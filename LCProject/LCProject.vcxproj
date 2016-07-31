@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\DungeonGame.cpp" />
     <ClCompile Include="ExcelCol.cpp" />
     <ClCompile Include="FracToDec.cpp" />
     <ClCompile Include="MajorityElement.cpp" />
