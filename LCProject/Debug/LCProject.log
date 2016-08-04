@@ -1,9 +1,8 @@
-﻿  MajorityElement.cpp
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(27): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(44): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(57): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(63): warning C4018: '>': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(64): warning C4018: '>': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\majorityelement.cpp(77): warning C4018: '<': signed/unsigned mismatch
+﻿  RepeatedDNA.cpp
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\repeateddna.cpp(30): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\repeateddna.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\repeateddna.cpp(84): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\repeateddna.cpp(91): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\repeateddna.cpp(98): warning C4018: '<': signed/unsigned mismatch
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.exe
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.pdb (Partial PDB)

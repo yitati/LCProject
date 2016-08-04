@@ -67,6 +67,7 @@ public:
 	}
 };
 
+/*
 int main(int argc, char * argv[])
 {
 	cout << "Main starts" << endl;
@@ -83,5 +84,5 @@ int main(int argc, char * argv[])
 	system("pause");
 
 }
-
+*/
 
