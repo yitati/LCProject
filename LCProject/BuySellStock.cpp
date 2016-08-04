@@ -104,5 +104,30 @@ public:
 	}
 
 
+	int maxProfitIV(vector<int>& prices, int k)
+	{
+		int i, j;
+		if (prices.size() < 2) return 0;
+		int n = prices.size();
+		// if transaction numbers larger than n/2 - same as unlimited transaction
+		if (k > n / 2) return maxProfitII(prices);
+
+		vector<vector<int>> profit(k + 1, vector<int>(n, 0));
+
+
+		for (i = 0; i < k + 1; i++)
+		{
+			int localMax = -prices[0];
+			for (j = 0; j < n; j++)
+			{
+				// max profit of either hold or sell out the current stock
+				profit[i][j] = max(profit[i][j - 1], prices[j] + localMax);
+				// localMax records the max profit of buying with prices[j]
+				localMax = max(localMax, profit[i - 1][j - 1] - prices[j]);
+			}
+		}
+
+		return profit[k][n - 1];
+	}
 
 };
