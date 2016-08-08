@@ -71,6 +71,7 @@ public:
 	}
 };
 
+/*
 int main(int argc, char * argv)
 {
 	string s1 = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
@@ -102,3 +103,4 @@ int main(int argc, char * argv)
 
 	system("pause");
 }
+*/
