@@ -110,6 +110,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BitwiseAND.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BSTRightView.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BuySellStock.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\DungeonGame.cpp" />
