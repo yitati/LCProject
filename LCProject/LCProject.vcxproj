@@ -115,6 +115,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\DungeonGame.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HammingWeight.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HouseRob.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Islands.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestNum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RepeatedDNA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp" />
