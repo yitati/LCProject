@@ -78,5 +78,8 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LListReverse.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CourseSchedule.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

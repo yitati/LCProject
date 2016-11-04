@@ -114,6 +114,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BSTRightView.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BuySellStock.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CountPrimes.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CourseSchedule.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\DungeonGame.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HammingWeight.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HappyNumber.cpp" />
