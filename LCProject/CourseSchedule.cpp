@@ -136,6 +136,7 @@ vector<int> findOrder(int numCourses, vector<pair<int, int>>& prerequisites)
 
 }
 
+/*
 int main(int argc, char * argv)
 {
 	vector<int> order;
@@ -180,3 +181,5 @@ int main(int argc, char * argv)
 	system("pause");
 
 }
+
+*/

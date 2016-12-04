@@ -110,6 +110,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_MergeSort.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_RainbowSort.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp" />
+    <ClCompile Include="1_QuickSort.cpp" />
+    <ClCompile Include="AddAndSearchWord.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BitwiseAND.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BSTRightView.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BuySellStock.cpp" />
@@ -123,6 +129,8 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\IsomorphicString.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestNum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LListReverse.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinSizeSubarraySum.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Trie.cpp" />
     <ClCompile Include="LListRemove.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RepeatedDNA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp" />
