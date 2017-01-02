@@ -1,5 +1,11 @@
 // Selection sort an array a[] with size n.
 // time complexity is O(n^2)
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
 void SelectionSort(int a[], int n)
 {
 	int global, temp;
@@ -19,3 +25,20 @@ void SelectionSort(int a[], int n)
 		a[global] = temp;
 	}
 }
+
+/*
+int main(int argc, char ** argv)
+{
+	int input[] = { 3, 6, 2, 8, 3, 5, 9, 0, 1 };
+
+	SelectionSort(input, 9);
+	
+	for (int i = 0; i < 9; i++)
+	{
+		cout << input[i] << "  ";
+	}
+	cout << endl;
+
+	system("pause");
+}
+*/

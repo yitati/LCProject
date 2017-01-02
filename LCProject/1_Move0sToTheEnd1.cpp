@@ -29,16 +29,27 @@ vector<int> generateTestcase(int length) {
 	return testcase;
 }
 
-class Solution {
-public:
-	vector<int> moveZero(vector<int> array) {
-		vector<int> nums;
-		return nums;
+// finally there will be 2 zones
+// [0, k) - non-zero values
+// [k, i] - unknown area
+// (i, n-1] - all 0's
+void moveZero(vector<int> & nums) {
+	int n = nums.size();
+	int k = 0, i = n - 1;
+	while (k <= i)
+	{
+		if (nums[k] == 0)
+		{
+			swap(nums[k], nums[i--]);
+		}
+		else k++;
 	}
-};
+}
+
 
 /*
 int main(int argc, char** argv) {
+	// to generate real radom numbers
 	srand(time(NULL));
 	int tLength = 10;
 
@@ -48,11 +59,11 @@ int main(int argc, char** argv) {
 	}
 	cout << endl;
 
-	Solution S;
-	vector<int> moved = S.moveZero(testcase);
-	for (int v : moved) {
+	moveZero(testcase);
+	for (int v : testcase) {
 		cout << v << " ";
 	}
 	cout << endl;
+	system("pause");
 }
 */

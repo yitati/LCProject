@@ -19,6 +19,15 @@
     <Filter Include="Source Files\Basics">
       <UniqueIdentifier>{9eb51fce-63f2-45bf-80b2-0905ac70172e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Sort">
+      <UniqueIdentifier>{dec7e612-3915-46b6-baf6-10e388b55c83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataStructures">
+      <UniqueIdentifier>{91bdd5d2-3dda-4659-9f15-900eb750946e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LCProblems\Trie">
+      <UniqueIdentifier>{4e4b2dd2-d4a8-4223-91a8-71c14f7f12c8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -90,9 +99,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RotateArray.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Trie.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
     <ClCompile Include="VersionComp.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
@@ -111,5 +117,88 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_BinarySearch.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_SearchSizeUnknownArray.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_Fibonacci.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_PowerBofA.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="2_SearchSortedMatrix.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="4_MedianOf2SortedArray.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\21_Merge2SortedLists.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\23_MergeKSortedLists.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\26_RemoveDuplicatesFromSortedArray.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\33_SearchInRotatedSortedArray.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\77_SortColors.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\80_RemoveDuplicatesFromSortedArrayII.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\81_SearchInRotatedSortedArrayII.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\82_RemoveDuplicatesFromSortedListII.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\83_RemoveDuplicatesFromSortedList.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\88_MergeSortedArray.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\147_InsertionSortList.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\148_SortList.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="153_FindMinInRotatedSortedArray.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\154_FindMinInRotatedSortedArrayII.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\378_KthSmallestElementInSortedMatrix.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="208_ImplementTrie.cpp">
+      <Filter>Source Files\LCProblems\Trie</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeNode.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

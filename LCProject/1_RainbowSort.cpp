@@ -19,34 +19,53 @@ using namespace std;
 vector<int> generateTestCase(int length) {
 	vector<int> testcase(length);
 	for (int i = 0; i < length; i++) {
-		int value = rand() % 3;
-		if (value == 2) value = -1;
+		int value = rand() % 3-1;
 		testcase[i] = value;
 	}
 	return testcase;
 }
 
 // four areas
-// [0, i) - all elements < 0 (-1)
-// [i, j) - unknown area
-// [j, x) - all elements >0
-class Solution {
-public:
-	vector<int> rainbowSort(vector<int> a) {
-		vector<int> nums;
-		return nums;
+// [0, i) - all elements < 0 (-1's)
+// [i, j] - should be all 0's but
+//    - [i, k) - known 0
+//    - [k, j] - unknow area
+// (j, n-1) - all elements > 0 (1's)
+
+void rainbowSort(vector<int> & nums) {
+	int n = nums.size();
+	int i = 0, j = n - 1, k = 0;
+	while (k <= j)
+	{
+		if (nums[k] == -1) 
+		{
+			swap(nums[k++], nums[i++]);
+		}
+		else if (nums[k] == 1)
+		{
+			swap(nums[k], nums[j--]);
+		}
+		else // nums[k] == 0
+		{
+			k++;
+		}	
 	}
-};
+
+}
+
 
 /*
 int main(int argc, char** argv) {
 	srand(time(NULL));
 	int tLength = 10;
 	vector<int> testcase = generateTestCase(tLength);
-	Solution S;
-	vector<int> sorted = S.rainbowSort(testcase);
-	if (is_sorted(sorted.begin(), sorted.end())) {
-		cout << "Sorted" << endl;
+	rainbowSort(testcase);
+	int i = 0;
+	int n = testcase.size();
+	for (i = 0; i < n; i++)
+	{
+		cout << testcase[i] << endl;
 	}
+	system("pause");
 }
 */

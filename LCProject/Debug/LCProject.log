@@ -1,3 +1,2 @@
-﻿  1_MergeSort.cpp
-  LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.exe
-  LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.pdb (Partial PDB)
+﻿  148_SortList.cpp
+LINK : fatal error LNK1104: cannot open file 'C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.ilk'
