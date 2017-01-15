@@ -31,6 +31,12 @@
     <Filter Include="Source Files\LCProblems\BST">
       <UniqueIdentifier>{69293816-7926-496e-a098-4713bd3a827a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Array">
+      <UniqueIdentifier>{a924336d-23a9-4e58-b7e0-8ace02daa50f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LCProblems\BinarySearch">
+      <UniqueIdentifier>{f81ba3ce-72ad-4979-b102-a5e643b0179a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -197,6 +203,36 @@
     </ClCompile>
     <ClCompile Include="..\..\..\..\Downloads\BST.cpp">
       <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\11_ContainerWithMostWater.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\15_3Sum.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="1_2Sum.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\16_3SumClosest.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\18_4Sum.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="27_RemoveElement.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\31_NextPermutation.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\34_SearchForRange.cpp">
+      <Filter>Source Files\LCProblems\BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\35_SearchInsertPosition.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\41_FirstMissingPositive.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

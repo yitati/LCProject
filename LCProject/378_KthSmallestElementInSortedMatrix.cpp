@@ -114,6 +114,7 @@ int kthSmallest_dfs(vector<vector<int>>& matrix, int k)
 	return -1;
 }
 
+/*
 int main(int argc, char ** argv)
 {
 	int input[3][3] = { { 1, 3, 5}, {6, 7, 12}, {11, 14, 14 } };
@@ -129,7 +130,6 @@ int main(int argc, char ** argv)
 	}
 
 	int x = kthSmallest_dfs(matrix, 6);
-
 	system("pause");
-
 }
+*/
