@@ -111,6 +111,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\BST.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\147_InsertionSortList.cpp" />
@@ -167,7 +168,8 @@
     <ClCompile Include="VersionComp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TreeNode.h" />
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinHeap.h" />
+    <ClInclude Include="BST.h" />
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -65,3 +65,15 @@ ListNode * generateList(vector<int>& arr)
 
 	return head;
 }
+
+int listLength(ListNode * head)
+{
+	if (!head) return 0;
+	int len = 0;
+	while (head)
+	{
+		len++;
+		head = head->next;
+	}
+	return len;
+}

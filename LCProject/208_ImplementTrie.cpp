@@ -72,7 +72,7 @@ Question: suppose we are designing a dictionary, what data structure/container s
 
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 using namespace std;
 // Asuumption: use 26 lowercase english character
@@ -83,13 +83,13 @@ public:
 		m_isWord = false;
 	}
 	bool m_isWord;
-	map<char, TrieNode*> m_children;
+	unordered_map<char, TrieNode*> m_children;
 };
 
 class Trie {
 public:
 	Trie() {
-		root = new TrieNode();
+		m_root = new TrieNode();
 	}
 
 	// Inserts a word into the trie.
@@ -97,7 +97,7 @@ public:
 	{
 		if (word.empty()) return;
 		int i;
-		TrieNode * node = root;
+		TrieNode * node = m_root;
 		for (i = 0; i < word.size(); i++)
 		{
 			char curr = word[i];
@@ -115,7 +115,7 @@ public:
 	{
 		if (word.empty()) return false;
 		int i;
-		TrieNode * node = root;
+		TrieNode * node = m_root;
 		for (i = 0; i < word.size() && node != NULL; i++)
 		{
 			char curr = word[i];
@@ -135,9 +135,9 @@ public:
 	// that starts with the given prefix.
 	bool startsWith(string prefix) // same with search
 	{
-		if (prefix.empty()) return root == NULL;
+		if (prefix.empty()) return m_root == NULL;
 		int i;
-		TrieNode * node = root;
+		TrieNode * node = m_root;
 		for (i = 0; i < prefix.size() && node != NULL; i++)
 		{
 			char curr = prefix[i];
@@ -150,25 +150,81 @@ public:
 				return false;
 			}
 		}
+		// node is not a word (but a prefix) and it has connected to some word
 		return !node->m_isWord || !node->m_children.empty();
 	}  
 
+
 	void remove(string word)
 	{
-
+		remove_helper1(word, 0, m_root);
 	}
 
-	bool remove_helper(string word, int index)
+	// solution 1 - recursion method to search until finding the last char
+	// return true to the parent if this char can be removed
+	// return false to the parent if this char can not be removed
+
+	bool remove_helper1(string word, int index, TrieNode * node)
 	{
 		// find children from curr layer
-		
+		if (word.empty()) return false;
+		if (index == word.size() - 1) // last char in word
+		{
+			if (node->m_isWord == false) // this is not a valid word in dic
+			{
+				return false;
+			}
+			else
+			{
+				node->m_isWord = false;
+				if (node->m_children.empty())  // valid word and not a prefix to any other word, can be removed from parent
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+		}
+		char curr = word[index];
+		if (node->m_children.find(curr) == node->m_children.end())  // does not find the word
+		{
+			return false;
+		}
+		else
+		{
+			if (remove_helper1(word, index + 1, node->m_children[curr]) == false) // does not need to delete children
+			{
+				return false;
+			}
+			else // need to delete children[curr]
+			{
+				delete node->m_children[curr];
+				node->m_children.erase(curr);
+				if (node->m_children.empty() && !node->m_isWord)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			}
+
+		}
 	}
 
+	// solution 2 - to search twice
+	// first search and find the last char, flip the flag isWord
+	// delete all node that isWord is false and does not have children
+
 private:
-	TrieNode * root;
+	TrieNode * m_root;
 };
 
 // Your Trie object will be instantiated and called as such:
 // Trie trie;
 // trie.insert("somestring");
 // trie.search("key");
+

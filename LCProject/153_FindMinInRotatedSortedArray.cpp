@@ -9,10 +9,20 @@
 /*****************************************************************************/
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int findMinInRotatedSortedArray(vector<int>& nums) 
 {
-	return 0;
+	int n = nums.size();
+	int start = 0, end = n - 1;
+	while (start < end)
+	{
+		if (nums[start] < nums[end]) return nums[start];
+		int mid = start + (end - start) / 2;
+		if (nums[mid] >= nums[start]) start = mid + 1;
+		else end = mid;
+	}
+	return nums[start];
 }

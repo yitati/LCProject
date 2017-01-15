@@ -19,6 +19,7 @@ void printList(ListNode * head);
 ListNode * generateList(int arr[], int arr_size);
 ListNode * generateList(vector<int> & arr);
 ListNode* mergeTwoLists(ListNode* l1, ListNode* l2);
+int listLength(ListNode * head);
 
 
 #endif

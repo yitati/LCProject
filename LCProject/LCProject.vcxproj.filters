@@ -28,6 +28,9 @@
     <Filter Include="Source Files\LCProblems\Trie">
       <UniqueIdentifier>{4e4b2dd2-d4a8-4223-91a8-71c14f7f12c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\BST">
+      <UniqueIdentifier>{69293816-7926-496e-a098-4713bd3a827a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -165,14 +168,8 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\88_MergeSortedArray.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp">
-      <Filter>Source Files\LCProblems\Sort</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.cpp">
       <Filter>Source Files\DataStructures</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp">
-      <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\147_InsertionSortList.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
@@ -192,12 +189,24 @@
     <ClCompile Include="208_ImplementTrie.cpp">
       <Filter>Source Files\LCProblems\Trie</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\BST</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\BST</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\BST.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
-    <ClInclude Include="TreeNode.h">
+    <ClInclude Include="BST.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinHeap.h">
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>
