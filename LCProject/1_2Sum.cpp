@@ -13,11 +13,28 @@
 */
 /*****************************************************************************/
 
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
 
+// build the map ON THE FLY !!
+// be careful with case [0, 3, 4, 0] target = 0 case !
 vector<int> twoSum(vector<int>& nums, int target) {
-	vector<int> result;
+	vector<int> result(2);
+	unordered_map<int, int> table;
+	int i;
+	for (i = 0; i < nums.size(); i++)
+	{
+		if (table.find(target - nums[i]) != table.end())
+		{
+			result[1] = i;
+			result[0] = table[target - nums[i]];
+		}
+		else
+		{
+			table[nums[i]] = i;
+		}
+	}
 	return result;
 }

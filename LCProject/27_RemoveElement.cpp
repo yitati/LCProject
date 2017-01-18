@@ -16,7 +16,6 @@ Your function should return length = 2, with the first two elements of nums bein
 
 using namespace std;
 
-
 int removeElement(vector<int>& nums, int val) {
 	int result=0;
 
