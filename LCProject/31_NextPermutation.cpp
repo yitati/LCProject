@@ -12,11 +12,44 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 */
 /*****************************************************************************/
 
+#include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
+// find the first element that is nums[j-1] < nums[j]
 void nextPermutation(vector<int>& nums) 
 {
+	if (nums.size() < 2) return;
+	int k = nums.size() - 1;
+	// find the first element that is smaller than its next
+	while (k >= 1 && nums[k - 1] >= nums[k]) k--;
 
+	// if the whole array is ascending order, sort the whole array
+	if (k == 0)
+	{
+		sort(nums.begin(), nums.end());
+		return;
+	}
+	// else find min value that is larger than nums[k-1]
+	int l = k;
+	int tmp = nums[k];
+	while (l < nums.size() - 1 && nums[l + 1] > nums[k - 1]) l++;
+	swap(nums[k - 1], nums[l]);
+	sort(nums.begin() + k, nums.end());
+}
+
+int main(int argc, char * * argv)
+{
+	int input[] = {1, 3, 2};
+	vector<int> nums(input, input + sizeof(input) / sizeof(int));
+	nextPermutation(nums);
+	for (int i = 0; i < nums.size(); i++)
+	{
+		cout << nums[i] << "    ";
+	}
+
+	cout << endl;
+	system("pause");
 }

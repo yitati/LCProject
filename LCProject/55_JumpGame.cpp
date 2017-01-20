@@ -49,7 +49,7 @@ bool canJump_dp(vector<int>& nums)
 	return (dp[n - 1] == 1);
 }
 
-
+/*
 int main(int argc, char * * argv)
 {
 	int input[] = { 0, 2, 3 }; // false
@@ -62,3 +62,4 @@ int main(int argc, char * * argv)
 
 	system("pause");
 }
+*/

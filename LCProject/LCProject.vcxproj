@@ -121,6 +121,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\15_3Sum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\167_2SumSorted.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\16_3SumClosest.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\187_RepeatedDNA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\18_4Sum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_MergeSort.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp" />

@@ -37,6 +37,9 @@
     <Filter Include="Source Files\LCProblems\BinarySearch">
       <UniqueIdentifier>{f81ba3ce-72ad-4979-b102-a5e643b0179a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\HashMap">
+      <UniqueIdentifier>{049dea1c-e404-4b67-a530-cc7238ec31a0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -254,6 +257,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\167_2SumSorted.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\187_RepeatedDNA.cpp">
+      <Filter>Source Files\LCProblems\HashMap</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

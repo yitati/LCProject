@@ -1,3 +1,5 @@
-﻿  55_JumpGame.cpp
+﻿  31_NextPermutation.cpp
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\31_nextpermutation.cpp(38): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\31_nextpermutation.cpp(48): warning C4018: '<': signed/unsigned mismatch
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.exe
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.pdb (Partial PDB)
