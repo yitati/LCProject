@@ -115,6 +115,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\11_ContainerWithMostWater.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\128_LongestConsecutiveSequence.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\147_InsertionSortList.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\148_SortList.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\154_FindMinInRotatedSortedArrayII.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_RainbowSort.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\31_NextPermutation.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\34_SearchForRange.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\35_SearchInsertPosition.cpp" />

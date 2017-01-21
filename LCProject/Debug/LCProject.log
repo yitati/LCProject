@@ -1,5 +1,5 @@
-﻿  31_NextPermutation.cpp
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\31_nextpermutation.cpp(38): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\31_nextpermutation.cpp(48): warning C4018: '<': signed/unsigned mismatch
+﻿  187_RepeatedDNA.cpp
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\187_repeateddna.cpp(55): warning C4018: '<': signed/unsigned mismatch
+c:\users\joanney1\documents\joanne's data\lcproject\lcproject\187_repeateddna.cpp(74): warning C4018: '<': signed/unsigned mismatch
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.exe
   LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.pdb (Partial PDB)

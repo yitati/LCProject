@@ -40,6 +40,9 @@
     <Filter Include="Source Files\LCProblems\HashMap">
       <UniqueIdentifier>{049dea1c-e404-4b67-a530-cc7238ec31a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Heap">
+      <UniqueIdentifier>{976a33a2-ff36-4fad-a3ae-8779b9a40a9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -150,9 +153,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\21_Merge2SortedLists.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\23_MergeKSortedLists.cpp">
-      <Filter>Source Files\LCProblems\Sort</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\26_RemoveDuplicatesFromSortedArray.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
@@ -190,9 +190,6 @@
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\154_FindMinInRotatedSortedArrayII.cpp">
-      <Filter>Source Files\LCProblems\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\378_KthSmallestElementInSortedMatrix.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
     <ClCompile Include="208_ImplementTrie.cpp">
@@ -260,6 +257,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\187_RepeatedDNA.cpp">
       <Filter>Source Files\LCProblems\HashMap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\378_KthSmallestElementInSortedMatrix.cpp">
+      <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\23_MergeKSortedLists.cpp">
+      <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp">
+      <Filter>Source Files\LCProblems\BST</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\128_LongestConsecutiveSequence.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
