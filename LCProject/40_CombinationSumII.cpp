@@ -23,15 +23,32 @@ A solution set is:
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-vector<vector<int>> combinationSum2(vector<int>& candidates, int target) 
+void combSum_dfs2(vector<vector<int>> & results, vector<int> & result, vector<int> & nums, int level, int sum, int target)
 {
+	if (sum > target) return;
+	if (sum == target)
+	{
+		results.push_back(result);
+		return;
+	}
+	for (int i = level; i < nums.size(); i++)
+	{
+		if (i > level && nums[i] == nums[i - 1]) continue;
+		result.push_back(nums[i]);
+		combSum_dfs2(results, result, nums, i + 1, sum + nums[i], target);
+		result.pop_back();
+	}
+}
+
+vector<vector<int>> combinationSum2(vector<int>& candidates, int target)
+{
+	sort(candidates.begin(), candidates.end());
 	vector<vector<int>> results;
-
-
-
+	vector<int> result;
+	combSum_dfs2(results, result, candidates, 0, 0, target);
 	return results;
-
 }

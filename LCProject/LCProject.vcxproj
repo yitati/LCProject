@@ -128,17 +128,22 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_RainbowSort.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\216_CombinationSumIII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\31_NextPermutation.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\34_SearchForRange.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\35_SearchInsertPosition.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\377_CombinationSumIV.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\39_CombinationSum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\40_CombinationSumII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\41_FirstMissingPositive.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\42_TrappingRainWater.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\45_JumpGameII.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\48_RotateImage.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\54_SpiralMatrix.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\55_JumpGame.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\56_MergeIntervals.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\59_SpiralMatrixII.cpp" />
     <ClCompile Include="27_RemoveElement.cpp" />
     <ClCompile Include="1_2Sum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\21_Merge2SortedLists.cpp" />
@@ -162,8 +167,8 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_SearchSizeUnknownArray.cpp" />
     <ClCompile Include="1_QuickSort.cpp" />
     <ClCompile Include="AddAndSearchWord.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BitwiseAND.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BSTRightView.cpp" />
+    <ClCompile Include="201_BitwiseAND.cpp" />
+    <ClCompile Include="199_BSTRightView.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BuySellStock.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CountPrimes.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CourseSchedule.cpp" />
@@ -174,17 +179,16 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Islands.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\IsomorphicString.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestNum.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LListReverse.cpp" />
+    <ClCompile Include="206_ReverseLinkedList.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinSizeSubarraySum.cpp" />
     <ClCompile Include="208_ImplementTrie.cpp" />
-    <ClCompile Include="LListRemove.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RepeatedDNA.cpp" />
+    <ClCompile Include="203_RemoveLinkedListElement.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RotateArray.cpp" />
     <ClCompile Include="ExcelCol.cpp" />
     <ClCompile Include="FracToDec.cpp" />
     <ClCompile Include="MajorityElement.cpp" />
-    <ClCompile Include="MinStack.cpp" />
+    <ClCompile Include="155_MinStack.cpp" />
     <ClCompile Include="VersionComp.cpp" />
   </ItemGroup>
   <ItemGroup>

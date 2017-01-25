@@ -23,12 +23,26 @@ A solution set is:
 
 using namespace std;
 
-vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
+void combSum_dfs(vector<vector<int>> & results, vector<int> & result, vector<int> & nums, int level, int sum, int target)
+{
+	if (sum > target) return;
+	if (sum == target)
+	{
+		results.push_back(result);
+		return;
+	}
+	for (int i = level; i<nums.size(); i++)
+	{
+		result.push_back(nums[i]);
+		combSum_dfs(results, result, nums, i, sum + nums[i], target);
+		result.pop_back();
+	}
+}
+
+vector<vector<int>> combinationSum(vector<int>& candidates, int target)
 {
 	vector<vector<int>> results;
-
-
-
+	vector<int> result;
+	combSum_dfs(results, result, candidates, 0, 0, target);
 	return results;
-
 }

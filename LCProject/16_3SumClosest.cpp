@@ -12,13 +12,31 @@
 /*****************************************************************************/
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int threeSumClosest(vector<int>& nums, int target) 
 {
-	int i = 0;
-
-	return i;
-
+	int n = nums.size();
+	if (n < 3) return{};
+	int globalSum = nums[0] + nums[1] + nums[2];
+	sort(nums.begin(), nums.end());
+	for (int index = 0; index < n - 2; index++)
+	{
+		if (index > 0 && nums[index - 1] == nums[index]) continue;
+		int i = index + 1, j = n - 1;
+		while (i < j)
+		{
+			int sum = nums[i] + nums[j] + nums[index];
+			if (sum == target)
+			{
+				return target;
+			}
+			else if (sum < target) i++;
+			else j--;
+			globalSum = abs(globalSum - target) > abs(sum - target) ? sum : globalSum;
+		}
+	}
+	return globalSum;
 }

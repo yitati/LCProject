@@ -17,12 +17,39 @@ A solution set is:
 /*****************************************************************************/
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-vector<int> threeSum(vector<int>& nums, int target) {
-	vector<int> result;
-
-	return result;
+vector<vector<int>> threeSum(vector<int>& nums) 
+{
+	int n = nums.size();
+	if (n < 3) return{};
+	vector<vector<int>> results;
+	sort(nums.begin(), nums.end());
+	for (int index = 0; index < n - 2; index++)
+	{
+		if (index > 0 && nums[index] == nums[index - 1]) continue;
+		int target = 0 - nums[index];
+		int i = index + 1, j = n - 1;
+		while (i < j)
+		{
+			if (nums[i] + nums[j] == target)
+			{
+				vector<int> result(3);
+				result[0] = nums[index];
+				result[1] = nums[i];
+				result[2] = nums[j];
+				results.push_back(result);
+				i++;
+				j--;
+				while (i<j && nums[i] == nums[i - 1]) i++;
+				while (i<j && nums[j] == nums[j + 1]) j--;
+			}
+			else if (nums[i] + nums[j] < target) i++;
+			else j--;
+		}
+	}
+	return results;
 }
 
