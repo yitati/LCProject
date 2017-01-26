@@ -303,6 +303,12 @@
     <ClCompile Include="206_ReverseLinkedList.cpp">
       <Filter>Source Files\LCProblems\LinkedList</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\53_MaximumSubarray.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="57_InsertInterval.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
@@ -312,6 +318,9 @@
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinHeap.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Interval.h">
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>

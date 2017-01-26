@@ -140,9 +140,11 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\42_TrappingRainWater.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\45_JumpGameII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\48_RotateImage.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\53_MaximumSubarray.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\54_SpiralMatrix.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\55_JumpGame.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\56_MergeIntervals.cpp" />
+    <ClCompile Include="57_InsertInterval.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\59_SpiralMatrixII.cpp" />
     <ClCompile Include="27_RemoveElement.cpp" />
     <ClCompile Include="1_2Sum.cpp" />
@@ -192,6 +194,7 @@
     <ClCompile Include="VersionComp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Interval.h" />
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinHeap.h" />
     <ClInclude Include="BST.h" />
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h" />
