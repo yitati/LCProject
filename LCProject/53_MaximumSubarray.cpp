@@ -13,6 +13,7 @@ the contiguous subarray [4,-1,2,1] has the largest sum = 6.
 
 using namespace std;
 
+// dp solution: calculate at each point the max sum if subarray ending at this point
 int maxSubArray(vector<int>& nums)
 {
 	if (nums.empty()) return 0;

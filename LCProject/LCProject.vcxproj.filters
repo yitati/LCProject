@@ -309,6 +309,72 @@
     <ClCompile Include="57_InsertInterval.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\62_UniquePath.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\63_UniquePathII.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\64_MinimumPathSum.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\66_PlusOne.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\73_SetMatrixZeros.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\74_Search2DMatrix.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\78_Subsets.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\79_WordSearch.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="90_SubsetsII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\485_MaxConsecutiveOnes.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\448_FindAllNumbersDisappearedInArray.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\442_FindAllDuplicatesInArray.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\414_ThirdMaximumNumber.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\380_InsertDeleteGetRamdom.cpp">
+      <Filter>Source Files\LCProblems\HashMap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\381_InsertDeleteGetRandomII.cpp">
+      <Filter>Source Files\LCProblems\HashMap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\289_GameOfLife.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\287_FindTheDuplicateNumber.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\283_MoveZeros.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\268_MissingNumber.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\238_ProductOfArrayExceptSelf.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\119_PascalTriangleII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="118_PascalTriangle.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
