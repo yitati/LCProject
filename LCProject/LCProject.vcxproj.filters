@@ -111,9 +111,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RotateArray.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
     <ClCompile Include="VersionComp.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
@@ -391,6 +388,9 @@
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\189_RotateArray.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\162_FindPeakElement.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
   </ItemGroup>

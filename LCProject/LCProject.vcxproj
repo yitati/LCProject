@@ -117,6 +117,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\119_PascalTriangleII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\11_ContainerWithMostWater.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\128_LongestConsecutiveSequence.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\162_FindPeakElement.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\169_MajorityElement.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\189_RotateArray.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\209_MinimumSizeSubarraySum.cpp" />
@@ -215,7 +216,6 @@
     <ClCompile Include="208_ImplementTrie.cpp" />
     <ClCompile Include="203_RemoveLinkedListElement.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\RotateArray.cpp" />
     <ClCompile Include="ExcelCol.cpp" />
     <ClCompile Include="FracToDec.cpp" />
     <ClCompile Include="155_MinStack.cpp" />
