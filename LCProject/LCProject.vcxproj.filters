@@ -105,9 +105,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestNum.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
-    <ClCompile Include="MajorityElement.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinSizeSubarraySum.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
@@ -373,6 +370,27 @@
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
     <ClCompile Include="118_PascalTriangle.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\169_MajorityElement.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="229_MajorityElementII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\217_ContainsDuplicate.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\219_ContainsDeuplicateII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\228_SummaryRanges.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\209_MinimumSizeSubarraySum.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\189_RotateArray.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
   </ItemGroup>
