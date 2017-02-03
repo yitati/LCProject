@@ -24,5 +24,5 @@ int findPeakElement(vector<int>& nums)
 		else if (nums[mid] < nums[mid - 1]) rhs = mid - 1;
 		else lhs = mid + 1;
 	}
-	return lhs > rhs ? lhs : rhs;
+	return nums[lhs] > nums[rhs] ? lhs : rhs;
 }

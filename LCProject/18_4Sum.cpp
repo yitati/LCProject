@@ -22,7 +22,7 @@ A solution set is:
 
 using namespace std;
 
-vector<int> fourSum(vector<int>& nums, int target) 
+vector<vector<int>> fourSum(vector<int>& nums, int target) 
 {
 	if (nums.size() < 4) return{};
 	vector<vector<int>> results;

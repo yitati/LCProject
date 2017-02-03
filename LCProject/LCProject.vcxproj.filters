@@ -37,9 +37,6 @@
     <Filter Include="Source Files\LCProblems\BinarySearch">
       <UniqueIdentifier>{f81ba3ce-72ad-4979-b102-a5e643b0179a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\LCProblems\HashMap">
-      <UniqueIdentifier>{049dea1c-e404-4b67-a530-cc7238ec31a0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\LCProblems\Heap">
       <UniqueIdentifier>{976a33a2-ff36-4fad-a3ae-8779b9a40a9f}</UniqueIdentifier>
     </Filter>
@@ -63,6 +60,9 @@
     </Filter>
     <Filter Include="Source Files\LCProblems\LinkedList">
       <UniqueIdentifier>{58541adc-8ac0-4dcb-a492-5b9fff804885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LCProblems\HashTable">
+      <UniqueIdentifier>{049dea1c-e404-4b67-a530-cc7238ec31a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -244,7 +244,7 @@
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\187_RepeatedDNA.cpp">
-      <Filter>Source Files\LCProblems\HashMap</Filter>
+      <Filter>Source Files\LCProblems\HashTable</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\378_KthSmallestElementInSortedMatrix.cpp">
       <Filter>Source Files\LCProblems\Heap</Filter>
@@ -343,10 +343,10 @@
       <Filter>Source Files\LCProblems\Array</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\380_InsertDeleteGetRamdom.cpp">
-      <Filter>Source Files\LCProblems\HashMap</Filter>
+      <Filter>Source Files\LCProblems\HashTable</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\381_InsertDeleteGetRandomII.cpp">
-      <Filter>Source Files\LCProblems\HashMap</Filter>
+      <Filter>Source Files\LCProblems\HashTable</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\289_GameOfLife.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
@@ -392,6 +392,18 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\162_FindPeakElement.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\120_Triangle.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\152_MaximumProductSubarray.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\3_LongestSubstringWithoutRepeatingCharacters.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_AddTwoNumbers.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

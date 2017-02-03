@@ -38,7 +38,7 @@ int findDuplicate1(vector<int>& nums)
 }
 
 // two pointers
-int findDuplicate1(vector<int>& nums)
+int findDuplicate2(vector<int>& nums)
 {
 	int slow = nums[0];
 	int fast = nums[nums[0]];

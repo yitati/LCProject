@@ -21,6 +21,7 @@ If nums = [1,2,2], a solution is:
 /*****************************************************************************/
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
