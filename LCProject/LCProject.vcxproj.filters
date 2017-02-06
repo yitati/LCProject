@@ -28,9 +28,6 @@
     <Filter Include="Source Files\LCProblems\Trie">
       <UniqueIdentifier>{4e4b2dd2-d4a8-4223-91a8-71c14f7f12c8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\LCProblems\BST">
-      <UniqueIdentifier>{69293816-7926-496e-a098-4713bd3a827a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\LCProblems\Array">
       <UniqueIdentifier>{a924336d-23a9-4e58-b7e0-8ace02daa50f}</UniqueIdentifier>
     </Filter>
@@ -64,12 +61,12 @@
     <Filter Include="Source Files\LCProblems\HashTable">
       <UniqueIdentifier>{049dea1c-e404-4b67-a530-cc7238ec31a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Tree">
+      <UniqueIdentifier>{69293816-7926-496e-a098-4713bd3a827a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BuySellStock.cpp">
       <Filter>Source Files\LCProblems</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CountPrimes.cpp">
@@ -193,13 +190,10 @@
       <Filter>Source Files\LCProblems\Trie</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp">
-      <Filter>Source Files\LCProblems\BST</Filter>
+      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp">
-      <Filter>Source Files\LCProblems\BST</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\BST.cpp">
-      <Filter>Source Files\DataStructures</Filter>
+      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\11_ContainerWithMostWater.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
@@ -253,7 +247,7 @@
       <Filter>Source Files\LCProblems\Heap</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp">
-      <Filter>Source Files\LCProblems\BST</Filter>
+      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\128_LongestConsecutiveSequence.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
@@ -289,7 +283,7 @@
       <Filter>Source Files\LCProblems\BitManipulation</Filter>
     </ClCompile>
     <ClCompile Include="199_BSTRightView.cpp">
-      <Filter>Source Files\LCProblems\BST</Filter>
+      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
     <ClCompile Include="203_RemoveLinkedListElement.cpp">
       <Filter>Source Files\LCProblems\LinkedList</Filter>
@@ -404,6 +398,57 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_AddTwoNumbers.cpp">
       <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\BST.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\445_AddTwoNumbersII.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="160_IntersectionOfTwoLinkedLists.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\141_LinkedListCycle.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\142_LinkedListCycleII.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\349_IntersectionOfTwoArrays.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="121_BestTimeToBuyAndSellStockI.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\122_BestTimeToBuyAndSellStockII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\123_BestTimeToBuyAndSellStockIII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\188_BestTimeToBuyAndSellStockIV.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\309_BestTimeToBuyAndSellStockWithCoolDown.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\84_LargestRectangleInHistogram.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\85_MaximalRectangle.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\221_MaximumSquare.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\105_ConstructBinaryTreeFromPreorderAndInorderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\106_ConstsructBinaryTreeFromInorderAndPostorderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\30_SubstringWithConcatenationOfAllWords.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

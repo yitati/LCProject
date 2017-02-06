@@ -67,6 +67,7 @@ vector<string> findRepeatedDnaSequences(string s)
 	return result;
 }
 
+/*
 int main(int argc, char * * argv)
 {
 	string s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
@@ -78,3 +79,4 @@ int main(int argc, char * * argv)
 
 	system("pause");
 }
+*/

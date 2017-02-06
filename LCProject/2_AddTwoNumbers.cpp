@@ -13,29 +13,24 @@ Output: 7 -> 0 -> 8
 
 #include "ListNode.h"
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+ListNode* addTwoNumbersI(ListNode* l1, ListNode* l2) 
 {
 	int carry = 0;
 	ListNode * head = NULL;
-	ListNode * tail = NULL;
-	while (l1 != NULL || l2 != NULL)
+	ListNode * tail = head;
+	// carry can not be zeor - otherwise will lose the last node
+	while (l1 != NULL || l2 != NULL || carry != 0)
 	{
 		int opt1 = l1 == NULL ? 0 : l1->val;
 		int opt2 = l2 == NULL ? 0 : l2->val;
 		int sum = opt1 + opt2 + carry;
 		carry = sum / 10;
 		sum = sum % 10;
-		if (head == tail == NULL)
-		{
-			head->val = sum;
-			tail = head;
-		}
-		else
-		{
-			ListNode * newNode = new ListNode(sum);
-			tail->next = newNode;
-			tail = newNode;
-		}
+
+		ListNode * newNode = new ListNode(sum);
+		if (head == NULL) head = newNode;
+		else tail->next = newNode;
+		tail = newNode;
 
 		l1 = l1 == NULL ? NULL : l1->next;
 		l2 = l2 == NULL ? NULL : l2->next;
@@ -44,7 +39,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
 	return head;
 }
 
-
+/*
 int main(int argc, char ** argv)
 {
 	int input1[] = { 2, 4, 3}; // size is 3
@@ -62,3 +57,5 @@ int main(int argc, char ** argv)
 
 	system("pause");
 }
+
+*/

@@ -22,7 +22,7 @@ Given target = 3, return true.
 
 using namespace std;
 
-bool searchMatrix(vector<vector<int>>& matrix, int target) 
+bool searchMatrixI(vector<vector<int>>& matrix, int target) 
 {
 	int n = matrix.size(), m = matrix[0].size();
 	int len = m*n;

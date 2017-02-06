@@ -16,7 +16,7 @@ the subarray [4,3] has the minimal length under the problem constraint.
 
 using namespace std;
 
-int minSubArrayLen(int s, vector<int>& nums) 
+int minSubArrayLength(int s, vector<int>& nums) 
 {
 	int n = nums.size(), minLen = INT_MAX;
 	int lhs = 0, rhs = 0, sum = 0;
