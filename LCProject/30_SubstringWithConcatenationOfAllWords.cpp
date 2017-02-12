@@ -77,3 +77,4 @@ vector<int> findSubstring(string S, vector<string> &L)
 	}
 
 	return result;
+}

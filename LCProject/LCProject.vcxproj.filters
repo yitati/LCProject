@@ -64,6 +64,9 @@
     <Filter Include="Source Files\LCProblems\Tree">
       <UniqueIdentifier>{69293816-7926-496e-a098-4713bd3a827a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\String">
+      <UniqueIdentifier>{20f2b7ba-0153-4687-b43e-fb0a45331b5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AddAndSearchWord.cpp">
@@ -449,6 +452,36 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\30_SubstringWithConcatenationOfAllWords.cpp">
       <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\328_OddEvenLinkedList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\237_DeleteNodeInLinkedList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\234_PalindromeLinkedList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\143_ReorderList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\36_ValidSoduku.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\37_SudokuSolver.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\76_MinimumWindowSubstring.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\32_LongestValidParentheses.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\214_ShortestPalindrome.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\5_LongestPanlindromeSubstring.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

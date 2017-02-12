@@ -24,7 +24,7 @@ TreeNode * buildTreePreIn(vector<int> & preorder, int pStart, int pEnd, vector<i
 	return root;
 }
 
-TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder)
+TreeNode* buildTreeI(vector<int>& preorder, vector<int>& inorder)
 {
 	return buildTreePreIn(preorder, 0, preorder.size() - 1, inorder, 0, inorder.size() - 1);
 }

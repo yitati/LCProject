@@ -24,7 +24,7 @@ TreeNode * buildTreePostIn(vector<int> & postorder, int pStart, int pEnd, vector
 	return root;
 }
 
-TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder)
+TreeNode* buildTreeII(vector<int>& inorder, vector<int>& postorder)
 {
 	return buildTreePostIn(postorder, 0, postorder.size() - 1, inorder, 0, inorder.size() - 1);
 }

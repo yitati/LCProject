@@ -68,7 +68,7 @@ ListNode *detectCycle_math(ListNode *head)
 
 
 
-
+/*
 int main(int argc, char ** argv)
 {
 	ListNode* head = new ListNode(1);
@@ -86,3 +86,4 @@ int main(int argc, char ** argv)
 	system("pause");
 
 }
+*/

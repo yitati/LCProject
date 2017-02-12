@@ -1,13 +1,3 @@
-﻿  349_IntersectionOfTwoArrays.cpp
-  121_BestTimeToBuyAndSellStockI.cpp
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\121_besttimetobuyandsellstocki.cpp(32): warning C4018: '<': signed/unsigned mismatch
-  188_BestTimeToBuyAndSellStockIV.cpp
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\188_besttimetobuyandsellstockiv.cpp(21): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\188_besttimetobuyandsellstockiv.cpp(40): warning C4018: '<': signed/unsigned mismatch
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\188_besttimetobuyandsellstockiv.cpp(55): warning C4018: '<': signed/unsigned mismatch
-  123_BestTimeToBuyAndSellStockIII.cpp
-  122_BestTimeToBuyAndSellStockII.cpp
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\122_besttimetobuyandsellstockii.cpp(18): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\123_besttimetobuyandsellstockiii.cpp(18): error C4716: 'maxProfitIII': must return a value
-c:\users\joanney1\documents\joanne's data\lcproject\lcproject\349_intersectionoftwoarrays.cpp(23): error C4716: 'intersection': must return a value
+﻿  328_OddEvenLinkedList.cpp
+  LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.exe
+  LCProject.vcxproj -> C:\Users\joanney1\Documents\Joanne's Data\LCProject\Debug\LCProject.pdb (Partial PDB)
