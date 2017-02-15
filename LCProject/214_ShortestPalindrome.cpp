@@ -40,5 +40,6 @@ string shortestPalindrome_twoPointers(string s)
 // use KMP
 string shortestPalindrome_KMP(string s)
 {
+	// TODO - add code here
 	return s;
 }

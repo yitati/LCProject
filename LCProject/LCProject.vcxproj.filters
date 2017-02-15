@@ -483,6 +483,54 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\5_LongestPanlindromeSubstring.cpp">
       <Filter>Source Files\LCProblems\String</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\6_ZigZagConversion.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\8_StringToInteger.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\12_IntegerToRoman.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\13_RomanToInteger.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\14_LongestCommonPrefix.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\17_LetterCombinationsOfPhoneNumber.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\20_ValidParentheses.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\22_GenerateParentheses.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\28_ImplementStrStr.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\138_CopyLinkedListWithRandomPointer.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\92_ReverseLinkedListII.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\86_PartitionList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\61_RotateList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\24_SwapNodesInPairs.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\19_RemoveNthNodeFromEndOfList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\25_ReverseNodesInKGroup.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
