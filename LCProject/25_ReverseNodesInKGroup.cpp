@@ -17,5 +17,21 @@ For k = 3, you should return: 3->2->1->4->5
 
 ListNode* reverseKGroup(ListNode* head, int k) 
 {
+	if (head == NULL || head->next == NULL || k == 1) return head;
+	ListNode * dummy = new ListNode(0);
+	dummy->next = head;
+	ListNode * dummyHead = dummy, * tail = head;
+	int count = 0;
+	// put tail to the last node of a group
+	while (count < k && tail->next) { tail = tail->next; count++; }
+	if (count < k) return head;
+	while (tail != NULL)
+	{
+		ListNode * curr = dummyHead->next;
+		ListNode * tmp = curr->next;
+	}
+
+
+	return head;
 
 }

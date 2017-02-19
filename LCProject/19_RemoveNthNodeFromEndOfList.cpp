@@ -39,6 +39,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n)
 	return head;
 }
 
+/*
 int main(int argc, char ** argv)
 {
 	int input1[] = { 1, 2, 3, 4, 5 }; // size is 3
@@ -52,3 +53,4 @@ int main(int argc, char ** argv)
 
 	system("pause");
 }
+*/

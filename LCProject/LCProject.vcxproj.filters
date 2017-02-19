@@ -5,14 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\LCProblems">
       <UniqueIdentifier>{c271be3c-fd35-4b58-a4a4-1c6dca3b95ce}</UniqueIdentifier>
     </Filter>
@@ -67,53 +59,11 @@
     <Filter Include="Source Files\LCProblems\String">
       <UniqueIdentifier>{20f2b7ba-0153-4687-b43e-fb0a45331b5e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Math">
+      <UniqueIdentifier>{50d20640-38ef-451a-bfda-37892a6554ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AddAndSearchWord.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CountPrimes.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\CourseSchedule.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\DungeonGame.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="ExcelCol.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="FracToDec.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HammingWeight.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HappyNumber.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\HouseRob.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Islands.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\IsomorphicString.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestNum.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinSizeSubarraySum.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReverseBit.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
-    <ClCompile Include="VersionComp.cpp">
-      <Filter>Source Files\LCProblems</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
@@ -248,9 +198,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\23_MergeKSortedLists.cpp">
       <Filter>Source Files\LCProblems\Heap</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp">
-      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\128_LongestConsecutiveSequence.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
@@ -530,6 +477,78 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\25_ReverseNodesInKGroup.cpp">
       <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\515_FindLargestValueInEachTreeRow.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\513_FindBottomLeftTreeValue.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\508_MostFrequentSubtreeSum.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\501_FindModeInBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\450_DeleteNodeInBST.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\437_PathSumIII.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\112_PathSum.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\113_PathSumII.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\404_SumOfLeftLeaves.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\449_SerializeAndDeserializeBST.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\257_BinaryTreePath.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\235_LowestCommonAncestorOfBinarySearchTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="236_LowestCommonAncestorOfBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="230_KthSmallestElementInBST.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\226_InvertBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\144_BinaryTreePreorderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\145_BinaryTreePostorderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\94_BinaryTreeInorderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\38_CountAndSay.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\7_ReverseInteger.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\9_PalindromeNumber.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\7_StringPatternMatching.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\297_SerializationAndDeserializeBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
