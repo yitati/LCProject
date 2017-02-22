@@ -550,6 +550,33 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\297_SerializationAndDeserializeBinaryTree.cpp">
       <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\43_MultiplyString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\111_MinimumDepthOfBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\110_BalancedBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\102_BinaryTreeLevelOrderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\107_BinaryTreeLevelOrderTraversalII.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\104_MaximumDepthOfBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\103_BinaryTreeZigzagLevelOrderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\125_ValidPalindrome.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\344_ReverseString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">

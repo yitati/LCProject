@@ -111,10 +111,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\102_BinaryTreeLevelOrderTraversal.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\103_BinaryTreeZigzagLevelOrderTraversal.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\104_MaximumDepthOfBinaryTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\105_ConstructBinaryTreeFromPreorderAndInorderTraversal.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\106_ConstsructBinaryTreeFromInorderAndPostorderTraversal.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\107_BinaryTreeLevelOrderTraversalII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\108_ConvertSortedArrayToBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\109_ConvertSortedListToBinarySearchTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\110_BalancedBinaryTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\111_MinimumDepthOfBinaryTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\112_PathSum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\113_PathSumII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\119_PascalTriangleII.cpp" />
@@ -122,6 +128,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\120_Triangle.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\122_BestTimeToBuyAndSellStockII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\123_BestTimeToBuyAndSellStockIII.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\125_ValidPalindrome.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\12_IntegerToRoman.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\138_CopyLinkedListWithRandomPointer.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\13_RomanToInteger.cpp" />
@@ -140,7 +147,9 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\234_PalindromeLinkedList.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\235_LowestCommonAncestorOfBinarySearchTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\297_SerializationAndDeserializeBinaryTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\344_ReverseString.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\38_CountAndSay.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\43_MultiplyString.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\7_ReverseInteger.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\7_StringPatternMatching.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\94_BinaryTreeInorderTraversal.cpp" />

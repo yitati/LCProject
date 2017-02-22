@@ -20,5 +20,26 @@ using namespace std;
 
 string countAndSay(int n) 
 {
-	return "";
+	string result;
+	if (n < 1) return result;
+	result.push_back('1');
+	while (n - 1)
+	{
+		string next;
+		int len = result.length(), count = 1;
+		for (int i = 0; i < len; i++)
+		{
+			if (i + 1 < len && result[i] == result[i + 1]) count++;
+			else
+			{
+				if (count > 0) next += to_string(count);
+				next += result[i];
+				count = 1;
+			}
+		}
+		result = next;
+		n--;
+	}
+
+	return result;
 }

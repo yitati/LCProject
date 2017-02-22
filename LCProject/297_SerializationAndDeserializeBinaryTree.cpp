@@ -123,7 +123,7 @@ TreeNode* deserialize(string data)
 	return root;
 }
 
-
+/*
 int main(int argc, char ** argv)
 {
 	string input1 = "5,3,2,4,9,10";
@@ -153,3 +153,4 @@ int main(int argc, char ** argv)
 
 	system("pause");
 }
+*/
