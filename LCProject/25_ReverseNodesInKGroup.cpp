@@ -15,23 +15,34 @@ For k = 3, you should return: 3->2->1->4->5
 
 #include "ListNode.h"
 
-ListNode* reverseKGroup(ListNode* head, int k) 
+ListNode* reverseKGroup(ListNode* head, int k)
 {
 	if (head == NULL || head->next == NULL || k == 1) return head;
 	ListNode * dummy = new ListNode(0);
 	dummy->next = head;
-	ListNode * dummyHead = dummy, * tail = head;
-	int count = 0;
-	// put tail to the last node of a group
-	while (count < k && tail->next) { tail = tail->next; count++; }
-	if (count < k) return head;
-	while (tail != NULL)
+	ListNode * prev = dummy, *curr = head;
+	int len = 0;
+	while (curr) { curr = curr->next; len++; }
+	int loop = len / k;
+	curr = head;
+	while (loop && curr)
 	{
-		ListNode * curr = dummyHead->next;
-		ListNode * tmp = curr->next;
+		int inLoop = k - 1;
+		while (inLoop)
+		{
+			ListNode * tmp = curr->next;
+			curr->next = tmp->next;
+			ListNode * prevNext = prev->next;
+			prev->next = tmp;
+			tmp->next = prevNext;
+			inLoop--;
+		}
+		prev = curr;
+		curr = curr->next;
+		loop--;
 	}
 
-
+	head = dummy->next;
+	delete dummy;
 	return head;
-
 }

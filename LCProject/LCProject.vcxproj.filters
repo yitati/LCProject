@@ -550,9 +550,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\297_SerializationAndDeserializeBinaryTree.cpp">
       <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\43_MultiplyString.cpp">
-      <Filter>Source Files\LCProblems\String</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\111_MinimumDepthOfBinaryTree.cpp">
       <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
@@ -576,6 +573,27 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\344_ReverseString.cpp">
       <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="222_CountCompleteTreeNodes.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\199_BinaryTreeRightSideView.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\173_BinarySearchTreeIterator.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\29_DivideTwoIntegers.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\43_MultiplyString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\50_PowXN.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\60_PermutationSequence.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

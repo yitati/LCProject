@@ -11,55 +11,33 @@
 /*****************************************************************************/
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
-string multiplyStrWithOneNum(string num1, string num2, int index)
-{
-	string result;
-	int opt = num2[index] - '0', len1 = num1.length(), len2 = num2.length();
-	int i = len1 - 1, carry = 0, k = len2 - index - 1;
-	if (opt == 0) return result;
-	while (i >= 0)
-	{
-		int mul = (num1[i] - '0') * opt + carry;
-		carry = mul / 10;
-		mul = mul % 10;
-		result.insert(result.begin(), mul + '0');
-	}
-	while (k)
-	{
-		result.push_back('0');
-		k--;
-	}
-
-	return result;
-}
-
-string addTwoString(string num1, string num2)
-{
-	string result;
-	if (num1.empty()) return num2;
-	if (num2.empty()) return num1;
-	int len1 = num1.length(), len2 = num2.length();
-	int i = len1 - 1, j = len2 - 1, carry = 0;
-	while (i >= 0 || j >= 0)
-	{
-		int sum = (i >= 0 ? num1[i] - '0': 0) + (j >=0 ? num2[j] - '0' : 0);
-		carry = sum / 10;
-		sum %= 10;
-		result.insert(result.begin(), sum);
-		i--; j--;
-	}
-	return result;
-}
-
 string multiply(string num1, string num2) 
 {
-	string result;
-	if (num1.empty() || num2.empty()) return result;
-	if (num1[0] == 0 || num2[0] == 0) return "0";
 	int len1 = num1.length(), len2 = num2.length();
-	
+	string result(len1+len2, '0');
+	int i, j, k = 0, carry = 0;
+	for (i = len1-1; i >= 0; i--)
+	{
+		carry = 0;
+		for (j = len2-1; j >= 0; j--)
+		{
+			int sum = (result[i+j+1]-'0') + (num1[i] - '0')*(num2[j] - '0') + carry;
+			result[i+j+1] = sum % 10 + '0';
+			carry = sum / 10;
+		}
+		result[i] = carry + '0';
+	}
+	while (k < len1+len2-1 && result[k] == '0') k++;
+	result.erase(0, k);
+	return result;
+}
 
+int main(int argc, char ** argv)
+{
+	cout << multiply1("123", "456") << endl;
+	system("pause");
 }
