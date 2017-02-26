@@ -19,5 +19,5 @@ using namespace std;
 
 bool isNumber(string s)
 {
-    
+    // this is only use to test
 }
