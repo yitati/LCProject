@@ -36,8 +36,10 @@ string multiply(string num1, string num2)
 	return result;
 }
 
+/*
 int main(int argc, char ** argv)
 {
-	cout << multiply1("123", "456") << endl;
+	cout << multiply("123", "456") << endl;
 	system("pause");
 }
+*/

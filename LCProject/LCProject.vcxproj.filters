@@ -595,6 +595,63 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\60_PermutationSequence.cpp">
       <Filter>Source Files\LCProblems\Math</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\168_ExcelSheetColumnTitle.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\171_ExcelSheetColumnNumber.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\65_ValidNumber.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\136_SingleNumber.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\67_AddBinary.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\149_MaxPointsOnALine.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\69_SquareRoot.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\46_Permutations.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\417_PacificAtlanticWaterFlow.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\47_PermutationII.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\71_SimplifyPath.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="204_CountPrimes.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="172_FactorialTrailingZeors.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\202_HappyNumber.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\166_FractionToRecurringDecimal.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\231_PowerOfTwo.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\258_AddDigits.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\77_Combinations.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\401_BinaryWatch.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">

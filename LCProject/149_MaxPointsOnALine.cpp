@@ -18,6 +18,6 @@ struct Point{
 
 int maxPoints(vector<Point>& points)
 {
-  
+	return 0;
 
 }
