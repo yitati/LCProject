@@ -24,7 +24,7 @@
 
 using namespace std;
 
-priority_queue<int, vector<int>, struct comparator> minHeap;
+priority_queue<int, vector<int>, greater<int>> minHeap;
 
 int nthUglyNumber(int n) 
 {

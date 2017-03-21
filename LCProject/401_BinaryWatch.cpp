@@ -61,6 +61,7 @@ vector<string> readBinaryWatch(int num)
 	return results;
 }
 
+/*
 int main(int argc, char * * argv)
 {
 	vector<string> results = readBinaryWatch(3);
@@ -71,3 +72,4 @@ int main(int argc, char * * argv)
 
 	system("pause");
 }
+*/

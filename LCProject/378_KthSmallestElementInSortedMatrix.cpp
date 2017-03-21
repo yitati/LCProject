@@ -37,7 +37,8 @@ struct MatrixNode
 	MatrixNode(int v, int r, int c) : val(v), row(r), col(c) {};
 };
 
-struct comparator {
+struct my_comparator 
+{
 	bool operator()(MatrixNode & i, MatrixNode & j)
 	{
 		return i.val > j.val;
@@ -49,7 +50,7 @@ int kthSmallest1(vector<vector<int>>& matrix, int k)
 {
 	int n = matrix.size();
 	
-	priority_queue<MatrixNode, std::vector<MatrixNode>, comparator> minHeap;
+	priority_queue<MatrixNode, std::vector<MatrixNode>, my_comparator> minHeap;
 	for (int i = 0; i < matrix.size(); i++)
 	{
 		minHeap.push(MatrixNode(matrix[i][0], i, 0));
@@ -74,7 +75,7 @@ int kthSmallest1(vector<vector<int>>& matrix, int k)
 int kthSmallest_dfs(vector<vector<int>>& matrix, int k)
 {
 	int n = matrix.size();
-	priority_queue<MatrixNode, std::vector<MatrixNode>, comparator> minHeap;
+	priority_queue<MatrixNode, std::vector<MatrixNode>, my_comparator> minHeap;
 	int count = 0;
 	vector<vector<int>> flag(n, vector<int>(n, 0));
 

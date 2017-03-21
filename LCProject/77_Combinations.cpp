@@ -23,36 +23,27 @@ If n = 4 and k = 2, a solution is:
 
 using namespace std;
 
-void readBinaryWatch_dfs(vector<string> & results, int time, int num, int count, int level)
+void combine_recursion(vector<vector<int>> & results, vector<int> & result, int n, int level, int k)
 {
-	int hour = time, min = time;
-	hour >>= 6;
-	if (hour > 11) return;
-	int minMask = (1 << 6) - 1;
-	min &= minMask;
-	if (min > 59) return;
-	if (count > num) return;
-	if (count == num)
+	if (k == 0)
 	{
-		string result = to_string(hour) + ":";
-		if (min < 10) result += "0";
-		result += to_string(min);
 		results.push_back(result);
 		return;
 	}
-	for (int i = level; i < 10; i++)
+
+	for (int i = level; i < n + 1; i++)
 	{
-		if ((time & (1 << i)) != 0) continue;
-		time |= (1 << i);
-		readBinaryWatch_dfs(results, time, num, count + 1, i + 1);
-		time &= ~(1 << i);
+		result.push_back(i);
+		combine_recursion(results, result, n, i + 1, k - 1);
+		result.pop_back();
 	}
 }
 
-vector<string> readBinaryWatch(int num)
+vector<vector<int>> combine(int n, int k)
 {
-	vector<string> results;
-	if (num > 8) return results;
-	readBinaryWatch_dfs(results, 0, num, 0, 0);
+	vector<vector<int>> results;
+	if (n == 0) return results;
+	vector<int> result;
+	combine_recursion(results, result, n, 1, k);
 	return results;
 }

@@ -62,6 +62,9 @@
     <Filter Include="Source Files\LCProblems\Math">
       <UniqueIdentifier>{50d20640-38ef-451a-bfda-37892a6554ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Design">
+      <UniqueIdentifier>{a8b0aeed-baaf-4187-b6fc-3c10a16fbfca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp">
@@ -756,6 +759,114 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\87_ScrambleString.cpp">
       <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\58_LengthOfLastWord.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\91_DecodeWays.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\93_RestoreIPAddress.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\151_ReverseWordsInString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\345_ReverseVowelsOfString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\146_LRUCache.cpp">
+      <Filter>Source Files\LCProblems\Design</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\290_WordPattern.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\299_BullsAndCows.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\350_IntersectionOfTwoArraysII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\97_InterleavingString.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\115_DistinctSubsequences.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\273_IntegerToEnglishWords.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\355_DesignTwitter.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\336_PalindromePairs.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="383_RansomNote.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\347_TopKFrequentElements.cpp">
+      <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\389_FindTheDifference.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\409_LongestPalindrome.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\438_FindAllAnagramsInString.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\70_ClimbingStairs.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\447_NumberOfBoomerangs.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\451_SortCharactersByFrequency.cpp">
+      <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\463_IslandPerimeter.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\500_KeyboardRow.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\525_ContiguousArray.cpp">
+      <Filter>Source Files\LCProblems\HashTable</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\319_BulbSwitcher.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\388._LongestAbsoluteFilePath .cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\279_PerfectSquares.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\233_NumberDigitOne .cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\326_PowerOfThree.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\335_SelfCrossing.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\51_NQueens.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\52_NQueenII.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\385_MiniParser.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\215_KthLargestElementInArray.cpp">
+      <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\343_IntegerBreak.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

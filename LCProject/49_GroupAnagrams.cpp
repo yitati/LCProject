@@ -20,17 +20,21 @@ Return:
 
 using namespace std;
 
-bool isIsomorphic(string s, string t)
-{
-	if (s.length() != t.length()) return false;
-	int len = s.length();
-	vector<int> table1(256, -1);
-	vector<int> table2(256, -1);
-	for (int i = 0; i < len; i++)
+vector<vector<string>> groupAnagrams(vector<string>& strs) {
+	vector<vector<string>> results;
+	unordered_map<string, int> table;
+	for (int i = 0; i < strs.size(); i++)
 	{
-		if (table1[s[i]] != table2[t[i]]) return false;
-		table1[s[i]] = i;
-		table2[t[i]] = i;
+		string curr = strs[i];
+		sort(curr.begin(), curr.end());
+		if (table.count(curr)) results[table[curr]].push_back(strs[i]);
+		else
+		{
+			table[curr] = results.size();
+			vector<string> item;
+			item.push_back(strs[i]);
+			results.push_back(item);
+		}
 	}
-	return true;
+	return results;
 }

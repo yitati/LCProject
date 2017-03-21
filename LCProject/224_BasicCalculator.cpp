@@ -20,7 +20,7 @@ Some examples:
 
 using namespace std;
 
-int calculate(string s) {
+int calculateI(string s) {
 	if (s.empty()) return 0;
 	stack<int> table;
 	int sign = 0;

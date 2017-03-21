@@ -17,6 +17,7 @@
 *****************************************************************************/
 
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -36,7 +37,7 @@ public:
 		int element = -1;
 		if (!m_queue.empty())
 		{
-			for (int i = 0; i<m_queue.size() - 1; i++)
+			for (int i = 0; i<(m_queue.size() - 1); i++)
 			{
 				element = m_queue.front();
 				m_queue.pop();

@@ -26,7 +26,7 @@ isMatch("aab", "c*a*b") → true
 
 using namespace std;
 
-bool isMatch(string s, string p) 
+bool isMatchRegularExpression(string s, string p) 
 {
 	int sLen = s.length(), pLen = p.length();
 	vector<vector<bool>> dp(sLen + 1, vector<bool>(pLen + 1, 0));

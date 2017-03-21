@@ -26,7 +26,7 @@ inline bool isOperator(char x)
 	return x == '+' || x == '-' || x == '*' || x == '/';
 }
 
-int calculate(string s)
+int calculateII(string s)
 {
 	stack<int> table;
 	int len = s.length(), num = 0;
