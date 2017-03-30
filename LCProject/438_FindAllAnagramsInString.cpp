@@ -56,7 +56,7 @@ vector<int> findAnagrams(string s, string p)
 		diff[s[i]]--;
 		if (diff[s[i]] == 0)
 		{
-			diff.erase[s[i]];
+			diff.erase(s[i]);
 			if (diff.empty())
 			{
 				result.push_back(i - pLen + 1);

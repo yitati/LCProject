@@ -26,11 +26,11 @@ Explanation: [0, 1] (or [1, 0]) is a longest contiguous subarray with equal numb
 
 using namespace std;
 
-int findMaxLength(vector<int>& nums) 
+int findMaxLength(vector<int>& nums)
 {
 	int maxLen = 0, sum = 0;
 	unordered_map<int, int> table;
-	table[-1] = 0;
+	table[0] = -1;
 	for (int i = 0; i < nums.size(); i++)
 	{
 		if (nums[i] == 0) sum--;
@@ -44,4 +44,5 @@ int findMaxLength(vector<int>& nums)
 			table[sum] = i;
 		}
 	}
+	return maxLen;
 }
