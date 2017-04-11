@@ -79,36 +79,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_SelectionSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="1_QuickSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_MergeSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_RainbowSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\1_Move0sToTheEnd1.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_BinarySearch.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_SearchSizeUnknownArray.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_Fibonacci.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\2_PowerBofA.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="2_SearchSortedMatrix.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
     <ClCompile Include="4_MedianOf2SortedArray.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
@@ -394,9 +364,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\188_BestTimeToBuyAndSellStockIV.cpp">
       <Filter>Source Files\LCProblems\DP</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\309_BestTimeToBuyAndSellStockWithCoolDown.cpp">
-      <Filter>Source Files\LCProblems\Array</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\84_LargestRectangleInHistogram.cpp">
       <Filter>Source Files\LCProblems\Stack</Filter>
     </ClCompile>
@@ -559,9 +526,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\9_PalindromeNumber.cpp">
       <Filter>Source Files\LCProblems\Math</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\7_StringPatternMatching.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\297_SerializationAndDeserializeBinaryTree.cpp">
       <Filter>Source Files\LCProblems\Tree</Filter>
     </ClCompile>
@@ -618,9 +582,6 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\65_ValidNumber.cpp">
       <Filter>Source Files\LCProblems\String</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\136_SingleNumber.cpp">
-      <Filter>Source Files\LCProblems\Math</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\67_AddBinary.cpp">
       <Filter>Source Files\LCProblems\String</Filter>
@@ -928,6 +889,156 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\191_NumberOf1Bits.cpp">
       <Filter>Source Files\LCProblems\BitManipulation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\211_AddAndSearchWord.cpp">
+      <Filter>Source Files\LCProblems\Trie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\421_MaximumXOROfTwoNumbersInArray.cpp">
+      <Filter>Source Files\LCProblems\Trie</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\137_SingleNumberII.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\136_SingleNumber.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\260_SingleNumberIII.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\371_SumOfTwoIntegers.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\318_MaximumProductOfWordLength.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\338_CountingBits.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\521_LongestUncommonSubsequence.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\522_LongestUncommonSubsequenceII.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\139_WordBreak.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\140_WordBreakII.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="342_PowerOf4.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\393_UTF8Validation.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\300_LongestIncreasingSubsequence.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\303_RangeSumQuery.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\304_RangeSumQueryMatrix.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\322_CoinChange.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\354_RussionDollEnvelopes.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\309_BestTimeToBuyAndSellStockWithCoolDown.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\312_BurstBallons.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\357_CountNumberWithUniqueDigits.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\368_LargestDivisibleSubsets.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\403_FrogJump.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\394_DecodeString.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\332_ReconstructItinerary.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\331_VerifyPreorderSerializationOfBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\341_FlattenNestedListIterator.cpp">
+      <Filter>Source Files\LCProblems\Stack</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\372_SuperPow.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\396_RotateFunction.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\397_IntegerReplacement.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\400_NthDigit.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\415_AddString.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="CountSetBit.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\461_HammingDistance.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\477_TotalHammingDistance.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\476_NumberComplement.cpp">
+      <Filter>Source Files\LCProblems\BitManipulation</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList_FindMiddleNode.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList_ReverseLinkedList.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort_MergeSort.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort_QuickSort.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort_RainbowSort.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort_SelectionSort.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch_BinarySearch.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Iteration_Fibonacci.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort_Move0sToTheEnd1.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="Iteration_PowerBofA.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch_SearchSizeUnknownArray.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch_SearchSortedMatrix.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="String_StringPatternMatching.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
@@ -940,6 +1051,9 @@
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Interval.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="NestedInteger.h">
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>

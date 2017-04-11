@@ -45,6 +45,7 @@ unsigned long long power(unsigned long long num, int p) {
 	return num;
 }
 
+/*
 int main(void) 
 {
 
@@ -93,3 +94,4 @@ int main(void)
 
 	system("pause");
 }
+*/

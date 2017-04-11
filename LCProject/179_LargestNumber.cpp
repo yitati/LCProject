@@ -20,7 +20,7 @@ string largestNumber(vector<int>& nums)
 	{
 		collection.push_back(to_string(num));
 	}
-	sort(collection.begin(), collection.end(), [](const string & lhs, const string & rhs)->bool {return lhs + rhs > rhs + lhs});
+	sort(collection.begin(), collection.end(), [](const string & lhs, const string & rhs)->bool {return lhs + rhs > rhs + lhs; });
 
 	string result;
 	for (string str : collection)
