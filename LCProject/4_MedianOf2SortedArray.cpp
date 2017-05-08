@@ -22,7 +22,6 @@
 using namespace std;
 
 /* Solution 1 : binary search idea*/
-
 // find kth min from two sorted array
 int findKthMin(const vector<int>& nums1, int lhs1, const vector<int>& nums2, int lhs2, int k)
 {
@@ -51,7 +50,6 @@ int findKthMin(const vector<int>& nums1, int lhs1, const vector<int>& nums2, int
 // for a sorted array- 
 // median = nums[n/2]  - n is odd
 // median = (nums[n/2] + nums[n/2+1])/2 - n is even
-
 double findMedianSortedArrays(vector<int> & nums1, vector<int> & nums2) {
 	int totalNum = nums1.size() + nums2.size();
 	if (totalNum % 2 == 1) {
@@ -62,8 +60,6 @@ double findMedianSortedArrays(vector<int> & nums1, vector<int> & nums2) {
 		return 0.5 * sum;
 	}
 }
-
-
 
 
 double medianOfArray(vector<int>& nums, int start, int end)

@@ -13,19 +13,15 @@ using namespace std;
 
 ListNode* reverseList(ListNode* head) 
 {
-	if (head == NULL || head->next == NULL) return head;
-	ListNode * dummy = new ListNode(0);
-	dummy->next = head;
-	while (head->next)
+	ListNode * prev = NULL;
+	ListNode * next = NULL;
+	while (head)
 	{
-		ListNode * curr = head->next;
-		head->next = curr->next;
-		curr->next = dummy->next;
-		dummy->next = curr;
+		next = head->next;
+		head->next = prev;
+		prev = head;
+		head = next;
 	}
-
-	head = dummy->next;
-	delete dummy;
-	return head;
+	return prev;
 }
 

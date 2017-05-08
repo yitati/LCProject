@@ -35,14 +35,33 @@ using namespace std;
 // if child is a number, then we decode with an '!' in front of it
 // if child is NULL, then we decode with an '#' in front of it
 
-// Encodes a tree to a single string.
-
+// helper function that will store one int in a 4 byte char array
 void addInttoStr(string & str, int val)
 {
 	int x = val;
 	char buff[4];
 	memcpy(buff, &x, sizeof(int));
 	for (int i = 0; i < 4; i++) str += buff[i];
+}
+
+// helper function that will get one treenode from string
+TreeNode * getNodeFromStr(string & data, int & pos)
+{
+	if (pos >= data.size()) return NULL;
+
+	if (data[pos] == '#')
+	{
+		pos++;
+		return NULL;
+	}
+
+	pos++;
+	int val;
+	char * buff = &data[pos];
+	memcpy(&val, buff, sizeof(int));
+	TreeNode * node = new TreeNode(val);
+	pos += 4;
+	return node;
 }
 
 string serialize(TreeNode * root) 
@@ -75,25 +94,7 @@ string serialize(TreeNode * root)
 
 }
 
-TreeNode * getNodeFromStr(string & data, int & pos)
-{
-	if (pos >= data.size()) return NULL;
 
-	if (data[pos] == '#')
-	{
-		pos++;
-		return NULL;
-	}
-
-	pos++;
-	int val;
-	char * buff;
-	buff = &data[pos];
-	memcpy(&val, buff, sizeof(int));
-	TreeNode * node = new TreeNode(val);
-	pos += 4;
-	return node;
-}
 
 // Decodes your encoded data to tree.
 TreeNode* deserialize(string data) 

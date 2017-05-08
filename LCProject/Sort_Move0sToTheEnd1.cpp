@@ -13,22 +13,6 @@ The relative order of the elements in the original array does not need to be mai
 
 using namespace std;
 
-#define TESTCASERANGE 9
-#define ZEROFREQUENCY 4
-
-vector<int> generateTestcase(int length) {
-	vector<int> testcase(length);
-	for (int i = 0; i < length; i++) {
-		if ((rand() % ZEROFREQUENCY) == 0) {
-			testcase[i] = 0;
-		}
-		else {
-			testcase[i] = rand() % TESTCASERANGE + 1;
-		}
-	}
-	return testcase;
-}
-
 // finally there will be 2 zones
 // [0, k) - non-zero values
 // [k, i] - unknown area

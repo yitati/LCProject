@@ -83,3 +83,45 @@ vector<string> fullJustify(vector<string>& words, int maxWidth) {
 	}
 	return results;
 }
+
+// a consice solution 
+vector<string> textJustification(vector<string>& words, int maxWidth)
+{
+	vector<string> result;
+	// i is word index
+	for (int i = 0, wordNum, lineLen; i < words.size(); i += wordNum)
+	{
+		// first we need to calculate how many words in currently line
+		// wordNum = number of words added to this line, and num of spaces added == wordNum - 1 
+		// lineLen = length of line without space
+		for (int wordNum = 0, lineLen = 0; i + wordNum < words.size() && lineLen + words[i + wordNum].size() + wordNum < maxWidth; wordNum++)
+		{
+			lineLen += words[i + wordNum].length();
+			wordNum++;
+		}
+		string line = words[i];
+		int evenlyDistributedSpace = (maxWidth - lineLen) / (wordNum - 1);
+		int extraSpace = (maxWidth - lineLen) % (wordNum - 1);
+		// there will be wordNum-1 slots to fill with spaces, j is space index
+		for (int j = 0; j < wordNum - 1; j++)
+		{
+			// if this is the last line of word, should be left justified
+			if (i + wordNum >= words.size()) line += " ";
+			else
+			{
+				// first add evenly distributed Space
+				line.append(evenlyDistributedSpace, ' ');
+				// add one if it's "left"
+				if (j < extraSpace)
+				{
+					line.append(1, ' ');
+				}
+			}
+			line += words[i + j + 1];
+		}
+		// incase this is the last line
+		line.append(maxWidth - line.size(), ' ');
+		result.push_back(line);
+	}
+	return result;
+}

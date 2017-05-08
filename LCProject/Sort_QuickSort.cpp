@@ -4,39 +4,29 @@
 using namespace std;
 
 // three areas 
-// [0, i) - all elements smaller than pivot
-// [i, j) - unknow area
-// [j, rhs] - all elements greater or equal to pivot
-
+// [lhs, i) - all elements smaller than pivot
+// [i, j] - unknow area
+// (j, rhs] - all elements greater or equal to pivot
 void QuickSort(vector<int> & nums, int lhs, int rhs)
 {
-	// first check if lhs == rhs
-	if (lhs == rhs) return;
-	int mid = lhs + (rhs - lhs) / 2;
-	int pivot = nums[mid];
+	if (lhs >= rhs) return;
 	int lower = lhs, upper = rhs - 1;
-
-	// pivot now in the rhs 
-	swap(nums[mid], nums[rhs]);
+	int pivot = nums[rhs];
 
 	while (lower <= upper)
 	{
-		if (nums[lower] < pivot) lower++;
-		else if (nums[upper] >= pivot) upper--;
-		else {
-			swap(nums[lower], nums[upper]);
-			lower++;
-			upper--;
+		if (nums[lower] <= pivot) lower++;
+		else if (nums[upper] > pivot) upper--;
+		else
+		{
+			swap(nums[lower++], nums[upper--]);
 		}
 	}
-
-	// now lhs <= upper < lower <= rhs
-
-	// swap back pivot
+	// out of loop we get lhs <= upper < lower <= rhs-1
 	swap(nums[lower], nums[rhs]);
-	
-	if(lhs < upper) QuickSort(nums, lhs, upper);
-	if(lower < rhs) QuickSort(nums, lower + 1, rhs);
+	QuickSort(nums, lhs, upper);
+	// here is where we make it a smaller problem
+	QuickSort(nums, lower+1, rhs);
 }
 
 // Rainbow style has better performance especially when there is duplicates
@@ -74,6 +64,7 @@ void QuickSortRainbow(vector<int> & nums, int lhs, int rhs)
 }
 
 /*
+
 int main(int argc, char* argv)
 {
 	int i;
@@ -86,9 +77,10 @@ int main(int argc, char* argv)
 	nums.push_back(0);
 	nums.push_back(6);
 
+	vector<int> em;
 	int n = nums.size();
-	//QuickSort(nums, 0, n-1);
-	QuickSortRainbow(nums, 0, n - 1);
+	QuickSort(em, 0, em.size()-1);
+	//QuickSortRainbow(nums, 0, n - 1);
     
 	for (i=0; i < n; i++)
 	{
@@ -98,3 +90,4 @@ int main(int argc, char* argv)
 	system("pause");
 }
 */
+

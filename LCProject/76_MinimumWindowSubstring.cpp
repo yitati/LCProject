@@ -33,7 +33,7 @@ string minWindow(string s, string t)
 
 	while (rhs < s.length())
 	{
-		if (target.count(s[rhs]) != 0)
+		if (target.count(s[rhs]))
 		{
 			window[s[rhs]]++;
 			if (window[s[rhs]] == target[s[rhs]]) count--;
@@ -45,7 +45,8 @@ string minWindow(string s, string t)
 					result = s.substr(lhs, minLen);
 				}
 
-				if (target.count(s[lhs])) {
+				if (target.count(s[lhs])) 
+				{
 					window[s[lhs]]--;
 					if (window[s[lhs]] < target[s[lhs]]) count++;
 				}

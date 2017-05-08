@@ -2,98 +2,75 @@
 // left: the left index of the sub vector
 // right: the right index of the sub vector
 // Time complexity is O(nlgn), space complexity is O(n)
+// time complexity: at every layer it's O(n) and total O(logn) layers
 #include <iostream>
 #include <vector>
+#include "tc.h"
 using namespace std;
-// combine function -> move smaller one
-vector<int> combine(vector<int> & lhs, vector<int>& rhs)
+
+vector<int> merge(vector<int> & lhs, vector<int> & rhs)
 {
-	int i = 0, j = 0, k = 0;
-	int m = lhs.size(), n = rhs.size();
-	// if we want to use result[k] then must initialize the size of the result 
-	vector<int>result(m + n, 0);
-
-	while (i < m || j < n)
+	vector<int> result;
+	int i = 0, j = 0;
+	while (i < lhs.size() || j < rhs.size())
 	{
-		int item1 = i < m ? lhs[i] : INT_MAX;
-		int item2 = j < n ? rhs[j] : INT_MAX;
-		if (item1 <= item2)
-		{
-			result[k++] = item1;
-			i = i == m ? m : i + 1;
-		}
-		else
-		{
-			result[k++] = item2;
-			j = j == n ? n : j + 1;
-
-		}
+		int val1 = i < lhs.size() ? lhs[i] : INT_MAX;
+		int val2 = j < rhs.size() ? rhs[j] : INT_MAX;
+		if (val1 <= val2) result.push_back(lhs[i++]);
+		else result.push_back(rhs[j++]);
 	}
 	return result;
 }
 
-vector<int> mergeSort(vector<int> &nums, int left, int right)
+vector<int> mergeSort_recursion(vector<int> & nums, int lhs, int rhs)
 {
-	vector<int> solution; // store the final solution
-	if(left == right)
+	vector<int> result;
+	if (lhs == rhs)
 	{
-		solution.push_back(nums[left]);
-		return solution;
+		result.push_back(nums[lhs]);
+		return result;
 	}
-	int mid = left + (right - left) / 2;
-	vector<int> solu_left = mergeSort(nums, left, mid);
-	vector<int> solu_right = mergeSort(nums, mid + 1, right);
-	solution = combine(solu_left, solu_right); // who small move who
-	return solution;
+	int mid = lhs + (rhs - lhs) / 2;
+	vector<int> left = mergeSort_recursion(nums, lhs, mid);
+	vector<int> right = mergeSort_recursion(nums, mid + 1, rhs);
+	result = merge(left, right);
+	return result;
+}
+
+
+vector<int> mergeSort(vector<int> input)
+{
+	if (input.empty()) return input;
+	return mergeSort_recursion(input, 0, input.size() - 1);
 }
 
 /*
-// test the combine function
-int main(int argc, char * argv)
-{
-	int i;
-	int sample1[] = { 1, 3, 5, 7, 9 };
-	int sample2[] = { 0, 2, 4, 6, 8 };
-
-	vector<int> nums1(sample1, sample1 + sizeof(sample1)/sizeof(int));
-	vector<int> nums2(sample2, sample2 + sizeof(sample2) / sizeof(int));
-
-	vector<int>result = combine(nums1, nums2);
-
-	int n = result.size();
-	for (int i = 0; i < n; i++)
-	{
-		cout << result[i] << endl;
-	}
-
-	system("pause");
-}
-
-
-
 int main(int argc, char* argv)
 {
-	int i;
-	vector<int> nums;
-	nums.push_back(7);
-	nums.push_back(5);
-	nums.push_back(6);
-	nums.push_back(8);
-	nums.push_back(1);
-	nums.push_back(0);
-	nums.push_back(6);
+	int i, n = 15;
+	vector<int> nums = generateTestcase(n);
 
-	int n = nums.size();
-	nums = mergeSort(nums, 0, n - 1);
-
+	cout << "Before calling sort function" << endl;
 	for (i = 0; i < n; i++)
 	{
-		cout << nums[i] << endl;
+		cout << nums[i] << '\t';
 	}
+	cout << endl;
+
+	nums = mergeSort(nums);
+
+	cout << "After calling sort function" << endl;
+	for (i = 0; i < n; i++)
+	{
+		cout << nums[i] << '\t';
+	}
+	cout << endl;
 
 	system("pause");
 }
 */
+
+
 
 
 // Discuss

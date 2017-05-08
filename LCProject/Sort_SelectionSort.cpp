@@ -44,7 +44,7 @@ void SelectionSort_iteration(vector<int> & input)
 }
 
 
-
+/*
 int main(int argc, char ** argv)
 {
 	int input[] = { 3, 6, 2, 8, 3, 5, 9, 0, 1 };
@@ -61,3 +61,4 @@ int main(int argc, char ** argv)
 
 	system("pause");
 }
+*/

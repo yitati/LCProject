@@ -137,12 +137,16 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\123_BestTimeToBuyAndSellStockIII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\124_BinaryTreeMaximumPathSum.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\125_ValidPalindrome.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\126_WordLadderII.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\127_WordLadder.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\129_SumRootToLeafNumbers.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\12_IntegerToRoman.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\130_SurroundedRegions.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\131_PalindromePartitioning.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\132_PalindromePartitioning.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\133_CloneGraph.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\134_GasStation.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\135_Candy.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\136_SingleNumber.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\137_SingleNumberII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\138_CopyLinkedListWithRandomPointer.cpp" />
@@ -175,6 +179,20 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\211_AddAndSearchWord.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\213_HouseRobberII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\215_KthLargestElementInArray.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\218_SkylineProblem.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\277_FindCelebrity.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\278_FirstBadVersion.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\285_InorderSuccessor.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\314_BinaryTreeVerticalOrderTraversal.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\334_IncreasingTripletSubsequence.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\398_RandomPickIndex.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\419_PartitionEqualSubsetSum.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\494_TargetSum.cpp" />
+    <ClCompile Include="BFS_LevelOrderPrintTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Heap_KSmallestElements.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\SerializeAndDeserialize.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_PrintWithRange.cpp" />
+    <ClCompile Include="220_ContainsDuplicatesIII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\223_RectangleArea.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\224_BasicCalculator.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\225_ImplementStackUsingQueues.cpp" />
@@ -203,6 +221,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\357_CountNumberWithUniqueDigits.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\368_LargestDivisibleSubsets.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\372_SuperPow.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\376_WiggleSequence.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\393_UTF8Validation.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\394_DecodeString.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\396_RotateFunction.cpp" />
@@ -213,6 +232,11 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\461_HammingDistance.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\476_NumberComplement.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\477_TotalHammingDistance.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\89_GrayCode.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\tc.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_isBST.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_isSymmetric.cpp" />
+    <ClCompile Include="Tree_isBalanced.cpp" />
     <ClCompile Include="LinkedList_FindMiddleNode.cpp" />
     <ClCompile Include="LinkedList_ReverseLinkedList.cpp" />
     <ClCompile Include="CountSetBit.cpp" />
@@ -413,7 +437,7 @@
     <ClCompile Include="Iteration_PowerBofA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\33_SearchInRotatedSortedArray.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\378_KthSmallestElementInSortedMatrix.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\77_SortColors.cpp" />
+    <ClCompile Include="75_SortColors.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\80_RemoveDuplicatesFromSortedArrayII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\81_SearchInRotatedSortedArrayII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\82_RemoveDuplicatesFromSortedListII.cpp" />
@@ -433,6 +457,7 @@
     <ClCompile Include="155_MinStack.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\tc.h" />
     <ClInclude Include="NestedInteger.h" />
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Interval.h" />
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MinHeap.h" />

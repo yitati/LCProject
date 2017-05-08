@@ -18,6 +18,7 @@ By calling next repeatedly until hasNext returns false, the order of elements re
 */
 /*****************************************************************************/
 #include <stack>
+#include <vector>
 #include "NestedInteger.h"
 
 using namespace std;
@@ -60,4 +61,53 @@ public:
 private:
 	stack<NestedInteger> nodes;
 
+};
+
+// using a different kind of solution
+class NestedIteratorII
+{
+public:
+	typedef vector<NestedInteger>::const_iterator IterType;
+	vector<pair<IterType, IterType>> history;
+
+	// remove the last layer
+	void popLast()
+	{
+		while (!history.empty() && history.back().first == history.back().second)
+		{
+			history.pop_back();
+			if (!history.empty()) history.back().first++;
+		}
+	}
+
+	// when removed the last layer, find the next integer
+	void findNext()
+	{
+		popLast();
+		while (!history.empty() && !history.back().first->isInteger())
+		{
+			history.push_back(pair<IterType, IterType>(history.back().first->getList().begin(), history.back().first->getList().end()));
+			popLast();
+		}
+	}
+
+
+	NestedIteratorII(vector<NestedInteger> & nestedList)
+	{
+		history.push_back(pair<IterType, IterType>(nestedList.begin(), nestedList.end()));
+		findNext();
+	}
+
+	int next()
+	{
+		int v = history.back().first->getInteger();
+		history.back().first++;
+		findNext();
+		return v;
+	}
+
+	bool hasNext()
+	{
+		return !history.empty();
+	}
 };

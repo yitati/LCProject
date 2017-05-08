@@ -77,6 +77,12 @@
     <Filter Include="Source Files\Challenge\空气床">
       <UniqueIdentifier>{3854cfe9-eca1-4963-bceb-7681711fbb19}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LCProblems\Greedy">
+      <UniqueIdentifier>{c811a0bf-50cc-4d9f-9b5c-c3b80aeb5891}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\LCProblems\Scanning">
+      <UniqueIdentifier>{a44db2c8-d6eb-4665-9295-b0b89ea35293}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4_MedianOf2SortedArray.cpp">
@@ -89,9 +95,6 @@
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\33_SearchInRotatedSortedArray.cpp">
-      <Filter>Source Files\LCProblems\Sort</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\77_SortColors.cpp">
       <Filter>Source Files\LCProblems\Sort</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\80_RemoveDuplicatesFromSortedArrayII.cpp">
@@ -1039,6 +1042,81 @@
     <ClCompile Include="String_StringPatternMatching.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
+    <ClCompile Include="Tree_isBalanced.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\tc.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_isSymmetric.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_isBST.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\376_WiggleSequence.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\89_GrayCode.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\127_WordLadder.cpp">
+      <Filter>Source Files\LCProblems\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\126_WordLadderII.cpp">
+      <Filter>Source Files\LCProblems\BFS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\134_GasStation.cpp">
+      <Filter>Source Files\LCProblems\Greedy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\135_Candy.cpp">
+      <Filter>Source Files\LCProblems\Greedy</Filter>
+    </ClCompile>
+    <ClCompile Include="220_ContainsDuplicatesIII.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\278_FirstBadVersion.cpp">
+      <Filter>Source Files\LCProblems\BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\SerializeAndDeserialize.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Tree_PrintWithRange.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Heap_KSmallestElements.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="75_SortColors.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\218_SkylineProblem.cpp">
+      <Filter>Source Files\LCProblems\Scanning</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\277_FindCelebrity.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\314_BinaryTreeVerticalOrderTraversal.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\285_InorderSuccessor.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="BFS_LevelOrderPrintTree.cpp">
+      <Filter>Source Files\Basics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\334_IncreasingTripletSubsequence.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\494_TargetSum.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\419_PartitionEqualSubsetSum.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\398_RandomPickIndex.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ListNode.h">
@@ -1054,6 +1132,9 @@
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
     <ClInclude Include="NestedInteger.h">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Joanne%27s Data\LCProject\LCProject\tc.h">
       <Filter>Source Files\DataStructures</Filter>
     </ClInclude>
   </ItemGroup>

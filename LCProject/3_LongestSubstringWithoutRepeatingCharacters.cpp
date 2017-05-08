@@ -25,7 +25,7 @@ int lengthOfLongestSubstring(string s)
 	int len = 0;
 	while (start <= end && end < s.length())
 	{
-		if (visited.find(s[end]) != visited.end())
+		if (visited.count(s[end]))
 		{
 			while (s[start] != s[end]) visited.erase(s[start++]);
 			visited.erase(s[start++]);

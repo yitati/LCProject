@@ -35,11 +35,9 @@ string simplifyPath(string path)
 		int start = i;
 		while (i < len && path[i] != '/') i++;
 		string curr = path.substr(start, i - start);
-		cout << curr << endl;
 		if (curr.empty() || curr == ".") continue;
 		else if (curr == "..")
 		{
-			cout << "need a pop" << curr << endl;
 			if (!table.empty()) table.pop();
 		}
 		else
