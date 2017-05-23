@@ -19,7 +19,7 @@
 /*****************************************************************************/
 
 
-bool knows(int a, int b);
+bool knows(int a, int b) { return true; };
 
 bool isCelebrity(int k, int n)
 {

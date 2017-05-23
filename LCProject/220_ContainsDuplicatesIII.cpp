@@ -12,5 +12,5 @@ using namespace std;
 
 bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t)
 {
-
+	return false;
 }

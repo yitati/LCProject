@@ -111,6 +111,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Fibonacci.cpp" />
+    <ClCompile Include="AToThePowerOfB.cpp" />
+    <ClCompile Include="MissingNumberI.cpp" />
+    <ClCompile Include="ClosestInSortedArray.cpp" />
+    <ClCompile Include="KClosestInSortedArray.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\100_SameTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\101_SymmetricTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\102_BinaryTreeLevelOrderTraversal.cpp" />
@@ -180,14 +185,29 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\213_HouseRobberII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\215_KthLargestElementInArray.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\218_SkylineProblem.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\276_PaintFence.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\277_FindCelebrity.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\278_FirstBadVersion.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\285_InorderSuccessor.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\314_BinaryTreeVerticalOrderTraversal.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\334_IncreasingTripletSubsequence.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\340_LongestSubstringWithKDistinctChars.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\398_RandomPickIndex.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\419_PartitionEqualSubsetSum.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\482_LicenseKeyFormatting.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\494_TargetSum.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\523_ContinuousSubarraySum.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\543_DiameterOfBinaryTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\554_BrickWall.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\572_SubtreeOfAnotherTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\AllAnagram.cpp" />
+    <ClCompile Include="AllPermutationIII_Duplicates.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\AllPermutationII_NoDuplicates.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\FenwickTree.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\getMedian.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReorderString.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\StringReplace.cpp" />
+    <ClCompile Include="Dijkstra_KthSmallestNumberInMatrix.cpp" />
     <ClCompile Include="BFS_LevelOrderPrintTree.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Heap_KSmallestElements.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\SerializeAndDeserialize.cpp" />
@@ -205,7 +225,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\299_BullsAndCows.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\300_LongestIncreasingSubsequence.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\303_RangeSumQuery.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\304_RangeSumQueryMatrix.cpp" />
+    <ClCompile Include="304_RangeSumQueryMatrix_Immutable.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\312_BurstBallons.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\318_MaximumProductOfWordLength.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\319_BulbSwitcher.cpp" />
@@ -385,10 +405,10 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\16_3SumClosest.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\187_RepeatedDNA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\18_4Sum.cpp" />
-    <ClCompile Include="Sort_MergeSort.cpp" />
-    <ClCompile Include="Sort_Move0sToTheEnd1.cpp" />
-    <ClCompile Include="Sort_RainbowSort.cpp" />
-    <ClCompile Include="Sort_SelectionSort.cpp" />
+    <ClCompile Include="MergeSort.cpp" />
+    <ClCompile Include="Move0sToTheEnd1.cpp" />
+    <ClCompile Include="RainbowSort.cpp" />
+    <ClCompile Include="SelectionSort.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\216_CombinationSumIII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\238_ProductOfArrayExceptSelf.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\240_Search2DMatrixII.cpp" />
@@ -432,7 +452,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\21_Merge2SortedLists.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\23_MergeKSortedLists.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\26_RemoveDuplicatesFromSortedArray.cpp" />
-    <ClCompile Include="BinarySearch_BinarySearch.cpp" />
+    <ClCompile Include="ClassicBinarySearch.cpp" />
     <ClCompile Include="Iteration_Fibonacci.cpp" />
     <ClCompile Include="Iteration_PowerBofA.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\33_SearchInRotatedSortedArray.cpp" />
@@ -448,7 +468,7 @@
     <ClCompile Include="4_MedianOf2SortedArray.cpp" />
     <ClCompile Include="BinarySearch_SearchSortedMatrix.cpp" />
     <ClCompile Include="BinarySearch_SearchSizeUnknownArray.cpp" />
-    <ClCompile Include="Sort_QuickSort.cpp" />
+    <ClCompile Include="QuickSort.cpp" />
     <ClCompile Include="201_BitwiseAND.cpp" />
     <ClCompile Include="199_BSTRightView.cpp" />
     <ClCompile Include="206_ReverseLinkedList.cpp" />

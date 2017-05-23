@@ -18,6 +18,7 @@ Return 6.
 
 using namespace std;
 
+// be familiar with 84 largest rectangle in histogram
 
 int largestRectangleInHistogram(vector<int>& heights)
 {

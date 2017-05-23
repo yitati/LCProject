@@ -35,7 +35,7 @@ using namespace std;
 // so if we get SUM we turn the problem to find subset sum in a vector
 // Same with LC 419
 
-int subsetSum(vector<int> & nums, int target)
+int subSum(vector<int> & nums, int target)
 {
 	vector<int> dp(target + 1, 0);
 	dp[0] = 1;
@@ -55,7 +55,7 @@ int findTargetSumWays(vector<int>& nums, int S)
 	for (int num : nums) sum += num;
 	if (sum < S) return 0;
 	if ((S + sum) % 2 != 0) return 0;
-	return subsetSum(nums, (S + sum) / 2);
+	return subSum(nums, (S + sum) / 2);
 }
 
 

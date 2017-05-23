@@ -38,5 +38,5 @@ using namespace std;
 // scan the horizontall left and right boundries
 vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings)
 {
-
+	return{};
 }

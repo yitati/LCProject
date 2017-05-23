@@ -83,6 +83,24 @@
     <Filter Include="Source Files\LCProblems\Scanning">
       <UniqueIdentifier>{a44db2c8-d6eb-4665-9295-b0b89ea35293}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Basics\Class05">
+      <UniqueIdentifier>{d303a2bf-2936-4a91-8de5-dc01aa5cbc2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class01_Array&amp;Sort">
+      <UniqueIdentifier>{e3598947-dac2-4534-b95d-5cf91bbd8d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class02_Recursion&amp;BinarySearch">
+      <UniqueIdentifier>{c5abbcec-bf56-4fd6-b8e6-42925860000c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class07_HashTable &amp; String I">
+      <UniqueIdentifier>{a751c8d5-6a5d-4db6-918f-5c92756cb892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class08_StringII">
+      <UniqueIdentifier>{ceb9ea9e-f340-40f5-9cac-7defe172a945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class06_DFS">
+      <UniqueIdentifier>{63bf303f-840b-4101-9603-8ac397551cb6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4_MedianOf2SortedArray.cpp">
@@ -940,9 +958,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\303_RangeSumQuery.cpp">
       <Filter>Source Files\LCProblems\DP</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\304_RangeSumQueryMatrix.cpp">
-      <Filter>Source Files\LCProblems\DP</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\322_CoinChange.cpp">
       <Filter>Source Files\LCProblems\DP</Filter>
     </ClCompile>
@@ -1009,25 +1024,7 @@
     <ClCompile Include="LinkedList_ReverseLinkedList.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
-    <ClCompile Include="Sort_MergeSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort_QuickSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort_RainbowSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort_SelectionSort.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="BinarySearch_BinarySearch.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
     <ClCompile Include="Iteration_Fibonacci.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort_Move0sToTheEnd1.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
     <ClCompile Include="Iteration_PowerBofA.cpp">
@@ -1116,6 +1113,87 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\398_RandomPickIndex.cpp">
       <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\572_SubtreeOfAnotherTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Dijkstra_KthSmallestNumberInMatrix.cpp">
+      <Filter>Source Files\Basics\Class05</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\554_BrickWall.cpp">
+      <Filter>Source Files\LCProblems\Scanning</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\543_DiameterOfBinaryTree.cpp">
+      <Filter>Source Files\LCProblems\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\523_ContinuousSubarraySum.cpp">
+      <Filter>Source Files\LCProblems\Array</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\482_LicenseKeyFormatting.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\276_PaintFence.cpp">
+      <Filter>Source Files\LCProblems\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\FenwickTree.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\getMedian.cpp">
+      <Filter>Source Files\DataStructures</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\StringReplace.cpp">
+      <Filter>Source Files\Basics\Class08_StringII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReorderString.cpp">
+      <Filter>Source Files\Basics\Class08_StringII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\340_LongestSubstringWithKDistinctChars.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="304_RangeSumQueryMatrix_Immutable.cpp">
+      <Filter>Source Files\LCProblems\DP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\AllPermutationII_NoDuplicates.cpp">
+      <Filter>Source Files\Basics\Class06_DFS</Filter>
+    </ClCompile>
+    <ClCompile Include="AllPermutationIII_Duplicates.cpp">
+      <Filter>Source Files\Basics\Class08_StringII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\AllAnagram.cpp">
+      <Filter>Source Files\Basics\Class08_StringII</Filter>
+    </ClCompile>
+    <ClCompile Include="MissingNumberI.cpp">
+      <Filter>Source Files\Basics\Class07_HashTable &amp; String I</Filter>
+    </ClCompile>
+    <ClCompile Include="Fibonacci.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="AToThePowerOfB.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="ClassicBinarySearch.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="ClosestInSortedArray.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="KClosestInSortedArray.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectionSort.cpp">
+      <Filter>Source Files\Basics\Class01_Array&amp;Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeSort.cpp">
+      <Filter>Source Files\Basics\Class01_Array&amp;Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="QuickSort.cpp">
+      <Filter>Source Files\Basics\Class01_Array&amp;Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="RainbowSort.cpp">
+      <Filter>Source Files\Basics\Class01_Array&amp;Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="Move0sToTheEnd1.cpp">
+      <Filter>Source Files\Basics\Class01_Array&amp;Sort</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

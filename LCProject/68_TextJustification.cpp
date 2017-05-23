@@ -89,7 +89,7 @@ vector<string> textJustification(vector<string>& words, int maxWidth)
 {
 	vector<string> result;
 	// i is word index
-	for (int i = 0, wordNum, lineLen; i < words.size(); i += wordNum)
+	for (int i = 0, wordNum = 0, lineLen = 0; i < words.size(); i += wordNum)
 	{
 		// first we need to calculate how many words in currently line
 		// wordNum = number of words added to this line, and num of spaces added == wordNum - 1 

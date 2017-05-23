@@ -12,7 +12,7 @@
 /*****************************************************************************/
 
 // Forward declaration of isBadVersion API.
-bool isBadVersion(int version);
+bool isBadVersion(int version) { return true; };
 
 // binary search 0 0 0 0 0 1 1 1 1 1 1 will find the first 1
 int firstBadVersion(int n)

@@ -34,7 +34,22 @@ int minSubArrayLength(int s, vector<int>& nums)
 	return minLen == INT_MAX ? 0 : minLen;
 }
 
+
 // O(nlogn) solution
+
+int findEnd(vector<int> & preSum, int start, int target)
+{
+	int lhs = start, rhs = preSum.size() - 1;
+	while (lhs <= rhs)
+	{
+		int mid = lhs + (rhs - lhs) / 2;
+		if (preSum[mid] >= target) rhs = mid - 1;
+		else lhs = mid + 1;
+	}
+	if (preSum[lhs] >= target) return lhs;
+	return preSum.size() + 1;
+}
+
 int minSubArrayLen_BinarySearch(int s, vector<int>& nums)
 {
 	if (nums.empty()) return 0;
@@ -55,17 +70,4 @@ int minSubArrayLen_BinarySearch(int s, vector<int>& nums)
 		minLen = min(minLen, idx - i + 1);
 	}
 	return minLen <= len ? minLen : 0;
-}
-
-int findEnd(vector<int> & preSum, int start, int target)
-{
-	int lhs = start, rhs = preSum.size() - 1;
-	while (lhs <= rhs)
-	{
-		int mid = lhs + (rhs - lhs) / 2;
-		if (preSum[mid] >= target) rhs = mid - 1;
-		else lhs = mid + 1;
-	}
-	if (preSum[lhs] >= target) return lhs;
-	return preSum.size() + 1;
 }

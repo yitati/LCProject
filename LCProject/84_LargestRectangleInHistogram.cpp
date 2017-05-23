@@ -11,6 +11,16 @@
 
 using namespace std;
 
+// Solution 1: Primitive idea O(n^2)
+// Starting from each index, walk left and walk right to find the border and right border, 
+// then the area_i = height * (right_border - left_border + 1)
+
+// Solution 2: Divide and conquer O(nlogn)
+// http://www.geeksforgeeks.org/largest-rectangular-area-in-a-histogram-set-1/
+
+// Solution 2: Better idea using stack
+// Use a stack to store all the indices of the columns that form an ascending order.
+
 // to find the largest rectangle we need to find corresponding height and weight.
 // the idea is to find a range (lhs, rhs) so that width = (rhs-1)-(lhs+1)+1 = rhs-lhs-1
 // normally we can use O(n^2) time to find the lhs and rhs, but by using stack we can get O(n) solution
@@ -22,6 +32,7 @@ int largestRectangleArea(vector<int>& heights)
 	for (int i = 0; i <= heights.size(); i++)
 	{
 		int heightToCalc = i == heights.size() ? 0 : heights[i];
+		// push the height if it is larger than the last one
 		if (indStack.empty() || heights[indStack.back()] <= heightToCalc)
 		{
 			indStack.push_back(i);

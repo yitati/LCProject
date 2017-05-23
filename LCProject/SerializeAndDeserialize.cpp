@@ -16,7 +16,11 @@ string serializeGolden(int num)
 	{
 		result.push_back(buff[i]);
 	}
+
+	return result;
 }
+
+
 int deserializeFromStr(string str)
 {
 	int num;
