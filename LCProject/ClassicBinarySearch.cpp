@@ -20,6 +20,7 @@ Corner Cases:
 
 using namespace std;
 
+// Classical Version
 int binarySearch_basic(vector<int> & nums, int target)
 {
 	int n = nums.size();
@@ -36,67 +37,76 @@ int binarySearch_basic(vector<int> & nums, int target)
 	return -1;
 }
 
-// another version
-// if we want to have a range, say to find the number that is closet to the target,
-// then we can use the following code snippet
-int binarySearch_generic(vector<int> & nums, int target)
+// search one target inside sorted matrix
+// sorted in each row and first element of each row is larger than last element in last row
+bool ifFind(vector<vector<int>> & matrix, int target)
 {
-	int n = nums.size();
-	// if target out of boundary, return -1
-	if (target < nums[0] || target > nums[n - 1]) return -1;
-	int lhs = 0, rhs = n - 1;
-	while (lhs < rhs - 1) // when comming out of loop, at least 2 elements
+	if (matrix.empty() || matrix[0].empty()) return false;
+	int row = matrix.size(), col = matrix[0].size();
+	int lhs = 0, rhs = row*col - 1;
+	while (lhs <= rhs)
 	{
 		int mid = lhs + (rhs - lhs) / 2;
-		if (target == nums[mid]) return mid;
-		else if (target < nums[mid]) lhs = mid;
+		int r = mid / col, c = mid%col;
+		if (matrix[r][c] == target) return true;
+		else if (matrix[r][c] < target) lhs = mid + 1;
+		else rhs = mid - 1;
+	}
+	return false;
+}
+
+// how to find an element in the array that is closest to the target number?
+// we need to get 2 boundries and check which one is closest
+int BinarySearchClosest(vector<int>& nums, int lhs, int rhs, int target)
+{
+	int mid;
+	while (lhs < rhs - 1) // if left neighbors right -> terminate
+	{
+		mid = lhs + (rhs - lhs) / 2;
+		if (nums[mid] == target) return mid;
+		else if (nums[mid] < target) lhs = mid;
 		else rhs = mid;
 	}
-	// only lhs and rhs left, check the value
-	if (nums[lhs] == target) return lhs;
-	if (nums[rhs] == target) return rhs;
-	return -1;
+	// post possessing
+	if (abs(nums[lhs] - target) <= abs(nums[rhs] - target)) return lhs;
+	else return rhs;
 }
 
-// advanced question 1 - first occurance
-// if duplicates exist, find the first occurance of the target element
-int binarySearch_firstOccurance(vector<int> & nums, int target)
+// find first occurrence of one target
+int binarySearch_firstOccurrence(vector<int> & nums, int lhs, int rhs, int target)
 {
-	int n = nums.size();
-	// if target out of boundary, return -1
-	if (target < nums[0] || target > nums[n - 1]) return -1;
-	int lhs = 0, rhs = n - 1;
-	while (lhs < rhs - 1) // when comming out of loop, at least 2 elements
+	int mid;
+	while (lhs < rhs - 1)  // if lhs neighbors rhs -> terminate
 	{
-		int mid = lhs + (rhs - lhs) / 2;
-		if (target <= nums[mid]) rhs = mid;
-		else lhs = mid+1;
+		mid = lhs + (rhs - lhs) / 2;
+		if (nums[mid] == target) rhs = mid;
+		else if(nums[mid] > target) rhs = mid;
+		// above two can be combined if(nums[mid] >= target) rhs = mid;
+		else lhs = mid;
 	}
-	// only lhs and rhs left, check the value
+	// post-processing first check lhs
 	if (nums[lhs] == target) return lhs;
-	if (nums[rhs] == target) return rhs;
-	return -1;
+	else if (nums[rhs] == target) return rhs;
+	return -1; // does not find target
 }
 
 
-// advanced question 2 - last occurance
-// if duplicates exist, find the last occurance of the target element
-int binarySearch_lastOccurance(vector<int> & nums, int target)
+// find last occurrence of one target
+int binarySearch_lastOccurrence(vector<int> & nums, int lhs, int rhs, int target)
 {
-	int n = nums.size();
-	// if target out of boundary, return -1
-	if (target < nums[0] || target > nums[n - 1]) return -1;
-	int lhs = 0, rhs = n - 1;
-	while (lhs < rhs - 1) // when comming out of loop, at least 2 elements
+	int mid;
+	while (lhs < rhs - 1)  // if lhs neighbors rhs -> terminate
 	{
-		int mid = lhs + (rhs - lhs) / 2;
-		if (target >= nums[mid]) lhs = mid;
-		else rhs = mid-1;
+		mid = lhs + (rhs - lhs) / 2;
+		if (nums[mid] == target) lhs = mid;
+		else if (nums[mid] < target) lhs = mid;
+		// above two can be combined if(nums[mid] <= target) rhs = mid;
+		else rhs = mid;
 	}
-	// only lhs and rhs left, check the value
-	if (nums[rhs] == target) return rhs;
-	if (nums[lhs] == target) return lhs;
-	return -1;
+	// post-processing first check rhs
+	if (nums[rhs] == target) return lhs;
+	else if (nums[lhs] == target) return rhs;
+	return -1; // does not find target
 }
 
 

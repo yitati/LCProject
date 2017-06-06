@@ -38,6 +38,7 @@ string licenseKeyFormatting(string S, int K)
 		{
 			counter++;
 			extraSpace--;
+			// convert char to upper case
 			if (c >= 'a' && c <= 'z') c -= 32;
 			output.push_back(c);
 

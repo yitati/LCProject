@@ -111,6 +111,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\163_MissingRanges.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\281_ZigzagIterator.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\298_BinaryTreeLongestConsecutiveSequence.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\305_NumberOfIslandsII.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\320_GeneralizedAbbreviation.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\329_LongestIncreasingPathInMatrix.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\346_MovingAverageFromDataStream.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\361_BombEnemy.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\407_TrappingRainWaterII.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\418_SentenceScreenFitting.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\425_WordSquares.cpp" />
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\UnionFind.cpp" />
     <ClCompile Include="Fibonacci.cpp" />
     <ClCompile Include="AToThePowerOfB.cpp" />
     <ClCompile Include="MissingNumberI.cpp" />

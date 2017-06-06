@@ -52,7 +52,7 @@ vector<int> allAnagrams(string s, string l)
 	}
 	return results;
 }
-
+/*
 int main(int argc, char * argv[])
 {
 	//string s = "abcd";
@@ -71,3 +71,4 @@ int main(int argc, char * argv[])
 
 	system("pause");
 }
+*/

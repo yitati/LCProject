@@ -23,8 +23,7 @@ A solution is ["cats and dog", "cat sand dog"].
 
 using namespace std;
 
-// DFS got TLE so we need to use momorized dfs
-
+// Solution 1: DFS got TLE so we need to use momorized dfs
 vector<string> combine(string word, vector<string> prev)
 {
 	// concatenate word to each of prev strings
@@ -69,3 +68,44 @@ vector<string> wordBreak(string s, vector<string>& wordDict)
 
 	return result;
 }
+
+// Solution 2 :  Use DP first to memorize the positions for the break point, then combine the strings
+void fillWordBreaks(string& s, vector<string>& results, vector<vector<int>>& dp, string curr, int rhs);
+vector<string> wordBreak(string s, vector<string>& wordDict)
+{
+	// push all words to unordered_set 
+	unordered_set<string> dict;
+	for (string word : wordDict) dict.insert(word);
+	// first memorize all lhs positions that are able to do the word breaks to point i - make a matrix
+	int sLen = s.length();
+	vector<vector<int>> dp(sLen);
+	for (int i = 0; i<sLen; i++)
+	{
+		if (dict.count(s.substr(0, i + 1))) dp[i].push_back(-1); // use -1 to denote lhs from 0
+		for (int j = 0; j <= i; j++)
+		{   // if s[0...j] is a valid word and s[j+1...i] is a valid word 
+			if (!dp[j].empty() && dict.count(s.substr(j + 1, i - j))) dp[i].push_back(j);
+		}
+	}
+	// we can fill the results using DFS then
+	vector<string> results;
+	fillWordBreaks(s, results, dp, "", s.size() - 1);
+	return results;
+}
+// dfs searching for every possible string
+void fillWordBreaks(string& s, vector<string>& results, vector<vector<int>>& dp, string curr, int rhs)
+{
+	if (rhs == -1)
+	{
+		curr.pop_back();
+		results.push_back(curr);
+		return;
+	}
+
+	for (int lhs : dp[rhs])
+	{
+		string sub = s.substr(lhs + 1, rhs - lhs);
+		fillWordBreaks(s, results, dp, sub + " " + curr, lhs);
+	}
+}
+
