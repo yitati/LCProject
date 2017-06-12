@@ -13,28 +13,25 @@ Given "abcd", return "dcbabcd".
 
 using namespace std;
 
-// This is when using two pointers
-string shortestPalindrome_twoPointers(string s)
+// one easy solution by using two pointers to compare original string and reversed string
+// we want to find the longest substring which will be the prefix of original string and
+// surfix of reversed string
+// So this is actually a string matching problem
+string shortestPalindrome(string s)
 {
-	string pattern = s;
-	reverse(s.begin(), s.end());
-	string target = s;
-	reverse(s.begin(), s.end());
-	int len = s.length(), maxLen = 0, i = 0, j = 0;
-	while (i < len)
+	string ori = s, rev = s;
+	reverse(rev.begin(), rev.end());
+	int i = 0, j = 0, maxLen = 0, cut = 0;
+	while (i < s.length())
 	{
-		while (i<len && pattern[0] != target[i]) i++;
-		while (i + j < len && target[i + j] == pattern[j]) j++;
-		if (i + j == len) break;
-		i++;
+		while (i + j < s.length() && rev[i + j] == ori[j]) j++;
+		if (i + j == s.length()) break;
 		j = 0;
+		i++;
 	}
-
-	maxLen = j - i;
-	if (maxLen == len) return s;
-	string add = s.substr(j, len - maxLen);
-	reverse(add.begin(), add.end());
-	return add + s;
+	// get prefix
+	string prefix = rev.substr(0, i);
+	return prefix + s;
 }
 
 // use KMP

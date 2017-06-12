@@ -1024,16 +1024,7 @@
     <ClCompile Include="LinkedList_ReverseLinkedList.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
-    <ClCompile Include="Iteration_Fibonacci.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
     <ClCompile Include="Iteration_PowerBofA.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="BinarySearch_SearchSizeUnknownArray.cpp">
-      <Filter>Source Files\Basics</Filter>
-    </ClCompile>
-    <ClCompile Include="BinarySearch_SearchSortedMatrix.cpp">
       <Filter>Source Files\Basics</Filter>
     </ClCompile>
     <ClCompile Include="String_StringPatternMatching.cpp">
@@ -1239,6 +1230,21 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\407_TrappingRainWaterII.cpp">
       <Filter>Source Files\LCProblems\Heap</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch_SearchSizeUnknownArray.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="BinarySearch_SearchSortedMatrix.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="Iteration_Fibonacci.cpp">
+      <Filter>Source Files\Basics\Class02_Recursion&amp;BinarySearch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\315_CountSmallerNumbersAfterSelf.cpp">
+      <Filter>Source Files\LCProblems\Sort</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\484_FindPermutation.cpp">
+      <Filter>Source Files\LCProblems\Greedy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

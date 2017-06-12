@@ -47,8 +47,8 @@ bool isMatchRegularExpression(string s, string p)
 			{
 				// when p[j] == '*' there are 3 different situations, denote p[0, j-1] = x
 				// 1. when x* repeats 0 times - dp[i+1][j+1] = dp[i+1][j-1]
-				// 2. when x* repeats 1 times - dp[i+1][j+1] = dp[i+1][j]
-				// 3. when x* repeats >= 2 times - dp[i+1][j+1] = dp[i][j+1] && p[j-1] == s[i]
+				// 2. when x* repeats 1 times - dp[i+1][j+1] = dp[i][j+1] && p[j-1] == s[i] 
+				// 3. when x* repeats >= 2 times - dp[i+1][j+1] = dp[i+1][j]
 				dp[i + 1][j + 1] = (dp[i + 1][j - 1] && j > 0) || 
 									dp[i + 1][j] || 
 									(dp[i][j + 1] && (p[j - 1] == s[i] || p[j-1] == '.') && j > 0);
