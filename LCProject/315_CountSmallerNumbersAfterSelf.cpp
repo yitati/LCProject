@@ -29,28 +29,6 @@ Return the array [2, 1, 1, 0].
 
 using namespace std;
 
-struct triplet;
-vector<triplet> merge(vector<triplet>& lhs, vector<triplet>& rhs);
-vector<triplet> merge(vector<triplet>& lhs, vector<triplet>& rhs);
-
-vector<int> countSmaller(vector<int>& nums)
-{
-	vector<triplet> collect;
-	vector<int> result(nums.size());
-	for (int i = 0; i < nums.size(); i++)
-	{
-		collect.push_back(triplet(nums[i], 0, i));
-	}
-
-	collect = mergeSort(collect, 0, collect.size() - 1);
-	// parse the result 
-	for (int i = 0; i < nums.size(); i++)
-	{
-		result[collect[i].index] = collect[i].count;
-	}
-	return result;
-}
-
 struct triplet
 {
 	triplet(int v, int c, int i) : val(v), count(c), index(i) {};
@@ -59,21 +37,6 @@ struct triplet
 	int index;	  // original index of the number 
 };
 
-// merge sort that will sort the tuple according to the value of number
-vector<triplet> mergeSort(vector<triplet> nums, int lhs, int rhs)
-{
-	if (lhs > rhs) return{};
-	vector<triplet> result;
-	if (lhs == rhs)
-	{
-		result.push_back(nums[lhs]);
-		return result;
-	}
-	int mid = lhs + (rhs - lhs) / 2;
-	vector<triplet> left = mergeSort(nums, lhs, mid);
-	vector<triplet> right = mergeSort(nums, mid + 1, rhs);
-	return merge(left, right);
-}
 // in merge funtion, we need to handle merge and count the number of smaller 
 // numbers that is switched to left
 // when do right number shift to left ?  => when you take any element from rhs vector instead of lhs
@@ -97,6 +60,42 @@ vector<triplet> merge(vector<triplet>& lhs, vector<triplet>& rhs)
 			result.push_back(triplet(lhs[i].val, lhs[i].count + j, lhs[i].index));
 			i++;
 		}
+	}
+	return result;
+}
+
+
+// merge sort that will sort the tuple according to the value of number
+vector<triplet> mergeSort(vector<triplet> nums, int lhs, int rhs)
+{
+	if (lhs > rhs) return{};
+	vector<triplet> result;
+	if (lhs == rhs)
+	{
+		result.push_back(nums[lhs]);
+		return result;
+	}
+	int mid = lhs + (rhs - lhs) / 2;
+	vector<triplet> left = mergeSort(nums, lhs, mid);
+	vector<triplet> right = mergeSort(nums, mid + 1, rhs);
+	return merge(left, right);
+}
+
+
+vector<int> countSmaller(vector<int>& nums)
+{
+	vector<triplet> collect;
+	vector<int> result(nums.size());
+	for (int i = 0; i < nums.size(); i++)
+	{
+		collect.push_back(triplet(nums[i], 0, i));
+	}
+
+	collect = mergeSort(collect, 0, collect.size() - 1);
+	// parse the result 
+	for (int i = 0; i < nums.size(); i++)
+	{
+		result[collect[i].index] = collect[i].count;
 	}
 	return result;
 }

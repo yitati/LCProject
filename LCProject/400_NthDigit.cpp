@@ -12,8 +12,6 @@ Input:
 Output:
 3
 
-
-
 Example 2: 
 Input:
 11

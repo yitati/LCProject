@@ -110,6 +110,12 @@
     <Filter Include="Source Files\LCProblems\DFS\MemDFS">
       <UniqueIdentifier>{2a150629-cbc7-47cd-87d4-1516b612fffd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Basics\Class14_DPIII">
+      <UniqueIdentifier>{e5aeaa40-7b28-4bfe-addd-ae0a095c7eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Basics\Class16_Shuffle&amp;Sample">
+      <UniqueIdentifier>{044b275f-c988-4ddc-852f-c099bf445a38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4_MedianOf2SortedArray.cpp">
@@ -1245,6 +1251,45 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\484_FindPermutation.cpp">
       <Filter>Source Files\LCProblems\Greedy</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\369_PlusOneLinkedList.cpp">
+      <Filter>Source Files\LCProblems\LinkedList</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\459_RepeatedSubstringPattern.cpp">
+      <Filter>Source Files\LCProblems\String</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LargestSubmatrixSum.cpp">
+      <Filter>Source Files\Basics\Class14_DPIII</Filter>
+    </ClCompile>
+    <ClCompile Include="LargestX.cpp">
+      <Filter>Source Files\Basics\Class14_DPIII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LongestCross.cpp">
+      <Filter>Source Files\Basics\Class14_DPIII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LongestConsecutive1.cpp">
+      <Filter>Source Files\Basics\Class14_DPIII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\LongestSubarraySum.cpp">
+      <Filter>Source Files\Basics\Class14_DPIII</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\PerfectShuffle.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\ReservoirSampling.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\Random7UsingRandom5.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="Random1000UsingRandom5.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\MedianTracker.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\95Percentile.cpp">
+      <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

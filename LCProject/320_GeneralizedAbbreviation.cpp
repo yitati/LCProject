@@ -34,6 +34,7 @@ vector<string> generateAbbreviations(string word)
 	return results;
 }
 
+/*
 int main(int argc, char * argv[])
 {
 	string input = "word";
@@ -46,3 +47,4 @@ int main(int argc, char * argv[])
 
 	system("pause");
 }
+*/

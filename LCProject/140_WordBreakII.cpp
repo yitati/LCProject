@@ -71,7 +71,7 @@ vector<string> wordBreak(string s, vector<string>& wordDict)
 
 // Solution 2 :  Use DP first to memorize the positions for the break point, then combine the strings
 void fillWordBreaks(string& s, vector<string>& results, vector<vector<int>>& dp, string curr, int rhs);
-vector<string> wordBreak(string s, vector<string>& wordDict)
+vector<string> wordBreakII(string s, vector<string>& wordDict)
 {
 	// push all words to unordered_set 
 	unordered_set<string> dict;

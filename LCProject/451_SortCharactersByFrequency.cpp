@@ -59,7 +59,7 @@ public:
 
 CharFreqComp comp;
 
-string frequencySort(string s)
+string frequencySort1(string s)
 {
 	priority_queue<pair<char, int>, vector<pair<char, int>>, CharFreqComp> maxHeap(comp);
 	unordered_map<char, int> frequency;
@@ -80,5 +80,37 @@ string frequencySort(string s)
 		int x = curr.first;
 		result.append(freq, x);
 	}
+	return result;
+}
+
+// if we do not put pair<char, int> but put pair<int, char>, namely make frequency as the first element
+// then no need to customize the sort funtion
+// put frequency as the first element, then we do not need to customize the sort funtion
+priority_queue<pair<int, char>> maxHeap;
+// since we need to order the char by frequency, so heap can be used here
+string frequencySort(string s)
+{
+	unordered_map<char, int> stat;
+	// first we need to make stat for each of the char and its frequency
+	for (char c : s) stat[c]++;
+	// then push this char, int pair to max heap
+	for (auto it = stat.begin(); it != stat.end(); it++)
+	{
+		maxHeap.push(make_pair(it->second, it->first));
+	}
+
+	string result;
+	while (!maxHeap.empty())
+	{
+		auto it = maxHeap.top();
+		maxHeap.pop();
+		char c = it.second;
+		int count = it.first;
+		for (int i = 0; i<count; i++)
+		{
+			result.push_back(c);
+		}
+	}
+
 	return result;
 }

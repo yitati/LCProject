@@ -22,6 +22,8 @@
 
 using namespace std;
 
+// We need to master both solutions
+
 
 // solution 1 - do the inorder traversal we can find the kth element
 int kthSmallest1(TreeNode* root, int k)
@@ -29,7 +31,7 @@ int kthSmallest1(TreeNode* root, int k)
 	if (root == NULL) return -1;
 	stack<TreeNode *> inorder;
 	TreeNode * curr = root;
-	while ((curr || !inorder.empty()) && k)
+	while ((curr || !inorder.empty()) && k)  // !!!!! this is a very briliant solution !!!!!
 	{
 		if (curr) // this is the push block
 		{
@@ -50,11 +52,10 @@ int kthSmallest1(TreeNode* root, int k)
 }
 
 
-// solution 2 - find how many element in left tree
+// solution 2 - Binary Search : find how many element in left tree
 int countTreeNodes(TreeNode * root)
 {
 	if (!root) return 0;
-	if (!root->left && !root->right) return 1;
 	return 1 + countTreeNodes(root->left) + countTreeNodes(root->right);
 }
 

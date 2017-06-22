@@ -27,20 +27,17 @@ using namespace std;
 
 vector<int> grayCode(int n)
 {
-	vector<int> result;
-	result.push_back(0);
-
-	int base = 1, start = 0;
-
+	vector<int> code;
+	code.push_back(0);
+	int base = 1;
 	for (int i = 1; i <= n; i++)
 	{
-		for (int j = start; j >= 0; j--)
+		int codeSize = code.size();
+		for (int j = codeSize - 1; j >= 0; j--)
 		{
-			result.push_back(result[j] + base);
+			code.push_back(code[j] + base);
 		}
-		start += base;
 		base *= 2;
 	}
-
-	return result;
+	return code;
 }
