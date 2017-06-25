@@ -628,9 +628,6 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\417_PacificAtlanticWaterFlow.cpp">
       <Filter>Source Files\LCProblems\DFS</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\47_PermutationII.cpp">
-      <Filter>Source Files\LCProblems\DFS</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\71_SimplifyPath.cpp">
       <Filter>Source Files\LCProblems\Stack</Filter>
     </ClCompile>
@@ -1290,6 +1287,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\95Percentile.cpp">
       <Filter>Source Files\Basics\Class16_Shuffle&amp;Sample</Filter>
+    </ClCompile>
+    <ClCompile Include="47_PermutationsII.cpp">
+      <Filter>Source Files\LCProblems\DFS</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

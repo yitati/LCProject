@@ -17,30 +17,21 @@ Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
 /*****************************************************************************/
 
 #include <string>
+#include <vector>
 
 using namespace std;
-
-void numDecodings_dfs(string & s, int & count, int level)
-{
-	if (level == s.length())
-	{
-		count++;
-		return;
-	}
-	if (s[level] == '0') return;
-
-	if (level < s.size() - 1)
-	{
-		if ((s[level] == '1' || (s[level] == '2' && s[level + 1] < '7')))
-			numDecodings_dfs(s, count, level + 2);
-	}
-	if (s[level] != '0')numDecodings_dfs(s, count, level + 1);
-}
-
+// this is a dp problem
+// dp[i] = dp[i-1] (if s[i] != '0') + dp[i-2] (if s[i-1, i] is valid) 
 int numDecodings(string s)
 {
 	if (s.empty()) return 0;
-	int count = 0;
-	numDecodings_dfs(s, count, 0);
-	return count;
+	int n = s.length();
+	vector<int> dp(n + 1, 0);
+	dp[0] = 1;
+	for (int i = 0; i<n; i++)
+	{
+		if (s[i] != '0') dp[i + 1] += dp[i];
+		if (i >= 1 && (s[i - 1] == '1' || (s[i - 1] == '2' && s[i] <= '6'))) dp[i + 1] += dp[i - 1];
+	}
+	return dp[n];
 }

@@ -19,11 +19,53 @@ Returns: False
 
 using namespace std;
 
-bool isPerfectSquare(int num)
+// Same as LC69 Sqrt(x)
+
+// solution 1 - O(sqrt(n)) time
+bool isPerfectSquare1(int num)
 {
 	for (long i = 0; i*i <= num; i++)
 	{
 		if (i*i == num) return true;
 	}
 	return false;
+}
+
+// solution 2 - O(sqrt(n)) time
+// any sqaure number should be equal to 1+3+5+7+9 ...
+bool isPerfectSquare2(int num)
+{
+	int i = 1;
+	while (num > 0)
+	{
+		num -= i;
+		i += 2;
+	}
+	return num == 0;
+}
+
+// solution 3 - Binary search O(logn)
+bool isPerfectSquare3(int num)
+{
+	int low = 1, high = num;
+	while (low <= high)
+	{
+		int mid = low + (high - low) / 2;
+		long long root = mid*mid;
+		if (root == num) return true;
+		else if (root > num) low = mid + 1;
+		else high = mid - 1;
+	}
+	return false;
+}
+
+// solution 4 - Newton Method
+bool isPerfectSquare4(int num)
+{
+	long x = num;
+	while (x*x > num)
+	{
+		x = (x + num / x) >> 1;
+	}
+	return x*x == num;
 }

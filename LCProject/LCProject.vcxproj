@@ -354,7 +354,7 @@
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\29_DivideTwoIntegers.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\417_PacificAtlanticWaterFlow.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\46_Permutations.cpp" />
-    <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\47_PermutationII.cpp" />
+    <ClCompile Include="47_PermutationsII.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\50_PowXN.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\60_PermutationSequence.cpp" />
     <ClCompile Include="..\..\..\Joanne%27s Data\LCProject\LCProject\65_ValidNumber.cpp" />

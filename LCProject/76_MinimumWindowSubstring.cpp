@@ -20,41 +20,38 @@ Minimum window is "BANC".
 
 using namespace std;
 
-string minWindow(string s, string t) 
+// this is a sliding window problem
+string minWindow(string s, string t)
 {
-	unordered_map<char, int> target;
+	int minLen = INT_MAX, start = -1, diff = 0;
 	unordered_map<char, int> window;
-
-	// put target string into target map
-	for (char x : t) target[x]++;
-	int count = target.size();
-	int lhs = 0, rhs = 0, minLen = INT_MAX;
-	string result;
-
+	for (char c : t) window[c]++;  // make the differencial table
+	diff = t.length();
+	int lhs = 0, rhs = 0;
 	while (rhs < s.length())
 	{
-		if (target.count(s[rhs]))
+		if (window.count(s[rhs])) // find a match 
 		{
-			window[s[rhs]]++;
-			if (window[s[rhs]] == target[s[rhs]]) count--;
-			while (lhs <= rhs && count == 0)
-			{
-				if (rhs - lhs + 1 < minLen)
-				{
-					minLen = rhs - lhs + 1;
-					result = s.substr(lhs, minLen);
-				}
-
-				if (target.count(s[lhs])) 
-				{
-					window[s[lhs]]--;
-					if (window[s[lhs]] < target[s[lhs]]) count++;
-				}
-				lhs++;
-			}
+			window[s[rhs]]--;
+			if (window[s[rhs]] >= 0) diff--;  // we we find enough char to cover the string, no need to decrease the counter
 		}
 		rhs++;
-	}
+		while (diff == 0)
+		{
+			if (rhs - lhs < minLen)   // get the length
+			{
+				start = lhs;
+				minLen = rhs - lhs;
+			}
 
-	return result;
+			if (window.count(s[lhs]))
+			{
+				window[s[lhs]]++;
+				if (window[s[lhs]] == 1) diff++; // add diff if the char to be poped matters in the substring
+			}
+			lhs++;
+		}
+	}
+	if (start == -1) return "";
+	return s.substr(start, minLen);
 }
