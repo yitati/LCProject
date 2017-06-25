@@ -24,6 +24,7 @@ click to show spoilers.
 /*****************************************************************************/
 
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 

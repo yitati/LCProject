@@ -23,6 +23,7 @@ the largest X of 1s has arm length 2.
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <climits>
 
 using namespace std;
 

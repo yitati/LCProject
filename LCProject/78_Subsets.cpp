@@ -24,6 +24,7 @@ If nums = [1,2,3], a solution is:
 #include <vector>
 #include <algorithm>
 #include <unordered_set>
+#include <cmath>
 
 using namespace std;
 

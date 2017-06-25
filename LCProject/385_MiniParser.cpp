@@ -12,6 +12,7 @@
 /*****************************************************************************/
 
 #include <stack>
+#include <string>
 #include "NestedInteger.h"
 
 using namespace std;
@@ -23,7 +24,7 @@ inline void resetFlags(int & num, int & sign, bool & hasNum)
 	hasNum = false;
 }
 
-NestedInteger deserialize(string s) {
+NestedInteger deserializeStr(string s) {
 	NestedInteger result;
 	int num = 0, sign = 1;
 	bool hasNum = 0;

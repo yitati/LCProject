@@ -23,6 +23,7 @@ word = "ABCB", -> returns false.
 /*****************************************************************************/
 
 #include <vector>
+#include <string>
 
 using namespace std;
 

@@ -28,6 +28,7 @@ Your serialize and deserialize algorithms should be stateless.
 #include "BST.h"
 #include <string>
 #include <queue>
+#include <cstring>
 
 using namespace std;
 

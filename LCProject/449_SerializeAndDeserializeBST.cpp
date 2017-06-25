@@ -18,6 +18,9 @@
 
 #include "BST.h"
 #include <string>
+#include <cstring>
+#include <ctime>
+#include <climits>
 
 using namespace std;
 

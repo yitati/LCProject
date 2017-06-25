@@ -6,6 +6,8 @@ The given array is not null
 */
 
 #include <vector>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 

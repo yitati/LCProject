@@ -15,6 +15,8 @@ What if A is null or A is of zero length? We should return -1 in this case.
 */
 
 #include <vector>
+#include <climits>
+#include <cmath>
 
 using namespace std;
 

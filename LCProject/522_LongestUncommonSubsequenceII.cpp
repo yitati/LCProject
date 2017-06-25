@@ -22,6 +22,7 @@ Output: 3
 /*****************************************************************************/
 
 #include <vector>
+#include <string>
 #include <algorithm>
 
 using namespace std;

@@ -32,6 +32,8 @@ but since we want to find the one with the smallest lexicographical permutation,
 /*****************************************************************************/
 
 #include <vector>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 // when we initialize the result vector, we make it 1, 2, 3,...n in incresing order

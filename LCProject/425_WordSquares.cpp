@@ -66,6 +66,8 @@ of words in each word square matters).
 /*****************************************************************************/
 
 #include <unordered_map>
+#include <vector>
+#include <string>
 
 using namespace std;
 

@@ -6,6 +6,7 @@
 /*****************************************************************************/
 
 #include "ListNode.h"
+#include <climits>
 
 ListNode* selectionSortList(ListNode* head) {
 	if (head == NULL || head->next == NULL) return head;

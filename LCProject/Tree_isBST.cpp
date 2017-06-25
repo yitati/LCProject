@@ -1,4 +1,5 @@
 #include "BST.h"
+#include <climits>
 
 bool judgeBST(TreeNode * root, int upperBound, int lowerBound)
 {

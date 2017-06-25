@@ -12,6 +12,8 @@
 /*****************************************************************************/
 
 #include <string>
+#include <algorithm>
+
 using namespace std;
 
 string addStrings(string num1, string num2)

@@ -5,6 +5,7 @@
 */
 /*****************************************************************************/
 
+#include <iostream>
 #include "BST.h"
 #include "ListNode.h"
 
@@ -29,7 +30,7 @@ TreeNode* sortedListToBST(ListNode * head) {
 	return buildTreeFromList(head, 0, length-1);
 }
 
-/*
+
 int main(int argc, char ** argv)
 {
 	int input[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; // size is 5
@@ -37,8 +38,5 @@ int main(int argc, char ** argv)
 	ListNode * head = generateList(input, n);
 	TreeNode * root = sortedListToBST(head);
 	printPretty(root, 1, 0, cout);
-
-
-	system("pause");
+	cout << "Hi this is LC 109" << endl;
 }
-*/

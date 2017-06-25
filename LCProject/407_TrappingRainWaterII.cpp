@@ -47,7 +47,7 @@ public:
 	int height;
 };
 
-priority_queue<Cell> minHeap;
+static priority_queue<Cell> minHeap;
 
 int trapRainWater(vector<vector<int>>& heightMap)
 {

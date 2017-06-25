@@ -27,7 +27,7 @@ void pathSumIII_dfs(TreeNode * root, int & count, int prefixSum, unordered_map<i
 }
 
 
-int pathSum(TreeNode* root, int sum)
+int pathSumIII(TreeNode* root, int sum)
 {
 	int count = 0;
 	if (root == NULL) return 0;

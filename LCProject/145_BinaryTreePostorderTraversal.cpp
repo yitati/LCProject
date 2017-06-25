@@ -16,6 +16,7 @@ return [3,2,1].
 
 #include "BST.h"
 #include <vector>
+#include <algorithm>
 #include <stack>
 
 using namespace std;

@@ -16,6 +16,7 @@ transactions = [buy, sell, cooldown, buy, sell]
 
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 

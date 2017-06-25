@@ -17,7 +17,7 @@ using namespace std;
 // use bit manipulation, we xor all the numbers and what left is A^B
 // then we found the first bit that result in 1 (which means A and B is different in this bit)
 // then we seperate the numbers into two groups and find A and B from doing single number I
-vector<int> singleNumber(vector<int>& nums)
+vector<int> singleNumberIII(vector<int>& nums)
 {
 	int bitXor = 0;
 	vector<int> results(2, 0);

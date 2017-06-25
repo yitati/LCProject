@@ -22,7 +22,7 @@ int longestSubarraySum(vector<int> input)
 	int currSum = input[0], maxSum = currSum;
 	for (int i = 1; i < input.size(); i++)
 	{
-		currSum = max(currSum + input[i]);
+		currSum = max(currSum + input[i], input[i]);
 		maxSum = max(maxSum, currSum);
 	}
 	return maxSum;

@@ -19,6 +19,7 @@ For example, given the following triangle
 /*****************************************************************************/
 
 #include <vector>
+#include <climits>
 #include <algorithm>
 
 using namespace std;

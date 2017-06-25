@@ -17,6 +17,7 @@ Return 6.
 /*****************************************************************************/
 
 #include "BST.h"
+#include <climits>
 #include <algorithm>
 
 using namespace std;

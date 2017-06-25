@@ -1,4 +1,6 @@
 #include "tc.h"
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 

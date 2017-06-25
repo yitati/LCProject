@@ -11,7 +11,9 @@ You may need to add more fields for the class.
 */
 
 #include <algorithm>
-#include <time.h>
+#include <cstdlib>
+#include <ctime>
+#include <climits>
 using namespace std;
 
 

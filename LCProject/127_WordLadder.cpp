@@ -31,6 +31,7 @@ As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 #include <string>
 #include <unordered_set>
 #include <algorithm>
+#include <climits>
 #include <queue>
 
 using namespace std;

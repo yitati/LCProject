@@ -26,6 +26,7 @@ Return the array [2, 1, 1, 0].
 // value, count, and original index
 
 #include <vector>
+#include <climits>
 
 using namespace std;
 

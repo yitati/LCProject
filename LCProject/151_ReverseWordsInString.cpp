@@ -22,6 +22,7 @@ Update (2015-02-12):
 
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 

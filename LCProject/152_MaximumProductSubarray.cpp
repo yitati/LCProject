@@ -10,6 +10,7 @@ the contiguous subarray [2,3] has the largest product = 6.
 
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 

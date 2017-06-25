@@ -7,7 +7,7 @@
 /*****************************************************************************/
 
 #include "ListNode.h"
-
+#include <climits>
 
 ListNode* mergeTwoLists1(ListNode* l1, ListNode* l2) {
 	ListNode* head = NULL;

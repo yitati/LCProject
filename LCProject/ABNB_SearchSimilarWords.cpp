@@ -4,6 +4,7 @@ The definition of similar is - edit distance less than k
 */
 
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -16,5 +17,5 @@ using namespace std;
 
 vector<string> getSimilarWords(vector<string> & dict, string & word)
 {
-
+	return {};
 }

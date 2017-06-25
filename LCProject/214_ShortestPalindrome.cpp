@@ -10,6 +10,7 @@ Given "abcd", return "dcbabcd".
 /*****************************************************************************/
 
 #include <string>
+#include <algorithm>
 
 using namespace std;
 

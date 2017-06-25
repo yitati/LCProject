@@ -19,6 +19,7 @@ Explanation: The binary representation of 1 is 1 (no leading zero bits), and its
 /*****************************************************************************/
 
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 

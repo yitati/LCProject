@@ -13,6 +13,7 @@ the subarray [4,3] has the minimal length under the problem constraint.
 
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 

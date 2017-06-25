@@ -19,7 +19,7 @@ Output: "bb"
 using namespace std;
 
 // using dp, suppose dp[i][j] is a bool, indecating the palindrome starts with i and ends with j
-string longestPalindrome(string s)
+string longestPalindromeSubstr(string s)
 {
 	if (s.empty() || s.length() == 1) return s;
 	int len = s.length(), maxLen = 1, markStart = 0;

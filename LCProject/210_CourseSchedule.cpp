@@ -28,6 +28,7 @@ Another correct ordering is[0,2,1,3].
 #include <vector>
 #include <unordered_set>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 

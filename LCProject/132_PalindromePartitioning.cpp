@@ -12,6 +12,7 @@ For example, given s = "aab",
 
 #include <string>
 #include <vector>
+#include <climits>
 #include <algorithm>
 
 using namespace std;

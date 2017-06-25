@@ -20,6 +20,8 @@ You can assume that you can always reach the last index.
 #include <vector>
 #include <unordered_set>
 #include <algorithm>
+#include <ctime>
+#include <climits>
 
 using namespace std;
 

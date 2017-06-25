@@ -10,6 +10,7 @@
 /*****************************************************************************/
 
 #include "ListNode.h"
+#include <climits>
 
 using namespace std;
 

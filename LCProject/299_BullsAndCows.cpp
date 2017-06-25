@@ -27,6 +27,7 @@ In this case, the 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow, 
 
 /*****************************************************************************/
 
+#include <vector>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>

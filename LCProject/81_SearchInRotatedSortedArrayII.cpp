@@ -13,7 +13,7 @@
 
 using namespace std;
 
-bool search(vector<int>& nums, int target) {
+bool searchRotatedSortedArrayII(vector<int>& nums, int target) {
 	int n = nums.size();
 	int lhs = 0, rhs = n - 1;
 	while (lhs <= rhs)

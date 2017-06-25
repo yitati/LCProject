@@ -11,7 +11,7 @@
 
 using namespace std;
 
-vector<vector<int>> levelOrder(TreeNode* root) 
+vector<vector<int>> levelOrder(TreeNode* root)
 {
 	vector<vector<int>> results;
 	if (root == NULL) return results;

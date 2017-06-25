@@ -57,7 +57,7 @@ public:
 	}
 };
 
-CharFreqComp comp;
+static CharFreqComp comp;
 
 string frequencySort1(string s)
 {
