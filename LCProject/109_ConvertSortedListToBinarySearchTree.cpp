@@ -30,7 +30,7 @@ TreeNode* sortedListToBST(ListNode * head) {
 	return buildTreeFromList(head, 0, length-1);
 }
 
-
+/*
 int main(int argc, char ** argv)
 {
 	int input[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; // size is 5
@@ -40,3 +40,4 @@ int main(int argc, char ** argv)
 	printPretty(root, 1, 0, cout);
 	cout << "Hi this is LC 109" << endl;
 }
+*/

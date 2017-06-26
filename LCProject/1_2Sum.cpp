@@ -23,7 +23,7 @@ using namespace std;
 vector<int> twoSum(vector<int>& nums, int target) {
 	vector<int> result(2);
 	unordered_map<int, int> table;
-	int i;
+	unsigned int i;
 	for (i = 0; i < nums.size(); i++)
 	{
 		if (table.find(target - nums[i]) != table.end())

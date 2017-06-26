@@ -36,9 +36,21 @@ int lengthOfLIS(vector<int>& nums)
 }
 
 // O(nlogn) solution
+/*
+ * Algorithm details from this link - http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/
+ * And to recover the longest subarray list - http://www.geeksforgeeks.org/construction-of-longest-monotonically-increasing-subsequence-n-log-n/
+ *
+ *  In general, we have set of acitve lists of varying length. When adding an element A[i] to these lists, we scan the lists(for end elements)
+ *  in decreasing order of their length. We will verify the end elements of all the lists to find a list whose end element is smaller than A[i]
+ *  1. If A[i] is the smallest among all end candidates of active lists, we still start new active list of length 1.
+ *  2. If A[i] is the largest among all end candidates of active lists, we will clone the largest active list, and extend it by A[i].
+ *  3. If A[i] is in between, we will find a list with largest end element that is smaller than A[i]. Clone and extend this list by A[i].
+ *  We will discard all other lists of same length as that of this modified list.
+ *
+ */
 int lengthOfLIS_binarySearch(vector<int> & nums)
 {
-	vector<int> table;
+	vector<int> table;  // this is the array of all end elements
 	for (int i = 0; i < nums.size(); i++)
 	{
 		auto it = lower_bound(table.begin(), table.end(), nums[i]);
