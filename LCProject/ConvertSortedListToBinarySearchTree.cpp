@@ -21,7 +21,7 @@ TreeNode * buildTreeFromList(ListNode *& list, int start, int end)
 	TreeNode * node = new TreeNode(list->val);
 	node->left = leftTree;
 	list = list->next;
-	node->right = buildTreeFromList(list, mid + 1, end);;
+	node->right = buildTreeFromList(list, mid + 1, end);
 	return node;
 }
 

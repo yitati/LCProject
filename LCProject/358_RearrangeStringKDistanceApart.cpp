@@ -24,6 +24,7 @@ The same letters are at least distance 2 from each other.
 /*****************************************************************************/
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -60,7 +61,7 @@ string rearrangeString(string s, int k)
 		if(index == -1) return "";
 		result.push_back('a' + index);
 		count[index]--;
-		valid[index] = pos+k;
+		valid[index] = pos+k;  // shift the index
 	}
 	return result;
 }

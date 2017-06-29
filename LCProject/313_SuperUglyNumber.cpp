@@ -23,8 +23,11 @@
 #include <climits>
 
 using namespace std;
-
-int nthSuperUglyNumber_etl(int n, vector<int>& primes) 
+/*
+ * burtal force solution to check for min ungly number each time
+ * but will have exceed time limit error
+ */
+int nthSuperUglyNumber_brutalforce(int n, vector<int>& primes)
 {
 	priority_queue<long, vector<long>, greater<long long>> minHeap;
 	unordered_set<long> visited;

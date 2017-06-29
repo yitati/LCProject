@@ -29,7 +29,7 @@ static priority_queue<int, vector<int>, greater<int>> minHeap;
 int nthUglyNumber(int n) 
 {
 	unordered_set<long long> visited;
-	priority_queue<long long, vector<long long>, std::greater<long long>> minHeap;
+	priority_queue<long long, vector<long long>, greater<long long>> minHeap;
 	if (n <= 6) return n;
 	int factor[3] = { 2, 3, 5 };
 	minHeap.push(1);
@@ -39,7 +39,7 @@ int nthUglyNumber(int n)
 	{
 		x = minHeap.top();
 		minHeap.pop();
-		for (int k = 0; k<3; k++)
+		for (int k = 0; k < 3; k++)
 		{
 			long long num = x * factor[k];
 			if (!visited.count(num))

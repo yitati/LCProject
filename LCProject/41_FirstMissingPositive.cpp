@@ -16,7 +16,7 @@ Your algorithm should run in O(n) time and uses constant space.
 
 using namespace std;
 
-// One soution idea - to use extra N space to store the arrary and use a flag to mark if number k exits
+// One solution idea - to use extra N space to store the arrary and use a flag to mark if number k exits
 // on position k-1. So if position flag[x-1] not marked then return x
 // But to switch to constant space - we can put numbers "in place" by doing a swaping
 // Always put k in nums[k-1] (if nums[k-1] != k)

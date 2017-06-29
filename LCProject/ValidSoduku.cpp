@@ -13,6 +13,13 @@
 
 using namespace std;
 
+/*
+ * Sudoku rules
+ * 	1. Each row must have the numbers 1-9 occuring just once.
+ * 	2. Each col must have the numbers 1-9 occuring just once.
+ * 	3. Each 9 sub-boes must have the numbers 1-9 occuring just once.
+ */
+
 // hashset / bit manipulation 
 // we have 9 numbers to check, and one int has 32 bit
 bool isValidSudoku(vector<vector<char>>& board)
