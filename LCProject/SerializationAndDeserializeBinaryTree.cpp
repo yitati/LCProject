@@ -90,11 +90,8 @@ string serialize(TreeNode * root)
 			}
 		}
 	}
-
 	return bfs;
-
 }
-
 
 
 // Decodes your encoded data to tree.

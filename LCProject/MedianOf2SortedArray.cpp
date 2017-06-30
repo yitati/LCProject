@@ -24,7 +24,7 @@ using namespace std;
 
 /* Solution 1 : binary search idea*/
 // find kth min from two sorted array
-int findKthMin(const vector<int>& nums1, int lhs1, const vector<int>& nums2, int lhs2, int k)
+int findKthMin(const vector<int>& nums1, unsigned int lhs1, const vector<int>& nums2, unsigned int lhs2, int k)
 {
 	// if nums1 is empty()
 	if (lhs1 >= nums1.size()) return nums2[lhs2 + k - 1];
