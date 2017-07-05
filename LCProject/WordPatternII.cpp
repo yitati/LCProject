@@ -69,12 +69,14 @@ using namespace std;
  	return findMatch(pattern, 0, str, 0, history, visited);
  }
 
+ /*
  int main(int argc, char ** argv)
  {
 	 string pattern = "eecs";
 	 string str = "electronicengineeringcomputerscience";  //should be false
 	 cout << wordPatternMatch(pattern, str) << endl;
  }
+ */
 
 
 

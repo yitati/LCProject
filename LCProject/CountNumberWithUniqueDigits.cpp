@@ -18,15 +18,33 @@ excluding [11,22,33,44,55,66,77,88,99])
 */
 /*****************************************************************************/
 
+#include <iostream>
+
+using namespace std;
+
+// suppose fx is the number with unique digits with length x
+// then fx = 9*9*8*....
 int countNumbersWithUniqueDigits(int n)
 {
-	if (n == 0) return 1;
-	int result = 10, fx = 9, i = 0;
-	while (--n)
+	if(n == 0) return 1;
+	int result = 1, fx = 9, i = 9;
+	while(n > 0 && i > 0)
 	{
-		fx *= (9 - i);
 		result += fx;
-		i++;
+		fx *= i;
+		i--;
+		n--;
 	}
 	return result;
 }
+
+/*
+int main(int argc, char ** argv)
+{
+	cout << "result for 1 is "<<countNumbersWithUniqueDigits(1) << endl;
+	cout << "result for 2 is "<<countNumbersWithUniqueDigits(2) << endl;
+	cout << "result for 3 is "<<countNumbersWithUniqueDigits(3) << endl;
+	cout << "result for 4 is "<<countNumbersWithUniqueDigits(4) << endl;
+
+}
+*/

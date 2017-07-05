@@ -1,5 +1,4 @@
-﻿/******************************************************************************/
-/**
+﻿/******************************************************************************
 * Question: #313 Super Ugly Number
 * Write a program to find the nth super ugly number. 
 * Super ugly numbers are positive numbers whose all prime factors are 
@@ -12,8 +11,7 @@
 * (2) The given numbers in primes are in ascending order.
 * (3) 0 < k ≤ 100, 0 < n ≤ 106, 0 < primes[i] < 1000.
 * (4) The nth super ugly number is guaranteed to fit in a 32-bit signed integer. 
-
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <queue>
