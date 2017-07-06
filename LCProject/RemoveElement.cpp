@@ -16,20 +16,13 @@ Your function should return length = 2, with the first two elements of nums bein
 
 using namespace std;
 
-int removeElement(vector<int>& nums, int val) {
-	int n = nums.size();
-	int search = 0, insert = 0;
-	int count = 0;
-	while (search < nums.size())
-	{
-		if (nums[search] != val)
-		{
-			nums[insert] = nums[search];
-			insert++;
-			count++;
-		}
-		search++;
-	}
-
-	return count;
+int removeElement(vector<int>& nums, int val)
+{
+    int slow = 0, fast = 0;
+    while(fast < nums.size())
+    {
+        if(nums[fast] == val) fast++;
+        else nums[slow++] = nums[fast++];
+    }
+    return slow;
 }

@@ -57,7 +57,7 @@ using namespace std;
 // using a min heap to solve this problem
 vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k)
 {
-	vector<pair<int, int>> result;
+	vector<pair<unsigned int, unsigned int>> result;
 	if(nums1.empty() || nums2.empty() || k == 0) return result;
 	auto comp = [&nums1, &nums2](pair<int, int>& a, pair<int, int>& b)  // comp for min heap
 	{
@@ -70,7 +70,7 @@ vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, in
 		auto idxPair = minHeap.top();
 		minHeap.pop();
 		result.emplace_back(nums1[idxPair.first], nums2[idxPair.second]);
-		if(idxPair.first + 1 < num s1.size())
+		if(idxPair.first + 1 < nums1.size())
 		{
 			minHeap.emplace(idxPair.first+1, idxPair.second);
 		}
