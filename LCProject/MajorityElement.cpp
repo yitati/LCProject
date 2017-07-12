@@ -12,7 +12,8 @@
 
 using namespace std;
 
-int majorityElement(vector<int>& nums) {
+int majorityElement(vector<int>& nums)
+{
 	int count = 1;
 	int champion = nums[0];
 	for (int i = 1; i < nums.size(); i++) {
@@ -23,5 +24,4 @@ int majorityElement(vector<int>& nums) {
 		}
 	}
 	return champion;
-
 }

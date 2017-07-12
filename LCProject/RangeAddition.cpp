@@ -36,6 +36,7 @@ After applying operation [0, 2, -2]:
  ************************************************************/
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
 

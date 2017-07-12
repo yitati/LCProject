@@ -19,12 +19,12 @@ bool isOneEditDistance(string s, string t) {
 	for (int i = 0; i < min(s.length(), t.length()); i++) {
 		if (s[i] != t[i]) {
 			if (s.length() == t.length()) {
-				return s.substr(i + 1) == t.substr(i + 1);
+				return s.substr(i + 1) == t.substr(i + 1);   // replace one char
 			}
 			if (s.length() < t.length()) {
-				return s.substr(i) == t.substr(i + 1);
+				return s.substr(i) == t.substr(i + 1);  // insert one to s
 			} else
-				return s.substr(i + 1) == t.substr(i);
+				return s.substr(i + 1) == t.substr(i);  // insert one to t
 		}
 	}
 	// !! all previous chars are same

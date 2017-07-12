@@ -13,6 +13,8 @@
 
 using namespace std;
 
+// suppose we give left level and right level to each node,
+// then left child should equals to root level -1 and right child should equals to root level +1
 vector<vector<int>> verticalOrder(TreeNode* root)
 {
 	if (!root) return{};

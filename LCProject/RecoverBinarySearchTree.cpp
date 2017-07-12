@@ -12,34 +12,34 @@
 #include <vector>
 
 using namespace std;
-
-// every binary search has unique order (inorder)
-void fillSuspect_recursion(TreeNode * curr, TreeNode * & prev, vector<pair<TreeNode*, TreeNode *>> & suspect)
+// helper function that will find all possible suspects
+// arguments are current node and previous node
+void findSuspects(TreeNode* curr, TreeNode*& prev, vector<pair<TreeNode*, TreeNode*>>& suspect)
 {
-	if (!curr) return;
-
-	fillSuspect_recursion(curr->left, prev, suspect);
-	if (prev && prev->val > curr->val)
-	{
-		suspect.push_back(pair<TreeNode*, TreeNode*>(prev, curr));
-	}
-	prev = curr;
-	fillSuspect_recursion(curr->right, prev, suspect);
+    if(!curr) return;
+    findSuspects(curr->left, prev, suspect);
+    if(prev && prev->val > curr->val)
+    {
+        suspect.emplace_back(prev, curr);
+    }
+    prev = curr;
+    findSuspects(curr->right, prev, suspect);
 }
-
+// there are 2 situations
+// 1. two nodes are root-leaf relationship
+// 2. two nodes are not root-leaf relationship but random nodes
 void recoverTree(TreeNode* root)
 {
-	vector<pair<TreeNode*, TreeNode *>> suspect;
-	if (root == NULL) return;
-	TreeNode* prev = NULL;
-	fillSuspect_recursion(root, prev, suspect);
-	if (suspect.size() == 2)
-	{
-		swap(suspect[0].first->val, suspect[1].second->val);
-		return;
-	}
-	else
-	{
-		swap(suspect[0].first->val, suspect[0].second->val);
-	}
+    vector<pair<TreeNode*, TreeNode*>> suspect;
+    if(!root) return;
+    TreeNode* prev = NULL;
+    findSuspects(root, prev, suspect);
+    if(suspect.size() == 2)  // when there are two pairs messed up
+    {
+        swap(suspect[0].first->val, suspect[1].second->val);
+    }
+    else
+    {
+        swap(suspect[0].first->val, suspect[0].second->val);
+    }
 }

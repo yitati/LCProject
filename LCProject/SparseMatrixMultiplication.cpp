@@ -1,5 +1,6 @@
 /**************************************************************************
  * Question 311. Sparse Matrix Multiplication
+ * company tag: Facebook
  * Given two sparse matrics A and B, return the result of AB.
  * You may assume that A's column number is equal to B's row number.
 

@@ -6,7 +6,7 @@
 // Space complexity O(n) - depth of the call stack
 
 // Solution 1 - iterative way
-ListNode * reverseList_iterative(ListNode * head)
+ListNode * reverseList(ListNode * head)
 {
 	if (!head) return NULL;
 	ListNode * prevNode = NULL;
@@ -21,18 +21,3 @@ ListNode * reverseList_iterative(ListNode * head)
 	return prevNode;
 }
 
-// Solution 2 - recursive way
-ListNode * reverseList_recursive(ListNode * head)
-{
-	// base case
-	if (!head || !head->next) return head;
-	// handle all the rest nodes
-	ListNode * newHead = reverseList(head->next);
-	// connect with head
-	head->next->next = head;
-	head->next = NULL;
-	return newHead;
-}
-
-// We need to understand and know how to draw the recursion tree
-// Figure out the subproblem

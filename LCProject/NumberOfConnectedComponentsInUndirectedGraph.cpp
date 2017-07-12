@@ -28,33 +28,31 @@ Given n = 5 and edges = [[0, 1], [1, 2], [2, 3], [3, 4]], return 1.
 
 using namespace std;
 
-	// similar problem: LC 261 ValidGraphTree
+// similar problem: LC 261 ValidGraphTree
 
-	// union find problem, we need find root for each vertice
-	int findRoot(vector<int>& root, int id)
-	{
-		while(root[id] != id)
-		{
-			root[id] = root[root[id]];   // here is combining the root
-			id = root[id];
-		}
-		return id;
+// union find problem, we need find root for each vertice
+int findRoot(vector<int>& root, int id)
+{
+	while (root[id] != id) {
+		root[id] = root[root[id]];   // here is combining the root
+		id = root[id];
 	}
+	return id;
+}
 
-	int countComponents(int n, vector<pair<int, int>>& edges)
+int countComponents(int n, vector<pair<int, int>>& edges) {
+	vector<int> root(n);
+	for (int i = 0; i < n; i++)
+		root[i] = i;
+
+	for (auto& edge : edges)
 	{
-		vector<int> root(n);
-		for(int i=0; i<n; i++) root[i] = i;
-
-		for(auto& edge : edges)
-		{
-			int root1 = findRoot(root, edge.first);
-			int root2 = findRoot(root, edge.second);
-			if(root1 != root2)
-			{
-				root[root2] = root1;  // union
-				n--;
-			}
+		int root1 = findRoot(root, edge.first);
+		int root2 = findRoot(root, edge.second);
+		if (root1 != root2) {
+			root[root2] = root1;  // union
+			n--;
 		}
-		return n;
 	}
+	return n;
+}

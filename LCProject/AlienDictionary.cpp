@@ -59,8 +59,8 @@ typedef enum {
 
 /**************************** Helper Function Start ****************************/
 // true or false indicate if there is any cycle in the graph
-bool fillOrder(stack<char>& topOrder, unordered_map<char, STATUS>& state,
-		char curr) {
+bool fillOrder(stack<char>& topOrder, unordered_map<char, STATUS>& state, char curr)
+{
 	// set flag for current node
 	state[curr] = VISITING;
 	for (auto& neigh : graph[curr]) {
@@ -73,7 +73,7 @@ bool fillOrder(stack<char>& topOrder, unordered_map<char, STATUS>& state,
 				return false;
 		}
 	}
-	state[curr] = VISITED;
+	state[curr] = VISITED;  // change state to VISITED only when all neighbors checked
 	topOrder.push(curr);
 	return true;
 }
@@ -103,9 +103,9 @@ void buildTopoGraph(vector<string>& words) {
 }
 
 /**************************** Helper Function End ****************************/
-
-
-string alienOrder(vector<string>& words) {
+// actually a topological sort problem
+string alienOrder(vector<string>& words)
+{
 	if (words.empty())
 		return "";
 	// build graph
@@ -113,8 +113,7 @@ string alienOrder(vector<string>& words) {
 	// do topological sort
 	int n = graph.size();
 	unordered_map<char, STATUS> state;
-	for (auto& item : graph)
-		state[item.first] = NOT_VISITED;
+	for (auto& item : graph) state[item.first] = NOT_VISITED;
 	string result;
 	stack<char> topOrder;
 	for (auto& item : graph) {

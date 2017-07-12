@@ -25,4 +25,4 @@ string longestCommonPrefix(vector<string>& strs)
         }
     }
     return prefix;
-}}
+}

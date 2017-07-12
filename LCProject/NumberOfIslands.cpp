@@ -28,6 +28,7 @@ Answer: 3
 
 using namespace std;
 
+// in dfs, change each searched land to 2
 void numIslands_dfs(vector<vector<char>> & grid, int r, int c)
 {
 	grid[r][c] = '2';

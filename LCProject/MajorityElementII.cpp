@@ -11,36 +11,43 @@
 
 using namespace std;
 
-// there are at most two majority elements
+// similar to majority element
+// there will be at most two such majority elements
 vector<int> majorityElementII(vector<int>& nums)
 {
-	vector<int> champions;
-	if (nums.size() == 0) return champions;
-	int champion1 = nums[0], champion2 = nums[0];
-	int count1 = 0, count2 = 0;
-	for (int i = 0; i < nums.size(); i++)
-	{
-		if (nums[i] != champion1 && nums[i] != champion2)
-		{
-			if (count1 == 0) { champion1 = nums[i]; count1++; }
-			if (count2 == 0) { champion2 = nums[i]; count2++; }
-			else { count1--; count2--; }
-		}
-		if (nums[i] == champion1) { count1++; continue; }
-		if (nums[i] == champion2) { count2++; continue; }
-	}
+    vector<int> major;
+    int major1 = 0, major2 = 1, count1 = 0, count2 = 0;
+    for(int num : nums)
+    {
+        if(num == major1) count1++;
+        else if(num == major2) count2++;
+        else if(count1 == 0)
+        {
+            major1 = num;
+            count1++;
+        }
+        else if(count2 == 0)
+        {
+            major2 = num;
+            count2++;
+        }
+        else
+        {
+            count1--;
+            count2--;
+        }
 
-	count1 = 0;
-	count2 = 0;
+    }
+    count1 = 0;
+    count2 = 0;
+    for(int num : nums)
+    {
+        if(num == major1) count1++;
+        if(num == major2) count2++;
+    }
 
-	for (int i = 0; i < nums.size(); i++)
-	{
-		if (nums[i] == champion1) count1++;
-		if (nums[i] == champion2) count2++;
-	}
+    if(count1 > nums.size()/3) major.push_back(major1);
+    if(count2 > nums.size()/3) major.push_back(major2);
 
-	if (count1 > nums.size() / 3) champions.push_back(champion1);
-	if (count2 > nums.size() / 3) champions.push_back(champion2);
-
-	return champions;
+    return major;
 }

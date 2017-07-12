@@ -57,12 +57,12 @@ using namespace std;
 // using a min heap to solve this problem
 vector<pair<int, int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k)
 {
-	vector<pair<unsigned int, unsigned int>> result;
+	vector<pair<int, int>> result;
 	if(nums1.empty() || nums2.empty() || k == 0) return result;
 	auto comp = [&nums1, &nums2](pair<int, int>& a, pair<int, int>& b)  // comp for min heap
 	{
 		return nums1[a.first] + nums2[a.second] > nums1[b.first] + nums2[b.second];
-	}
+	};
 	priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(comp)> minHeap(comp);
 	minHeap.emplace(0, 0);
 	while(k-- && minHeap.size())

@@ -10,8 +10,10 @@
 
 using namespace std;
 
-
-ListNode* reverseList(ListNode* head) 
+/*
+ * iteration solution
+ */
+ListNode* reverseList_iterative(ListNode* head)
 {
 	ListNode * prev = NULL;
 	ListNode * next = NULL;
@@ -23,5 +25,17 @@ ListNode* reverseList(ListNode* head)
 		head = next;
 	}
 	return prev;
+}
+
+/*
+ * recursion solution
+ */
+ListNode* reverseList_recursion(ListNode* head)
+{
+	if (!head || !head->next) return head;
+	ListNode* newHead = reverseList_recursion(head->next);
+	head->next->next = head;
+	head->next = NULL;
+	return newHead;
 }
 

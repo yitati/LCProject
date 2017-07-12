@@ -14,7 +14,7 @@
 
 using namespace std;
 
-
+// three way part
 void sortColors(vector<int>& nums) 
 {
 	int n = nums.size();
