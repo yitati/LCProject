@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #47 Permutations II
+* company tag: LinkedIn
 * Given a collection of numbers that might contain duplicates, return all possible unique permutations.
 
 For example,
@@ -10,8 +10,7 @@ For example,
 [1,2,1],
 [2,1,1]
 ]
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <algorithm>

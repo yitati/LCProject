@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #198 House Robber
+* company tag: LinkedIn
 * You are a professional robber planning to rob houses along a street. 
 * Each house has a certain amount of money stashed, the only constraint 
 * stopping you from robbing each of them is that adjacent houses have security 
@@ -9,8 +9,7 @@
 
 * Given a list of non-negative integers representing the amount of money of each house, 
 * determine the maximum amount of money you can rob tonight without alerting the police.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <algorithm>

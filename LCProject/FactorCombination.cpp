@@ -1,5 +1,6 @@
 /***********************************************************************************
  * Question #254 Factor Combination
+ * company tag: LinkedIn
  * Numbers can be regarded as product of its factors. For example,
  8 = 2 x 2 x 2;
    = 2 x 4.

@@ -1,6 +1,6 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #297 Serialize And Deserialize Binary Tree
+* company tag: LinkedIn
 * Serialization is the process of converting a data structure or object into a 
 * sequence of bits so that it can be stored in a file or memory buffer, 
 * or transmitted across a network connection link to be reconstructed 
@@ -23,7 +23,7 @@ You do not necessarily need to follow this format, so please be creative and com
 with different approaches yourself.
 Note: Do not use class member/global/static variables to store states. 
 Your serialize and deserialize algorithms should be stateless.
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <string>

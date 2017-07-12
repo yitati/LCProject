@@ -1,6 +1,7 @@
 /******************************************************************************/
 /*
 * Question: #56 Merge Intervals
+* company tag: LinkedIn
 * Given a collection of intervals, merge all overlapping intervals.
 
 For example,

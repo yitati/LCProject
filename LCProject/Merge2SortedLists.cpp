@@ -1,10 +1,9 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #21 Merge Two Sorted Lists
+* company tag: LinkedIn
 * Merge two sorted linked lists and return it as a new list. 
 * The new list should be made by splicing together the nodes of the first two lists.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "ListNode.h"
 #include <climits>

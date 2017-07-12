@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #1 Two Sum
+* company tag: LinkedIn
 * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 * You may assume that each input would have exactly one solution.
 
@@ -10,8 +10,7 @@
 * return [0, 1].
 * UPDATE (2016/2/13):
 * The return format had been changed to zero-based indices. Please read the above updated description carefully.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <unordered_map>
 #include <vector>

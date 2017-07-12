@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #127 Word Ladder
+* company tag: LinkedIn
 * Given two words (beginWord and endWord), and a dictionary's word list, find the length of shortest transformation 
 * sequence from beginWord to endWord, such that: 
 * 1.Only one letter can be changed at a time.
@@ -24,8 +24,7 @@ As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
 * All words contain only lowercase alphabetic characters.
 * You may assume no duplicates in the word list.
 * You may assume beginWord and endWord are non-empty and are not the same.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 
 #include <string>

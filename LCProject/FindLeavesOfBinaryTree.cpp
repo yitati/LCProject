@@ -1,5 +1,6 @@
 /*************************************************************************************************
  * Question #366. Find Leaves of Binary Tree
+ * company tag: LinkedIn
  * Given a binary tree, collect a tree's nodes as if you were doing this: Collect and remove all leaves,
  * repeat until the tree is empty.
 Example:
