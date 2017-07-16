@@ -1,10 +1,11 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #28 Implement strStr()
+* company tag: Facebook
 * Implement strStr().
 * Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
-*/
-/*****************************************************************************/
+* Follow-up: instead of looking for needle, what if we are looking for needle's permutation?
+* Refer to problem: AllAnagrams
+*****************************************************************************/
 
 #include <string>
 
@@ -18,7 +19,6 @@ int strStr(string haystack, string needle)
 	if (needle.empty()) return 0;
 	for (start = 0; start + needle.length() <= haystack.length(); start++)
 	{
-		if (haystack[start] != needle[0]) continue;
 		for (i = 0; i < needle.size(); i++)
 		{
 			if (haystack[start + i] != needle[i]) break;

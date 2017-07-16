@@ -9,10 +9,13 @@
 #include "BST.h"
 #include "ListNode.h"
 
-// solution 1 - transfer list to array and build tree from array
-// solution 2 - build the tree from bottom-up !! this is a very cleaver way !!
+// solution 1 - every time find the middle point and make it root
+// then recursively build left tree and right tree.
+// But this time complexity is O(nlogn)
 
-
+// solution 2 - build the tree from bottom-up
+// every time we need to make head point to the next and build the tree inorder
+// time complexity is O(n)
 TreeNode * buildTreeFromList(ListNode *& list, int start, int end)
 {
 	if (start > end) return NULL;

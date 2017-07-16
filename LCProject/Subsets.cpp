@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #78 Subsets
+* company tag: Facebook
 * Given a set of distinct integers, nums, return all possible subsets.
 * Note: The solution set must not contain duplicate subsets.
 
@@ -18,8 +18,7 @@ If nums = [1,2,3], a solution is:
 []
 ]
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <algorithm>
@@ -27,6 +26,7 @@ If nums = [1,2,3], a solution is:
 #include <cmath>
 
 using namespace std;
+// TODO - do the problem and time complexity
 
 // solution 1: back tracking
 void subset_dfs(vector<vector<int>> & results, vector<int> & result, int level, vector<int> & nums)

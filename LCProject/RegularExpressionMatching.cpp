@@ -21,6 +21,7 @@ isMatch("aab", "c*a*b") → true
 */
 /*****************************************************************************/
 
+// TODO - redo the problem and write detailed instruction of the algorithm
 #include <string>
 #include <vector>
 

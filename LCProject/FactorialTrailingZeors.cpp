@@ -1,10 +1,9 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #172 Factorial Trailing Zeors
+* company tag: Facebook
 * Given an integer n, return the number of trailing zeroes in n!.
 * Note: Your solution should be in logarithmic time complexity.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <iostream>
 
@@ -33,6 +32,6 @@ int main(int argc, char ** argv)
 	cout << trailingZeroes(75) << endl;
 	cout << trailingZeroes(125) << endl;
 
-	system("pause");
 }
 */
+

@@ -56,6 +56,5 @@ vector<int> preorderTraversal2(TreeNode * root)
 
 // solution 3 - morris traversal, O(1) space
 
-//TODO
 
 

@@ -14,8 +14,10 @@
  * You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.
  ****************************************************************************************/
 
+#include <vector>
 #include <string>
 #include <climits>
+#include <cmath>
 
 using namespace std;
 
@@ -28,7 +30,8 @@ int shortestDistance(vector<string>& words, string word1, string word2)
 		if(words[i] == word2) p2 = i;
 		if(p1 != -1 && p2 != -1)
 		{
-			minDis = abs(minDis, abs(p1-p2));
+			int dis = p1 > p2 ? p1 - p2 : p2 - p1;
+			minDis = min(minDis, dis);
 		}
 	}
 	return minDis;

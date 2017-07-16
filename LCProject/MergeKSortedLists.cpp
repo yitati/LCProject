@@ -1,16 +1,17 @@
 /******************************************************************************
-* Question: #23 Merge Two Sorted Lists
-* company tag: LinkedIn
+* Question: #23 Merge K Sorted Lists
+* company tag: Facebook, LinkedIn
 * Merge k sorted linked lists and return it as one sorted list.
 * Analyze and describe its complexity.
 *****************************************************************************/
+// TODO - need to analysize the time complexity
 
 #include "ListNode.h"
 #include <queue>
 
 using namespace std;
 
- // Solution : User recursion, divide & conquer
+ // Solution : Use recursion, divide & conquer
  ListNode * mergeLists(vector<ListNode*>& lists, int start, int end)
  {
 	 if (start > end) return NULL;

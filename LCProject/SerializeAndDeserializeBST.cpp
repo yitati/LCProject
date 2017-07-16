@@ -1,6 +1,6 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #449 Serialize And Deserialize BST
+* company tag: Facebook
 * Serialization is the process of converting a data structure or object into a sequence of bits 
 * so that it can be stored in a file or memory buffer, or transmitted across a network connection 
 * link to be reconstructed later in the same or another computer environment.
@@ -14,7 +14,7 @@
 
 * Note: Do not use class member/global/static variables to store states. 
 * Your serialize and deserialize algorithms should be stateless.
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <string>

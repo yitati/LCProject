@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #49 Group Anagrams
+* company tag: Facebook
 * Given an array of strings, group anagrams together.
 For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
 Return:
@@ -10,8 +10,7 @@ Return:
   ["bat"]
 ]
 * Note: All inputs will be in lower-case.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <string>
@@ -20,21 +19,24 @@ Return:
 
 using namespace std;
 
-vector<vector<string>> groupAnagrams(vector<string>& strs) {
+vector<vector<string>> groupAnagrams(vector<string>& strs)
+{
 	vector<vector<string>> results;
-	unordered_map<string, int> table;
-	for (int i = 0; i < strs.size(); i++)
+	unordered_map<string, vector<int>> table;  // we can remember only the index for the string in strs
+	for(int i=0; i<strs.size(); i++)
 	{
 		string curr = strs[i];
 		sort(curr.begin(), curr.end());
-		if (table.count(curr)) results[table[curr]].push_back(strs[i]);
-		else
+		table[curr].push_back(i);
+	}
+	for(auto it = table.begin(); it != table.end(); it++)
+	{
+		vector<string> result;
+		for(int i=0; i<it->second.size(); i++)
 		{
-			table[curr] = results.size();
-			vector<string> item;
-			item.push_back(strs[i]);
-			results.push_back(item);
+			result.push_back(strs[it->second[i]]);
 		}
+		results.push_back(result);
 	}
 	return results;
 }

@@ -1,10 +1,9 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #208 Implement Trie (Prefix Tree)
+* company tag: Facebook
 * Implement trie with insert, search, and startsWith methods.
 * Note: You may assume that all inputs are consist of lowercase letters a-z.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 /*
 Trie: 

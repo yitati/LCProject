@@ -1,5 +1,6 @@
-/*
+/****************************************************************************************
 * Question: #210 Course Schedule II
+* company tag: Facebook
 * There are a total of n courses you have to take, labeled from 0 to n - 1.
 * Some courses may have prerequisites, for example to take course 0 you have to first take course 1, 
 * which is expressed as a pair: [0,1]
@@ -22,8 +23,7 @@ Another correct ordering is[0,2,1,3].
 * 1.The input prerequisites is a graph represented by a list of edges, not adjacency matrices. 
 * Read more about how a graph is represented.
 * 2.You may assume that there are no duplicate edges in the input prerequisites.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <unordered_set>
@@ -31,6 +31,13 @@ Another correct ordering is[0,2,1,3].
 #include <algorithm>
 
 using namespace std;
+
+/*
+ *  This question asks for an order in which prerequisite courses must be taken first. This prerequisites
+ *  relationship reminds one of directed graphs. Then, the problem reduces to find a topological sort order
+ *  of the courses, which would be a DAG if it has a valid offer.
+ *  For this problem, we can use either DFS or BFS solutions.
+ */
 
 // Solution 1 - using DFS, similar with I
 vector<unordered_set<int>> makeGraph2(int numCourses, vector<pair<int, int>>& prerequisites)

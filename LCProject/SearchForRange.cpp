@@ -28,22 +28,17 @@ vector<int> searchRange(vector<int>& nums, int target)
 
 	while (lhs < rhs)
 	{
-		if (nums[mid] == target)
-		{
-			//cout << "break" << endl;
-			break;
-		}
+		if (nums[mid] == target) break;
 		else if (nums[mid] < target) lhs = mid + 1;
 		else rhs = mid - 1;
 		mid = lhs + (rhs - lhs) / 2;
 	}
-	// if target not found
-	//cout << "mid is " << mid << "    Nums[mid] is " << nums[mid] << endl;
+
 	if (nums[mid] != target) return result;
 	lhs = mid;
 	rhs = mid;
-	while (lhs >= 0 && nums[lhs] == nums[mid]) lhs--;
-	while (rhs <= n-1 && nums[rhs] == nums[mid]) rhs++;
+	while (lhs >= 0 && nums[lhs] == nums[mid]) lhs--;     // expand to left
+	while (rhs <= n-1 && nums[rhs] == nums[mid]) rhs++;   // expand to right
 	result[0] = lhs + 1;
 	result[1] = rhs - 1;
 	return result;

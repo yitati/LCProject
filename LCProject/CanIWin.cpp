@@ -53,7 +53,7 @@ bool memdfs_canWin(vector<bool>& visited, unordered_map<int, bool>& memTable, in
 	int key = getKey(visited);  // check which number is not visited
 	if(!memTable.count(key))
 	{
-		for(int i=1; i<visited.size(); i++) // i ranges from [1, maxChoosableInteger]
+		for(unsigned int i=1; i<visited.size(); i++) // i ranges from [1, maxChoosableInteger]
 		{
 			if(visited[i]) continue;
 			visited[i] = true;

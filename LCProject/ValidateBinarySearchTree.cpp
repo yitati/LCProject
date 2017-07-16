@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #98 Validate Binary Search Tree
+* company tag: Facebook
 * Given a binary tree, determine if it is a valid binary search tree (BST).
 * Assume a BST is defined as follows:
 * The left subtree of a node contains only nodes with keys less than the node's key.
@@ -17,8 +17,7 @@ Example 2:
    / \
   2   3
 Binary tree [1,2,3], return false.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 

@@ -1,16 +1,16 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #111 Minimum Depth Of Binary Tree
+* company tag: Facebook
 * Given a binary tree, find its minimum depth.
 * The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <queue>
 
 using namespace std;
 
+// since we need to get the min depth, simply use BFS
 int minDepth(TreeNode* root) 
 {
 	if (root == NULL) return 0;

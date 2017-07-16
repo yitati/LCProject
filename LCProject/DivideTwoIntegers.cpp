@@ -1,10 +1,9 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #29 Divide Two Integers
+* company tag: Facebook
 * Divide two integers without using multiplication, division and mod operator.
 * If it is overflow, return MAX_INT.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <algorithm>
 #include <iostream>
@@ -15,25 +14,27 @@ using namespace std;
 // always substract the divisor, but when divisor not large enough, shift it to left
 int divide(int dividend, int divisor) 
 {
-	long long result = 0, did = labs(dividend), div = labs(divisor);
-	int sign = ((dividend > 0) ^ (divisor > 0) == 0) ? 1 : -1;
-	if (!divisor || (dividend == INT_MIN && divisor == -1)) return INT_MAX;
-	int quotient = 1;
-	while (did >= div)
-	{
-		while (div+div < did)
-		{
-			div <<= 1;
-			quotient += quotient;
-		}
-		result += quotient;
-		did -= div;
-		quotient = 1;
-		div = abs(divisor);
-	}
-	
-	result *= sign;
-	return result;
+    long long result = 0, did = labs(dividend), div = labs(divisor);
+    // get sign
+    int sign = ((dividend > 0)^(divisor > 0) == 1)? -1 : 1;
+    // corner cases, 1.when divisor is 0 or 2. divident = INT_MAX and divisor = -1
+    if(divisor == 0 || (dividend == INT_MIN && divisor == -1)) return INT_MAX;
+
+    while(did >= div)
+    {
+        int quotient = 1;
+
+        while(div+div < did)
+        {
+            div <<= 1;   // multiply by 2
+            quotient <<= 1;
+        }
+        result += quotient;
+        did -= div;
+        div = labs(divisor);
+    }
+    result *= sign;
+    return result;
 }
 
 /*

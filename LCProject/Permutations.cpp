@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #46 Permutations
-* company tag: LinkedIn
+* company tag: Facebook, LinkedIn
 * Given a collection of distinct numbers, return all possible permutations.
 
 For example,

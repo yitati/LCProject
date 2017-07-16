@@ -6,7 +6,8 @@
  a = "11"
  b = "1"
  Return "100".
-
+ * Follow-up:
+ * What if we have K such binary to add ?
 *****************************************************************************/
 
 #include <string>

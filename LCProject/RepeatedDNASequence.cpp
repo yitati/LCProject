@@ -1,5 +1,4 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #187 Repeated DNA Sequence
 * company tag: LinkedIn
 * All DNA is composed of a series of nucleotides abbreviated as A, C, G, and T, 
@@ -12,8 +11,7 @@ Given s = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT",
 
 Return:
 ["AAAAACCCCC", "CCCCCAAAAA"].
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <iostream>
 #include <string>
@@ -27,7 +25,7 @@ using namespace std;
 // there are 4 posibilities A, C, G, T then 2 bits is enough to represent the nucleotides
 // then for a sequence of 10 nucleotides, an integer will be enough
 
-// function that will clear off the first 2 bits of an integer (of 20 bits)
+// this funtion gets only the lowest 20 bits of an unsigned integer
 unsigned int eviction(unsigned int x)
 {
 	return x & (0xFFFFF);
@@ -45,7 +43,7 @@ vector<string> findRepeatedDnaSequences(string s)
 {
 	vector<string> result;
 	if (s.length() < 10) return result;
-	unordered_map<unsigned int, int> table;
+	unordered_map<unsigned int, int> table;   // this is to log the 10-letter string sequence and its freq
 	map<char, unsigned int> dict;
 	dict['A'] = 0;
 	dict['C'] = 1;
@@ -53,14 +51,15 @@ vector<string> findRepeatedDnaSequences(string s)
 	dict['T'] = 3;
 	unsigned int curr = 0;
 	// build the hash table
-	for (int i = 0; i < s.length(); i++)
+	for (unsigned int i = 0; i < s.length(); i++)
 	{
 		curr = addition(curr, dict[s[i]]);
 		if (i >= 9)
 		{
 			if(i > 9) curr = eviction(curr);
-			if (table[curr]++ == 1)
+			if (table[curr] == 1)
 			{
+				table[curr]++;
 				result.push_back(s.substr(i - 9, 10));
 			}
 		}
