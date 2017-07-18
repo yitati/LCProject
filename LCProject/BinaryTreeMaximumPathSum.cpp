@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #124 Binary Tree Maximum Path Sum
+* company tag: Facebook
 * Given a binary tree, find the maximum path sum.
 * For this problem, a path is defined as any sequence of nodes from some starting node to
 * any node in the tree along the parent-child connections. The path must contain at least 
@@ -13,8 +13,7 @@ Given the below binary tree,
       / \
      2   3
 Return 6.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <climits>

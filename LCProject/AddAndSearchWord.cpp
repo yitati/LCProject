@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #211 Add and Search Word - Data structure design
+* company tag: Facebook
 * Design a data structure that supports the following two operations: 
 * void addWord(word)
 * bool search(word)
@@ -20,8 +20,7 @@ search("b..") -> true
 
 * Note:
 * You may assume that all words are consist of lowercase letters a-z. 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <unordered_map>

@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #273 Integer To English Words
+* company tag: Facebook
 * Convert a non-negative integer to its english words representation. Given input is guaranteed to be less than 231 - 1. 
 For example,
 123 -> "One Hundred Twenty Three"
@@ -13,9 +13,11 @@ For example,
 * less than 1000 and convert just that chunk to words.
 * 3.There are many edge cases. What are some good test cases? Does your code work with input such as 0? 
 * Or 1000010? (middle chunk is zero and should not be printed out)
-
-*/
-/*****************************************************************************/
+*
+* Follow-up:
+* company tag: Facebook
+* What if we want to add ',' and "and" ?
+*****************************************************************************/
 
 #include <string>
 

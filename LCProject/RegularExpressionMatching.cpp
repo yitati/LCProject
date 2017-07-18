@@ -1,6 +1,6 @@
-﻿/******************************************************************************/
-/*
+﻿/******************************************************************************
 * Question: #10 Regular Expression Matching
+* company tag: Facebook
 * Implement regular expression matching with support for '.' and '*'.
 * '.' Matches any single character.
 * '*' Matches zero or more of the preceding element.
@@ -17,9 +17,7 @@ isMatch("aa", "a*") → true
 isMatch("aa", ".*") → true
 isMatch("ab", ".*") → true
 isMatch("aab", "c*a*b") → true
-
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 // TODO - redo the problem and write detailed instruction of the algorithm
 #include <string>

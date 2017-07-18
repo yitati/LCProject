@@ -10,7 +10,6 @@
  *
  */
 
-// TODO - check this code with BAOBAO
 
 #include <algorithm>
 #include <cstdint>
@@ -42,6 +41,7 @@ int Read(char * buf, int n)
 		while(count < n && p4 < n4)
 		{
 			int offset = min(n-count, n4-p4);
+			// memcpy(dest, source, size)
 			memcpy(buf+count, buf4+p4, offset);
 			count += offset;
 			p4 += offset;
@@ -49,6 +49,8 @@ int Read(char * buf, int n)
 	}
 	return count;
 }
+
+
 
 
 

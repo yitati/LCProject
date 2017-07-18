@@ -22,5 +22,5 @@ using namespace std;
 
 vector<int> kClosest(vector<int> array, int target, int k) 
 {
-	return{};
+	return {};
 }

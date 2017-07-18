@@ -6,7 +6,16 @@ Examples
 2nd fibonacci number is 1
 3rd fibonacci number is 2
 6th fibonacci number is 8
+Follow-up:
+company tag: Facebook
+What is fibonacci%10?
 */
+
+// TODO: discuss this with BAOBAO
+
+#include <iostream>
+
+using namespace std;
 
 long fibonacci(int K)
 {
@@ -18,6 +27,15 @@ long fibonacci(int K)
 		fn_2 = fn_1;
 		fn_1 = fn;
 		K--;
+		cout << "fn is "<< fn << "  fn%10 is "<< fn%10 << endl;
 	}
 	return fn;
 }
+
+/*
+int main(int argc, char ** argv)
+{
+	long x = fibonacci(20);
+	return 0;
+}
+*/

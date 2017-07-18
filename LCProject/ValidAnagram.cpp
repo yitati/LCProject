@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #242 Valid Anagram
+* company tag: Facebook
 * Given two strings s and t, write a function to determine if t is an anagram of s.
 
 For example,
@@ -12,8 +12,7 @@ s = "rat", t = "car", return false.
 
 * Follow up:
 * What if the inputs contain unicode characters? How would you adapt your solution to such case?
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <algorithm>
@@ -26,3 +25,6 @@ bool isAnagram(string s, string t)
 	sort(t.begin(), t.end());
 	return (s == t);
 }
+
+// solution2 - use multiset
+// TODO - confirm with BAOBAO

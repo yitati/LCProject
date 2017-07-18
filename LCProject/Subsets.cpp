@@ -53,8 +53,31 @@ vector<vector<int>> subsets1(vector<int>& nums)
 
 }
 
-// solution 2: bit manipulation
+// the second dfs solution
+void fillSubsets(vector<vector<int>>& subsets, vector<int>& set, vector<int>& nums, int pos)
+{
+    // at current layer we push the result of last layer
+    subsets.push_back(set);
+    if(pos >= nums.size()) return;
+
+    for(int i=pos; i<nums.size(); i++)
+    {
+        set.push_back(nums[i]);
+        fillSubsets(subsets, set, nums, i+1);
+        set.pop_back();
+    }
+}
+
 vector<vector<int>> subsets2(vector<int>& nums)
+{
+    vector<vector<int>> subsets;
+    vector<int> set;
+    fillSubsets(subsets, set, nums, 0);
+    return subsets;
+}
+
+// solution 2: bit manipulation
+vector<vector<int>> subsets3(vector<int>& nums)
 {
 	sort(nums.begin(), nums.end());
 	int n = pow(2, nums.size());

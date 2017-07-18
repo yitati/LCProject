@@ -13,6 +13,10 @@ Minimum window is "BANC".
 * If there is no such window in S that covers all characters in T, return the empty string "".
 * If there are multiple such windows, you are guaranteed that there will always be only one unique minimum
 * window in S.
+*
+* Similar problem:
+* LC340 Longest Substring with at most K distinct characters
+* All Anagram
 *****************************************************************************/
 
 #include <string>

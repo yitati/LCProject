@@ -1,5 +1,4 @@
-﻿/******************************************************************************/
-/*
+﻿/******************************************************************************
 * Question: #303 Range Sum Query - Immutable
 * Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.
 
@@ -16,8 +15,7 @@ sumRange(0, 5) -> -3
 * Note:
 * 1.You may assume that the array does not change.
 * 2.There are many calls to sumRange function.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <unordered_map>

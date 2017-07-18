@@ -28,7 +28,6 @@ void letterMobile_dfs(string & digits, int idx, string & result, vector<string> 
 	}
 	int k = digits[idx]-'0';
 	string curr = dict[k];
-	cout << curr << endl;
 	for (int i = 0; i < curr.length(); i++)
 	{
 		result.push_back(curr[i]);

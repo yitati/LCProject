@@ -1,5 +1,4 @@
-﻿/******************************************************************************/
-/**
+﻿/******************************************************************************
 * Question: #215 Kth Largest Element in an Array
 * Find the kth largest element in an unsorted array. Note that it is the kth largest element 
 * in the sorted order, not the kth distinct element. 
@@ -9,15 +8,13 @@ Given [3,2,1,5,6,4] and k = 2, return 5.
 
 * Note: 
 * You may assume k is always valid, 1 ≤ k ≤ array's length.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
+#include <iostream>
 #include <vector>
 #include <queue>
 
 using namespace std;
-
-// TODO - discuss with BAOBAO about better solution
 
 /*
  *  Solution 1 :  sort and find
@@ -63,4 +60,50 @@ int findKthLargest_minHeap(vector<int>& nums, int k)
 	return -minHeap.top();
 }
 
+/*
+ * rainbow sort - average O(n) time, worst case O(n^2)
+ */
 
+int findKth_quickSelection(vector<int>& nums, int k, int lhs, int rhs)
+{
+	if(lhs > rhs) return -1;
+	int mid = lhs + (rhs-lhs)/2;
+	int target = nums[mid];
+	// then the nums can be divided into three part
+	int i = lhs, j = rhs, m = lhs;
+	while(m <= j)
+	{
+		if(nums[m] < target)
+		{
+			swap(nums[i++], nums[m++]);
+		}
+		else if(nums[m] > target)
+		{
+			swap(nums[m], nums[j--]);
+		}
+		else m++;
+	}
+
+	if(k >= i+1 && k <= j+1) return nums[k-1];
+	else if(k < i+1)
+	{
+		return findKth_quickSelection(nums, k, lhs, i-1);
+	}
+	else
+	{
+		return findKth_quickSelection(nums, k, j+1, rhs);
+	}
+}
+
+int findKthLargest_QuickSelection(vector<int>& nums, int k)
+{
+	return findKth_quickSelection(nums, k, 0, nums.size()-1);
+}
+
+/*
+int main(int argc, char ** argv)
+{
+	vector<int> nums = {2, 3, 6, 7, 3, 5, 1, 7, 2, 8};
+	cout << findKthLargest_QuickSelection(nums, 100) << endl;
+}
+*/

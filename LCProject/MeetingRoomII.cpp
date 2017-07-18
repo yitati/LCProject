@@ -1,5 +1,6 @@
 /*************************************************************************************
  * Question #253 Meeting Room II
+ * company tag: Facebook
  * Given an array of meeting time intervals consisting of start and end times [[s1, e1], [s2, e2], ...] (si < ei),
  * find the minimum number of conference rooms required.
 
@@ -32,7 +33,7 @@ int minMeetingRooms(vector<Interval>& intervals)
 	int count = 0, maxCount = 0;
 	for(auto& it : timeTable)
 	{
-		if(it.second == 1) count--;   // if one end time overlaps the other start time
+		if(it.second == -1) count--;   // if one end time overlaps the other start time
 		else count++;
 		maxCount = max(maxCount, count);
 	}

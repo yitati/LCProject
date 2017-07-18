@@ -3,6 +3,9 @@
 * company tag: Facebook
 * Divide two integers without using multiplication, division and mod operator.
 * If it is overflow, return MAX_INT.
+* Follow-up:
+* company tag: Facebook
+* What is the remainder?
 *****************************************************************************/
 
 #include <algorithm>
@@ -12,7 +15,7 @@
 using namespace std;
 
 // always substract the divisor, but when divisor not large enough, shift it to left
-int divide(int dividend, int divisor) 
+int divide(int dividend, int divisor, int& remainder)
 {
     long long result = 0, did = labs(dividend), div = labs(divisor);
     // get sign
@@ -33,6 +36,8 @@ int divide(int dividend, int divisor)
         did -= div;
         div = labs(divisor);
     }
+
+    remainder = did;  // TODO: confirm with BAOBAO, this is the final remainder
     result *= sign;
     return result;
 }

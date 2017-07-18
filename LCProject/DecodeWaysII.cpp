@@ -32,8 +32,6 @@ using namespace std;
 
 #define MAXRANGE    1000000007
 
-// TODO - discuss this with BAOBAO
-
 /*
  *  1. For any string s logner than 2, we can decode either the last 2 char as a whole or the
  *  last 1 char. So

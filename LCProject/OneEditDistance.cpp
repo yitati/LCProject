@@ -1,9 +1,10 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #161 One Edit Distance
 * Given two strings S and T, determine if they are both one edit distance apart.
-*/
-/*****************************************************************************/
+* Follow-up:
+* If not giving two strings but give you a next() to call the next char. and next() returns 0
+* if reaching end of string, then how to do this problem?
+*****************************************************************************/
 
 #include <string>
 
@@ -30,3 +31,5 @@ bool isOneEditDistance(string s, string t) {
 	// !! all previous chars are same
 	return s.length() - t.length() == 1 || t.length() - s.length() == 1;
 }
+
+

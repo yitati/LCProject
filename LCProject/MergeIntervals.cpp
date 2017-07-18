@@ -1,15 +1,19 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #56 Merge Intervals
-* company tag: LinkedIn
+* company tag: Facebook, LinkedIn
 * Given a collection of intervals, merge all overlapping intervals.
 
 For example,
 Given [1,3],[2,6],[8,10],[15,18],
 return [1,6],[8,10],[15,18].
 
-*/
-/*****************************************************************************/
+* Follow-up:
+* 1. What is the total range that the merged interval covers? - merge and sum up
+* 2. How to deal with 2-D intervals?
+* company tag: Facebook
+*****************************************************************************/
+
+// TODO - how to deal with 2D intervals merge
 
 #include <algorithm>
 #include <vector>
