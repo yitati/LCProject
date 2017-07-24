@@ -1,5 +1,4 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #117 Populating Next Right Pointers In Each Node II
 * Follow up for problem "Populating Next Right Pointers in Each Node".
 * What if the given tree could be any binary tree? Would your previous solution still work?
@@ -19,7 +18,11 @@ After calling your function, the tree should look like:
       2 -> 3 -> NULL
      / \    \
     4-> 5 -> 7 -> NULL
-/*****************************************************************************/
+
+ * Follow-up:
+ * company tag: Facebook
+ * What if we need to link the last node to the next layer first?
+*****************************************************************************/
 
 #include "BST.h"
 
@@ -46,6 +49,8 @@ void connect(TreeLinkNode *root) {
 			}
 			curr = curr->next;
 		}
+		// if follow-up
+		// curr->next = nextLayer;
 		curr = nextLayer;
 		while (nextLayer)
 		{

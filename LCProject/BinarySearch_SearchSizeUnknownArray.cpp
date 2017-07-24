@@ -1,6 +1,7 @@
 /*
-Given a integer dictionary a of unknown size, where the numbers in the dictionary are sorted in ascending order,
-determine if a given target inteer T is in the dictionary. Return the index of T in A, return -1 if T is not in A.
+Given a integer dictionary a of unknown size, where the numbers in the dictionary are sorted
+in ascending order, determine if a given target inteer T is in the dictionary.
+Return the index of T in A, return -1 if T is not in A.
 */
 
 #include <iostream>

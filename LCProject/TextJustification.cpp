@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #68 Text Justification
-* company tag: LinkedIn
+* company tag: Facebook, LinkedIn
 * Given an array of words and a length L, format the text such that each line has exactly L characters and 
 * is fully (left and right) justified. 
 * You should pack your words in a greedy approach; that is, pack as many words as you can in each line. 
@@ -24,6 +24,9 @@ Return the formatted lines as:
 ]
 
 * Note: Each word is guaranteed not to exceed L in length. 
+* Follow-up:
+* company tag: Facebook
+* What if we need to add page number and total number of pages at each end of line?
 *****************************************************************************/
 
 #include <vector>

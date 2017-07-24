@@ -1,5 +1,6 @@
 /***********************************************************************************
  * Question #560 Subarray Sum Equals K
+ * company tag: Salseforce
  * Given an array of integers and an integer k, you need to find the total number of continuous
  * subarrays whose sum equals to k.
 
@@ -11,7 +12,15 @@ Output: 2
  * Note:
  * 1. The length of the array is in range [1, 20,000].
  * 2. The range of numbers in the array is [-1000, 1000] and the range of the integer k is [-1e7, 1e7]
+ *
+ * Follow-up
+ * company tag: Salseforce
+ * Given a string and every char has its weight. Find the substring has sum of weight that is
+ * closest to k (but smaller than k).
  ***********************************************************************************/
+
+//TODO - confirm with BAOBAO for follow up
+
 
 #include <vector>
 #include <unordered_map>
@@ -34,5 +43,10 @@ int subarraySum(vector<int>& nums, int k)
 	return count;
 }
 
-
+/*
+ * Follow-up solution:
+ * 1. First do prefix sum for the weighted string.
+ * 2. Instead of using unordered_map we can use map (ordered) and find upper_bound()
+ *
+ */
 

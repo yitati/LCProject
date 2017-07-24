@@ -1,5 +1,4 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #151 Reverse Words In A String
 * Given an input string, reverse the string word by word. 
 
@@ -17,8 +16,7 @@ Update (2015-02-12):
 * Yes. However, your reversed string should not contain leading or trailing spaces.
 * How about multiple spaces between two words?
 * Reduce them to a single space in the reversed string.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <iostream>

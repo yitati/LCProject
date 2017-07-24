@@ -1,15 +1,18 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #146 LRU Cache
+* company tag: Salseforce, Facebook
 * Design and implement a data structure for Least Recently Used (LRU) cache. 
 * It should support the following operations: get and put. 
 * get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
 * put(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, 
 * it should invalidate the least recently used item before inserting a new item. 
 * Follow up:
+* company tag: Facebook
 * Could you do both operations in O(1) time complexity?
-*/
-/*****************************************************************************/
+* company tag: Salseforce
+* How to better design for template? How to better design put(k, v) and get(k) to handle error?
+* How to design the LRU so it can be thread-safe?
+*****************************************************************************/
 
 #include <unordered_map>
 

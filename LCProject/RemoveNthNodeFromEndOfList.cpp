@@ -14,29 +14,31 @@ After removing the second node from the end, the linked list becomes 1->2->3->5.
 
 using namespace std;
 
+// one path solution - keep a fast pointer and a slow pointer
+// keep the distance between them to be n+1
 ListNode* removeNthFromEnd(ListNode* head, int n) 
 {
-	if (head == NULL) return NULL;
-	ListNode * dummy = new ListNode(0);
-	dummy->next = head;
-	ListNode * ptr = head;
-	int len = 0;
-	while (ptr) 
-	{
-		ptr = ptr->next; 
-		len++;
-	}
-	// can not remove dummy 
-	if (n > len) return head;
-	int k = len - n;
-	ptr = dummy;
-	while (k) { ptr = ptr->next; k--; }
-	ListNode * tmp = ptr->next;
-	ptr->next = tmp->next;
-	delete tmp;
-	head = dummy->next;
-	delete dummy;
-	return head;
+    if(!head) return NULL;
+    ListNode* dummy = new ListNode(0);
+    dummy->next = head;
+    ListNode* fast = dummy;
+    ListNode* slow = dummy;
+    while(n >= 0 && fast)
+    {
+        fast = fast->next;
+        n--;
+    }
+    while(fast)
+    {
+        slow = slow->next;
+        fast = fast->next;
+    }
+    ListNode* toDelete = slow->next;
+    slow->next = toDelete->next;
+    delete toDelete;
+    head = dummy->next;
+    delete dummy;
+    return head;
 }
 
 /*

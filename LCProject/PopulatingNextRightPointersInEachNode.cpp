@@ -1,5 +1,4 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #116 Populating Next Right Pointers in Each Node
 * Given a binary tree
 
@@ -15,7 +14,8 @@
 
 * Note:
 * You may only use constant extra space.
-* You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent has two children).
+* You may assume that it is a perfect binary tree (ie, all leaves are at the same level, and every parent
+* has two children).
 For example,
 Given the following perfect binary tree,
          1
@@ -29,7 +29,11 @@ After calling your function, the tree should look like:
       2 -> 3 -> NULL
      / \  / \
     4->5->6->7 -> NULL
-/*****************************************************************************/
+
+ * Follow-up:
+ * company tag: Facebook
+ * What if we need to link the last one in each layer to the first one in next layer?
+*****************************************************************************/
 
 #include "BST.h"
 #include <queue>
@@ -67,6 +71,26 @@ void connect2(TreeLinkNode *root)
 			if (curr->next) curr->right->next = curr->next->left;
 			curr = curr->next;
 		}
+		curr = nextLayer;
+		nextLayer = curr->left;
+	}
+}
+
+void connect3_linkToNextlayer(TreeLinkNode* root)
+{
+	if(!root || (!root->left && !root->right)) return;
+	TreeLinkNode* curr = root;
+	TreeLinkNode* nextLayer = curr->left;
+	while(nextLayer)
+	{
+		// loop curr layer
+		while(curr)
+		{
+			curr->left->next = curr->right;
+			if(curr->next) curr->right->next = curr->next->left;
+			curr = curr->next;
+		}
+		curr->next = nextLayer;
 		curr = nextLayer;
 		nextLayer = curr->left;
 	}

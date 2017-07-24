@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #38 Count And Say
+* company tag: Salseforce
 * The count-and-say sequence is the sequence of integers beginning as follows:
 * 1, 11, 21, 1211, 111221, ...
 
@@ -10,8 +10,7 @@
 * Given an integer n, generate the nth sequence.
 
 * Note: The sequence of integers will be represented as a string.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <queue>
