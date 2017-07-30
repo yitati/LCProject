@@ -12,10 +12,11 @@ return "blue is sky the".
  ***********************************************************************************************/
 
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
-void reverseWords(string &s)
+void reverseWordsInString(string &s)
 {
 	// first reverse the whole string
 	reverse(s.begin(), s.end());

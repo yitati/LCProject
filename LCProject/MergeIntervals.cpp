@@ -38,3 +38,38 @@ vector<Interval> merge(vector<Interval>& intervals)
 	return result;
 
 }
+
+//////////////////////////////////////////// division /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+/*
+ * design a class to implement following function for a vector of interval input
+ * - addInterval(int start, int end) merge a new interval
+ * - getTotalCoverage() get total coverage of the merged interval
+ */
+
+class IntervalManager{
+public:
+	IntervalManager(){
+		coverage = 0;
+	}
+
+	IntervalManager(vector<Interval> input){
+		intervals = input;
+		for(auto interval : input){
+			coverage += interval.end - interval.start;
+		}
+	}
+
+	/* in-place merge new interval */
+	void addInterval(int start, int end){
+
+	}
+
+	int getCoverage(){
+
+	}
+
+private:
+	vector<Interval> intervals;
+	int coverage;
+};

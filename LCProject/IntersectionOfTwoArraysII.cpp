@@ -42,6 +42,7 @@ vector<int> intersectionII(vector<int>& nums1, vector<int>& nums2)
         else if(nums1[i] > nums2[j]) j++;
         else
         {
+        	// push the element as long as they are equal
             result.push_back(nums1[i]);
             i++;
             j++;
@@ -50,11 +51,19 @@ vector<int> intersectionII(vector<int>& nums1, vector<int>& nums2)
     return result;
 }
 
+/*
+ * Hashset solution:
+ * Keep short array in front and long array in the back
+ * m - length of the short array
+ * n - length of the long array
+ *
+ */
 vector<int> intersect(vector<int>& nums1, vector<int>& nums2) 
 {
 	if (nums1.size() > nums2.size()) return intersect(nums2, nums1);
 	vector<int> result;
 	unordered_map<int, int>table;
+	// map the long array O(m)
 	for (int i = 0; i < nums1.size(); i++)
 	{
 		table[nums1[i]]++;

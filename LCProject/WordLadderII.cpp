@@ -34,6 +34,12 @@ return its length 5.
 
 using namespace std;
 
+// TODO - add BAOBAO keyword to make high priority
+
+/*
+ * the most important point of calculating the ladder correctly is to dedup
+ */
+
 vector<string> getPathStrings(string beginWord, vector<int> & result, vector<string> & wordList)
 {
 	vector<string> one;

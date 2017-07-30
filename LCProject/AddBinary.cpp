@@ -12,9 +12,11 @@
 *****************************************************************************/
 
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
+// keep a as the longer one and keep adding from back to front
 string addBinary(string a, string b)
 {
     int len1 = a.length(), len2 = b.length(), BASE = 2;
@@ -34,5 +36,30 @@ string addBinary(string a, string b)
     int i = 0;
     while(i < len1 && result[i] == '0') i++;
     return result.substr(i);
-    
+}
+
+// if we don't need to do this in place
+string addBinaryWithBase(string s1, string s2, int BASE)
+{
+	// check for empty
+	if(s1.empty()) return s2;
+	if(s2.empty()) return s1;
+	// reverse string
+	reverse(s1.begin(), s1.end());
+	reverse(s2.begin(), s2.end());
+	// add from begin to end
+	string result;
+	int i=0, carry = 0;
+	while(i < s1.length() || i < s2.length() || carry > 0)
+	{
+		int opt1 = i < s1.length() ? s1[i]-'0' : 0;
+		int opt2 = i < s2.length() ? s2[i]-'0' : 0;
+		int sum = opt1 + opt2 + carry;
+		int carry = sum/BASE;
+		sum %= BASE;
+		result.push_back(sum);
+	}
+
+	reverse(result.begin(), result.end());
+	return result;
 }

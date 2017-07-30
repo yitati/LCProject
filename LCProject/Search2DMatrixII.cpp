@@ -37,6 +37,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target)
 		return false;
 	}
 
+	// start from the top right conner
 	int x = 0, y = matrix[0].size() - 1;
 	while (x < matrix[0].size() && y >= 0)
 	{

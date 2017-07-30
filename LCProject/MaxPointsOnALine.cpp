@@ -22,40 +22,39 @@ struct Point{
 
 int maxPoints(vector<Point>& points)
 {
-	if (points.empty()) return 0;
-	if (points.size() == 1) return INT_MAX;
+    if(points.empty() || points.size() == 1) return points.size();
 
-	int n = points.size();
-	unordered_map<double, int> slopes;
-	int result = 0, dup = 0, vir = 0, num = 0;
-	double k = 0, b = 0;
-	for (int i = 0; i < n; i++)
-	{
-		slopes.clear();
-		dup = 1;
-		vir = 0;
-		num = 0;
-		for (int j = i + 1; j < n; j++)
-		{
-			double dx = (double)(points[j].x - points[i].x);
-			double dy = (double)(points[j].y - points[i].y);
-			if(dx == 0)
-			{
-				if (dy == 0) dup++;
-				else 
-				{
-					vir++;
-					num = max(num, vir);
-				}
-			}
-			else
-			{
-				double k = (double)(1000 * dy / dx);
-				slopes[k]++;
-				num = max(num, slopes[k]);
-			}
-		}
-		result = max(result, num + dup);
-	}
-	return result;
+    unordered_map<double, int> slope;  // for slope of one line we need to use double
+
+    int vir = 0, dup = 0, num = 0, result = 0;
+    double k = 0;
+
+    for(int i=0; i<points.size(); i++)
+    {
+        // we start with a new point
+        vir = 0;
+        dup = 1;
+        num = 0;
+        slope.clear();
+
+        for(int j=i+1; j<points.size(); j++)
+        {
+            double dx = double(points[j].x - points[i].x);
+            double dy = double(points[j].y - points[i].y);
+
+            if(dx == 0 && dy == 0) dup++; //we found one more duplicates
+            else if(dx == 0)
+            {
+                vir++;
+                num = max(num, vir);
+            }
+            else {
+                double k = 1000*dy/dx;
+                slope[k]++;
+                num = max(num, slope[k]);
+            }
+        }
+        result = max(result, num+dup);
+    }
+    return result;
 }

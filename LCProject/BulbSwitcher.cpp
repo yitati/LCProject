@@ -26,7 +26,7 @@ So you should return 1, because there is only one bulb is on.
 using namespace std;
 
 /*
- * All bulb ends up on if it is switched an odd number of times.
+ * A bulb ends up on if it is switched an odd number of times.
  * Call them bulb 1 to bulb n. Bulb i is switched in round d if and only if d divides i. So bulb
  * i ends up on if and only if it has an odd number of divisors.
  * Divisors come in pairs, like i = 12 has divisors 1 and 12, 2 and , and 3 and 4. Except when i

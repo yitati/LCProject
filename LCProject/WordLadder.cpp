@@ -106,11 +106,13 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 	wordDict.erase(beginWord);
 	wordDict.erase(endWord);
 
+	// use pointers here so we do not to re-code
 	unordered_set<string> * marching;
 	unordered_set<string> * reference;
 
 	while (!forward.empty() && !backward.empty())
 	{
+		// because of concurrency, we can not popping and inserting at the same time
 		unordered_set<string> next;
 
 		if (forward.size() <= backward.size()) // loop the smaller set
@@ -141,7 +143,7 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList)
 					if (wordDict.count(curr))
 					{
 						next.insert(curr);
-						wordDict.erase(curr);
+						wordDict.erase(curr);  // we need to do the dedup here
 					}
 				}
 				curr[i] = ori;

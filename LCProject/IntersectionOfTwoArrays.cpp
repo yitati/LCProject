@@ -1,5 +1,6 @@
 /******************************************************************************
 * Question: #349 Intersecton of Two Arrays
+* company tag: LinkedIn
 * Given two arrays, write a function to compute their intersection.
 
 Example:
@@ -34,6 +35,7 @@ vector<int> intersection1(vector<int>& nums1, vector<int>& nums2)
         else if(nums1[i] > nums2[j]) j++;
         else
         {
+        	// we need to keep only one copy of the intersected element
             if(result.empty() || nums1[i] > result.back())
             {
                 result.push_back(nums1[i]);
@@ -66,6 +68,7 @@ vector<int> findDuplicateInArrays(vector<int> & shortNum, vector<int> & longNum)
 	unordered_set<int> result;
 	int lenShort = shortNum.size();
 	int lenLong = longNum.size();
+	// sort the long array
 	sort(longNum.begin(), longNum.end());
 	for (int target:shortNum)
 	{

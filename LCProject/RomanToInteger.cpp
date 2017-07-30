@@ -3,6 +3,9 @@
 * company tag: Facebook
 * Given a roman numeral, convert it to an integer.
 * Input is guaranteed to be within the range from 1 to 3999.
+* Follow-up:
+* company tag: LinkedIn
+* How to handle error input here? For example, what should we do if we see input "VV"?
 *****************************************************************************/
 
 #include <string>
@@ -42,6 +45,7 @@ int romanToInt(string s)
 			result += 1000;
 			break;
 		default:
+			// here we can handle the error input - we can just ignore it
 			break;
 		}
 	}
