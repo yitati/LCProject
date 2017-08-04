@@ -28,13 +28,18 @@ There are 5 ways to assign symbols to make the sum of nums be target 3.
 #include <vector>
 using namespace std;
 
-// using the dfs solution it is very slow
-// using dp idea : first we denote sp to be sum of all positive numbsers 
-// and sn to be sum of all negative numbers, then sp - sn = target
-// add (sp + sn) at both sides we got sp = (taget + SUM)/2
-// so if we get SUM we turn the problem to find subset sum in a vector
-// Same with LC 419
+/* using the dfs solution it is very slow
+ * using dp idea : first we denote sp to be sum of all positive numbsers
+ * and sn to be sum of all negative numbers, then sp - sn = target
+ * add (sp + sn) at both sides we got sp = (taget + SUM)/2
+ * so if we get SUM we turn the problem to find subset sum in a vector
+ * Same with LC 419
+ */
 
+/*
+ * subsum function is used to calculate if a subset of array can add up to
+ * a target number.
+ */
 int subSum(vector<int> & nums, int target)
 {
 	vector<int> dp(target + 1, 0);

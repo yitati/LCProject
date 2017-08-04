@@ -50,6 +50,9 @@ int nthSuperUglyNumber_brutalforce(int n, vector<int>& primes)
 	return x;
 }
 
+/*
+ * the meaning for index[j] is the index of the ugly number that just updated by * prime[j]
+ */
 int nthSuperUglyNumber(int n, vector<int>& primes)
 {
 	int k = primes.size();

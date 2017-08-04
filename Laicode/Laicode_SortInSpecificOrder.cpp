@@ -79,7 +79,7 @@ vector<int> sortSpecial_rainbow(vector<int> A1, vector<int> A2)
 }
 
 
-
+/*
 int main(int argc, char ** argv)
 {
 	vector<int> A1 = {2, 1, 2, 5, 7, 1, 9, 3};
@@ -92,6 +92,7 @@ int main(int argc, char ** argv)
 	cout << endl;
 	system("pause");
 }
+*/
 
 
 

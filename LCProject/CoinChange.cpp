@@ -19,8 +19,7 @@ Example 2:
 
 #include <vector>
 #include <algorithm>
-
-// TODO - discuss with BAOBAO
+#include <climits>
 
 using namespace std;
 
@@ -30,6 +29,7 @@ int coinChange(vector<int>& coins, int amount) {
 	vector<int> dp(amount + 1, maxNum);
 	dp[0] = 0;
 
+	// loop the money
 	for (int i = 1; i <= amount; i++)
 	{
 		for (int j = 0; j < coins.size(); j++)
@@ -40,3 +40,4 @@ int coinChange(vector<int>& coins, int amount) {
 
 	return dp[amount] > amount ? -1 : dp[amount];
 }
+

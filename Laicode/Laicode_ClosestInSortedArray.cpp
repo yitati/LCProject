@@ -1,5 +1,6 @@
 /*
-Given a target integer T and an integer array A sorted in ascending order, find the index i in A such that A[i] is closest to T.
+Given a target integer T and an integer array A sorted in ascending order,
+find the index i in A such that A[i] is closest to T.
 
 Assumptions
 There can be duplicate elements in the array, and we can return any of the indices with same value.
@@ -20,7 +21,7 @@ What if A is null or A is of zero length? We should return -1 in this case.
 
 using namespace std;
 
-int solve(vector<int> input, int target)
+int closestInSortedArray(vector<int> input, int target)
 {
 	int res = -1, lhs = 0, rhs = input.size() - 1, closest = INT_MAX;
 	while (lhs <= rhs)

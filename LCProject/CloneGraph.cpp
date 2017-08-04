@@ -55,8 +55,8 @@ UndirectedGraphNode* cloneGraph_bfs(UndirectedGraphNode* node)
 
 /*
  * Solution 2 - DFS
+ * simply map the
  */
-
 static unordered_map<UndirectedGraphNode*, UndirectedGraphNode*> graphMap;
 UndirectedGraphNode* cloneGraph_dfs(UndirectedGraphNode* node)
 {
