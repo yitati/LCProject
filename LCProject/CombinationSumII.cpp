@@ -38,8 +38,10 @@ void combSum_dfs2(vector<vector<int>> & results, vector<int> & result, vector<in
 	}
 	for (int i = level; i < nums.size(); i++)
 	{
+		// dedup in the same layer
 		if (i > level && nums[i] == nums[i - 1]) continue;
 		result.push_back(nums[i]);
+		// since one num can picked only once, so go to next pos
 		combSum_dfs2(results, result, nums, i + 1, sum + nums[i], target);
 		result.pop_back();
 	}

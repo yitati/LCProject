@@ -43,8 +43,6 @@ int longestAscendingSubsequence(vector<int> a)
 	return maxLen;
 }
 
-// TODO TODAY
-
 // Solution 2 - O(nlgn) solution
 /*
  * The idea is that as you iterate the sequence, you keep track of the minimum value a subsequence
@@ -53,3 +51,14 @@ int longestAscendingSubsequence(vector<int> a)
  * we iterate to, we can determine the longest subsequence where it can be appended using binary search.
  * The final answer is the length of the longest subsequence we found so far.
  */
+int LIS_binarySearch(vector<int> a)
+{
+	vector<int> collect;
+	for(int i=0; i<a.size(); i++)
+	{
+		auto it = lower_bound(collect.begin(), collect.end(), a[i]);
+		if(it == collect.end()) collect.push_back(a[i]);
+		else *it = a[i];
+	}
+	return collect.size();
+}

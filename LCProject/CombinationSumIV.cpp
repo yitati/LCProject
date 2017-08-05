@@ -34,6 +34,7 @@ What limitation we need to add to the question to allow negative numbers?
 using namespace std;
 
 // dp solution - samilar to fibonacci
+// this is very similar to subset sum problems
 int combinationSum4(vector<int>& nums, int target)
 {
 	vector<int> dp(target + 1);

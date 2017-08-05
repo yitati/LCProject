@@ -15,6 +15,7 @@ Examples
  */
 
 #include <vector>
+#include <climits>
 
 using namespace std;
 
@@ -23,9 +24,31 @@ using namespace std;
 /*
  * at any point, the amount of rain water trapped is decided by the left
  */
+// Solution 1 - dp, time complexit is O(n) and space complexity is O(n)
+
+
+// Solution 2 - two pointers, time complexity is O(n) and space complexity is O(1)
 int maxTrapped(vector<int> array)
 {
-
+	int lhs = 0, rhs = array.size()-1;
+	int leftMax = INT_MIN, rightMax = INT_MIN;
+	int water = 0;
+	while(lhs < rhs)
+	{
+		if(array[lhs] <= array[rhs])
+		{
+			if(array[lhs] > leftMax) leftMax = array[lhs];
+			else water += leftMax - array[lhs];
+			lhs++;
+		}
+		else
+		{
+			if(array[rhs] >  rightMax) rightMax = array[rhs];
+			else water += rightMax - array[rhs];
+			rhs--;
+		}
+	}
+	return water;
 }
 
 

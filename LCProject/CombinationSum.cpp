@@ -32,6 +32,7 @@ void combSum_dfs(vector<vector<int>> & results, vector<int> & result, vector<int
 	for (int i = level; i<nums.size(); i++)
 	{
 		result.push_back(nums[i]);
+		// next level will start from i (current level) since we can choose one number multiple times
 		combSum_dfs(results, result, nums, i, sum + nums[i], target);
 		result.pop_back();
 	}
