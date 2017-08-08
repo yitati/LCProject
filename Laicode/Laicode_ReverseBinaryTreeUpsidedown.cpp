@@ -30,7 +30,7 @@ is reversed to
 
  */
 
-#include "BST.h"
+#include "LCProject/BST.h"
 
 using namespace std;
 

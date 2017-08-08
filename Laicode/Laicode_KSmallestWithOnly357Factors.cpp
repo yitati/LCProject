@@ -20,6 +20,7 @@ the 5th smallest is 3 ^ 3 * 5 * 7 = 945
 #include <vector>
 #include <climits>
 #include <unordered_set>
+#include <queue>
 
 using namespace std;
 

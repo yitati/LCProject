@@ -45,7 +45,7 @@ The sequence [1, 2, 3, #, #, 4] represents the following binary tree:
 
 */
 
-#include "BST.h"
+#include "LCProject/BST.h"
 #include <climits>
 
 using namespace std;

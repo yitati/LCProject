@@ -32,8 +32,19 @@ two equipment is 1 + 1 = 2, which is minimal.
 
  */
 
-// todo today
+#include <vector>
 
-//vector<int> solve(vector<vector<char>> gym)
+using namespace std;
+
+/*
+ * loop through each of the equipment place and BFS search all the distance to chair
+ * keep one common distance table to mark all distance to every equipment
+ * ! one thing to mark is that for each equipment there should be one seperate table to
+ * mark visited
+ */
+//vector<int> placeToPutChair(vector<vector<char>> gym)
+//{
+//
+//}
 
 

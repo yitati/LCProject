@@ -19,8 +19,6 @@ Examples
 
 using namespace std;
 
-// today
-
 /*
  * at any point, the amount of rain water trapped is decided by the left
  */
