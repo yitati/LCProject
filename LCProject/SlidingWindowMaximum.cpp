@@ -33,7 +33,7 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k)
         while(!maxQueue.empty() && nums[i] >= maxQueue.back().first) maxQueue.pop_back(); // keep poping until max updated
         maxQueue.emplace_back(nums[i], i);
     }
-    for(int i=k; i<nums.size(); i++)
+    for(int i=k; i<nums.size(); i++) // update the deque
     {
         result.push_back(maxQueue.front().first);
         if(!maxQueue.empty() && maxQueue.front().second <= i-k) maxQueue.pop_front();
