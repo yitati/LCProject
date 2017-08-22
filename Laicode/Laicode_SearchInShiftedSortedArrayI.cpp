@@ -21,8 +21,10 @@ What if A is null or A is of zero length? We should return -1 in this case.
 
  */
 
+#include <iostream>
 #include <vector>
 
+// today
 using namespace std;
 
 int searchInShiftedSortedArrayI(vector<int> input, int target)
@@ -34,9 +36,20 @@ int searchInShiftedSortedArrayI(vector<int> input, int target)
 	{
 		int mid = lhs + (rhs - lhs)/2;
 		if(input[mid] == target) return mid;
-		else if
+		else if(input[mid] < target)
+		{
+			if(input[mid] < input[lhs] && target > input[rhs]) rhs = mid-1;
+			else lhs = mid + 1;
+		}
+		else
+		{
+			if(input[mid] > input[rhs] && target < input[lhs]) lhs = mid+1;
+			else rhs = mid-1;
+		}
 	}
+	return -1;
 }
+
 
 
 

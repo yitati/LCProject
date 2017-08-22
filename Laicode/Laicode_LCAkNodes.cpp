@@ -27,7 +27,7 @@ The lowest common ancestor of 2, 3, 14 is 5
 The lowest common ancestor of 2, 3, 9 is 9
  */
 
-#include "LCProject/BST.h"
+#include "../LCProject/BST.h"
 #include <vector>
 #include <unordered_set>
 

@@ -34,19 +34,23 @@ bool canJump(vector<int>& nums)
 
 bool canJump_dp(vector<int>& nums)
 {
-	int n = nums.size();
-	int i = 0, j = 0, maxReach = nums[0];
-	vector<int> dp(n, 0);
-	dp[0] = 1;
-	for (i = 0; i < n; i++)
-	{
-		for (j = 1; j <= nums[i] && i+j <= n-1; j++)
-		{
-			dp[i + j] = 1;
-			if (i + j >= n - 1) return true;
-		}
-	}
-	return (dp[n - 1] == 1);
+    int n = nums.size();
+    if(n == 1) return true;
+    vector<bool> dp(n, false);
+    dp[0] = true;
+    for(int i=0; i < n-1; i++)
+    {
+        if(nums[i] == 0) continue;
+        for(int j=1; j<=nums[i] && i+j <= n-1; j++)
+        {
+            if(dp[i])
+            {
+                if(i+j >= n-1) return true;
+                dp[i+j] = true;
+            }
+        }
+    }
+    return dp[n-1];
 }
 
 /*

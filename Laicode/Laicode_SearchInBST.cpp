@@ -9,7 +9,7 @@ There are no duplicate keys in the binary search tree
 
 */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 
 using namespace std;
 

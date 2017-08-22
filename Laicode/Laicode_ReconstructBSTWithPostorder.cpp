@@ -25,7 +25,7 @@ the corresponding binary search tree is
 
  */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 #include <vector>
 #include <climits>
 

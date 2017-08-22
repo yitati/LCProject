@@ -30,11 +30,13 @@ int strStr(string haystack, string needle)
 	return -1;
 }
 
-int findOccurance(string haystack, int needle)
+/*
+ * return how many times one string appears in another string
+ */
+int findOccurance(string haystack, string needle)
 {
 	int start = 0, i = 0, count = 0;
-	if(haystack.empty()) return needle.empty() ? 1 : 0;
-	if(needle.empty()) return 0;
+	if(haystack.empty() || needle.empty()) return 0;
 	for(start = 0; start + needle.length() <= haystack.length(); start++)
 	{
 		for(i=0; i<needle.size(); i++)

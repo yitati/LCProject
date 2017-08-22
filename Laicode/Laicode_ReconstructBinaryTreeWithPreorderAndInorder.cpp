@@ -27,7 +27,7 @@ the corresponding binary tree is
 
  */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 #include <vector>
 #include <unordered_map>
 

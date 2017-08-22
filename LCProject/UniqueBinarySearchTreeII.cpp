@@ -31,7 +31,6 @@ vector<TreeNode *> generateTrees_recursion(int start, int end)
 
 	for (int i = start; i <= end; i++)
 	{
-
 		vector<TreeNode *> leftTrees = generateTrees_recursion(start, i - 1);
 		vector<TreeNode *> rightTrees = generateTrees_recursion(i + 1, end);
 		for (TreeNode * leftTree : leftTrees)

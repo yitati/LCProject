@@ -1,5 +1,4 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #309 Best Time To Buy And Sell Stock With Cool Down
 * Say you have an array for which the ith element is the price of a given stock on day i.
 * Design an algorithm to find the maximum profit. You may complete as many transactions as you like 
@@ -11,8 +10,7 @@ Example:
 prices = [1, 2, 3, 0, 2]
 maxProfit = 3
 transactions = [buy, sell, cooldown, buy, sell]
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <algorithm>
@@ -20,9 +18,14 @@ transactions = [buy, sell, cooldown, buy, sell]
 
 using namespace std;
 
-// O(n) space dp solution
-// buy[i] = max(buy[i-1], sell[i-2]-prices[i])
-// sell[i] = max(buy[i-1]+prices[i], sell[i])
+/*
+ * dp solution, denote the profit to sell in day i to be sell[i] and
+ * the profit to buy in day i to be buy[i]
+ * then
+ * buy[i] = max(buy[i-1], sell[i-2]-prices[i])
+ * sell[i] = max(sell[i-1], buy[i-1]+prices[i])
+ *
+ */
 
 int maxProfit(vector<int>& prices) 
 {
@@ -31,6 +34,7 @@ int maxProfit(vector<int>& prices)
 	{
 		prev_buy = buy;
 		buy = max(prev_buy, prev_sell - price);
+		// udpate prev_sell later
 		prev_sell = sell;
 		sell = max(prev_buy + price, prev_sell);
 	}

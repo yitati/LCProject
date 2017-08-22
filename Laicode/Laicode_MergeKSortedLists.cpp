@@ -11,7 +11,7 @@ ListOfLists is not null, and none of the lists is null.
 
 #include <vector>
 #include <queue>
-#include "LCProject/ListNode.h"
+#include "../LCProject/ListNode.h"
 
 using namespace std;
 

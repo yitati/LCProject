@@ -36,8 +36,8 @@
 
 using namespace std;
 
-int dx[8] = {-2, -1, 1, 2, 2, 1, -1, -2};
-int dy[8] = {1, 2, 2, 1, -1, -2, -2, -1};
+static int dx[8] = {-2, -1, 1, 2, 2, 1, -1, -2};
+static int dy[8] = {1, 2, 2, 1, -1, -2, -2, -1};
 
 // BFS solution
 // this can be improved by using two-way bfs solution

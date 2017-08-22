@@ -11,7 +11,7 @@ Assumptions
 There are no duplicate keys in the binary search tree
  */
 
-#include "LCProject/BST.h"
+#include "../LCProject/BST.h"
 
 static int getRightMostVal(TreeNode* root){
 	while(root->right){

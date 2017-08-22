@@ -1,5 +1,4 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #319 Bulb Switcher
 * There are n bulbs that are initially off. You first turn on all the bulbs. 
 * Then, you turn off every second bulb. On the third round, you toggle every 
@@ -18,8 +17,7 @@ After third round, the three bulbs are [on, off, off].
 
 So you should return 1, because there is only one bulb is on.
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <cmath>
 

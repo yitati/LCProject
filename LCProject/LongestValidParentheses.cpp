@@ -14,12 +14,11 @@
 
 using namespace std;
 
-// reverse the string, then we can get some overlapped part of the original string
-// and the reversed string
-
-// solution 1 - use stack
-// loop the string and push '(' indices to the stack, then when meeting a ')', pop top if top is '(' indices
-// then what left in stack are the not matched ones
+/*
+ * solution 1 - use stack
+ * loop the string and push '(' indices to the stack, then when meeting a ')', pop top if top is '(' indices
+ * then what left in stack are the not matched ones
+ */
 int longestValidParentheses_stack(string s)
 {
 	stack<int> noMatch;
@@ -56,14 +55,18 @@ int longestValidParentheses_stack(string s)
 	return maxLen;
 }
 
-// solution 2 - dp solution
-// suppose dp[i] denotes the longest length when ending i
-// 1. when s[i] == '(' dp[i] = 0
-// 2. when s[i] == ')' then 
-// - if s[i-1] = '(' dp[i] = dp[i-2] + 2
-// - if s[i-1] == ')' then the index which starts the length ending with i-1 is i-dp[i-1],
-//   so the last one that before this string is i-1-dp[i-1], so if s[i-1-dp[i-1]] == '(' then
-//   dp[i] = dp[i-1] + 2 + dp[i-2-dp[i-1]]
+
+/*
+ * solution 2 - dp solution
+ * suppose dp[i] denotes the longest length when ending i
+ * 1. when s[i] == '(' dp[i] = 0
+ * 2. when s[i] == ')' then
+ * 	- if s[i-1] == '(' dp[i] = dp[i-2] + 2
+ * 	- if s[i-1] == ')' dp[i] = dp[i-1] + 2 + dp[i-2-dp[i-1]]
+ * 	  because the index which starts the length ending with i-1 is i-dp[i-1],
+ * 	  so the last one that before this string is i-1-dp[i-1], so if s[i-1-dp[i-1]] == '(' then
+ * 	  dp[i] = dp[i-1] + 2 + dp[i-2-dp[i-1]]
+ */
 int longestValidParentheses_dp(string s)
 {
 	int len = s.length(), maxLen = 0;

@@ -47,7 +47,7 @@ insert 6, the tree becomes
 
 */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 
 using namespace std;
 

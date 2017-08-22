@@ -17,20 +17,17 @@ using namespace std;
 
 int lengthOfLastWord(string s)
 {
-	if (s.empty()) return 0;
-	int len = s.length(), wordLen = 0, lastLen = 0;
-	for (int i = 0; i < len; i++)
+	int len = 0, lastLen = 0;
+	for(int i=0; i<=s.length(); i++)
 	{
-		if (s[i] == ' ')
+		if(s[i] == ' ' || i == s.length())
 		{
-			if (wordLen > 0)lastLen = wordLen;
-			wordLen = 0;
-			continue;
+			if(len > 0) lastLen = len;
+			len = 0;
 		}
 		else
 		{
-			wordLen++;
-			if (i == len - 1) lastLen = wordLen;
+			len++;
 		}
 	}
 	return lastLen;

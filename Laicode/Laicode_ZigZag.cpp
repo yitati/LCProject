@@ -38,7 +38,7 @@ The sequence [1, 2, 3, #, #, 4] represents the following binary tree:
     4
 */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 #include <vector>
 #include <cstdlib>
 

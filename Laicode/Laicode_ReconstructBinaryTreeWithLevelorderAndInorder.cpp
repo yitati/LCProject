@@ -39,14 +39,13 @@ the corresponding binary tree is
  * information.
  */
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 #include <vector>
 #include <unordered_map>
 
 using namespace std;
 
-TreeNode* buildTreeWithLevelAndInorder(const vector<int>& level,
-		                               unordered_map<int, int>& indexMap)
+TreeNode* buildTreeWithLevelAndInorder(const vector<int>& level, unordered_map<int, int>& indexMap)
 {
 	if(level.empty()) return NULL;
 
