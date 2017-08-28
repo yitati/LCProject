@@ -1,5 +1,6 @@
 /******************************************************************************
 * Question: #116 Populating Next Right Pointers in Each Node
+* company tag: Facebook
 * Given a binary tree
 
     struct TreeLinkNode {

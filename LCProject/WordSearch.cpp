@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #79 Word Search
+* company tag: Facebook
 * Given a 2D board and a word, find if the word exists in the grid.
 
 * The word can be constructed from letters of sequentially adjacent cell, 
@@ -19,8 +19,7 @@ word = "ABCCED", -> returns true,
 word = "SEE", -> returns true,
 word = "ABCB", -> returns false.
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <string>
@@ -30,44 +29,42 @@ using namespace std;
 int dx[4] = { -1, 1, 0, 0 };
 int dy[4] = { 0, 0, -1, 1 };
 
-bool existChar(vector<vector<char>> & board, string word, int level, int r, int c, vector<vector<int>> & visited)
+bool isWordExists(const vector<vector<char>>& board, vector<vector<bool>>& visit, string word, int pos, int r, int c)
 {
-	if (level == word.size() - 1 && board[r][c] == word[level]) return true;
+    if(pos >= word.length())
+    {
+        return true;
+    }
 
-	if (board[r][c] != word[level]) return false;
+    for(int k=0; k<4; k++)
+    {
+        int x = r + dx[k];
+        int y = c + dy[k];
+        if(x < 0 || x >= board.size() || y < 0 || y >= board[0].size() || visit[x][y] || board[x][y] != word[pos]) continue;
+        visit[x][y] = true;
+        if(isWordExists(board, visit, word, pos+1, x, y)) return true;
+        visit[x][y] = false;
+    }
 
-	for (int k = 0; k < 4; k++)
-	{
-		int x = r + dx[k];
-		int y = c + dy[k];
-		if (x < 0 || x >= board.size()) continue;
-		if (y < 0 || y >= board[0].size()) continue;
-		if (visited[x][y] == 1) continue;
-		visited[x][y] = 1;
-		if (existChar(board, word, level + 1, x, y, visited)) return true;
-		visited[x][y] = 0;
-	}
-
-	return false;
+    return false;
 }
 
 bool exist(vector<vector<char>>& board, string word)
 {
-	if (board.size() == 0 || board[0].size() == 0) return false;
-
-	vector<vector<int>> visited(board.size(), vector<int>(board[0].size(), 0));
-
-	for (int i = 0; i < board.size(); i++)
-	{
-		for (int j = 0; j < board[0].size(); j++)
-		{
-			if (board[i][j] == word[0])
-			{
-				visited[i][j] = 1;
-				if (existChar(board, word, 0, i, j, visited)) return true;
-				visited[i][j] = 0;
-			}
-		}
-	}
-	return false;
+    if(board.empty() || board[0].empty() || word.empty()) return false;
+    // since same cell cannot be used twice so we need to mark visited
+    vector<vector<bool>> visit(board.size(), vector<bool>(board[0].size(), false));
+    for(int i=0; i<board.size(); i++)
+    {
+        for(int j=0; j<board[0].size(); j++)
+        {
+            if(board[i][j] == word[0])
+            {
+                visit[i][j] = true;
+                if(isWordExists(board, visit, word, 1, i, j)) return true;
+                visit[i][j] = false;
+            }
+        }
+    }
+    return false;
 }

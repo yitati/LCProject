@@ -11,6 +11,11 @@
 "(a)())()" -> ["(a)()()", "(a())()"]
 ")(" -> [""]
 
+* Follow-up:
+* TODO: BAOBAO
+* company tag: Facebook
+* What if we need to return only one result?
+
  ******************************************************************************************************/
 #include <string>
 #include <vector>

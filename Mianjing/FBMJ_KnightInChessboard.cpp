@@ -82,29 +82,15 @@ int canKnightMove1(int N, int M, int x1, int y1, int x2, int y2)
  * company tag: Facebook
  * 1. If the chessboard is infinate
  * 2. If there are some obstacles in the board and if there is any obstacle in the path, the knight
- * cannot take that move
+ * cannot take that move - use 1 to indicate obstacles and 0 to indicate empty cell
  * 3. Returns bool indecating if the knight can reach the final point or not
  */
 
-/*
- * 	Solution for follow - up
- * 	we need to come up and encapsule a validator helper funtion that could validate each move
- * 	of the knight such as
- */
+// TODO BAOBAO
 
-// assume this is the function provided to check if this point is valid
-bool isObstacle(int i, int j)
+bool canKnightReachDest(vector<vector<int>>& board, int x1, int y1, int x2, int y2)
 {
-	return false;
-}
 
-bool isMoveValid(int r, int c, int k)
-{
-	int x = r + dx[k];
-	int y = c + dy[k];
-
-	// if any obstacle exists in two path
-	// insert validate funtion here
 }
 
 

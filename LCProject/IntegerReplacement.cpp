@@ -43,17 +43,16 @@ using namespace std;
 // if n+1 is power of 4 then do n+1
 // else do n-1
 // but 3 is a exception
-static int c = 0;
 
 int integerReplacement(int n)
 {
-	if (n == 1) return c;
-	if (n == INT_MAX) return 32;
-	if (n == 3) { c += 2; return c; }
-	c++;
-	if (n % 2 == 0) return integerReplacement(n / 2);
-	else if ((n + 1) % 4 == 0) return integerReplacement(n + 1);
-	else return integerReplacement(n - 1);
-
-	return c;
+	if(n == 1) return 0;
+	if(n == INT_MAX) return 32;
+	if(n == 3) return 2;
+	if(n %2 == 0) return 1 + integerReplacement(n/2);
+	else if((n+1)%4 == 0)
+	{
+		return 1 + integerReplacement(n+1);
+	}
+	else return 1 + integerReplacement(n-1);
 }

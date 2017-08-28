@@ -1,13 +1,13 @@
-/*
+/********************************************************************************
  * Question: #69 Sqrt(x)
+ * company tag: Facebook
  * Implement int sqrt(int x).
  * Compute and return the square root of x.
- */
-/*****************************************************************************/
+*****************************************************************************/
 
 
 // This is the Newton
-int mySqrt(int x)
+int mySqrt_newton(int x)
 {
     long r = x;
     while(r*r > x)

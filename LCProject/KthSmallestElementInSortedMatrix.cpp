@@ -115,6 +115,35 @@ int kthSmallest_dfs(vector<vector<int>>& matrix, int k)
 	return -1;
 }
 
+// solution 3 - lambda function comparator
+int kthSmallest_lambda(vector<vector<int>>& matrix, int k)
+{
+    if(matrix.empty() || matrix[0].empty()) return -1;
+    int row = matrix.size(), col = matrix[0].size();
+    auto comp = [&](const MatrixNode& node1, const MatrixNode& node2)->bool{
+        return node1.val > node2.val;
+    };
+    priority_queue<MatrixNode, vector<MatrixNode>, decltype(comp)> minHeap(comp);
+    // initialize the minHeap
+    for(int i=0; i<row; i++)
+    {
+        minHeap.push(MatrixNode(matrix[i][0], i, 0));
+    }
+    // calculate the k the element
+    MatrixNode node(0, 0, 0);
+    while(k > 0)
+    {
+        node = minHeap.top();
+        minHeap.pop();
+        k--;
+        if(node.col + 1 < col)
+        {
+            minHeap.push(MatrixNode(matrix[node.row][node.col+1], node.row, node.col+1));
+        }
+    }
+    return node.val;
+}
+
 /*
 int main(int argc, char ** argv)
 {
