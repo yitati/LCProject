@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #139 Word Break
+* company tag: eBay
 * Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, 
 * determine if s can be segmented into a space-separated sequence of one or more dictionary words. 
 * You may assume the dictionary does not contain duplicate words. 
@@ -11,8 +11,7 @@ dict = ["leet", "code"].
 
 Return true because "leetcode" can be segmented as "leet code". 
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <vector>
@@ -23,7 +22,7 @@ using namespace std;
 bool wordBreak(string s, vector<string>& wordDict)
 {
 	if (s.empty()) return wordDict.empty();
-	// build dictionary
+	// use a set to store all the words
 	unordered_set<string> dict;
 	for (string str : wordDict) dict.insert(str);
 

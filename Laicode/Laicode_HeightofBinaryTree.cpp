@@ -20,6 +20,7 @@ The height of above binary tree is 3.
 
  */
 
+#include "../LCProject/BST.h"
 #include <algorithm>
 
 using namespace std;

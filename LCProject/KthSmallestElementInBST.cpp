@@ -1,6 +1,6 @@
-﻿/******************************************************************************/
-/*
+﻿/******************************************************************************
 * Question: #230 Kth Smallest Element In a BST
+* company tag: eBay
 * Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
 
 * Note:
@@ -14,8 +14,7 @@
 * Try to utilize the property of a BST.
 * What if you could modify the BST node's structure?
 * The optimal runtime complexity is O(height of BST).
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <stack>

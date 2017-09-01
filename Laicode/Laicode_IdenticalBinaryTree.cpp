@@ -27,6 +27,8 @@ are identical trees.
 
  */
 
+#include "../LCProject/BST.h"
+
 bool isIdentical(TreeNode* r1, TreeNode* r2)
 {
 	if(!r1 && !r2) return true;

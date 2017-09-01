@@ -1,6 +1,6 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #264 Ugly Number II
+* company tag: eBay
 * Write a program to find the n-th ugly number.
 * Ugly numbers are positive numbers whose prime factors only include 2, 3, 5. 
 * For example, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12 is the sequence of the first 10 ugly numbers.
@@ -13,8 +13,7 @@
 * The key is how to maintain the order of the ugly numbers. Try a similar approach of merging 
 * from three sorted lists: L1, L2, and L3.
 * Assume you have Uk, the kth ugly number. Then Uk+1 must be Min(L1 * 2, L2 * 3, L3 * 5).
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <queue>
@@ -23,8 +22,6 @@
 #include <functional>
 
 using namespace std;
-
-static priority_queue<int, vector<int>, greater<int>> minHeap;
 
 int nthUglyNumber(int n) 
 {

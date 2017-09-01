@@ -1,7 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #40 Combination Sum II
-* company tag: Facebook
+* company tag: Facebook, eBay
 * Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C 
 * where the candidate numbers sums to T.
 
@@ -19,8 +18,8 @@ A solution set is:
 [2, 6],
 [1, 1, 6]
 ]
-*/
-/*****************************************************************************/
+
+*****************************************************************************/
 
 #include <iostream>
 #include <vector>

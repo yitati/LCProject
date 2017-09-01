@@ -1,5 +1,6 @@
 /*
  * Laicode_Move0ToRightWithOrder.cpp
+ * company tag: eBay
 Given an array of integers, move all the 0s to the right end of the array.
 
 The relative order of the elements in the original array need to be maintained.

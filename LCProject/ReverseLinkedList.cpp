@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #206 Reverse Linked List
-* company tag: Facebook
+* company tag: Facebook, eBay
 * Reverse a singly linked list.
 *****************************************************************************/
 

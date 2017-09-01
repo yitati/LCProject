@@ -20,6 +20,8 @@ Example 2:
 00011
 
 Answer: 3
+ * follow-up: print out the set of all island (with their coordinates)
+ * company tag: eBay
 
 *****************************************************************************/
 

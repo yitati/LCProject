@@ -12,6 +12,8 @@ L = 1 -> 2 -> null, return 2
 
  */
 
+#include "../LCProject/ListNode.h"
+
 int numberOfNodes(ListNode* head)
 {
 	int count = 0;
