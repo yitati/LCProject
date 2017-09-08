@@ -1,7 +1,7 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #155 Min Stack
-* Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+* company tag: eBay
+* Design a stack that suppo rts push, pop, top, and retrieving the minimum element in constant time.
 *  * push(x) -- push element x onto stack
 *  * pop() -- remove the element on top of the stack
 *  * top() -- get the top element
@@ -34,7 +34,7 @@ public:
 	void push(int x) {
 		m_stack.push(x);
 		if (m_minStack.empty()) m_minStack.push(x);
-		else if (m_minStack.top() >= x) m_minStack.push(x);
+		else if (m_minStack.top() >= x) m_minStack.push(x); // take care of the duplicate
 	}
 
 	void pop() {

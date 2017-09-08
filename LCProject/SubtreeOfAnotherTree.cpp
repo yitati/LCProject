@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #572 Subtree Of Another Tree
+* company tag: eBay
 * Given two non-empty binary trees s and t, check whether tree t has exactly the same structure and 
 * node values with a subtree of s. A subtree of s is a tree consists of a node in s and all of this 
 * node's descendants. The tree s could also be considered as a subtree of itself. 
@@ -34,8 +34,7 @@ Given tree t:    4
 1   2
 
 Return false.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 
@@ -53,6 +52,7 @@ bool isTwoSameTree(TreeNode * lhs, TreeNode * rhs)
 	return left && right;
 }
 
+// function that checks if t is subtree of s
 bool isSubtree(TreeNode* s, TreeNode* t)
 {
 	if (!s) return false;

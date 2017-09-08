@@ -1,6 +1,6 @@
 /*
  * MianJing: Total Occurrence of Target
- * company tag: Facebook
+ * company tag: Facebook, eBay
  * Given a target number and an integer array sorted in ascending order. Find the total number of
  * occurrence of target in the array.
 

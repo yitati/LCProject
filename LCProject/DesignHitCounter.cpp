@@ -1,6 +1,6 @@
 /********************************************************************************************
  * DesignHitCounter.cpp
- *
+ * company tag: eBay
  * Design a hit counter which counts the number of hits received in the past 5 minutes.
  *
  * Each function accepts a timestamp parameter (in seconds granularity) and you may assume

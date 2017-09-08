@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #32 Longest Valid Parentheses
-* company tag: Facebook
+* company tag: Facebook, eBay
 * Given a string containing just the characters '(' and ')', find the length of the longest 
 * valid (well-formed) parentheses substring.
 * For "(()", the longest valid parentheses substring is "()", which has length = 2.

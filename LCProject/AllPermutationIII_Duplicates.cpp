@@ -1,4 +1,5 @@
 /*
+ * company tag: eBay
 Given a string with possible duplicate characters, return a list with all permutations of the characters.
 
 Examples

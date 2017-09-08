@@ -10,7 +10,6 @@
 
 using namespace std;
 
-// TODO - today
 
 void fillEquations(vector<string>& results, const vector<int>& nums, int pos, int currVal, string currStr, int target)
 {
@@ -27,7 +26,7 @@ void fillEquations(vector<string>& results, const vector<int>& nums, int pos, in
 	for(int i=pos; i<nums.size(); i++)
 	{
 		nextVal = nextVal*10 + nums[i];
-		if(currVal == 0)
+		if(currStr.empty())
 		{
 			fillEquations(results, nums, i+1, nextVal, to_string(nextVal), target-nextVal);
 		}

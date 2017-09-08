@@ -1,5 +1,6 @@
 /*
  * Laicode_LongestCommonSubstring.cpp
+ * company tag: eBay
 
 Find the longest common substring of two given strings.
 
@@ -18,7 +19,7 @@ S = “abcde”, T = “cdf”, the longest common substring of S and T is “cd”
 using namespace std;
 
 /*
- * a common dp problem, use dp[i+1][j+1] = denote the length of common string ending
+ * a common dp problem, use dp[i+1][j+1] to denote the length of common string ending
  * at s[i] and t[j], then dp[i+1][j+1] = dp[i][j] + 1 if(s[i] == t[j])
  */
 string longestCommon(string s, string t)

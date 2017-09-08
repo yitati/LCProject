@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #128 Longest Consecutive Sequence
-* company tag: Facebook
+* company tag: Facebook, eBay
 * Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 
 For example,

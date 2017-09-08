@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #224 Basic Calculator
-* company tag: Facebook
+* company tag: Facebook, eBay
 * Implement a basic calculator to evaluate a simple expression string.
 * The expression string may contain open ( and closing parentheses ), the plus + or minus sign -, 
 * non-negative integers and empty spaces .

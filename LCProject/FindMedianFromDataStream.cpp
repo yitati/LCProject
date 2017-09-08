@@ -1,6 +1,6 @@
 /******************************************************************************************************
  * Question #295 Find Median From Data Stream
- * company tag: Facebook
+ * company tag: Facebook, eBay
  * Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value.
  * So the median is the mean of the two middle value.
 
@@ -25,13 +25,18 @@ findMedian() -> 2
 
 using namespace std;
 
-// keep two heaps to store numbers
-// small - it is a max heap, will store the smaller half of the numbers
-// large - it is a min heap, will store the larger half of the numbers -  a special trick here
-// to use a max heap to be a min heap is to negate the numbers ans store in maxHeap, so the top
-// will be the smallest in its value before negation
-// also always keep small.size() >= large.size()
-// also we need to store long instead of int to avoid overflowing
+/*
+ * the median of an array of numbers is the middle number if the array has odd number of elements,
+ * or average of the middle two number if we have even number of elements.
+ * Keep two heaps to store numbers
+ * small - it is a max heap, will store the smaller half of the numbers
+ * large - it is the min heap, will store the larger half of the numbers
+ * to avoid makeing special comparators we can use max heap to store negative numbers , so the top
+ * will be the smallest in its value before negation.
+ * One thing to notice is that we want to keep small.size() >= large.size()
+ * Also we need to store long instead of int to avoid overflowing.
+ */
+
 class MedianFinder
 {
 public:
@@ -58,5 +63,4 @@ public:
 private:
     priority_queue<long> small, large;
 };
-
 
