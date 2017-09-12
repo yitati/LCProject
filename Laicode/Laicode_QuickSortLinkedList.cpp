@@ -80,6 +80,7 @@ ListNode* quickSort(ListNode* a)
 	return lhs;
 }
 
+/*
 int main(int argc, char ** argv)
 {
 	vector<int> input = {4, 2, 6, 3, 5};
@@ -87,3 +88,5 @@ int main(int argc, char ** argv)
 	a = quickSort(a);
 	printList(a);
 }
+
+*/

@@ -1,0 +1,1762 @@
+
+================================================================================================
+http://www.1point3acres.com/bbs/thread-192327-1-1.html
+http://www.1point3acres.com/bbs/thread-226030-1-1.html
+http://www.1point3acres.com/bbs/thread-210016-1-1.html
+http://www.1point3acres.com/bbs/thread-189212-1-1.html
+
+
+1. Virtual Function, Class memory layout, C++ multiple inheritance memory layout
+    https://www.evernote.com/shard/s260/sh/dfc7453b-e50f-46c0-b223-196bead364a9/c41f1cea8f38c1802d1941338b03d375
+    http://www.drdobbs.com/cpp/multiple-inheritance-considered-useful/184402074
+    http://blog.csdn.net/haoel/article/details/1948051
+
+    1.
+    一个基类Base1，有一个Virtualfunction virt1()。 一个子类Derived：Base1，override了这个函数。
+    另一个全局函数Global1，输入是Base1指针，返回这个指针指向的virt1。
+    在main里，定义一个Derived指针 d，然后输出，d->virt1(), Global1(d)
+
+    2.
+    一个基类Base2，有一个Virtualfunction virt2()。 一个子类MultipleDerived:Base1, Base2，override了两个函数。
+    另一个全局函数Global2，输入是Base2指针，返回这个指针指向的virt2。
+    在main里，定义一个MultipleDerived指针 md，然后输出，md->virt1(), Global1(md), md->virt2(),Glbal2(md)
+    之前看到地里同学们的面经对这个问题有所准备，但是不清楚到底会问到什么程度。果然到后来都傻眼了。基本上是在讨论compiler应该怎么处理虚函数。
+    首先问两个输出结果是什么。如果要写一个编译器，应该怎么处理虚函数。当然按照网上能查到的知识说了一通。
+    接下来，如果编译器MultipleDerived的datamember跟父类的datamember对调一下会有什么问题？
+    再改，原来virt2是返回一个常数，如果返回的是MultipleDerived的datamember， 然后在Global2里面传入一个Base2的指针，会怎么样？到这基本上就晕了。其实意思可能是，编译器是通过offset来找到datamember的，
+	如果来了个base2指针，那么this会指向Base2开始的地方，也就是第二个vptr的位置，那么再用相同的offset就会跳出去了。然后就讨论怎么解决这个问题，提示了一个办法，又问还有没有别的办法。又顺得他的话讨论了一下。
+
+    Derive de;	   // de object memory has Base1 segment, Base2 segment, Derive-specific segment, each segment has its own vtable and vptr	
+	Base1 *b1 = &de; // b1 points to the Base1 segment of object de, its vptr points to Base1 vtable, with some virtual method overided by Derive
+	Base2 *b2 = &de; // b2 points to the Base2 segment of object de, its vptr points to Base2 vtable, with some virtual method overided by Derive
+    parent pointer can't access child's specific/own method, parent can only access the method that child overide parent's virtual method
+    
+    it is typically a static vtable per class, and each instance has a vptr to the vtable for the class. 
+    
+2. Happy Number
+    LC202
+    https://en.wikipedia.org/wiki/Happy_number
+    class Solution {
+    public:
+        bool isHappy(int n) {
+            unordered_set<int> history;
+            int cur = n;
+            
+            while(cur != 1){
+                history.insert(cur); 
+            	int next = 0;
+            	while(cur > 0){
+            		next += (cur % 10) * (cur % 10);
+            		cur = cur / 10;       		
+            	}
+            	if(history.count(next)) return false;
+            	cur = next;  
+            }
+            
+            return true;
+        }
+    };    
+
+    // O(1) space solution using linked list cycle algo
+    // happy number forms a singly list, while non-happy number forms a loop
+    bool isHappy(int n) {
+        int slow = n, fast = n;
+        
+        while(1){
+            slow = squreSum(slow);
+            fast = squreSum(squreSum(fast));
+            if(slow == 1 || fast == 1) return true;
+            if(slow == fast) return false;
+        }
+        
+        return true;
+    }
+    
+    int squreSum(int n){
+        int sum = 0;
+        while(n > 0){
+            sum += (n % 10) * (n % 10);
+            n /= 10;
+        }
+        return sum;
+    }
+
+    Earlier posts gave the algorithm but did not explain why it is valid mathematically, and this is what this post is about: present a "short" mathematical proof.
+
+    First of all, it is easy to argue that starting from a number I, if some value - say a - appears again during the process after k steps, the initial number I 
+	
+	cannot be a happy number. Because a will continuously become a after every k steps.
+
+    Therefore, as long as we can show that there is a loop after running the process continuously, the number is not a happy number.
+
+    There is another detail not clarified yet: For any non-happy number, will it definitely end up with a loop during the process? 
+	
+	This is important, because it is possible for a non-happy number to follow the process endlessly while having no loop.
+
+    To show that a non-happy number will definitely generate a loop, we only need to show that for any non-happy number, all outcomes during the process 
+	
+	are bounded by some large but finite integer N. 
+	
+	If all outcomes can only be in a finite set (2,N], and since there are infinitely many outcomes for a non-happy number, 
+	
+	there has to be at least one duplicate, meaning a loop!
+
+    Suppose after a couple of processes, we end up with a large outcome O1 with D digits where D is kind of large, say D>=4, i.e., O1 > 999 
+	
+	(If we cannot even reach such a large outcome, it means all outcomes are bounded by 999 ==> loop exists). 
+	
+	We can easily see that after processing O1, the new outcome O2 can be at most 9^2*D < 100D, meaning that O2 can have at most 2+d(D) digits, 
+	
+	where d(D) is the number of digits D have. It is obvious that 2+d(D) < D. We can further argue that O1 is the maximum (or boundary) of all outcomes afterwards. 
+	
+	This can be shown by contradictory: Suppose after some steps, we reach another large number O3 > O1. 
+	
+	This means we process on some number W <= 999 that yields O3. However, this cannot happen because the outcome of W can be at most 9^2*3 < 300 < O1.
+
+    https://en.wikipedia.org/wiki/Happy_number
+
+    Math prove
+    1. if 1 appears in sequence, then a number is happy
+    2. if loop/duplicate appears in sequence, then it must not happy. BUT is it all non-happy number have loop?
+    3. a seed num will have infinite sequence, if we can approve value in seqence in bounded, then there must be a duplicate/loop
+    4. let's take a 3-digit number as an checkpoint
+        if value in seqence can't reach 3-digit num, then it's bounded
+        if it can reach 3-digit num, it can only go descendingly, why?
+            - the max next num of 3-digit num, is from 3-digit num 999, which is 81*3=243, smaller than 999
+            - that means the value in sequence can never exceed 999, so sum of square seqence is bounded, so must have loop
+            - if a seed num ends up looping 1 then it's a happy number, it ends up looping other num, then it's non-happy
+
+    
+    我是用detected cycle 方法写的，他的问题基本上是围绕我这个方法问的。假如有一个数每一次计算都是一个新的number， memory不够怎么办。
+	会不会有找不出来的情况。memory足够的情况怎么证明一定找得到，我说因为大的数每一次计算会缩小，最后到达一个范围。然后让我证明，证完让我求出那个范围的临界值……大概是这样
+    
+DONE 3.  画圆
+
+    这个题目说起来简单，一个简单的循环加对称就完了，但是
+    follow up是很多的，关键有3点，
+    1 - 当r很小，如r==3时，如何多画几个点，使他尽量多画一些点，这些点可能不exactly在圆上，但是有这些点要比孤零零的一个圆四个点要好很多
+    2 - performance，尽量减少乘法以及开方的使用数量
+        （1）x从r变到0.717r 要比从0变到0.717r可以多画几个点， 
+        （2）终止条件可以写成for(x=0; x<y;x++ ),这样就可以少用一次乘法或开方
+        （3）x加1之后的y只有两种可能，要么是和上次的y相等，要么是减去1，因为在这段范围内的圆斜率是小于1的，所以这里又可以少用一次乘法。
+    最终版本的代码里面，只用了一次乘法
+    
+    注意事项/需要你思考：
+    1. 如何高效地计算像素点的位置?
+    2. 是否可以只计圆上一部分像素的位置，其余像素用极其简单的数学计算得到？（提示：四个象限，1/8）
+    3. x坐标是否每次都加1？y坐标是否每次都加1？为什么？ 
+    4. 当一圆上的一个点的理论值不是整数时，要如何取整？舍去？补足？还是四舍五入？
+    5. 如何不用开根号sart()函数？
+    6. 如何不用取绝对值？（提示：理论值是否一定在两个整数之间？）
+    7. 下一次画点的像素点候选位置有几个？
+    8. 下一次画点的像素点的候选位置可否根据上一次的点计算出来？
+    9. 下一次画点的像素点的候选位置口否不用求平方就直接根据上一次的点计算出来？
+
+    技术二面里的9个小问题是我抛砖引玉请可为思考的，自己实际想一想，写写代码，应该就能想出来答案。我当时也没看过面经，第一遍写出来的时候写的不是最优的，但在现场写代码的时候对几个可能优化的地方都做了标注“我稍后会想一想这里能不能优化”。
+    最终我的代码没有使用sqrt；没有使用abs或者变相用if else、...?...:... 来求绝对值。而是直接可以根据理论性质判断“这个数一定是负的，所以直接取负就可以得到绝对值了”；只在循环体外有一次乘法运算，循环体内没有乘法或除法。
+    
+    // My code, basic solution
+    void drawCircle(int r){
+        int center_x = r, center_y = r;
+        int diameter = 2 * r + 1;
+        vector<vector<char>> board(diameter, vector<char>(diameter, '.'));
+        board[center_y][center_x] = 'x';
+        
+        int rsqu = r * r, degree45 = (ceil)(r / sqrt(2)), y = r;
+        for(int x = 0; x <= degree45; x++){
+            // solution 1: if sqrt() is not available, next y maybe y, y-1, y-2... 
+            int tmpdist = x * x - rsqu;
+            y = abs(tmpdist + pow(y, 2)) < abs(tmpdist + pow(y - 1, 2)) ? y : y-1; 
+                    
+            // solution 2: using sqrt, get new optimal y every time
+            //int y = (int)round(sqrt(rsqu - x * x));
+            board[center_y - y][center_x + x] = 'X';
+            board[center_y - x][center_x + y] = 'X';
+            
+            board[center_y + y][center_x + x] = 'X';
+            board[center_y + x][center_x + y] = 'X';
+            
+            board[center_y - y][center_x - x] = 'X';
+            board[center_y - x][center_x - y] = 'X';
+            
+            board[center_y + y][center_x - x] = 'X'; 
+            board[center_y + x][center_x - y] = 'X'; 
+        }
+        
+        for(int i=0; i<diameter; i++){
+            for(int j=0; j<diameter; j++){
+                cout << board[i][j] << " ";
+            }
+            cout << endl;
+        }   
+    }
+    
+    // Follow up: increase the density of circle line
+    for(int x = 0, y = r; x <= r; x++){
+        // solution 1: if sqrt() is not available, next y maybe y, y-1, y-2... 
+        //y = abs(dist + pow(y, 2)) < abs(dist + pow(y - 1, 2)) ? y : y-1; // this is not so accurate
+        int tmpdist = x * x - r * r;
+        int cur_dist = abs(tmpdist + pow(y, 2));
+        queue<int> ys; 
+        while(y >= 0){
+            ys.push(y);
+            int next_dist = abs(tmpdist + pow(y-1, 2));
+            if(y == 0 || next_dist > cur_dist) break;
+            y--;
+        }
+                
+        // solution 1: using sqrt, get new optimal y every time
+        //y = (int)round(sqrt(r*r - x*x));
+        while(!ys.empty()){
+            int cur_y = ys.front(); ys.pop();
+            board[center_y - cur_y][center_x + x] = '@';
+            board[center_y + cur_y][center_x + x] = '@';
+            board[center_y - cur_y][center_x - x] = '@';
+            board[center_y + cur_y][center_x - x] = '@'; 
+        }
+    }
+    
+    Midpoint circle algorithm
+    https://en.wikipedia.org/wiki/Midpoint_circle_algorithm
+    
+    void drawCircle(int r){
+        int center_x = r, center_y = r;
+        int diameter = 2 * r + 1;
+        vector<vector<char>> board(diameter, vector<char>(diameter, '.'));
+        board[center_y][center_x] = 'x';
+        
+        int x = 0, y = r;
+        int prevMidStatus = 0;
+        while(y >= x){
+            
+            board[center_y - y][center_x + x] = 'X';
+            board[center_y - x][center_x + y] = 'X';
+            
+            board[center_y + y][center_x + x] = 'X';
+            board[center_y + x][center_x + y] = 'X';
+            
+            board[center_y - y][center_x - x] = 'X';
+            board[center_y - x][center_x - y] = 'X';
+            
+            board[center_y + y][center_x - x] = 'X'; 
+            board[center_y + x][center_x - y] = 'X'; 
+            
+            // Solution 1 : Naive midpoint algo, right solution without sqrt and abs, but still not best
+            // next point could be (x + 1, y) or (x + 1, y - 1), mid point M is(x + 1, y - 0.5)
+            // if M is inside circle, then choose (x + 1, y), if M is outside, choose (x + 1, y - 1)
+            //int midStatus = pow(x + 1, 2) + pow(y - 0.5, 2) - r * r;
+            //if(midStatus > 0) y--;
+            //x++;
+            
+            // Solution 2 : Midpoint algo, derive cur midStatus from previous midStatus, save pow()
+            int curMidStatus;
+            // meaning last time (x, y) is chosen, so next point is (x+1, y) or (x+1, y-1)
+            // F(M2) - F(M1) = F([x+1][y-0.5]) - F([x][y-0.5]) = 2x+1
+            if(prevMidStatus <= 0) 
+                curMidStatus = prevMidStatus + 2*x + 1;
+            // meaning last time (x, y-1) is chosen, so next point is (x+1, y-1) or (x+1, y-2)
+            // F(M2) - F(M1) = F([x+1][y-1.5]) - F([x][y-0.5]) = 2x-2y+3
+            else 
+                curMidStatus = prevMidStatus + 2*x - 2*y + 3;
+            
+            if(curMidStatus > 0) y--;
+            x++;
+            prevMidStatus = curMidStatus;
+        }
+        
+        for(int i=0; i<diameter; i++){
+            for(int j=0; j<diameter; j++){
+                cout << board[i][j] << " ";
+            }
+            cout << endl;
+        }   
+    }
+    
+4. BuddyBitMap, ClearBits和SetBits
+    这是一个二维数组，不是一个heap(heap就是说这个树存在一个一维数组里，满足A的child是A[2i+1]和A[2i+2])，问题背景起源于内存分配问题
+    比如有N个level，第一个level有一个bit，第二个level有2个bit，第三个level有四个bit，调用第x个level的第y个bit直接用A[x][y]
+    那么A[x][y]的孩子包括A[x+1][2y] 和 A[x+1][2y+1]
+    题目要求完成的是：
+    例如ClearBits(A, 4,9) => 把第N个level的第4位到第9位清0. 当child清0之后， parent也要跟着清0，一直到root. 
+    我发的这个note的最后有一个link，有题目的详细说明和图解，但是代码是错的.
+
+    一开始给个brute force解，之后在interviewer引导下improve直至最优解（要求操作非常效率，主要考虑读取连续的内存进入memory，这样会使cache的命中率增加。）
+    
+    Given a complete binary tree with nodes of values of either 1 or 0, the following rules always hold:
+    (1) a node's value is 1 if and only if all its subtree nodes' values are 1
+    (2) a leaf node can have value either 1 or 0
+    Implement the following 2 APIs:
+    set_bit(offset, length), set the bits at range from offset to offset+length-1
+    clear_bit(offset, length), clear the bits at range from offset to offset+length-1
+
+    i.e. The tree is like:
+                 0
+              / \
+             0 1
+           / \ / \
+          1 0 1 1
+         /\ / \ /
+        1 1 1 0 1
+        Since it's complete binary tree, the nodes can be stored in an array:
+        [0,0,1,1,0,1,1,1,1,1,0,1]
+
+    From this post https://github.com/jasonfeng1989/Tech_Interviews/blob/master/others/buddy_bitmap.py
+    
+    follow up 1: 是最小化访问读取该树的次数，并且一次clear一层level，要求操作非常效率，主要考虑读取连续的内存进入memory，这样会使cache的命中率增加。
+                因为相比brute force的解法，LZ的解法不需要考虑下面一行，这样的话读进mem的只有当前行的数组，所以是连续的。
+    
+    Follow up 2: 注意BuddyBitMap里的complete binary tree是用bits[level][index]这样的方式给出的，然后有start， len来表示被更改的子树的位置和范围，height表示树的高度；从最后一层开始；
+一定要注意时间复杂度和空间复杂度，如果不是最优他会让你一直改一直改；还有要想出一层一层的改的方法，不要从低端backtrace回去；而且要快要熟练，我犹豫了两下，换了两种方法估计就pass了
+    
+    public static void clearBit(int[][] matrix,  int offset, int length) {
+            int curLevel = matrix.length-1;
+            int left = offset;
+            int right = offset+length - 1;
+            while (curLevel >= 0){
+                for (int i = left; i <= right; i++) {
+                    matrix[curLevel] = 0;
+                }
+                curLevel--;
+                left = left/2;
+                right = right/2;
+            }
+        }
+        public static void setBit(int[][] matrix,  int offset, int length) {
+            int curLevel = matrix.length-1;
+            int left = offset;
+            int right = offset+length - 1;
+              while (curLevel >= 0) {
+                   for (int i = left; i <= right; i++) {
+                          bits[curLevel] = 1;            
+                   }
+                   int leftBuddy = left + (left % 2 == 1 ? -1 : 1);
+                   int rightBuddy = right + (right % 2 == 1 ? -1 : 1);
+                   int leftBit = bits[curLevel][left] * bits[curLevel][leftBuddy];
+                   int rightBit = bits[curLevel][right] * bits[curLevel][rightBuddy];
+                   curLevel--;
+                   left /= 2;
+                   right / = 2;
+                   if (leftBit == 0) {
+                        left++;
+                   }
+                   if (rightBit == 0) {
+                       right--; 
+                   }
+            }
+        }
+        
+// My C++ code for 2-D array, BFS-like aproch
+void clearBits(vector<vector<int>> &nums, int start, int len){
+    int m = nums.size(), curRow = m - 1;
+    deque<int> Q; // queue of index in curRow that need to be cleared
+    
+    for(int col=start; col<start+len; col++)
+        if(nums[curRow][col] == 1)
+            Q.push_back(col);        
+   
+    while(curRow >= 0 && !Q.empty()){
+        int sz = Q.size();
+        for(int i=0; i<sz; i++){
+            int col = Q.front(); Q.pop_front();
+            nums[curRow][col] = 0;
+            int parcol = col / 2;
+            if(curRow > 0 && nums[curRow-1][parcol] == 1 && (Q.empty() || Q.back() != parcol))
+                Q.push_back(parcol);  
+        }
+        curRow--;
+    }
+}
+
+void setBits(vector<vector<int>> &nums, int start, int len){
+    int m = nums.size(), curRow = m - 1;
+    deque<int> Q; 
+    
+    for(int col=start; col<start+len; col++)
+        if(nums[curRow][col] == 0)
+            Q.push_back(col); 
+    
+    while(curRow >= 0 && !Q.empty()){
+        int sz = Q.size();
+        for(int i=0; i<sz; i++){
+            int col = Q.front(); Q.pop_front();
+            nums[curRow][col] = 1;
+            int buddycol = col % 2 == 0 ? col + 1 : col - 1;
+            int parcol = col / 2;
+            if(nums[curRow][buddycol] == 1 && curRow > 0 && nums[curRow-1][parcol] == 0 && (Q.empty() || Q.back() != parcol))
+                Q.push_back(parcol);  
+        }
+        curRow--;        
+    }    
+}
+
+void print(vector<vector<int>> &nums){
+    int n = nums.size(), m = nums[0].size();
+    cout << "printing nums ... " << endl;
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cout << nums[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main() {
+    printf("Hello, World!\n");
+    vector<vector<int>> nums(4, vector<int>(6, 0));
+    //vector<vector<int>> nums{{0,0,0,0,0},{0,1,0,0,0},{1,0,1,1,0},{1,1,1,0,1}};
+    //vector<vector<int>> nums{{1,0,0,0,0},{1,1,0,0,0},{1,1,1,1,0},{1,1,1,1,1}};
+    print(nums);
+    
+    setBits(nums, 1, 6);
+    print(nums);
+    
+    clearBits(nums, 1, 2);
+    print(nums);
+    return 0;
+}
+
+// My C++ code for 2-D array, DFS-like approach, save space compare with BFS
+void clearBits(vector<vector<int>> &nums, int start, int len){
+    int n = nums.size(), m = nums[n-1].size();
+    for(int i=start; i<min(start+len, m); i++){
+        int row = n-1, col = i;
+        while(row >= 0 && row < n && col >= 0 && col < m && nums[row][col] == 1){
+            nums[row][col] = 0;
+            row--;
+            col = col / 2;
+        }
+    }
+}
+
+void setBits(vector<vector<int>> &nums, int start, int len){
+    int n = nums.size(), m = nums[n-1].size();
+    for(int i=start; i<min(start+len, m); i++){
+        int row = n-1, col = i;
+        while(row >= 0 && row < n && col >= 0 && col < m && nums[row][col] == 0){
+            nums[row][col] = 1;            
+            int buddycol = col % 2 == 0 ? col + 1 : col - 1;
+            if(nums[row][buddycol] == 0) break;
+            col = col / 2;
+            row--;
+        }
+    }
+}
+
+
+// Solution for 1D array(heap)
+void clearBits(vector<int> &nums, int start, int len){
+    int n = nums.size();
+    for(int i=start; i<min(start+len, n); i++){
+        int index = i;
+        // clear upper nodes (parents)
+        while(index >= 0 && nums[index] == 1){
+            nums[index] = 0;
+            index = (index - 1) / 2;
+        }
+        // clear lower nodes, 1 must have both children as 1, always clear left child 1
+        index = 2 * i + 1;
+        while(index < n && nums[index] == 1){
+            nums[index] = 0;
+            index = 2 * index + 1;
+        }
+    }
+}
+
+void setBitsDownHelper(vector<int> &nums, int index){
+    int n = nums.size();
+    if(index >= n || nums[index] == 1) return;
+    nums[index] = 1;
+    setBitsDownHelper(nums, 2 * index + 1);
+    setBitsDownHelper(nums, 2 * index + 2);    
+}
+
+void setBits(vector<int> &nums, int start, int len){
+    int n = nums.size();
+    for(int i=start; i<min(start+len, n); i++){
+        int index = i;
+        // set upper nodes (parents)
+        while(index >= 0 && nums[index] == 0){
+            nums[index] = 1;
+            int buddyindex = index % 2 == 0 ? index - 1 : index + 1;
+            if(nums[buddyindex] == 1)
+                index = (index - 1) / 2;
+            else break;
+        }
+        // clear lower nodes, 0 must have children as 00 or 01 or 10, setting parents to 1 must set both children to 1
+        // So recursion/BFS/DFS is needed
+        int lchild = 2 * i + 1, rchild = 2 * i + 2;
+        setBitsDownHelper(nums, lchild);
+        setBitsDownHelper(nums, rchild);
+    }
+}
+
+
+
+DONE 5. O(1) Set
+    Q: Implement set with integers in range {1…N}, implements five operations, add, remove, contains, clear, iterate. There are 3 versions to solve this                   
+    v1: using only bucket array with size N+1, the operation costs are:        O(1),O(1),    O(1),     O(N), O(N)    for example: if we add, 2, 0, 1, it will become list:[1, 1, 1]
+    v2: using only sequential array(store them sequentially in array):         O(1),O(count),O(count),O(1),  O(count)for example: if we add, 2, 0, 1, it will become map: [2, 0, 1] you need to keep an count
+    v3: achieve best of v1 and v2’s performance:                               O(1),O(1)     O(1),     O(1), O(count)
+
+    Note: I was thinking similar to LRU, using array + linkedlist. So that would make add, remove, contains and iterates optimal. 
+    But it doesn’t handle clear with O(1).                                                   0, 1, 2       0, 1, 2
+    The right answer is to use the two array given. For bucket array value, it will be the index in the sequential array. 
+	The sequential array value will be the actually value. in the above example it will become list:[1, 2, 0], map[2, 0, 1]
+    A couple of things to notice: 
+	1) how to remove? remove will not shift the rest of the array front, instead, it will pick the 
+	map[toRemove] = map[count - 1]; count—; 
+	2) how to clear: map just need to set count to 0. 
+	3) after clear, because we don’t clear list, how do we know if the list pointer to the map are invalidate or not
+	(this will affect contains and add)? there are two things to consider, 
+	#1. if list[x] >= count - 1, then it is definitely invalid; 
+	#2 if list[x] < count but it still possible that it’s replaced by other element(e.g. add 2, clear, add 1, now list[2] and list[1] both points to map[0]). 
+	So you should also check if map[list[x]] == x.
+
+    class MySet{
+    private:
+        vector<int> nums;   // hold value of num, 1...N
+        vector<int> map;    // map[num] is index of num in nums[]
+        int count;          // last valid item in nums is nums[count - 1]
+        
+    public:
+        MySet(int N){
+            this->count = 0;
+            nums.resize(N, 0);
+            map.resize(N+1, -1); // CAUTION: this is not acutal hashSet, need to initialize array !
+        }
+        
+        void add(int num){
+            if(contains(num)) return;
+            nums[count++] = num;
+            map[num] = count - 1;
+        }
+        
+        // CAUTION: this is the key point, to remove num in O(1), we can't move following nums
+        // but only modifying map[num] is not enough, as it'll make nums not continous, making count unuseful.
+        // so the idea is to move only the last nums[count-1] to the 'to be removed nums[map[num]]', and update map, count--
+        void remove(int num){
+            if(!contains(num)) return;
+            int index_to_remove = map[num];
+            int last_num = nums[count-1];
+            map[num] = -1;
+            nums[index_to_remove] = last_num;
+            map[last_num] = index_to_remove;       
+            count--;
+        }
+        
+        bool contains(int num){
+            if(map[num] < 0 || map[num] > count - 1)
+                return false;
+            // CAUTION: must have this checking ! clear() doesn't modify map at all, old entry are still there
+            // how can we know if an entry is valid or not, is it added after clear() or it was there even before clear() ?
+            return nums[map[num]] == num; 
+        }
+        
+        void clear(){
+            count = 0;
+        }
+        
+        vector<int> iterate(){
+            vector<int> res;
+            for(int num : nums)
+                res.push_back(num);
+            return res;
+        }   
+    };
+
+DONE 6. Callback
+    https://www.evernote.com/shard/s260/sh/a01e5b26-d3eb-44c0-8ef4-01086605f675/da31dd196df57906d67ab4ea189304f1
+    回答的时候先写简单的单线程的，再写个最简单的给整个函数body加锁的版本，
+    再指出问题在哪儿(当callback是register_cb的时候会导致程序死锁)，再针对的改一改代码，时间过去了很久，我就不回忆代码怎么写的了，
+    大概思路是用一个全局的flag来表征是不是已经trigger过了，用一个Queue来存task，trigger之后也要注意检查Queue的size是不是0，因为多线程的时候可能导致有些callback加到队列的同时，flag被翻转了，如果不检查可能会导致有些callback没有被执行
+    
+    Q: Multi thread question: Event class has two methods, void register(Callback cb); void fire(); it should run like this:
+
+    Event e = new Event();
+    e.register(cb1);// Not invoke until event is fired..
+    e.register(cb2);// Same
+    ...
+    e.fire(); // cb1.invoke(); cb2.invoke();
+    ...
+    e.register(cb3); // cb3.invoke() right away since event has been fired.
+    
+    Followup 1: multithreading
+    在单线程中你用flag来判断是否需要入堆。 现在有这样一种情况：有一个线程1读取了flag并且这个时候这个值是false，所以你需要把event1 push到堆栈。可就在你读取完flag的值，还没有把event1 加入到堆栈的时候，另外一个线程2调用的event_fired，并且清空了堆栈。然后线程1把event1push到堆栈，那么这个event1就永远死在堆栈里里。
+    Followup 2: 一个callback 可能是另外一个callback的返回值，这样的话很可能出现deadlock的情况
+    Followup 3: 一种情况是，开火的时候还有在注册的，让这期间注册的要在开火前注册的之后运行，
+    例如，注册1，注册2，注册3，（开火 并concurrently注册4），那运行的顺序应该是1，2，3，4
+    有些方法可能没有这个问题，但是他写了个情况，就是开头先把isfired置true，问怎么解决。
+    其实简单的回答应该就是把这一步放最后，但当时傻了。。。   
+    
+    
+    boolean isFired = false;
+    Queue<Callback> q = new Queue<Callback>();
+    
+    void register(Callback cb) {
+      if (!isFired) {
+        q.enqueue(cb);
+      } else {
+        cb.invoke();
+      }
+    }
+    
+    void fire() {
+      while(!q.isEmpty()) {
+        Callback cb = q.dequeue();
+        cb.invoke();
+      }
+    
+      isFired = true;
+    }
+    
+    // if this is used in multi-thread condition, there are a couple of problems: 
+    // if register finished its if check(isFired = false) and then fire is run and finished(isFired = true), 
+	then cb in register is left in the queue without anyone running. 
+    boolean isFired = false;
+    Queue<Callback> q = new Queue<Callback>();
+    Mutex m = new Mutex();
+    void register(Callback cb) {
+      m.acquire();
+      if (!isFired) {
+        q.enqueue(cb);
+      } else {
+        cb.invoke();
+      }
+      m.release();
+    }
+    .
+    void fire() {
+      m.acquire();
+      while(!q.isEmpty()) {
+        Callback cb = q.dequeue();
+        cb.invoke();
+      }
+    
+      isFired = true;
+      m.release();
+    }
+    
+    // This is good. it will protect the atomicity. But it is slow because invoke could take a long time. But, if we change register to below it won’t work because fire() can be called after if (isFired) check and before m.acquire(); cb is left in the queue again.
+    
+    Mutex m = new Mutex();
+    void register(Callback cb) {
+      if (!isFired) {
+        m.acquire();
+        q.enqueue(cb);
+        m.release();
+      } else {
+        cb.invoke();
+      } 
+    
+    }
+    
+    // Next iteration on register. The reason we put m.release() before cb.invoke() is because invoke() we have no control and it could call this.register again and because Mutex is not reentrant we are going to have a deadlock and b) invoke can take a long time which make everything slower.
+    
+    void register(Callback cb) {
+      m.acquire();
+      if (!isFired) {
+        q.enqueue(cb);
+        m.release();
+      } else {
+        m.release();
+        cb.invoke();
+      }
+    
+    }
+    
+    // Now this looks good. We move on to fire(). Same as register, non-reentrant mutex can cause problem again with invoke(). So we should move invoke() outside.
+    void fire() {
+      m.acquire();
+      while(!q.isEmpty()) {
+        Callback cb = q.dequeue();
+        m.release();
+        cb.invoke();
+        m.acquire();
+      }
+    
+      isFired = true;
+      m.release();
+    }
+    
+    // Summary: exclude invoke() since we have no control; keep boolean isFired consistent with q status(q.isEmpty()), which is achieved by the last acquire and release
+
+// My C++ code
+class TaskDispatcher{
+private:
+	bool isFired;
+	queue<Task> tasks;
+	mutex mtx;
+
+public:
+	TaskDispatcher(){
+		isFired = false;
+	}
+	
+	void registerTask(Task &t){
+		mtx.lock();
+		if(!isFired){
+			cout << "Task " << t.taskid << " is being registered ." << endl;
+			tasks.push(t);
+			mtx.unlock();
+			return;
+		}
+		mtx.unlock(); // t.invoke() should be outside of cretical section. 1, it's not shared. 2, it may recursive call register and cause dead lock
+		
+		t.invoke();
+		//mtx.unlock(); // BUG: only placing unlock() here is wrong! previous return will skip this unlock() cause dead lock !
+	}
+	
+	void fire(){
+		mtx.lock();
+		cout << "!!! Event Fires !!!\n";
+		isFired = true;
+		while(!tasks.empty()){
+			Task* curTask = &tasks.front();
+			mtx.unlock();
+			curTask->invoke();
+			mtx.lock();
+			tasks.pop();
+		}
+		mtx.unlock();
+	}
+
+};
+
+// solution with condition_variable, to ensure fire() not interupted by register()
+class TaskDispatcher{
+private:
+	bool isFired;
+	queue<Task> tasks;
+	mutex mtx;
+	condition_variable cv;
+
+public:
+	TaskDispatcher(){
+		isFired = false;
+	}
+	
+	void registerTask(Task &t){
+	       {
+		unique_lock<mutex> lck(mtx);
+		//lck.lock();
+		if(!isFired){
+			cout << "Task " << t.taskid << " is being registered ." << endl;
+			tasks.push(t);
+			//lck.unlock();
+		}
+		else{
+			while(!tasks.empty()){
+				cv.wait(lck);
+			}
+			
+			//lck.unlock(); 					
+		}
+	       } // lck is released automaticlly as unique_lock's scope is ended ,its destructor calls mtx.unlock()
+		t.invoke();
+	}
+	
+	void fire(){		
+		unique_lock<mutex> lck(mtx);
+		//lck.lock();
+		cout << "!!! Event Fires !!!\n";
+		isFired = true;
+		
+		while(!tasks.empty()){
+			Task* curTask = &tasks.front();
+			lck.unlock();
+			curTask->invoke();
+			lck.lock(); // in this while loop, registerTask should NOT intercept fire(), instead all register() should be blocked waiting on cv
+			tasks.pop();
+		}
+		cv.notify_all();
+		//lck.unlock();
+		// lck is released automaticlly as unique_lock's scope is ended ,its destructor calls mtx.unlock()
+	}
+
+};
+
+
+7. Reverse File
+
+    Write a function to reverse a file in place.
+        Answer: Use two pointers, one reads from the beginning, one reads from the end, swap byte by byte.
+        Follow up: Each read and write will incur a system call, how do you minimize the amount of system calls?
+        Answer: We can read chunk by chunk instead (Need to modify the original function to illustrate this.)
+        Follow up: What can be a good chunk size? What are the factors determine a good chunk size?
+        Follow up: The reverse process can be interrupted at any time, how do you make sure the file won't be corrupted, and you can resume the reverse process any time?
+
+    给一个文件，reverse里面内容char by char。 (1 char takes 1 byte, 8 bits; while int takes 4 bytes in 32-bit system)
+    
+    Example:
+    
+    Input File Content: ABCDEFG
+    
+    Output File Content: GFEDCBA
+    
+    读写同一个文件。文件很大，需要读chunk by chunk而不能全读出来, reverse再写回去
+    
+    Follow up Question：
+    
+    如果在reverse或者写入过程中system crash，那么怎么保证内容正确重新正确写回去 (???)
+    
+    感觉答的不好，一开始写完的没有能过test case，改了两次还是不能过全部test case。意识到错误后重新design的算法，不过没时间了，只是口头解释了一下。Interviewer还是比较满意最后这个做法。
+    
+    一开始他问reverse时候如果crash了，怎么在crash以后继续。我就说reverse每个（或者每N个）character以后把整个char array和reverse过的index存在另一个文件里。
+	这样reverse和write期间crash了都可以通过读这个文件来继续
+    
+    给定一个文件，比较大，但是内存有限，写一个函数，reverse这个文件byte by byte. 以前的帖子也提到过这个问题。如果不知道读写文件的API的话，也没有关系，面试官会给出。
+    面试官说我们从简单的入手，每次读一个byte到内存的buffer，这样呢就是分别从头和尾部读两个byte，swap，然后存回去。然后说，这样inefficient，因为有太多的I/O,我们该如何改进。
+	答案是增大buffer，每次多读入一些，然后交换。
+    这样就有overwrite的问题。
+	假如ABCDEFGH,每个字母代表一个byte，buffer size是3，ABC 和 FGH交换 -》HGF DE CBA, 然后就剩下DE了，如果接着这么交换的话，就会读入DEC 和 FDE，然后reverse之后，在写入，变成 HGCDEFBA,就不对了。
+	这里可以加上判定条件，如果剩下的部分小于buffer长度的话，我们只用读入这一部分，然后reverse，写回去。
+
+
+// My Code
+// step 1 : read 1 chunk of k bytes from front and back of file, load into memory buffer buf1 and buf2
+-> if crash at step 1, redo log's last 'good' chunk and go on swapping
+// step 2 : write offset address and content of front/back chunk into backup log in disk, mark a 'logging done' in log if successful 
+-> if crash at step 2, last log entry has no 'done', so redo last last 'good' chunk and go on swapping
+// step 3 : swap conent of buf1 and buf 2 in memory
+-> if crash at step 3, redo log's last 'good' chunk and go on swapping
+// step 4 : write buf1 to back chunk, buf2 to front chunk, mark a 'swapping done' in log if successful
+-> if crash at step 4, file's content maybe dirty/corrupted
+
+log is like...
+offset 0
+abcde
+offset 21
+vwxyz
+logging done (meaning log content is reliable, otherwise log is not reliable)
+swapping done (meaning file content is reliable, otherwise file is not reliable)
+
+offset 5
+fghijk
+offset 16
+logging done
+!! crash !!
+
+So in summary, if a crash happen, then we should restart and redo the log, start to redo from which entry ? 
+    - if last entry has 'swapping done', next chunk may has only been read not written, resume at last entry's offset + k
+    - if last entry has ONLY 'logging done', next chunk may has already been written and corrupted, redo last entry's offset using clean chunk-content from log
+    - if last entry has NO 'xx done', this log entry is corrupted but file is still clean, so redo last 'swapping done' entry's offset + k using data from file
+
+string file = "abcdefghijklmnopqrstuvwxyz";
+
+string readFile(int offset, int n){
+    return file.substr(offset, n);
+}
+
+void writeFile(int offset, int n, string s){
+    for(int i=0; i<n; i++){
+        file[offset + i] = s[i];
+    }
+}
+
+// swap 2 chunks of file, starting from offset i and j, chunk size = k
+void swapChunk(int i, int j, int k){
+    // step 1:
+    string front = readFile(i, k);
+    string back = readFile(j, k);
+    // step 2 : write backup log here
+    // step 3 : reverse
+    reverse(front.begin(), front.end());
+    reverse(back.begin(), back.end());
+    // step 4 : write back to disk
+    writeFile(i, k, back);
+    writeFile(j, k, front);
+}
+
+// swapping char array
+        char text[] = "hello";
+        int nChars = sizeof(text)-1;
+
+        char *pStart = text;
+        char *pEnd = text + nChars - 1;
+
+        while (pStart < pEnd)
+        {
+            char tmp = *pStart;
+            *pStart = *pEnd;
+            *pEnd = tmp;
+
+            pStart++;
+            pEnd--;
+        }
+
+// How to choose proper k ? 
+// 1. k <= n/2
+// 2. chunk of k should be able to fit in memory, unit is char which is a byte. So memory requirement is at least 2k Byte
+// 3. k should be reasonable big, to reduce read/write IO operation, which is n/2k
+void swapFile(){
+    int k = 7;
+    int n = file.size(), i = 0, j = n-k;
+    
+    while(1){
+        swapChunk(i, j, k);
+        if(j < i){ // data before i has already been swapped, so we need to revert the second "double swap" here
+            swapChunk(j, j + k, i - j);
+        }        
+        if(i + k >= j){ // all data has been covered/swapped
+            break;
+        }
+        i += k;
+        j -= k;
+    }  
+}
+
+
+DONE 8. 给出四个点判断是不是正方形 (new added in Leetcode 593. Valid Square )
+    链接: https://instant.1point3acres.com/thread/265936
+    
+    struct Point{
+        int x, y;
+        Point(int x, int y){
+            this->x = x;
+            this->y = y;
+        }
+    };
+    
+    int dist(Point p1, Point p2){
+        return pow((p1.x - p2.x), 2) + pow((p1.y - p2.y), 2);
+    }
+
+    bool isSquareByDist(Point a, Point b, Point c, Point d){
+        int ab = dist(a, b), ac = dist(a, c), ad = dist(a, d);
+        int bc = dist(b, c), bd = dist(b, d), cd = dist(c, d);
+        
+        // take a as starting point
+        int x;
+        if(ac == ad){ // b is at diagonal
+            x = ac;
+            return bc == x && bc == x && cd == 2*x && ab == 2*x;
+        }
+        else if(ab == ad){ // c is at diagonal
+            x = ab;
+            return bc == x && cd == x && bd == 2*x && ac == 2*x;       
+        }
+        else if(ac == ab){ // d is at diagonal
+            x = ac;
+            return bd == x && cd == x && bc == 2*x && ad == 2*x;        
+        }
+    
+        return false;
+    }    
+    
+    int main() {
+        printf("Hello, World!\n");
+        Point a(2, 3);
+        Point b(1, 0);
+        Point c(3, 1);
+        Point d(0, 2);
+        cout << "is suqare ? " << isSquare(b, a, c, d) << endl;
+        return 0;
+    }
+
+    FollowUp: follow up是一堆点里找square的个数 
+    我看网上有FOLLOW UP，N个点，看能组成多少个正方形，貌似先把所有的点放入HASHMAP，然后是给定两个点，另外两个能组成正方形的点就能算出来了，然后看能不能在MAP里找到，
+	但是问题是。。。给我两个点，让我笔算，虽然我知道能够算出来另外两个点的坐标，但是我也不知道怎么算，那些角度问题太麻烦了
+    
+    // O(n) + O(n*n) time, O(n) space
+    int findSqures(vector<Point> &points){
+        int n = points.size(), count = 0;
+        set<Point> pset(points.begin(), points.end());
+        
+        for(int i=0; i<n; i++){
+            Point p1 = points[i];
+            for(int j=i+1; j<n; j++){
+                Point p2 = points[j];
+                Point p12(p2.x - p1.x, p2.y - p1.y); // vector p1 -> p2
+                Point p21(p1.x - p2.x, p1.y - p2.y); // vector p2 -> p1
+                // only need to search for upper 2 points that can form square
+                // if also search for down side square, there will be duplicate !
+                Point p3(p1.x - p12.y, p1.y + p12.x); // up left
+                Point p4(p2.x + p21.y, p2.y - p21.x); // up right
+                if(pset.count(p3) && pset.count(p4)) count++;
+            }
+            pset.erase(p1); // must delete this point as this point has been checked, otherwise will have duplicate
+        }
+        return count;
+    }
+
+    
+
+9. What data structure would you use to construct a skip list? Implement search() and insert().. (HARD)
+    http://www.geeksforgeeks.org/skip-list/
+    Skiplist is to implement Binary Search or BST on linked list
+    build multiple layer lists, leaf layer is the original list, while upper layer are temp indexing node to coarsely locate the target in a segment/range
+    
+    
+    http://igoro.com/archive/skip-lists-are-fascinating/
+    http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Map/skip-list-impl.html
+    http://ticki.github.io/blog/skip-lists-done-right/
+
+class SkipList{
+private:
+    
+    class ListNode{
+    public: 
+        string key;
+        int val;
+        bool dummy;
+        ListNode *up, *down, *next, *prev;  
+        ListNode(string key, int val, bool dummy){
+            this->dummy = dummy;
+            this->key = key;
+            this->val = val;
+            this->up = NULL; this->down = NULL; this->next = NULL; this->prev = NULL;
+        }
+    };
+    
+    ListNode *head;
+    int height; 
+
+    ListNode* search(string key){
+        ListNode *cur = head;
+        while(cur){
+            while(cur->next && cur->next->key <= key){
+                cur = cur->next;
+                //if(cur->key == key) return cur; wrong, should only return the leaf node
+            }
+            if(!cur->down) return cur;
+            cur = cur->down;            
+        }
+        return NULL;
+    }    
+    
+    ListNode* insert(ListNode* node, ListNode* dnode, string key, int val){
+        ListNode *tmp = node->next;
+        ListNode *newnode = new ListNode(key, val, false);
+        node->next = newnode; 
+        newnode->prev = node;
+        newnode->next = tmp; 
+        if(tmp) tmp->prev = newnode;   
+        newnode->down = dnode;
+        if(dnode) dnode->up = newnode;
+        return newnode;
+    }
+    
+    void extendTopLayer(){
+        ListNode *newhead = new ListNode("head", INT_MIN, true);
+        newhead->down = head;
+        head->up = newhead;
+        head = newhead;
+        height++;
+    }    
+    
+public:  
+    SkipList(){
+        this->head = new ListNode("head", INT_MIN, true);
+        height = 0;
+        srand(time(NULL));
+    }
+        
+    bool contains(string key){
+        ListNode *node = search(key);
+        if(node && node->key == key) return true;
+        return false;
+    }
+    
+    int get(string key){
+        ListNode *node = search(key);
+        if(node && node->key == key) return node->val;
+        return 0;
+    }
+    
+    void put(string key, int val){
+        cout << "puting key " << key << endl;
+        ListNode *node = search(key);
+        if(node && node->key == key){ // overwrite
+            node->val = val;
+            return;
+        }       
+        
+        // insert into leaf layer
+        ListNode *last = insert(node, NULL, key, val); // last inserted node
+        
+        // randomly insert into upper layer
+        int curheight = 1;
+        ListNode *tunnel = last; // tunnel node which connect to upper layer
+        while(1){
+            double r = ((double) rand() / (RAND_MAX));
+            cout << "\trandom number " << r << endl;  
+            if(r < 0.5) break;
+            
+            curheight++;
+            if(curheight > height) extendTopLayer();
+            
+            // go to upper layer through first left side tunnel node
+            while(!tunnel->up) 
+                tunnel = tunnel->prev;
+            tunnel = tunnel->up;
+            
+            last = insert(tunnel, last, key, val);
+        }        
+    }
+    
+    void print(){
+        queue<ListNode*> heads;
+        ListNode *head0 = head;
+        
+        while(head0){
+            heads.push(head0);
+            head0 = head0->down;
+        }
+        cout << "Skip List : \n";
+        while(!heads.empty()){
+            ListNode *cur = heads.front(); heads.pop();
+            cout << "\t";
+            while(cur){
+                cout << cur->key << "(" << (cur->down ? cur->down->key : "null") << ")" << " -> ";
+                cur = cur->next;
+            }
+            cout << endl;
+        }
+    }
+    
+}; 
+
+    
+10. Sort color
+    一个disk有很多chunks，但只有三种类型称为A，B，C。要求把乱序的disk chunks重排为[A A A B B B B C C]，所有A在前面，C在后面，B在中间，只能通过
+    1) read某个index的chunk 2) swap两个chunk的data 这两个操作来实现。follow up是尽量减少2）的次数
+    
+    lc sort color, but要求swap次数最少。那个经典的法国国旗算法不work，不能保证swap最少，最优解是o(n)时间o(1)space，我没给出最优解，给出了o(n)时间o(n)space的。
+
+// Minial swap solution ! Bucket sort + swapping instead of overwriting
+void sortColor(vector<int>& nums){
+    int n = nums.size();
+    int index[3] = {0, 0, 0};
+    
+    for(int num : nums)
+        index[num]++;
+    
+    index[2] = index[0] + index[1]; // starting index of 2 in sorted array
+    index[1] = index[0]; // starting index of 1 in sorted array
+    index[0] = 0; // starting index of 0 in sorted array
+    
+    // move all 0 to the left side nums[index[0] : index[1]-1] 
+    int j = index[0];
+    for(int i=index[1]; i<n; i++){
+        if(nums[i] == 0){
+            while(j < index[1] && nums[j] == 0)
+                j++;
+            swap(nums[i], nums[j]);
+        }
+    }
+    
+    // move all 2 to the right side nums[index[2] : $] 
+    j = index[2];
+    for(int i=0; i<index[2]; i++){
+        if(nums[i] == 2){
+            while(j < n && nums[j] == 2)
+                j++;
+            swap(nums[i], nums[j]);
+        }
+    }
+}
+
+
+// 3-way partition, not least swap
+void sortColor(vector<int>& nums){
+    int n = nums.size(), pivot = 1;
+    int i = 0, j = 0, k = n-1;
+    
+    while(j <= k){
+        if(nums[j] > pivot){
+            if(nums[k] < pivot)
+            swap(nums[j], nums[k--]);
+        else if(nums[j] < pivot)
+            swap(nums[j++], nums[i++]);
+        else
+            j++;
+    }
+}
+    
+11. get_one_id()
+    已知一个叫get_ids()的API能够耗时1s并返回100个各不相同的id（第二次call返回的和第一次的也不会有任何重复），有个待实现的函数叫get_one_id()，每秒最多被call 100次，每次call要能返回一个新的id。题目就是利用get_ids()实现get_one_id()，follow up是保证每次call get_one_id()不能等待超过1s
+
+    用户会随机call int get_call_id(), 已经有 get_ids(int num_of_id, int *buf)，get ids from disk or database，consume 1s per call。实现get_call_id()，我是一步一步来的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。最后还用到了tcp congestion control（1. slow start 2. congestion avoid 3. congestion recovery， 有兴趣的可以网上查一下） 的机制来处理动态分配buf的要求。
+
+// Solution 1 :  long wait time when queue is empty
+queue<int> Q;
+mutex mtx;
+condition_variable cv;
+
+int get_one_id(){
+	mtx.lock();
+	if(Q.empty()){
+		vector<int> newids = get_100_id();
+		for(int i = 0; i < newids.size(); i++)
+			Q.push(newids[i]);
+	}
+			
+	int id = Q.front();
+	Q.pop();
+	
+	cout << id << "\t ";
+	mtx.unlock();
+	return id;
+}
+
+// Solution 2 : using producer-consumer model, with background running producer, but still long wait time
+// compile using : g++ -std=gnu++0x callback.cpp -o callback -lpthread
+int globalId = 0;
+
+vector<int> get_100_id(){
+	vector<int> res;
+	int n = 10;
+	for(int i=0; i<n; i++){
+		res.push_back(globalId++);
+	}
+	return res;
+}
+
+
+queue<int> Q;
+mutex mtx;
+condition_variable cv;
+
+void producer(){
+   while(1){
+	//mtx.lock();
+	unique_lock<mutex> lck(mtx);
+	while(!Q.empty()){
+		cout << "producer is waiting on cv\n";
+		cv.wait(lck);
+	}
+	
+	vector<int> newids = get_100_id();
+	for(int i = 0; i < newids.size(); i++){
+		cout << "producing " << newids[i] << "\n";
+		Q.push(newids[i]);
+	}
+	
+	cv.notify_all();
+	//mtx.unlock;
+    } // unique_lock will be automaticlly released as its scope is ended 
+}
+
+int consumer(int userid, int consumerid){
+	//mtx.lock();
+	unique_lock<mutex> lck(mtx);
+	while(Q.empty()){
+		cout << "user " << userid << "::" << consumerid << " is waiting on cv\n";
+		cv.wait(lck);
+	}
+	
+	if(Q.size() == 1)
+		cv.notify_all();
+			
+	int id = Q.front();
+	Q.pop();
+	
+	cout << " *** user " << userid << "::" << consumerid << " consuming " << id << "\n";
+	//mtx.unlock();
+	return id;	
+}
+
+int get_one_id(){
+		
+}
+
+void user(int userid){
+	int n = 5;
+	for(int i=0; i<n; i++){
+		//cout << get_one_id() << "\t ";
+		//get_one_id();
+		consumer(userid, i);
+	}
+}
+
+int main(){
+	cout << "hello world\n" << endl;
+	int n = 8;
+	thread threads[n];
+	thread producerThread = thread(producer);
+	
+	for(int i=0; i<n; i++){
+		threads[i] = thread(user, i);
+	}	
+	
+	for(int i=0; i<n; i++){
+		if(threads[i].joinable())
+			threads[i].join();
+	}	
+	producerThread.join();
+	
+	cout << endl;	
+	return 0;
+}
+
+// Solution 3 : non-blocking Consumer + asynchronous background Producer, with 2 Queue rotating serving Consumer
+// compile using : g++ -std=gnu++0x callback.cpp -o callback -lpthread
+
+int globalId = 0; // this is supposed in FS or DB
+
+vector<int> get_100_id(){ // this is a provided DB API
+	vector<int> res;
+	int n = 10;
+	for(int i=0; i<n; i++){
+		res.push_back(globalId++);
+	}
+	return res;
+}
+
+
+queue<int> Q1, Q2;
+int curQ = 0;
+mutex c_mtx, p_mtx;
+condition_variable cv;
+
+
+void producer(){
+   while(1){
+	//mtx.lock();
+	unique_lock<mutex> lck(p_mtx);
+	while(!Q1.empty() && !Q2.empty()){
+		//cout << "producer is waiting on cv\n";
+		cv.wait(lck);
+	}
+	
+	vector<int> newids = get_100_id();
+	queue<int> *spareQ;
+	if(curQ == 0){
+		spareQ = &Q1;
+		curQ = 1;
+	}
+	else if(curQ == 1)
+	 	spareQ = &Q2;
+	else if(curQ == 2)
+		spareQ = &Q1;
+	
+	for(int i = 0; i < newids.size(); i++){
+		//cout << "producing Q" << (spareQ == &Q1?1:2) << " : "<< newids[i] << "\n";
+		spareQ->push(newids[i]);
+	}
+	
+	cv.notify_all();
+	//mtx.unlock;
+    }
+}
+
+int get_one_id(int userid, int consumerid){ // consumer
+	//mtx.lock();
+	unique_lock<mutex> lck(c_mtx);
+		
+	while(Q1.empty() && Q2.empty()){
+		cout << "user " << userid << "::" << consumerid << " is waiting on cv\n";
+		cv.wait(lck);
+	}
+			
+	int id;
+	int old_curQ = curQ;
+	if(curQ == 1){
+		id = Q1.front();
+		Q1.pop();
+		if(Q1.size() == 0){ // switch to another Q to consume, and tell producer to fill this empty Q
+			cout << "Q1 is going to be empty\n";
+			curQ = 2;
+			cv.notify_all();
+		}
+	}
+	else{
+		id = Q2.front();
+		Q2.pop();	
+		if(Q2.size() == 0){
+			cout << "Q2 is going to be empty\n";
+			curQ = 1;
+			cv.notify_all();
+		}
+	}	
+	
+	cout << " *** user " << userid << "::" << consumerid << " consuming Q" << old_curQ << " : " << id << "\n";	
+	//mtx.unlock();
+	return id;	
+}
+
+mutex screenlock;
+
+void user(int userid){
+	int n = 5;
+	for(int i=0; i<n; i++){
+		//cout << get_one_id() << "\t ";
+		//get_one_id();
+		int id = get_one_id(userid, i);
+		screenlock.lock();
+		//cout << "user " << userid << " gets a id " << id << endl;
+		screenlock.unlock();
+	}
+}
+
+int main(){
+	cout << "hello world\n" << endl;
+	int n = 8;
+	thread threads[n];
+	thread producerThread = thread(producer);
+	usleep(5000);
+	
+	for(int i=0; i<n; i++){
+		threads[i] = thread(user, i);
+	}	
+	
+	for(int i=0; i<n; i++){
+		if(threads[i].joinable())
+			threads[i].join();
+	}	
+	producerThread.join();
+	
+	cout << endl;	
+	return 0;
+}
+
+
+DONE 12. memcpy
+    给了一段简单的代码，实际就是memcpy的实现。讨论下什么情况不work（两个buf有overlap的时候不work），怎么改进，用memmove改进，然后实现memmove
+    http://www.geeksforgeeks.org/write-memcpy/
+    memcpy is implemented in a simple (but fast manner). Simplistically, it just loops over the data (in order), copying from one location to the other. This can result in the source being overwritten while it's being read.
+    memmove performs a test to determine which direction to loop in to avoid corrupting the data. 
+    
+    给了另外一段代码，五个线程，对一个global变量x做5次++，问这个代码有什么问题。thread concurrence问题，具体是++翻译成汇编是三个指令：1. load x 2. increment x 3. store x back to memory。然后问最大可能的数是多少（25），可能的最小值是多少（2）为什么最小值是2. 我层层提示下想到了为什么是2。
+    
+    copy函数，从源指针复制到目标指针，开放性找bug，不断优化code
+    
+    http://www.geeksforgeeks.org/write-memcpy/
+    
+    
+13. align textbox
+    有一系列的textbox，要求bias的线齐平（如图），给一个一行的最大宽度。如果这一行放不下更多的textbox了就提行。放textbox的顺序必须是输入的textbox的顺序。就是说你不能更改顺序。只能调整位置。
+    
+    给你a list of rectangle 让你把它们放在一个坐标平面上并align，从左往右放矩形，最右边有一个边界，不能超界，每个矩形提供getLength(), getWidth()，要保证每一行矩形的中心都在一条直线上，一行放不满另起一行，但是不能有overlap。
+    
+    textbox class 有高度，宽度，biasline的位置，还有左上角位置xy。xy初始化为0。解题就是要给每个box设置相应合适的xy
+    
+    http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=202635
+
+    class Box{
+    public:
+        int width, height;
+        int base2top; // baseline to topline distance
+        int upleftx, uplefty; // upleft vertex x and y
+        Box(int width, int height, int base2top){
+            this->width = width, this->height = height, this->base2top = base2top;
+            upleftx = 0, uplefty = 0;
+        }
+    };
+    // re-partition the boxes in a web page with a width_limit
+    void alignBoxes(vector<Box> &boxes, int width_limit){
+        vector<int> bottom(width_limit, 0); // the most bottom x-index of placed boxes so far
+        int n = boxes.size(), right = 0, left = 0;
+        
+        while(right < n){
+            // determine which boxes to place in current row and the baseline of them
+            int startIndex = 0, curBaseline = 0;
+            // while current boxes[right] can be added in current row
+            while(right < n && startIndex + boxes[right].width - 1 < width_limit){ 
+                for(int col = startIndex; col < startIndex + boxes[right].width; col++)
+                    curBaseline = max(curBaseline, bottom[col] + boxes[right].base2top);
+                startIndex += boxes[right++].width;
+            }
+            
+            //cout << left << ", " << right << ", startIndex = " << startIndex << endl;
+            
+            startIndex = 0;
+            for(int i=left; i<right; i++){
+                // update upleft xy of boxes in current row
+                boxes[i].upleftx = curBaseline - boxes[i].base2top;
+                boxes[i].uplefty = startIndex;
+                
+                // update bottom array for next row to use
+                for(int col = startIndex; col < startIndex + boxes[i].width; col++)
+                    bottom[col] = curBaseline + boxes[i].height - boxes[i].base2top;
+                startIndex += boxes[i].width; 
+            }
+            
+            left = right;
+        }
+        
+    }
+    
+    int main() {
+        printf("Hello, World!\n");     
+        Box box1(3, 3, 0);
+        Box box2(3, 3, 0);
+        Box box3(3, 3, 0);
+        
+        Box box4(5, 5, 0);
+        Box box5(5, 5, 0);
+        Box box6(6, 6, 0);
+        
+        vector<Box> boxes{box1, box2, box3, box4, box5, box6};
+        alignBoxes(boxes, 10);
+        
+        for(int i=0; i<boxes.size(); i++){
+            cout << "Box " << i << " : upleft vertex is (" << boxes[i].upleftx << ", " << boxes[i].uplefty << ")\n"; 
+        }
+        
+        return 0;
+    }
+
+
+    
+DONE 14. Image smoother, 给定一个matrix, 要求输出一个matrix, 每个cell的值是原来3*3邻居的平均值, 要求in-place 
+    image smooth。值得注意的是，网上说的in place的算法是行不通的。因为可能有number overflow，所以必须用extra的space来存一些东西（matrix的一行）
+
+// Best inplace solution, but original image[x][y] must be < pow(2,16), 
+// original data must fit in 32/2=16 bit int, and leave another higher 16bits to hold averaged data
+void imageSmooth(vector<vector<int>> image){
+    int n = image.size(), m = image[0].size();
+    int dirs[9][2] = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 0}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+    int mask = 0xff;
+    
+    // image[31:0], image[7:0] is old/clean data, image[15:8] is new/dirty data
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            int sum = 0, count = 0;
+            for(auto dir : dirs){
+                int x = i + dir[0], y = j + dir[1];
+                if(x < 0 || x >= n || y < 0 || y >= m) continue;
+                if(dir[0] < 0 || dir[0] == 0 && dir[1] < 0) // previous data, image[x][y] is dirty
+                    sum += (image[x][y] & mask);  //image[x][y] >> 8 is wrong, clean data is in lower 8 bits
+                else // cur or next row, image[x][y] is clean
+                    sum += image[x][y];
+                count++;
+            }
+            image[i][j] += (sum / count) << 8;
+        }
+    }
+
+    for(int i=0; i<n; i++)
+        for(int j=0; j<m; j++)
+            image[i][j] >>= 8;
+}    
+    
+    
+// O(2m) extra memory instead of naive O(nm), if image value > 16bits, this is the only solution
+void imageSmooth(vector<vector<int>> image){
+    int n = image.size(), m = image[0].size();
+    vector<int> cleanPrevRow(m, 0);
+    int dirs[9][2] = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 0}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+    
+    for(int i=0; i<n; i++){
+        vector<int> avg(m, 0);
+        for(int j=0; j<m; j++){
+            int sum = 0, count = 0;
+            for(auto dir : dirs){
+                int x = i + dir[0], y = j + dir[1];
+                if(x < 0 || x >= n || y < 0 || y >= m) continue;
+                if(dir[0] < 0) // previous row, image[x][y] is dirty
+                    sum += cleanPrevRow[y];
+                else // cur or next row, image[x][y] is clean
+                    sum += image[x][y];
+                count++;
+            }
+            avg[j] = sum / count;
+        }
+        
+        for(int j=0; j<m; j++){
+            cleanPrevRow[j] = image[i][j]; // store the clean cur row 
+            image[i][j] = avg[j]; // update the cur row to be dirty
+        }
+    }
+
+    for(int i=0; i<n; i++){
+        for(int j=0; j<m; j++){
+            cout << image[i][j] << " ";
+        }
+        cout << endl;
+    }    
+
+}
+
+15. 实现不同的iterator, (sorted iterator(给定一个非sort的iterator), filter Iterator (给定一个predicate函数, 和一个iterator)
+    设计iterator, input是一个遍历1到N的iterator，你设计的iterator只返回偶数。
+
+DONE 16. Given a number, it will go through the following transition: if it is odd: n * 3 + 1, otherwise n / 2. Write a function that returns how many transitions would a number take to get to 1. For example, given 3, it will go through the following: 3 - 10 - 5 - 16 - 8 - 4 - 2 - 1, thus the answer is 7.
+        Follow up: If you need to call this function many many times, how can you optimize it?
+        Follow up: Any different data structure/approach?
+        Follow up: If the memory is limited, what would you do?
+
+    奇数的话n = n*3+1, 偶数的话n/2,一直到n== 1.返回变换了多少次。然后问改进的方法，就是记录中间算过的数，变换的次数。加入一个HashMap里。follow-up问题是，如果我们调用了很多很多次，而且很多不同的数，这个HashMap就特别大,会占用很多内存，该怎么办。
+    暂时没有遇到版上的哪些常见固定的面试题。而且他们家不怎么用leetcode的题。
+
+    cache一部分n的值，比如说小于1000的，然后其他的每次都算
+    
+    // even * even  = even, odd * odd = odd, even * odd = even
+    // even factors(2) is extracted from num until no even factors left, by / 2
+    // then odd factors are transformed to generate some even factor + odd factors, by * 3 + 1
+    
+    int countTransition(int n){
+        if(n < 1) return INT_MAX;
+        int count = 0;
+        while(n != 1){
+            cout << count << ", " << n << endl;
+            if(n % 2 == 0) // even -> even/odd, even(2^n) -> even
+                n /= 2;
+            else // odd -> even
+                n = 3 * n + 1;
+            count++;    
+        }
+        
+        return count;
+    }
+
+    unordered_map<int, int> cache; // num, steps to reach 1
+    int countTransition(int num){
+        if(num < 1) return INT_MAX;
+        int n = num, count = 0;
+        
+        while(n != 1){           
+            // optimization 1 : the nums that only have even factors
+            double exp = log2(n);
+            if(exp == (int)exp){
+                count += exp;
+                break;
+            }
+            
+            // optimization 2 : the nums that already been calculated before
+            if(cache.count(n)){
+                count += cache[n];
+                break;
+            }
+            
+            count++;     
+            if(n % 2 == 0) 
+                n /= 2;
+            else 
+                n = 3 * n + 1;               
+        }
+        
+        cache[num] = count;
+        return count;
+    }    
+    
+    
+    int countTransition(int n){
+        int count = 0;
+        while(n != 1){
+            cout << count << ", " << n << endl;
+            if(n % 2 == 0)
+                n /= 2;
+            else
+                n = 3 * n + 1;
+            count++;    
+        }
+        
+        return count;
+    }
+    
+    
+ 
+17. two decimal
+    The floating binary point representation of decimals:
+    Decimals can be represented exactly if there's enough space, just not by floating binary point numbers. 
+	There are some decimals cannot be represented exactly because of recurring. Some floating decimal point types have a fixed size, 
+	which is "arbitrarily" large. It will face problems when the storage is not large enough.
+    Answers from StackOverFlow :
+    http://stackoverflow.com/questions/1089018/why-cant-decimal-numbers-be-represented-exactly-in-binary
+
+    "The problem is that 3 is a prime number which isn't a factor of 10. That's not an issue when you want to multiply a number by 3: you can always multiply by an integer without running into problems. But when you divide by a number which is prime and isn't a factor of your base, you can run into trouble (and will do so if you try to divide 1 by that number).Although 0.1 is usually used as the simplest example of an exact decimal number which can't be represented exactly in binary floating point, arguably 0.2 is a simpler example as it's 1/5 - and 5 is the prime that causes problems between decimal and binary. So if you have 23 bits for the significand, you can only represent about 8.3 million distinct values."
+
+18. implement mutex using spinlocks and flags.
+
+
+ 
+ 
+ 
+    
+000000000000000 Others....    
+    
+5- 没见过的题；http://www.1point3acres.com/bbs/thread-138406-1-1.html
+
+leetcode: min stack, 优化空间，主要是去重
+
+Skyline Leetcode
+
+
+Question:
+1. What do you think is the main advantage of pure storage product over traditional storage vendor like EMC ? 
+
+2. What are the product lines and differents engineering groups are there in pure storage ? 
+    the job title is for core product, but what exactly poroject will I working on ?
+
+3. Could you introduce me a little about technique stack that used in pure, like lauguages, skills..
+ 
+===========================================
+
+
+
+
+
+
+
+
+class Box{
+public:
+    int width, height;
+    int base2top; // baseline to topline distance
+    int upleftx, uplefty; // upleft vertex x and y
+    Box(int width, int height, base2top){
+        this->width = width, this->height = height, this->base2top = base2top;
+        upleftx = 0, uplefty = 0;
+    }
+};
+// re-partition the boxes in a web page with a width_limit
+void alignBoxes(vector<Box> &boxes, int width_limit){
+    vector<int> bottom(width_limit + 1, 0); // the most bottom x-index of placed boxes so far
+    int n = boxes.size(), right = 0, left = 0;
+    
+    while(right < n){
+        // determine which boxes to place in current row and the baseline of them
+        int startIndex = 0, curBaseline = 0;
+        // while current boxes[right] can be added in current row
+        while(right < n && startIndex + boxes[right].width < width_limit){ 
+            for(int col = startIndex; col < startIndex + box[right].width; col++)
+                curBaseline = max(curBaseline, bottom[col] + boxes[right].base2top);
+            startIndex += boxes[right++].width;
+        }
+        
+        startIndex = 0;
+        for(int i=left; i<right; i++){
+            // update upleft xy of boxes in current row
+            boxes[i].upleftx = curBaseline - boxes[i].base2top;
+            boxes[i].uplefty = startIndex;
+            
+            // update bottom array for next row to use
+            for(int col = startIndex; col < startIndex + boxes[i].width; col++)
+                bottom[col] = curBaseline + boxes[i].height - boxes[i].base2top;
+            startIndex += boxes[i].width; 
+        }
+        
+        left = right;
+    }
+    
+}
+
+int main() {
+    printf("Hello, World!\n");     
+    Box box1(3, 2, 1);
+    Box box2(4, 4, 2);
+    Box box3(2, 4, 1);
+    
+    Box box4(2, 5, 2);
+    Box box5(3, 4, 2);
+    Box box6(4, 2, 1);
+    
+    vector<Box> boxes{box1, box2, box3, box4, box5, box6};
+    alignBoxes(boxes, 10);
+    
+    for(int i=0; i<boxes.size(); i++){
+        cout << "Box " << i << " : upleft vertex is (" << boxes[i].upleftx << ", " << boxes[i].uplefty << ")\n"; 
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+

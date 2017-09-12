@@ -16,6 +16,7 @@ A = {1, 2, 2, 3, 1, 3}, return []
  */
 
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 

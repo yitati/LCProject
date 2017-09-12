@@ -1,6 +1,6 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #202 Happy Number
+* company tag: PureStorage
 * Write an algorithm to determine if a number is "happy".
 * A happy number is a number defined by the following process: 
 * Starting with any positive integer, replace the number by the sum of the squares of its digits, 
@@ -12,9 +12,13 @@ Example: 19 is a happy number
 82 + 22 = 68
 62 + 82 = 100
 12 + 02 + 02 = 1
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
+
+/*
+ * the math behind this https://en.wikipedia.org/wiki/Happy_number
+ * No matter what number we start with, we eventually drop below 100.
+ */
 #include <unordered_set>
 #include <iostream>
 

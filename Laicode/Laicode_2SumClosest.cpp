@@ -16,6 +16,7 @@ A = {1, 4, 7, 13}, target = 7, closest pair is 1 + 7 = 8, return [1, 7].
 
 #include <vector>
 #include <climits>
+#include <algorithm>
 
 using namespace std;
 
