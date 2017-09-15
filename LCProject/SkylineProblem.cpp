@@ -43,7 +43,7 @@ using namespace std;
 // scan the horizontall left and right boundries, but we need to keep the highest one so far
 // and make sure that when one height ends, we need to remove that from the height set
 // use a set to store all "active" heights, and use stack to store the heightest one each time
-vector<pair<int, int>> getSkyline(vector<vector<int>>& buildings)
+vector<pair<int, int>> getSkylineProblem(vector<vector<int>>& buildings)
 {
 	vector<pair<int, int>> lines;
 	// we need to use start point to overlap end point, so here lhs value should be negative

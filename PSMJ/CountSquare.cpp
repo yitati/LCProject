@@ -11,6 +11,8 @@
 
 using namespace std;
 
+#ifdef POINT
+
 class Point{
 public:
     int x, y;
@@ -92,3 +94,5 @@ int findSqures(vector<Point> &points)
     }
     return count;
 }
+#endif
+

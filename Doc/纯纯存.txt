@@ -6,7 +6,7 @@ http://www.1point3acres.com/bbs/thread-210016-1-1.html
 http://www.1point3acres.com/bbs/thread-189212-1-1.html
 
 
-1. Virtual Function, Class memory layout, C++ multiple inheritance memory layout
+TODO 1. Virtual Function, Class memory layout, C++ multiple inheritance memory layout
     https://www.evernote.com/shard/s260/sh/dfc7453b-e50f-46c0-b223-196bead364a9/c41f1cea8f38c1802d1941338b03d375
     http://www.drdobbs.com/cpp/multiple-inheritance-considered-useful/184402074
     http://blog.csdn.net/haoel/article/details/1948051
@@ -33,7 +33,7 @@ http://www.1point3acres.com/bbs/thread-189212-1-1.html
     
     it is typically a static vtable per class, and each instance has a vptr to the vtable for the class. 
     
-2. Happy Number
+DONE 2. Happy Number
     LC202
     https://en.wikipedia.org/wiki/Happy_number
     class Solution {
@@ -272,7 +272,7 @@ DONE 3.  画圆
         }   
     }
     
-4. BuddyBitMap, ClearBits和SetBits
+DONE 4. BuddyBitMap, ClearBits和SetBits
     这是一个二维数组，不是一个heap(heap就是说这个树存在一个一维数组里，满足A的child是A[2i+1]和A[2i+2])，问题背景起源于内存分配问题
     比如有N个level，第一个level有一个bit，第二个level有2个bit，第三个level有四个bit，调用第x个level的第y个bit直接用A[x][y]
     那么A[x][y]的孩子包括A[x+1][2y] 和 A[x+1][2y+1]
@@ -776,7 +776,7 @@ public:
 };
 
 
-7. Reverse File
+TODO 7. Reverse File
 
     Write a function to reverse a file in place.
         Answer: Use two pointers, one reads from the beginning, one reads from the end, swap byte by byte.
@@ -981,7 +981,7 @@ DONE 8. 给出四个点判断是不是正方形 (new added in Leetcode 593. Vali
 
     
 
-9. What data structure would you use to construct a skip list? Implement search() and insert().. (HARD)
+TODO 9. What data structure would you use to construct a skip list? Implement search() and insert().. (HARD)
     http://www.geeksforgeeks.org/skip-list/
     Skiplist is to implement Binary Search or BST on linked list
     build multiple layer lists, leaf layer is the original list, while upper layer are temp indexing node to coarsely locate the target in a segment/range
@@ -1117,7 +1117,7 @@ public:
 }; 
 
     
-10. Sort color
+DONE 10. Sort color
     一个disk有很多chunks，但只有三种类型称为A，B，C。要求把乱序的disk chunks重排为[A A A B B B B C C]，所有A在前面，C在后面，B在中间，只能通过
     1) read某个index的chunk 2) swap两个chunk的data 这两个操作来实现。follow up是尽量减少2）的次数
     
@@ -1173,7 +1173,7 @@ void sortColor(vector<int>& nums){
     }
 }
     
-11. get_one_id()
+TODO 11. get_one_id()
     已知一个叫get_ids()的API能够耗时1s并返回100个各不相同的id（第二次call返回的和第一次的也不会有任何重复），有个待实现的函数叫get_one_id()，每秒最多被call 100次，每次call要能返回一个新的id。题目就是利用get_ids()实现get_one_id()，follow up是保证每次call get_one_id()不能等待超过1s
 
     用户会随机call int get_call_id(), 已经有 get_ids(int num_of_id, int *buf)，get ids from disk or database，consume 1s per call。实现get_call_id()，我是一步一步来的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。最后还用到了tcp congestion control（1. slow start 2. congestion avoid 3. congestion recovery， 有兴趣的可以网上查一下） 的机制来处理动态分配buf的要求。
@@ -1424,7 +1424,7 @@ DONE 12. memcpy
     http://www.geeksforgeeks.org/write-memcpy/
     
     
-13. align textbox
+DONE 13. align textbox
     有一系列的textbox，要求bias的线齐平（如图），给一个一行的最大宽度。如果这一行放不下更多的textbox了就提行。放textbox的顺序必须是输入的textbox的顺序。就是说你不能更改顺序。只能调整位置。
     
     给你a list of rectangle 让你把它们放在一个坐标平面上并align，从左往右放矩形，最右边有一个边界，不能超界，每个矩形提供getLength(), getWidth()，要保证每一行矩形的中心都在一条直线上，一行放不满另起一行，但是不能有overlap。
@@ -1569,7 +1569,7 @@ void imageSmooth(vector<vector<int>> image){
 
 }
 
-15. 实现不同的iterator, (sorted iterator(给定一个非sort的iterator), filter Iterator (给定一个predicate函数, 和一个iterator)
+TODO 15. 实现不同的iterator, (sorted iterator(给定一个非sort的iterator), filter Iterator (给定一个predicate函数, 和一个iterator)
     设计iterator, input是一个遍历1到N的iterator，你设计的iterator只返回偶数。
 
 DONE 16. Given a number, it will go through the following transition: if it is odd: n * 3 + 1, otherwise n / 2. Write a function that returns how many transitions would a number take to get to 1. For example, given 3, it will go through the following: 3 - 10 - 5 - 16 - 8 - 4 - 2 - 1, thus the answer is 7.
@@ -1648,7 +1648,7 @@ DONE 16. Given a number, it will go through the following transition: if it is o
     
     
  
-17. two decimal
+TODO 17. two decimal
     The floating binary point representation of decimals:
     Decimals can be represented exactly if there's enough space, just not by floating binary point numbers. 
 	There are some decimals cannot be represented exactly because of recurring. Some floating decimal point types have a fixed size, 
@@ -1658,7 +1658,7 @@ DONE 16. Given a number, it will go through the following transition: if it is o
 
     "The problem is that 3 is a prime number which isn't a factor of 10. That's not an issue when you want to multiply a number by 3: you can always multiply by an integer without running into problems. But when you divide by a number which is prime and isn't a factor of your base, you can run into trouble (and will do so if you try to divide 1 by that number).Although 0.1 is usually used as the simplest example of an exact decimal number which can't be represented exactly in binary floating point, arguably 0.2 is a simpler example as it's 1/5 - and 5 is the prime that causes problems between decimal and binary. So if you have 23 bits for the significand, you can only represent about 8.3 million distinct values."
 
-18. implement mutex using spinlocks and flags.
+TODO 18. implement mutex using spinlocks and flags.
 
 
  
@@ -1669,9 +1669,9 @@ DONE 16. Given a number, it will go through the following transition: if it is o
     
 5- 没见过的题；http://www.1point3acres.com/bbs/thread-138406-1-1.html
 
-leetcode: min stack, 优化空间，主要是去重
+TODO leetcode: min stack, 优化空间，主要是去重
 
-Skyline Leetcode
+DONE Skyline Leetcode
 
 
 Question:

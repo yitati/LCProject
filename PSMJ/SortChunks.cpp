@@ -15,13 +15,15 @@ lc sort color, but要求swap次数最少。那个经典的法国国旗算法不w
 
 using namespace std;
 
-void sortColors(vector<int>& nums)
+void sortChunks(vector<int>& nums)
 {
 	int n = nums.size();
 	int startIdx[3] = {0, 0, 0};
 
+	// count the number of chunk in one loop
 	for(int num : nums) startIdx[num]++;
 
+	// get the start index for each chunk
 	startIdx[2] = startIdx[0] + startIdx[1];
 	startIdx[1] = startIdx[0];
 	startIdx[0] = 0;
@@ -50,5 +52,32 @@ void sortColors(vector<int>& nums)
 
 }
 
+/*
+ * the 3 way partion is not least swap
+ * [0, i) - 0
+ * [i, k) - 1
+ * [k, j] - unknown
+ * (j, n-1) - 2
+ */
+void sortColors(vector<int>& nums)
+{
+	int n = nums.size();
+	int i = 0, j = n - 1, k = 0;
+	while (k <= j)
+	{
+		if (nums[k] == 0)
+		{
+			swap(nums[k++], nums[i++]);
+		}
+		else if (nums[k] == 2)
+		{
+			swap(nums[k], nums[j--]);
+		}
+		else
+		{
+			k++;
+		}
+	}
+}
 
 

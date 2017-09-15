@@ -24,7 +24,7 @@ Example: 19 is a happy number
 
 using namespace std;
 
-bool isHappy(int n) 
+bool isHappyNumber(int n)
 {
 	unordered_set<int> visited;
 	int num = n;

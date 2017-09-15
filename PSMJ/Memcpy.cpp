@@ -60,7 +60,7 @@ void testMemCpy1()
 int negMemCpy()
 {
 	char csrc[100]="Geeksfor";
-	memcpy(csrc+5, csrc, strlen(csrc)+1);  // output is "GeeksGeeksGeek", data lost
+	myMemCpy(csrc+5, csrc, strlen(csrc)+1);  // output is "GeeksGeeksGeek", data lost
 	printf("%s", csrc);
 	return 0;
 }

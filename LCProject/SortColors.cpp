@@ -18,7 +18,7 @@ using namespace std;
 // [i, k) - 1
 // [k, j] - unknown
 // (j, n-1) - 2
-void sortColors(vector<int>& nums) 
+void sortColorsProblem(vector<int>& nums)
 {
 	int n = nums.size();
 	int i = 0, j = n - 1, k = 0;
