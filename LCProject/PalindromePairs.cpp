@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #336 PalindromePairs
+* company tag: Google
 * Given a list of unique words, find all pairs of distinct indices (i, j) in the given list, 
 * so that the concatenation of the two words, i.e. words[i] + words[j] is a palindrome. 
 
@@ -14,8 +14,7 @@ Example 2:
  Return [[0, 1], [1, 0], [3, 2], [2, 4]]
  The palindromes are ["dcbaabcd", "abcddcba", "slls", "llssssll"]
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <string>
@@ -75,7 +74,7 @@ vector<vector<int>> palindromePairs1(vector<string>& words)
 			}
 			prefix.push_back(curr[j]);
 		}
-		// search for surfix
+		// search for surfix, find in forward so we can do push_back each time instead of push front
 		for (size_t j = curr.length() - 1; j >= 0; j--)
 		{
 			if (forward.count(surfix))
@@ -117,3 +116,4 @@ vector<vector<int>> palindromePairs2(vector<string>& words)
 	}
 	return results;
 }
+

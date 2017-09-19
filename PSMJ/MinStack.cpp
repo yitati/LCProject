@@ -11,10 +11,10 @@
 
 using namespace std;
 
-class MinStack {
+class MinStackI {
 public:
 	/** initialize your data structure here. */
-	MinStack() {
+	MinStackI() {
 
 	}
 
@@ -47,8 +47,56 @@ private:
 	stack<int> m_stack;
 	// m_minStack to store all mins
 	stack<int> m_minStack;
+};
 
+/*
+ * a memory reduction solution, the solution may overflow
+ */
+class MinStack {
+public:
+	/** initialize your data structure here. */
+	MinStack() {
+	}
 
+	void push(int x) {
+        long long xx = x;
+		if(m_stack.empty())
+		{
+			m_stack.push(0);
+			m_min = xx;
+		}
+		else
+		{
+			// push the diff and save current min
+			m_stack.push(xx-m_min);
+			if(xx < m_min) m_min = xx;
+		}
+	}
+
+	void pop()
+	{
+		// pop out and update min
+		if(m_stack.empty()) return;
+		long long top = m_stack.top();
+		m_stack.pop();
+		if(top < 0) m_min = m_min-top;
+	}
+
+	int top() {
+		long long top = m_stack.top();
+        if (top > 0) return m_min + top;
+        return m_min;
+	}
+
+	int getMin() {
+		return m_min;
+	}
+
+private:
+	// m_stack to store all my numbers
+	stack<long long> m_stack;
+	// current min value
+	long long m_min;
 };
 
 

@@ -33,16 +33,15 @@ public:
 
 	void add(int key, int val)
 	{
-		// if this key already exist
-		if(m_map.count(key) && m_map[key] < m_array.size())
+		if(m_map.count(key) && m_map[key] < m_array.size()) // if this key already exist
 		{
 			int index = m_map[key];
-			m_array[index].second = val;
+			m_array[index].second = val; // update the value
 		}
 		else
 		{
 			m_map[key] = m_array.size();
-			m_array.emplace_back(key, val);
+			m_array.emplace_back(key, val); // insert the new key value pair
 		}
 	}
 
@@ -91,8 +90,8 @@ public:
 	}
 
 private:
-	vector<pair<int, int>> m_array;
-	unordered_map<int, int> m_map;
+	vector<pair<int, int>> m_array;  // vector that stores the key-value pair
+	unordered_map<int, int> m_map;   // map stores the key-index pair
 };
 
 

@@ -6,7 +6,7 @@ http://www.1point3acres.com/bbs/thread-210016-1-1.html
 http://www.1point3acres.com/bbs/thread-189212-1-1.html
 
 
-TODO 1. Virtual Function, Class memory layout, C++ multiple inheritance memory layout
+DONE 1. Virtual Function, Class memory layout, C++ multiple inheritance memory layout
     https://www.evernote.com/shard/s260/sh/dfc7453b-e50f-46c0-b223-196bead364a9/c41f1cea8f38c1802d1941338b03d375
     http://www.drdobbs.com/cpp/multiple-inheritance-considered-useful/184402074
     http://blog.csdn.net/haoel/article/details/1948051
@@ -20,6 +20,7 @@ TODO 1. Virtual Function, Class memory layout, C++ multiple inheritance memory l
     一个基类Base2，有一个Virtualfunction virt2()。 一个子类MultipleDerived:Base1, Base2，override了两个函数。
     另一个全局函数Global2，输入是Base2指针，返回这个指针指向的virt2。
     在main里，定义一个MultipleDerived指针 md，然后输出，md->virt1(), Global1(md), md->virt2(),Glbal2(md)
+	
     之前看到地里同学们的面经对这个问题有所准备，但是不清楚到底会问到什么程度。果然到后来都傻眼了。基本上是在讨论compiler应该怎么处理虚函数。
     首先问两个输出结果是什么。如果要写一个编译器，应该怎么处理虚函数。当然按照网上能查到的知识说了一通。
     接下来，如果编译器MultipleDerived的datamember跟父类的datamember对调一下会有什么问题？
@@ -152,8 +153,10 @@ DONE 3.  画圆
     8. 下一次画点的像素点的候选位置可否根据上一次的点计算出来？
     9. 下一次画点的像素点的候选位置口否不用求平方就直接根据上一次的点计算出来？
 
-    技术二面里的9个小问题是我抛砖引玉请可为思考的，自己实际想一想，写写代码，应该就能想出来答案。我当时也没看过面经，第一遍写出来的时候写的不是最优的，但在现场写代码的时候对几个可能优化的地方都做了标注“我稍后会想一想这里能不能优化”。
-    最终我的代码没有使用sqrt；没有使用abs或者变相用if else、...?...:... 来求绝对值。而是直接可以根据理论性质判断“这个数一定是负的，所以直接取负就可以得到绝对值了”；只在循环体外有一次乘法运算，循环体内没有乘法或除法。
+    技术二面里的9个小问题是我抛砖引玉请可为思考的，自己实际想一想，写写代码，应该就能想出来答案。我当时也没看过面经，
+	第一遍写出来的时候写的不是最优的，但在现场写代码的时候对几个可能优化的地方都做了标注“我稍后会想一想这里能不能优化”。
+    最终我的代码没有使用sqrt；没有使用abs或者变相用if else、...?...:... 来求绝对值。而是直接可以根据理论性质判断“
+	这个数一定是负的，所以直接取负就可以得到绝对值了”；只在循环体外有一次乘法运算，循环体内没有乘法或除法。
     
     // My code, basic solution
     void drawCircle(int r){
@@ -981,7 +984,7 @@ DONE 8. 给出四个点判断是不是正方形 (new added in Leetcode 593. Vali
 
     
 
-TODO 9. What data structure would you use to construct a skip list? Implement search() and insert().. (HARD)
+DONE 9. What data structure would you use to construct a skip list? Implement search() and insert().. (HARD)
     http://www.geeksforgeeks.org/skip-list/
     Skiplist is to implement Binary Search or BST on linked list
     build multiple layer lists, leaf layer is the original list, while upper layer are temp indexing node to coarsely locate the target in a segment/range
@@ -1174,9 +1177,12 @@ void sortColor(vector<int>& nums){
 }
     
 TODO 11. get_one_id()
-    已知一个叫get_ids()的API能够耗时1s并返回100个各不相同的id（第二次call返回的和第一次的也不会有任何重复），有个待实现的函数叫get_one_id()，每秒最多被call 100次，每次call要能返回一个新的id。题目就是利用get_ids()实现get_one_id()，follow up是保证每次call get_one_id()不能等待超过1s
+    已知一个叫get_ids()的API能够耗时1s并返回100个各不相同的id（第二次call返回的和第一次的也不会有任何重复），有个待实现的函数叫get_one_id()，
+	每秒最多被call 100次，每次call要能返回一个新的id。题目就是利用get_ids()实现get_one_id()，follow up是保证每次call get_one_id()不能等待超过1s
 
-    用户会随机call int get_call_id(), 已经有 get_ids(int num_of_id, int *buf)，get ids from disk or database，consume 1s per call。实现get_call_id()，我是一步一步来的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。最后还用到了tcp congestion control（1. slow start 2. congestion avoid 3. congestion recovery， 有兴趣的可以网上查一下） 的机制来处理动态分配buf的要求。
+    用户会随机call int get_call_id(), 已经有 get_ids(int num_of_id, int *buf)，get ids from disk or database，consume 1s per call。
+	实现get_call_id()，我是一步一步来的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。
+	最后还用到了tcp congestion control（1. slow start 2. congestion avoid 3. congestion recovery， 有兴趣的可以网上查一下） 的机制来处理动态分配buf的要求。
 
 // Solution 1 :  long wait time when queue is empty
 queue<int> Q;
@@ -1569,10 +1575,12 @@ void imageSmooth(vector<vector<int>> image){
 
 }
 
-TODO 15. 实现不同的iterator, (sorted iterator(给定一个非sort的iterator), filter Iterator (给定一个predicate函数, 和一个iterator)
+TBD 15. 实现不同的iterator, (sorted iterator(给定一个非sort的iterator), filter Iterator (给定一个predicate函数, 和一个iterator)
     设计iterator, input是一个遍历1到N的iterator，你设计的iterator只返回偶数。
 
-DONE 16. Given a number, it will go through the following transition: if it is odd: n * 3 + 1, otherwise n / 2. Write a function that returns how many transitions would a number take to get to 1. For example, given 3, it will go through the following: 3 - 10 - 5 - 16 - 8 - 4 - 2 - 1, thus the answer is 7.
+DONE 16. Given a number, it will go through the following transition: if it is odd: n * 3 + 1, otherwise n / 2. 
+Write a function that returns how many transitions would a number take to get to 1. For example, given 3, 
+it will go through the following: 3 - 10 - 5 - 16 - 8 - 4 - 2 - 1, thus the answer is 7.
         Follow up: If you need to call this function many many times, how can you optimize it?
         Follow up: Any different data structure/approach?
         Follow up: If the memory is limited, what would you do?
@@ -1648,7 +1656,7 @@ DONE 16. Given a number, it will go through the following transition: if it is o
     
     
  
-TODO 17. two decimal
+DONE 17. two decimal
     The floating binary point representation of decimals:
     Decimals can be represented exactly if there's enough space, just not by floating binary point numbers. 
 	There are some decimals cannot be represented exactly because of recurring. Some floating decimal point types have a fixed size, 
@@ -1656,9 +1664,14 @@ TODO 17. two decimal
     Answers from StackOverFlow :
     http://stackoverflow.com/questions/1089018/why-cant-decimal-numbers-be-represented-exactly-in-binary
 
-    "The problem is that 3 is a prime number which isn't a factor of 10. That's not an issue when you want to multiply a number by 3: you can always multiply by an integer without running into problems. But when you divide by a number which is prime and isn't a factor of your base, you can run into trouble (and will do so if you try to divide 1 by that number).Although 0.1 is usually used as the simplest example of an exact decimal number which can't be represented exactly in binary floating point, arguably 0.2 is a simpler example as it's 1/5 - and 5 is the prime that causes problems between decimal and binary. So if you have 23 bits for the significand, you can only represent about 8.3 million distinct values."
+    "The problem is that 3 is a prime number which isn't a factor of 10. That's not an issue when you want to multiply a number by 3: 
+	you can always multiply by an integer without running into problems. But when you divide by a number which is prime and isn't a factor of 
+	your base, you can run into trouble (and will do so if you try to divide 1 by that number).Although 0.1 is usually used as the simplest 
+	example of an exact decimal number which can't be represented exactly in binary floating point, arguably 0.2 is a simpler example 
+	as it's 1/5 - and 5 is the prime that causes problems between decimal and binary. So if you have 23 bits for the significand, you can only 
+	represent about 8.3 million distinct values."
 
-TODO 18. implement mutex using spinlocks and flags.
+DONE 18. implement mutex using spinlocks and flags.
 
 
  
@@ -1669,7 +1682,7 @@ TODO 18. implement mutex using spinlocks and flags.
     
 5- 没见过的题；http://www.1point3acres.com/bbs/thread-138406-1-1.html
 
-TODO leetcode: min stack, 优化空间，主要是去重
+DONE leetcode: min stack, 优化空间，主要是去重
 
 DONE Skyline Leetcode
 

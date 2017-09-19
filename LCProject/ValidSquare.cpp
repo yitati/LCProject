@@ -29,14 +29,14 @@ using namespace std;
  * Number of longer length : 2
  */
 
-long long distance(const vector<int>& p1, const vector<int>& p2)
+static long long distance(const vector<int>& p1, const vector<int>& p2)
 {
 	long long dx = p1[0]-p2[0];
 	long long dy = p1[1]-p2[1];
 	return dx*dx + dy*dy;
 }
 
-bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4)
+static bool validSquare(vector<int>& p1, vector<int>& p2, vector<int>& p3, vector<int>& p4)
 {
 	int minLen = INT_MAX, maxLen = INT_MIN;
 	int counts = 0, countl = 0;

@@ -128,9 +128,11 @@ void reverseFile2()
 	}
 }
 
+/*
 int main()
 {
 	cout << "Original file is "<<file << endl;
 	reverseFile2();
 	cout << "reverse file 2 result "<< file << endl;
 }
+*/

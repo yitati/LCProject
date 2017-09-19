@@ -21,9 +21,6 @@ get ids from disk or database，consume 1s per call。
 #include <mutex>
 #include <condition_variable>
 
-// todo - today
-
-
 /*
  * randomly generate some id values
  */
@@ -46,7 +43,8 @@ condition_variable m_cond;
 /*
  * Solution 1: Create a queue for all id (int type) and enqueue all IDs we get from get_ids().
  * Then pop them out one by one when get_one_id() gets called.
- * Drawback: long wait time when queue is empty
+ * Drawback: long wait time when queue is empty. Average wait time is smaller than 1s, but not garenteed that each call
+ * shorter than 1s.
  *
  */
 int get_one_id1()
@@ -70,28 +68,6 @@ int get_one_id1()
 /*
  * Solution 2: using producer-consumer model, with background producer, but still long wait.
  */
-void producer()
-{
-	while(1)
-	{
-		// m_mutex.lock();
-		unique_lock<mutex> lck(m_mutex);
-		while(idQueue.empty())
-		{
-			cout << "producer is waiting on condition variable" << endl;
-			m_cond.wait();
-		}
-		// get all id's
-		int buf[100];
-		get_ids(100, buf);
-		// push id's to queue
-		for(int i=0; i<100; i++)
-		{
-			idQueue.push(buf[i]);
-		}
-		m_cond.notify_all();
-		// m_mutex.unlock();
-	}
-}
+
 
 #endif

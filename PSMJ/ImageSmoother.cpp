@@ -72,10 +72,10 @@ void imageSmoother2(vector<vector<int>> image)
 	for(int i=0; i<row; i++)
 	{
 		vector<int> avg(col, 0);
-		for(int j=0; j<col; j++)
+		for(int j=0; j<col; j++) // loop through all cols
 		{
 			int sum = 0, count = 0;
-			for(auto dir : dirs)
+			for(auto dir : dirs) // loop through all neighbors
 			{
 				int x = i + dir[0];
 				int y = j + dir[1];

@@ -11,7 +11,7 @@
 
 using namespace std;
 
-#ifdef POINT
+
 
 class Point{
 public:
@@ -20,7 +20,7 @@ public:
         x = a;
         y = b;
     }
-    bool operator <(const Point& other)
+    bool operator <(const Point& other) const
     {
     	return x < other.x || (x == other.x && y < other.y);
     }
@@ -94,5 +94,5 @@ int findSqures(vector<Point> &points)
     }
     return count;
 }
-#endif
+
 

@@ -8,7 +8,7 @@
  * v3: achieve best of v1 and v2.
  * The time complexity of above solutions are
  *                          add      remove    contains    clear    iterate
- *   bucket array           O(1)     O(1)      O(1)        O(1)     O(N)
+ *   bucket array           O(1)     O(1)      O(1)        O(N)     O(N)
  *   sequential array       O(1)     O(count)  O(count)    O(1)     O(count)
  *   best of two            O(1)     O(1)      O(1)        O(1)     O(count)
  *
@@ -81,8 +81,8 @@ public:
 	}
 
 private:
-	vector<int> m_set;
-	vector<int> m_array;
+	vector<int> m_set;  // vector for indexes
+	vector<int> m_array;  // vector for array values
 };
 
 

@@ -25,7 +25,9 @@ void drawCircle(int radius)
 {
 	int x = radius;
 	int y = 0;
-	int err = 1- radius;
+	int y4 = 4*y;
+	int x4 = 4*x;
+	int err = 3- radius;
 
 	while(x >= y)
 	{
@@ -41,12 +43,17 @@ void drawCircle(int radius)
 
 	if(err < 0)
 	{
-		err += 2*y + 3;
+		//err += 4*y + 6;
+		err += y4 + 6; // or err = (y<<2) + 6;
+		y4 += 4;
 		y++;
 	}
 	else
 	{
-		err += 2*(y-x)+5;
+		//err += 4*(y-x)+10;
+		err += y4 - x4 + 10; // or err = ((y-x) << 2) + 10;
+		y4 += 4;
+		x4 -= 4;
 		y++;
 		x--;
 	}

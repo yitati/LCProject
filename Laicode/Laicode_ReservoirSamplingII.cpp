@@ -20,7 +20,6 @@ You may need to add more fields for the class.
 
 // http://www.geeksforgeeks.org/reservoir-sampling/
 
-// todo - today
 
 #include <vector>
 #include <cstdlib>

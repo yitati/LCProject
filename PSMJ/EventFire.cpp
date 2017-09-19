@@ -2,7 +2,7 @@
  * EventFire.cpp
  *
 We want to implement a callback mechanism that allows listeners to register a function that will be
-invoked when then event fires.
+invoked when the event fires.
 
 The API functions are register_callback and event_fired.
 	1. There is only one event and it will fire only once.
@@ -73,13 +73,13 @@ public:
 
 	void event_fired()
 	{
-		m_eventTriggered = true;
 		while(!m_callbacks.empty())
 		{
 			Callback cb = m_callbacks.front();
 			m_callbacks.pop();
 			cb.call();
 		}
+		m_eventTriggered = true;
 	}
 
 private:
@@ -89,60 +89,160 @@ private:
 
 /*
  * Step 2: switch to multi-threading solution.
- * We want to introduce multiple threads, one main thread handling register callback and event firing.
- * The other threads can handle the actual calling of callbacks.
- * Keep critical section as small as possible to avoid deadlock.
- *
+ * Q: If thread1 reads the flag, and evenTriggered is false, so we need to push it to queue. However before callback 1 is
+ * pushed to queue, another thread2 called event_fired and cleared the queue. And after that, callback1 is pushed to queue.
+ * Then callback1 will wait in queue forever.
+ * 	- We need to toggle the flag at the end of the event_fired function.
  */
-class ThreadSafeEvent
+bool m_eventFired = false;
+queue<Callback> m_callbacks;
+mutex m_mutex;
+
+void register_callback_update1(Callback & cb)
 {
-public:
-	ThreadSafeEvent(){
-		m_eventTriggered = false;
-	}
-
-	void register_callback(Callback & cb)
+	/*
+	 * we need to put lock here before the m_eventFired checking, so the flag cannot toggle before the push happens.
+	 */
+	m_mutex.lock();
+	if(!m_eventFired)
 	{
-		if(m_eventTriggered)
-		{
-			cb.call();
-		}
-		else
-		{
-			m_mutex.lock();
-			m_callbacks.push(cb);
-			m_mutex.unlock();
-		}
+		m_callbacks.push(cb);
 	}
-
-	bool isQueueEmpty()
+	else
 	{
-		bool empty;
-		m_mutex.lock();
-		empty = m_callbacks.empty();
+		cb.call();
+	}
+	m_mutex.unlock();
+}
+
+
+/*
+ * This will protect the atomicity for the flag but
+ * Q: If a callback function invoke another regester_callback function, will there be deadlock?
+ * Q: How is the efficiency?
+ * 	- if cb.call() is calling another register function then there will be a deadlock.
+ * 	- if the cb.call() takes long time then the critical section will be blocked for long time for other regestering.
+ * so we need to update the function again.
+ */
+void register_callback_update2(Callback & cb)
+{
+	/*
+	 * we need to put lock here before the m_eventFired checking, so the flag cannot toggle before the push happens.
+	 */
+	m_mutex.lock();
+	if(!m_eventFired)
+	{
+		m_callbacks.push(cb);
 		m_mutex.unlock();
-		return empty;
 	}
-
-
-	void event_fired()
+	else
 	{
-		m_eventTriggered = true;
-		while(!isQueueEmpty())
-		{
-			m_mutex.lock();
-			Callback cb = m_callbacks.front();
-			m_callbacks.pop();
-			m_mutex.unlock();
-			cb.call();
-		}
+		m_mutex.unlock();
+		cb.call();
+	}
+}
+
+/*
+ * Now let's move to fire_event
+ */
+void fire_event_update1()
+{
+	m_mutex.lock();
+	while(!m_callbacks.empty())
+	{
+		Callback cb = m_callbacks.front();
+		m_callbacks.pop();
+		cb.call();
+	}
+	/*
+	 * flag toggle happens here, after dealing with all callbacks that has registered before event fire
+	 */
+	m_eventFired = true;
+	m_mutex.unlock();
+}
+
+/*
+ * Same with register, non-reentrant mutex can cause deadlock with cb.call(), so need to update it as following
+ */
+void fire_event_update2()
+{
+	m_mutex.lock();
+	while(!m_callbacks.empty())
+	{
+		Callback cb = m_callbacks.front();
+		m_callbacks.pop();
+		m_mutex.unlock();
+		cb.call();
+		m_mutex.lock();
+	}
+	/*
+	 * flag toggle happens here, after dealing with all callbacks that has registered before event fire
+	 */
+	m_eventFired = true;
+	m_mutex.unlock();
+}
+
+/*
+ * Summary: exclude invoke() since we have no control; keep boolean isFired consistent with q status(q.isEmpty()),
+ * which is achieved by the last acquire and release
+ */
+
+/*
+ * to better improve above solution with condition variable
+ */
+class TaskDispatcher
+{
+private:
+	bool isFired;
+	queue<Task> tasks;
+	mutex mtx;
+	condition_variable cv;
+
+public:
+	TaskDispatcher()
+	{
+		isFired = false;
 	}
 
-private:
-	// shared resource
-	queue<Callback> m_callbacks;
-	bool m_eventTriggered;
-	mutex m_mutex;
+	void registerTask(Task & t)
+	{
+
+		{
+			// enter the scope of unique lock
+			unique_lock<mutex> lck(mtx);
+
+			if(!isFired)
+			{
+				task.push(t);
+			}
+			else
+			{
+				while(!task.empty())
+				{
+					cv.wait(lck);
+				}
+			}
+		}
+		t.invoke();
+	}
+
+	void fire()
+	{
+		unique_lock<mutex> lck(mtx);
+
+		isFired = true;
+
+		while(!tasks.empty())
+		{
+			Task * currTask = &tasks.front();
+			lck.unlock();
+			currTask->invoke();
+			lck.lock();
+			tasks.pop();
+		}
+		cv.notify_all();
+	}
+
 };
 
 /*
