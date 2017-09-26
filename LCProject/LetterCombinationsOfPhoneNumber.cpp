@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #17 Letter Combinations Of a Phone Number
-* company tag: Facebook
+* company tag: Amazon, Facebook
 * Given a digit string, return all possible letter combinations that the number could represent.
 * A mapping of digit to letters (just like on the telephone buttons) is given below.
 Input:Digit string "23"

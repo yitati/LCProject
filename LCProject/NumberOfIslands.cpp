@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #200 Number Of Islands
-* company tag: Facebook
+* company tag: Amazon, Facebook
 * Given a 2d grid map of '1's (land) and '0's (water), count the number of islands. 
 * An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. 
 * You may assume all four edges of the grid are all surrounded by water.
@@ -46,7 +46,7 @@ void numIslands_dfs(vector<vector<char>> & grid, int r, int c)
 	}
 }
 
-int numIslands(vector<vector<char>>& grid) 
+int numIslands(vector<vector<char>>& grid)
 {
 	int count = 0;
 	if (grid.size() == 0 || grid[0].size() == 0) return count;

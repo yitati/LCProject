@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #380 Insert Delete GetRandom O(1)
+* company tag: Amazon, Facebook
 * Design a data structure that supports all following operations in average O(1) time.
 
 * insert(val): Inserts an item val to the set if not already present.
@@ -32,8 +32,7 @@ randomSet.insert(2);
 
 // Since 2 is the only number in the set, getRandom always return 2.
 randomSet.getRandom();
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 /**
 * Your RandomizedSet object will be instantiated and called as such:

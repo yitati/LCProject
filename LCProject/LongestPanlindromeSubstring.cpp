@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #5 Longest Palindrome Substring
+* company tag : Amazon
 * Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 
 Example:
@@ -11,33 +11,35 @@ Output: "bab"
 Example:
 Input: "cbbd"
 Output: "bb"
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 
 using namespace std;
-
-// using dp, suppose dp[i][j] is a bool, indecating the palindrome starts with i and ends with j
+/*
+ * there could be only one longest palindrome string, so we can do O(n) solution
+ */
 string longestPalindromeSubstr(string s)
 {
-	if (s.empty() || s.length() == 1) return s;
-	int len = s.length(), maxLen = 1, markStart = 0;
+	if(s.empty() || s.length() == 1) return s;
+	int slen = s.length();
+	vector<vector<bool>> dp(slen, vector<bool>(slen, false));
+	int maxLen = 0, start = -1;
 
-	for (int k = 0; k < len;)
+	int center = 0;
+	while(center < slen)
 	{
-		if (len - k < maxLen / 2) break;
-		int i = k, j = k;
-		// skip duplicates (duplicates are counted in palindrome length)
-		while (j < len - 1 && s[j + 1] == s[j]) j++;
-		k = j + 1;
-		while (i > 0 && j < len - 1 && s[i - 1] == s[j + 1]) { i--; j++; }
-		if (j - i + 1 > maxLen)
+		if(slen - center < maxLen/2) break;
+		int lhs = center, rhs = center;
+		while(rhs+1 < slen && s[rhs+1] == s[rhs]) rhs++;
+		center = rhs + 1;
+		while(lhs > 0 && rhs + 1 < slen && s[lhs-1] == s[rhs+1]) { lhs--; rhs++;}
+		int len = rhs - lhs + 1;
+		if(len > maxLen)
 		{
-			maxLen = j - i + 1;
-			markStart = i;
+			maxLen = len;
+			start = lhs;
 		}
 	}
-
-	return s.substr(markStart, maxLen);
+	return s.substr(start, maxLen);
 }

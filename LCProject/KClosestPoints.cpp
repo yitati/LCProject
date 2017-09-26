@@ -102,6 +102,67 @@ vector<pair<int, int>> getKClosestPoints(vector<pair<int, int>> points, pair<int
 	}
 }
 
+/*
+ * Use quick selection method to get k closest points
+ * company tag: Facebook
+ * Similar to KthLargestElementInArray
+ */
+
+/*
+ * utility function that returns distance
+ */
+int getDistance(const pair<int,int>& point, const pair<int, int>& center)
+{
+	int dx = point[0]-center[0];
+	int dy = point[1]-center[1];
+	return dx*dx + dy*dy;
+}
+
+/*
+ * [0, lhs)    <= target distance
+ * (rhs, n-1]  >  target distance
+ */
+void selectKPoints(vector<pair<int, int>>& points, pair<int, int>& center, int start, int end, int k)
+{
+	if(start > end) return;
+	int dist = getDistance(points[end], center);
+	int lhs = start, rhs = end-1;
+	while(lhs <= rhs)
+	{
+		if(getDistance(points[lhs], center) <= dist) lhs++;
+		else if(getDistance(points[rhs], center) >= dist) rhs--;
+		else
+		{
+			swap(points[lhs], points[rhs]);
+		}
+	}
+	// put
+	swap(points[lhs], points[end]);
+	int count = lhs - start + 1;
+	if(count == k) return;
+	else if(count < k)
+	{
+		selectKPoints(points, center, lhs+1, end, k-count);
+	}
+	else
+	{
+		selectKPoints(points, center, start, lhs, k);
+	}
+
+}
+
+vector<pair<int, int>> getKClosetPoinsts_selectionSort(vector<pair<int, int>> points, pair<int, int> center, int k)
+{
+	// select the quilified points and put them in the first k spots
+	if(points.size() <= k) return points;
+	selectKPoints(points, center, 0, points.size()-1, k);
+	vector<pair<int, int>> result;
+	for(int i=0; i<k; i++)
+	{
+		result.push_back(points[i]);
+	}
+	return result;
+}
 
 
 /*

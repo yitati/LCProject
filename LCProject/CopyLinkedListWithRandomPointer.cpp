@@ -1,13 +1,15 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #138 Copy Linked List with Random Pointer
+* company tag: Amazon
 * A linked list is given such that each node contains an additional random pointer which could 
 * point to any node in the list or null.
 * Return a deep copy of the list.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <stdlib.h>
+#include <unordered_map>
+
+using namespace std;
 
 struct RandomListNode {
 	int label;
@@ -55,3 +57,45 @@ RandomListNode *copyRandomList(RandomListNode * head)
 	return copyHead;		
 }
 
+RandomListNode *deepCopyRandomList(RandomListNode * head)
+{
+	if(head == NULL) return NULL;
+	// use a hash table to store the node pair
+	unordered_map<RandomListNode*, RandomListNode* > table;
+	RandomListNode* curr = head;
+	while(curr)
+	{
+		// check for the node itself
+		if(!table.count(curr))
+		{
+			RandomListNode* copyCurr = new RandomListNode(curr->label);
+			table[curr] = copyCurr;
+		}
+		// check for the next
+		if(curr->next)
+		{
+			if(!table.count(curr->next))
+			{
+				RandomListNode* copyNext = new RandomListNode(curr->next->label);
+				table[curr->next] = copyNext;
+			}
+			table[curr]->next = table[curr->next];
+		}
+		// check for the random
+		if(curr->random)
+		{
+			if(!table.count(curr->random))
+			{
+				RandomListNode* copyRandom = new RandomListNode(curr->random->label);
+				table[curr->random] = copyRandom;
+			}
+			table[curr]->random = table[curr->random];
+		}
+		// move curr to next
+		curr = curr->next;
+	}
+
+	RandomListNode* copyHead = table[head];
+	return copyHead;
+
+}

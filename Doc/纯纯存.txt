@@ -584,7 +584,8 @@ DONE 6. Callback
     e.register(cb3); // cb3.invoke() right away since event has been fired.
     
     Followup 1: multithreading
-    在单线程中你用flag来判断是否需要入堆。 现在有这样一种情况：有一个线程1读取了flag并且这个时候这个值是false，所以你需要把event1 push到堆栈。可就在你读取完flag的值，还没有把event1 加入到堆栈的时候，另外一个线程2调用的event_fired，并且清空了堆栈。然后线程1把event1push到堆栈，那么这个event1就永远死在堆栈里里。
+    在单线程中你用flag来判断是否需要入堆。 现在有这样一种情况：有一个线程1读取了flag并且这个时候这个值是false，所以你需要把event1 push到堆栈。
+	可就在你读取完flag的值，还没有把event1 加入到堆栈的时候，另外一个线程2调用的event_fired，并且清空了堆栈。然后线程1把event1push到堆栈，那么这个event1就永远死在堆栈里里。
     Followup 2: 一个callback 可能是另外一个callback的返回值，这样的话很可能出现deadlock的情况
     Followup 3: 一种情况是，开火的时候还有在注册的，让这期间注册的要在开火前注册的之后运行，
     例如，注册1，注册2，注册3，（开火 并concurrently注册4），那运行的顺序应该是1，2，3，4
@@ -639,7 +640,8 @@ DONE 6. Callback
       m.release();
     }
     
-    // This is good. it will protect the atomicity. But it is slow because invoke could take a long time. But, if we change register to below it won’t work because fire() can be called after if (isFired) check and before m.acquire(); cb is left in the queue again.
+    // This is good. it will protect the atomicity. But it is slow because invoke could take a long time. But, if we change register to below 
+	it won’t work because fire() can be called after if (isFired) check and before m.acquire(); cb is left in the queue again.
     
     Mutex m = new Mutex();
     void register(Callback cb) {
@@ -653,7 +655,9 @@ DONE 6. Callback
     
     }
     
-    // Next iteration on register. The reason we put m.release() before cb.invoke() is because invoke() we have no control and it could call this.register again and because Mutex is not reentrant we are going to have a deadlock and b) invoke can take a long time which make everything slower.
+    // Next iteration on register. The reason we put m.release() before cb.invoke() is because invoke() we have no control and it could call 
+	this.register again and because Mutex is not reentrant we are going to have a deadlock and b) invoke can take a long time which make 
+	everything slower.
     
     void register(Callback cb) {
       m.acquire();
@@ -667,7 +671,8 @@ DONE 6. Callback
     
     }
     
-    // Now this looks good. We move on to fire(). Same as register, non-reentrant mutex can cause problem again with invoke(). So we should move invoke() outside.
+    // Now this looks good. We move on to fire(). Same as register, non-reentrant mutex can cause problem again with invoke(). 
+	So we should move invoke() outside.
     void fire() {
       m.acquire();
       while(!q.isEmpty()) {
@@ -1181,7 +1186,7 @@ TODO 11. get_one_id()
 	每秒最多被call 100次，每次call要能返回一个新的id。题目就是利用get_ids()实现get_one_id()，follow up是保证每次call get_one_id()不能等待超过1s
 
     用户会随机call int get_call_id(), 已经有 get_ids(int num_of_id, int *buf)，get ids from disk or database，consume 1s per call。
-	实现get_call_id()，我是一步一步来的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。
+	实现get_call_id()，我是一步一步来MA的，先实现一个单线程的，满足average小于要求的，然后多线程，然后improve，用了mutex和condition variable。
 	最后还用到了tcp congestion control（1. slow start 2. congestion avoid 3. congestion recovery， 有兴趣的可以网上查一下） 的机制来处理动态分配buf的要求。
 
 // Solution 1 :  long wait time when queue is empty

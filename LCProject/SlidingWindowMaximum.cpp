@@ -1,6 +1,6 @@
 /***************************************************************************************************
  * Question 239 Sliding Window Maximum
- * company tag: Facebook, Google,
+ * company tag: Amazon, Facebook, Google,
  * Given an array nums, there is a sliding window of size k which is moving from the very left of the
  * array to the very right. You can only see the k numbers in the window. Each time the sliding window
  * moves right by one position.
@@ -60,5 +60,4 @@ vector<int> maxSlidingWindow_improveCodeConvention(vector<int>& nums, int k)
     return result;
 }
 
-
-
+// O(Nlgk) solution - use a multiset which has capacity of k

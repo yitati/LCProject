@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #238 Product of Array Except Self
-* company tag: LinkedIn
+* company tag: Amazon, LinkedIn
 * Given an array of n integers where n > 1, nums, return an array output such that output[i] is equal to the product 
 * of all the elements of nums except nums[i].
 
@@ -18,22 +18,21 @@ For example, given [1,2,3,4], return [24,12,8,6].
 using namespace std;
 
 // output[i] = product of all numbers in the left * product of all numbers in the right
-vector<int> productExceptSelf(vector<int>& nums) 
+vector<int> productExcSelf(vector<int>& nums)
 {
 	int n = nums.size();
-	vector<int> output(n, 1);
-	int right = 1;
-	// calculate the left product
-	for (int i = 1; i < n; i++)
+	vector<int> result(n, 1);
+	long long product = 1;
+	for(int i=0; i<n; i++)
 	{
-		output[i] *= output[i - 1] * nums[i - 1];
+		result[i] = product;
+		product *= nums[i];
 	}
-	// calculate the right product
-	for (int i = n - 1; i >= 0; i--)
+	product = 1;
+	for(int i=n-1; i>=0; i--)
 	{
-		output[i] *= right;
-		right *= nums[i];
+		result[i] *= product;
+		product *= nums[i];
 	}
-	return output;
-
+	return result;
 }

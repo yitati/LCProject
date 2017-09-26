@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #146 LRU Cache
-* company tag: Salseforce, Facebook, eBay
+* company tag: Amazon, Salseforce, Facebook, eBay
 * Design and implement a data structure for Least Recently Used (LRU) cache. 
 * It should support the following operations: get and put. 
 * get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
@@ -13,6 +13,8 @@
 * How to better design for template? How to better design put(k, v) and get(k) to handle error?
 * How to design the LRU so it can be thread-safe?
 *****************************************************************************/
+
+// todo - today
 
 #include <unordered_map>
 

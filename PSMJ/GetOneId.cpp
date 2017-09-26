@@ -38,7 +38,7 @@ void get_ids(int num_of_id, int *buf)
 
 queue<int> idQueue;
 mutex m_mutex;
-condition_variable m_cond;
+condition_variable cv;
 
 /*
  * Solution 1: Create a queue for all id (int type) and enqueue all IDs we get from get_ids().
@@ -50,7 +50,7 @@ condition_variable m_cond;
 int get_one_id1()
 {
 	m_mutex.lock();
-	if(!idQueue.empty())
+	if(idQueue.empty())
 	{
 		char buf[100];
 		get_ids(100, buf);
@@ -67,7 +67,119 @@ int get_one_id1()
 
 /*
  * Solution 2: using producer-consumer model, with background producer, but still long wait.
+ * When producer doing the production, the consumer are blocked.
+ * We need lock between each consumer, but producer does not need lock.
  */
+void producer()
+{
+	while(1)
+	{
+		unique_lock<mutex> lck(m_mutex);
+		while(!idQueue.empty())
+		{
+			cv.wait(lck);
+		}
+		vector<int> newIds = get_100_id();
+		for(int i=0; i<100; i++)
+		{
+			idQueue.push(newIds[i]);
+		}
+		lck.unlock();
+		cv.notify_all();
+	}
+}
+
+void consumer()
+{
+	unique_lock<mutex> lck(m_mutex);;
+	while(idQueue.empty())
+	{
+		cv.wait(lck);
+	}
+
+	int id = idQueue.front();
+	idQueue.pop();
+
+	lck.unlock();
+	cv.notify_all();
+
+	return id;
+
+}
+
+/*
+ * Solution 3: Lock free linked list
+ * We want to make read and write to happen at the same time.
+ */
+
+int threshold = 1024;
+
+struct ListNode
+{
+	int val;
+	ListNode* next;
+	ListNode(int v) : val(v), next(NULL){}
+};
+
+class SingleProducerList
+{
+private:
+	ListNode* head;
+	ListNode* tail;
+	std::atomic<int> size;
+	mutex cmtx;
+	condition_variable cv;
+
+public:
+	SingleProducerList()
+	{
+		head = tail = NULL;
+		size = 0;
+	}
+
+	void push()
+	{
+		vector<int> newIds = get_100_id();
+		ListNode* tempTail = new ListNode(0);
+		ListNode* curr = tempTail;
+		for(int i=0; i<100; i++)
+		{
+			curr->next = new ListNode(id);
+		}
+		cmtx.lock();
+		if(!tail)
+		{
+			head = tail = tempTail->next;
+		}
+		else
+		{
+			tail->next = tempTail->next;
+		}
+		size += 100;
+		delete tempTail;
+		cmtx.unlock();
+
+		cv.notify_all();
+	}
+
+	void get_one_id()
+	{
+		unique_lock<mutex> lck(cmtx);
+
+		while(size == 0)
+		{
+			cv.wait(lck, []()->bool {size > 0;});
+		}
+
+		size--;
+		int id = head->val;
+		ListNode* temp = head;
+		head = head->next;
+		delete temp;
+
+		return id;
+	}
+};
 
 
 #endif

@@ -126,7 +126,7 @@ int Global2Updated(Base2 * bptr)
 {
 	return bptr->virt2();
 }
-
+/*
 int main()
 {
 	Derived1 * d = new Derived1;
@@ -143,6 +143,7 @@ int main()
 	 MultiDerivedUpdated* mdupdate = new MultiDerivedUpdated(122);
 	 cout << Global2Updated(mdupdate) << endl;
 }
+*/
 /*
 Derived1 vir1
 global1 ptr is 0x4131e48

@@ -29,8 +29,6 @@ The corresponding binary search tree is
 
 using namespace std;
 
-// BAOBAO
-
 TreeNode * constructTree(TreeNode* upper, TreeNode* lower, vector<int>& pre, int pos)
 {
 	if(pos >= pre.size()) return NULL;

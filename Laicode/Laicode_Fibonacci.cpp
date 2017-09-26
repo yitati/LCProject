@@ -1,5 +1,7 @@
 /*
-Get the Kth number in the Fibonacci Sequence. (K is 0-indexed, the 0th Fibonacci number is 0 and the 1st Fibonacci number is 1).
+company tag: Pure Storage
+Get the Kth number in the Fibonacci Sequence.
+(K is 0-indexed, the 0th Fibonacci number is 0 and the 1st Fibonacci number is 1).
 Examples
 0th fibonacci number is 0
 1st fibonacci number is 1
@@ -17,6 +19,7 @@ What is fibonacci%10?
 
 using namespace std;
 
+// iteration solution
 long fibonacci(int K)
 {
 	if (K < 2) return K < 0 ? 0 : K;
@@ -30,6 +33,13 @@ long fibonacci(int K)
 		cout << "fn is "<< fn << "  fn%10 is "<< fn%10 << endl;
 	}
 	return fn;
+}
+
+// recursion solution
+long fibonacci_recursion(int K)
+{
+	if(K < 2) return K < 0 ? 0 : K;
+	return fibonacci_recursion(K-1) + fibonacci_recursion(K-2);
 }
 
 /*

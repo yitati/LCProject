@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #48 Rotate Image
+* company tag: Amazon
 * You are given an n x n 2D matrix representing an image.
 
 * Rotate the image by 90 degrees (clockwise).
@@ -8,36 +8,31 @@
 Follow up:
 Could you do this in-place?
 
-*/
-/*****************************************************************************/
+ *****************************************************************************/
 
 #include <vector>
 #include <iostream>
 
 using namespace std;
 
-
-void rotate(vector<vector<int>>& matrix) 
+void rotateImage(vector<vector<int>> & matrix)
 {
 	int n = matrix.size();
-	for (int layer = 0; layer < n / 2; layer++)
+	for(int layer = 0; layer < n/2; layer++)
 	{
-		int begin = layer;
-		int end = n - 1 - layer;
-		int len = n - 2 * layer;
-		// BE VERY CAREFUL WITH THIS LEN-1
-		for (int i = 0; i < len - 1; i++)
+		int start = layer, end = n - 1 - layer, len = end - start + 1;
+		for(int i = 0; i < len-1; i++)
 		{
-			// store the right
-			int right = matrix[begin + i][end];
-			// put top to the right
-			matrix[begin + i][end] = matrix[begin][begin + i];
-			// put left to top
-			matrix[begin][begin + i] = matrix[end - i][begin];
-			// put bottom to left
-			matrix[end - i][begin] = matrix[end][end - i];
-			// put right to bottom
-			matrix[end][end - i] = right;
+			// save the right
+			int right = matrix[start+i][end];
+			// move top to right
+			matrix[start+i][end] = matrix[start][start + i];
+			// move left to top
+			matrix[start][start+i] = matrix[end-i][start];
+			// move bottom to left
+			matrix[end-i][start] = matrix[end][end-i];
+			// move right to bottom
+			matrix[end][end-i] = right;
 		}
 	}
 }
