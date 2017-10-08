@@ -1,6 +1,7 @@
 /*
  * Laicode_LowestCommonAncestorIII.cpp
  *
+company tag: Facebook
 
 Given two nodes in a binary tree, find their lowest common ancestor
 (the given two nodes are not guaranteed to be in the binary tree).
@@ -78,11 +79,11 @@ TreeNode* solve(TreeNode* root, TreeNode* one, TreeNode* two)
 	return lca;
 }
 
-// solution 2 - check LCA and then check existence
-
 /*
- * check LCA
+ * solution 2 - prefered, check LCA and then check existence, this will change the problem into two smaller problem
  */
+
+// check LCA
 TreeNode* getLca(TreeNode* root, TreeNode* one, TreeNode* two)
 {
 	if(root == NULL || root == one || root == two) return root;
@@ -92,6 +93,7 @@ TreeNode* getLca(TreeNode* root, TreeNode* one, TreeNode* two)
 	return leftLca ? leftLca : rightLca;
 }
 
+// check existence
 bool exist(TreeNode* root, TreeNode* node)
 {
 	if(!root) return false;
@@ -103,6 +105,7 @@ bool exist(TreeNode* root, TreeNode* node)
 TreeNode* solve2(TreeNode* root, TreeNode* one, TreeNode* two)
 {
 	TreeNode* lca = getLca(root, one, two);
+	// if lca is a node that is not one or two, it must be the lca of those two nodes
 	if(lca != one && lca != two) return lca;
 	else if(lca == one)
 	{

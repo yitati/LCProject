@@ -1,6 +1,6 @@
 /******************************************************************************
  * Question: #65 Valid Number
- * company tag: LinkedIn
+ * company tag: Facebook, LinkedIn
  * Validate if a given string is numeric.
  Some examples:
  "0" => true
@@ -10,6 +10,8 @@
  "2e10" => true
  * Note: It is intended for the problem statement to be ambiguous. You should gather all
  * requirements up front before implementing one.
+ *
+ * TODO
 *****************************************************************************/
 
 #include <string>

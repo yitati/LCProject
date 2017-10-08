@@ -1,0 +1,24 @@
+   what is purity? Is it an os system? a driver?
+   
+   data service / core service?
+   
+   for storage, we all need to consider extreme situations like crash. how does pure prevent/protect data from that?
+   
+   what does 99.9999% avilibility mean?
+   how do you evaluate that? 
+   
+   what is predictive support?
+
+   generally, what are the core technologies in this area? 
+   
+   what are the goals pure is trying to achieve in making the flash array products? like reduce latency? protect data?
+
+   what is the chanllenging part for the work if I am going to work here?
+   
+   how do you like this place? what is the best part of the company in your opinion?
+   
+   what is the not-so cool part?
+   
+   
+   
+   

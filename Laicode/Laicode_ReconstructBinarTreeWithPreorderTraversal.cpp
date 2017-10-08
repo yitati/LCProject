@@ -1,6 +1,8 @@
 /*
  * Laicode_ReconstructBinarTreeWithPreorderTraversal.cpp
  *
+ *
+company tag: Facebook
 Given the preorder traversal sequence of a binary search tree, reconstruct the original tree.
 
 Assumptions
@@ -24,6 +26,8 @@ The corresponding binary search tree is
 1      4        11
  */
 
+// TODO
+
 #include "../LCProject/BST.h"
 #include <vector>
 
@@ -36,13 +40,7 @@ TreeNode * constructTree(TreeNode* upper, TreeNode* lower, vector<int>& pre, int
     return NULL;
 }
 
-/*
-TreeNode* reconstruct(vector<int> pre)
-{
 
-}
-
-*/
 
 
 

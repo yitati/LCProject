@@ -35,6 +35,7 @@ void nextPermutation(vector<int>& nums)
 	sort(nums.begin() + k, nums.end());
 }
 
+// company tag: Facebook
 // similar problem, how to find the previous permutation?
 vector<int> previousPermuation(vector<int>& nums)
 {

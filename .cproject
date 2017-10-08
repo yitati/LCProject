@@ -24,16 +24,21 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1374641018" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base">
 								<option id="gnu.cpp.compiler.option.optimization.level.300987279" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.debugging.level.1564065498" name="Debug Level" superClass="gnu.cpp.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
-								<option id="gnu.cpp.compiler.option.other.other.695631964" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++0x" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.other.other.695631964" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" useByScannerDiscovery="false" value="-c -fmessage-length=0 -std=c++11" valueType="string"/>
+								<option id="gnu.cpp.compiler.option.dialect.std.1861577781" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1598576860" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="__GXX_EXPERIMENTAL_CXX0X__"/>
+								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1151806148" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.base.2078720709" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.base">
 								<option defaultValue="gnu.c.optimization.level.none" id="gnu.c.compiler.option.optimization.level.2098723456" name="Optimization Level" superClass="gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.debugging.level.982528165" name="Debug Level" superClass="gnu.c.compiler.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
+								<option id="gnu.c.compiler.option.dialect.std.1222928880" name="Language standard" superClass="gnu.c.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.c.compiler.dialect.default" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1619522197" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.base.1200420541" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.base"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1297588891" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
+							<tool command="g++" id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base.1297588891" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.base">
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1260868093" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -42,7 +47,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Laicode_PlaceToPutTheChair.cpp|Laicode_4Sum.cpp|Laicode_MaximumPathSumBinaryTreeII.cpp|SortCategory.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="FBMJ|Laicode_ShiftPosition.cpp|Laicode_4Sum.cpp|SortCategory.cpp|Mianjing/PSMJ/EventFire.cpp|Laicode_PlaceToPutTheChair.cpp|Laicode_MaximumPathSumBinaryTreeII.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FBMJ"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -93,7 +99,8 @@
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Laicode_PlaceToPutTheChair.cpp|Laicode_4Sum.cpp|Laicode_MaximumPathSumBinaryTreeII.cpp|SortCategory.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="FBMJ|Laicode_ShiftPosition.cpp|Laicode_4Sum.cpp|SortCategory.cpp|Laicode_PlaceToPutTheChair.cpp|Laicode_MaximumPathSumBinaryTreeII.cpp" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="FBMJ"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -119,6 +126,9 @@
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.release.1665857201;cdt.managedbuild.config.gnu.cygwin.exe.release.1665857201.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.release.1934930564;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.1080566933">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971;cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971.;cdt.managedbuild.tool.gnu.c.compiler.mingw.base.2078720709;cdt.managedbuild.tool.gnu.c.compiler.input.1619522197">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971;cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971.;org.eclipse.cdt.msvc.cl.c.dll.debug.1414206627;org.eclipse.cdt.msvc.cl.inputType.c.1599554253">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.msw.build.clScannerInfo"/>
 		</scannerConfigBuildInfo>
@@ -129,6 +139,9 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971;cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971.;cdt.managedbuild.tool.gnu.c.compiler.cygwin.exe.debug.760343606;cdt.managedbuild.tool.gnu.c.compiler.input.cygwin.2109847101">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971;cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971.;cdt.managedbuild.tool.gnu.cpp.compiler.mingw.base.1374641018;cdt.managedbuild.tool.gnu.cpp.compiler.input.1151806148">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971;cdt.managedbuild.config.gnu.cygwin.exe.debug.2002438971.;cdt.managedbuild.tool.gnu.cpp.compiler.cygwin.exe.debug.481381455;cdt.managedbuild.tool.gnu.cpp.compiler.input.cygwin.1523406774">

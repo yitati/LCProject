@@ -1,6 +1,6 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #350 Intersecton of Two Arrays II
+* company tag: Facebook
 * Given two arrays, write a function to compute their intersection. 
 
 Example:
@@ -20,8 +20,7 @@ Given nums1 = [1, 2, 2, 1], nums2 = [2, 2], return [2, 2].
 * What if elements of nums2 are stored on disk, and the memory is limited such that you 
 * cannot load all elements into the memory at once?
 * - store unordered_map for nums1 and check nums2
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <vector>
 #include <algorithm>

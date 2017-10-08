@@ -1,6 +1,6 @@
-/******************************************************************************/
-/**
+/******************************************************************************
 * Question: #71 Simplify Path
+* company tag: Facebook
 * Given an absolute path for a file (Unix-style), simplify it.
 
 For example,

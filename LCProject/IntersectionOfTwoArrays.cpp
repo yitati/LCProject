@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #349 Intersecton of Two Arrays
-* company tag: LinkedIn
+* company tag: Facebook, LinkedIn
 * Given two arrays, write a function to compute their intersection.
 
 Example:

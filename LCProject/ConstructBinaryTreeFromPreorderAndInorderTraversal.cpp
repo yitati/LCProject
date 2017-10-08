@@ -1,9 +1,8 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #105 Construct Binary Tree From Preorder and Inorder Traversal
+* company tag: Facebook
 * Given preorder and inorder traversal of a tree, construct the binary tree.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include "BST.h"
 #include <vector>

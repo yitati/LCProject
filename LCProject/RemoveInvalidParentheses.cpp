@@ -23,6 +23,39 @@
 
 using namespace std;
 
+/****************************** FBMJ ***********************************/
+/*
+ * Generate unique answer once and only once, do not rely on Set !!!
+ * We all know how to check a string of parentheses is valid using a stack. Or even simpler use a counter.
+ * The counter will increase when it is '(' and decrese when it is ')'. Whenever the couter is negative, we
+ * remove ')' than '(' in the prefix.
+ * To make the prefix valid, we need to remove a ')'. The problem is: which one?  - The first one!
+ * After the removal, the prefix is then valid. We then call the function recursively to solve the rest
+ * of the string. However, we need to keep another information: the last removal position. If we do not
+ * have this position, we will generate duplicate by removing 2 ')' in two steps only with a different order.
+ * For this, we keep tracking the last removal position and only remove ')' after that.
+ *
+ * Now we may ask. What about '('? What if s="(()(()" in which we need remove '('?
+ * The answer is: do same from right to left.
+ * However a cleaver idea is: reverse the string and reuse the code!
+ */
+// O(n) solution to build the result array
+void remove(string input, vector<string> results, int curr, int lastr, vector<char>& par)
+{
+	int counter = 0;
+	for(int i = curr; i < input.length(); i++)
+	{
+		if(input[i] == par[0]) counter++;
+		if(input[i] == par[1]) counter--;
+		if(counter >= 0) continue;
+		for(int j=lastr; j <= curr; j++)
+		{
+			// TODO with BAOBAO
+		}
+	}
+}
+
+/*****************************  LC problem ************************************/
 /*
  * helper function calculateInvalidParenteses
  * calculate the count for unmatched '(' and count of unmatched ')'

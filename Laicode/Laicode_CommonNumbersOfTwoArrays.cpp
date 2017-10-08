@@ -1,6 +1,7 @@
 /*
  * Laicode_CommonNumbersOfTwoArraysII.cpp
  *
+company tag: Facebook
 
 Find all numbers that appear in both of two unsorted arrays.
 

@@ -1,6 +1,6 @@
 /********************************************************************************
  * Question #277 Find The Celebrity
- * company tag: LinkedIn
+ * company tag: Facebook, LinkedIn
  * Suppose you are at a party with n people (labeled from 0 to n-1) and among them,
  * there may exist one celebrity. The definition of a celebrity is that all the other
  * n-1 people know him/her but he/she does not know any of them.
@@ -14,6 +14,9 @@
  *
  * Note: There will be exactly one celebrity if he/she is in the party. Return the celebrity's
  * label if there is a celebrity in the party. If there is no celebrity, return -1.
+ *
+ *
+ * TODO
  *******************************************************************************/
 
 

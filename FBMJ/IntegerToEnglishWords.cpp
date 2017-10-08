@@ -23,44 +23,43 @@ For example,
 
 using namespace std;
 
-string under20[] = { "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
-"Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
-string above20[] = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+string under20[] = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+					"Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen",
+					"Nineteen"};
+string above20[] = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
 
-string int_string(int num)
+string intToString(int num)
 {
 	string result;
-	if (num >= 1000000000)
+	if(num >= 1000000000)
 	{
-		return int_string(num / 1000000000) + " Billion" + int_string(num % 1000000000);
+		result = intToString(num/1000000000) + " Billion" + intToString(num%1000000000);
 	}
-	else if (num >= 1000000)
+	else if(num >= 1000000)
 	{
-		return int_string(num / 1000000) + " Million" + int_string(num % 1000000);
+		result = intToString(num/1000000) + " Million" + intToString(num%1000000);
 	}
-	else if (num >= 1000)
+	else if(num >= 1000)
 	{
-		return int_string(num / 1000) + " Thousand" + int_string(num % 1000);
+		result = intToString(num/1000) + " Thousand" + intToString(num%1000);
 	}
-	else if (num >= 100)
+	else if(num >= 100)
 	{
-		return int_string(num / 100) + " Hundred" + int_string(num % 100);
+		result = intToString(num/100) + " Hundred" + intToString(num%100);
 	}
-	else if (num >= 20)
+	else if(num >= 20)
 	{
-		return " " + above20[num / 10] + int_string(num % 10);
+		result = " " + above20[num/10] + intToString(num%10);
 	}
-	else if (num >= 1)
+	else if(num >= 1)  // pitfull here!!!!!
 	{
-		return " " + under20[num];
+		result = " " + under20[num];
 	}
-
 	return result;
 }
 
-
 string numberToWords(int num)
 {
-	if (num == 0) return "Zero";
-	else return int_string(num).substr(1);
+	if(num == 0) return "Zero";
+	return intToString(num).substr(1);
 }

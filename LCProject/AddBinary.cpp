@@ -33,6 +33,7 @@ string addBinary(string a, string b)
         result[i+1] = sum+'0';
     }
     result[0] = carry+'0';
+    // remove all prefix '0'
     int i = 0;
     while(i < len1 && result[i] == '0') i++;
     return result.substr(i);

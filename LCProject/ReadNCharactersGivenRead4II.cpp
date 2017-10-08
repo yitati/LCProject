@@ -1,11 +1,17 @@
 /******************************************************************************************************
  * Question #158 Read N Characters Given Read4 II - Call multiple times
+ * company tag: Facebook
  * The API: int read4(char *buf) reads 4 characters at a time from a file.
  * The return value is the actual number of characters read. For example, it returns 3 if there is only 3
  * characters left in the file.
  * By using the read4 API, implement the function int read(char *buf, int n) that reads n characters from the file.
  * Note:
  * The read function may be called mltiple times.
+ *
+ * company tag: Facebook
+ * 利扣 妖舞扒变形，给了read4，但是实现按行read，会有'/n'为行终止，这题开始没理清题意，以为总是以行终止作为结束，就没考虑读完的情况，
+ * 后来面试官提醒说不一定最后是行终止字符才发现少了个if，悲剧， 大家一定要问清题意再作答啊
+ * TODO
  *****************************************************************************************************/
 
 static int read4(char * buf)

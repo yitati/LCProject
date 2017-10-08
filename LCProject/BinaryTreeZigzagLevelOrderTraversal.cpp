@@ -1,6 +1,6 @@
 /******************************************************************************
 * Question: #103 Binary Tree Level Order Traversal
-* company tag: LinkedIn
+* company tag: Facebook, LinkedIn
 * Given a binary tree, return the zigzag level order traversal of its nodes' values. 
 * (ie, from left to right, then right to left for the next level and alternate between).
 *****************************************************************************/
@@ -37,3 +37,5 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root)
 	}
 	return results;
 }
+
+// TODO use deque instead of vector so we do not need to reverse

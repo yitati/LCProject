@@ -20,7 +20,7 @@ int divide(int dividend, int divisor, int& remainder)
     long long result = 0, did = labs(dividend), div = labs(divisor);
     // get sign
     int sign = ((dividend > 0)^(divisor > 0) == 1)? -1 : 1;
-    // corner cases, 1.when divisor is 0 or 2. divident = INT_MAX and divisor = -1
+    // corner cases, 1.when divisor is 0    2. divident = INT_MAX and divisor = -1
     if(divisor == 0 || (dividend == INT_MIN && divisor == -1)) return INT_MAX;
 
     while(did >= div)
@@ -37,7 +37,7 @@ int divide(int dividend, int divisor, int& remainder)
         div = labs(divisor);
     }
 
-    remainder = did;  // TODO: confirm with BAOBAO, this is the final remainder
+    remainder = did;
     result *= sign;
     return result;
 }

@@ -17,6 +17,11 @@ Given the list [1,[4,[6]]],
 By calling next repeatedly until hasNext returns false, the order of elements returned by next
 should be: [1,4,6].
 
+
+Follow-up:
+company tag: Facebook
+return list
+TODO
 *****************************************************************************/
 #include <stack>
 #include <vector>

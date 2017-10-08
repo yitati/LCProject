@@ -81,3 +81,8 @@ void sortColors(vector<int>& nums)
 }
 
 
+/*
+ * for example 2 1 0 2 the first one saves more time
+ */
+
+

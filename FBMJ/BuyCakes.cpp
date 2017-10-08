@@ -1,6 +1,7 @@
 /*
  * FBMJ_BuyCakes.cpp
  *
+company tag: Facebook
 Suppose there are three kinds of boxes of cakes. One has 6 cakes, one has 9 cakes
 and one has 20. You are given
 a number, return if you can buy cakes.

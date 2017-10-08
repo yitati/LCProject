@@ -26,7 +26,7 @@ TreeNode* concatenate(TreeNode* left, TreeNode* right)
 	if(!right) return left;
 
 	TreeNode* leftTail = left->left;    // tail of left is the prev of left head
-	TreeNode* rightTail = right->right;  // tail of right is the prev of right head
+	TreeNode* rightTail = right->left;  // tail of right is the prev of right head
 
     leftTail->right = right;
     right->left = leftTail;

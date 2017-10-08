@@ -13,6 +13,10 @@ Given [1,2],[3,5],[6,7],[8,10],[12,16], insert and merge [4,9] in as [1,2],[3,10
 
 This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
 
+Follow-up:
+company tag: Facebook
+给了一个情境。每次insert要返回当前总时间
+TODO
 *****************************************************************************/
 
 #include <vector>
