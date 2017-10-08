@@ -8,16 +8,20 @@ i.e. return 5 and the left 5 numbers will be [1,2,3,4,5,The_rest_doesnt_matter]
 
 using namespace std;
 
-int sortUnique(vector<int> input)
+int sortUnique(vector<int>& array)
 {
-	if(input.empty()) return 0;
+  int unique = 0, fast = 1, slow = 0;
 
-	int fast = 0, slow = 0;
-	int unique = 0;
-	while(fast < input.size())
-	{
+  while(fast < array.size())
+  {
+    if(array[fast] != array[slow])
+    {
+      array[++slow] = array[fast];
+    }
+    fast++;
+  }
 
-	}
+  return slow+1;
 }
 
 
