@@ -7,7 +7,7 @@ Check if a given linked list has a cycle. Return the node where the cycle starts
  */
 
 
-#include "ListNode.h"
+#include "../LCProject/ListNode.h"
 
 ListNode* getCycleNode(ListNode* head)
 {

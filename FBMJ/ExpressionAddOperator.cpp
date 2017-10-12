@@ -21,6 +21,8 @@ using namespace std;
 
 vector<string> results;
 
+// TODO - time complexity? BAOBAO
+
 void dfsAddOperator(const string& num, int pos, int target, string result, int prevNum, int currSum)
 {
 	if(pos >= num.length())

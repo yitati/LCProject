@@ -16,6 +16,7 @@ each function sorted by their function id.
 
 #include <vector>
 #include <string>
+#include <stack>
 
 using namespace std;
 

@@ -2,6 +2,8 @@
  * find the successor in the binary search tree
  * recursive solution, time complexity is O(h), h is the depth of the tree
  */
+#include <../LCProject/BST.h>
+
 TreeNode* inorderSuccessor(TreeNode* root, TreeNode* p)
 {
 	if(!root || !p) return NULL;

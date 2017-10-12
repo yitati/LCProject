@@ -22,19 +22,72 @@ The integer n is in the range [0, 100].
 #include <iostream>
 #include <vector>
 #include <queue>
+#include <unordered_map>
 
 using namespace std;
 
 // 1. tasks need to follow the certain order
-int taskScheduler1(vector<char>& tasks, int n)
+/*
+ * 外面试官，给一个String, 如AABACCDCD, 插入'_'使同一个字母间隔为k: 如果k=3: A___AB__AC___CD__CD,
+ * 一开始理解有误，认为是要先shuffle字母顺序然后插入'_'，花了不少时间，然后面试官提示字母顺序不变，写出来，
+ * 然后直接run出来有bug，在coderpad上调了一会才通过
+ */
+int taskScheduler(vector<char> tasks, int cooldown)
 {
-  int time = 1;
-  for(int i = 1; i < tasks.size(); i++)
+  int time = 0;
+  if(tasks.empty()) return time;
+  unordered_map<char, int> table;
+  table[tasks[0]] = 0;
+
+  // start from the second task
+  for(int i=1; i<tasks.size(); i++)
   {
-    if(tasks[i] == tasks[i-1]) time += n;
-    time += 1;
+    if(table.count(tasks[i]))
+    {
+      int diff = time - table[tasks[i]];
+      if(diff < cooldown) time = table[tasks[i]] + cooldown;
+    }
+
+    // update anyway
+    time++;
+    // update with latest time
+    table[tasks[i]] = time;
   }
+
   return time;
+}
+
+
+/*
+task scheduler 的变种，给出任务单和同种任务之间的cool down间隔，要求计算每个任务的执行时间列表。比如任务单为[1, 1, 2, 1],
+cool down间隔为2，那么每个任务的执行时间应该是[0, 3, 4, 6]。这题用hashtable可以得出O(n)的解法。
+*/
+
+vector<int> taskScheduler(vector<char> tasks, int cooldown)
+{
+  vector<int> order;
+  if(tasks.empty()) return order;
+  int time = 0;
+  unordered_map<char, int> table;
+  table[tasks[0]] = 0;
+  order.push_back(0);
+
+  // start from the second task
+  for(int i=1; i<tasks.size(); i++)
+  {
+    if(table.count(tasks[i]))
+    {
+      int diff = time - table[tasks[i]];
+      if(diff < cooldown) time = table[tasks[i]] + cooldown;
+    }
+
+    time++;
+    order.push_back(time);
+    // update with latest time
+    table[tasks[i]] = time;
+  }
+
+  return order;
 }
 
 // 2. tasks does not need to follow certain order
@@ -69,7 +122,7 @@ int taskScheduler2(vector<char>& tasks, int n)
   }
   // calculate tasks
   int time = 0;
-  int round = 0;
+
   while(!maxHeap.empty())
   {
     vector<pair<char, int>> temp;
@@ -98,10 +151,10 @@ int taskScheduler2(vector<char>& tasks, int n)
       maxHeap.push(temp[i]);
     }
   }
-
   return time;
-
 }
+
+
 
 int taskScheduler_math(vector<char>& tasks, int n)
 {

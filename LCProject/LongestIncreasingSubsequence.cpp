@@ -48,6 +48,13 @@ int lengthOfLIS(vector<int>& nums)
  *  We will discard all other lists of same length as that of this modified list.
  *
  */
+
+/*
+ * If we keep a vector to log all the smallest tails of possible increasing list. then each time when we meet a new element, we try to check
+ * it with all existing smallest tails, if it is the largest that means it should be large than all possible lists' tails. So we add it to the
+ * vector and incresing by 1.
+ * If we find it is smaller than some tail, then update the tail with new element.
+ */
 int lengthOfLIS_binarySearch(vector<int> & nums)
 {
 	vector<int> table;  // this is the array of all end elements

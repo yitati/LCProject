@@ -36,7 +36,7 @@ Given tree t:    4
 Return false.
 *****************************************************************************/
 
-#include "BST.h"
+#include "../LCProject/BST.h"
 
 using namespace std;
 
