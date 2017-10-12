@@ -54,8 +54,6 @@ void dfsAddOperator(const string& num, int pos, int target, string result, int p
 	}
 }
 
-
-// TODO - today
 vector<string> addOperators(string num, int target)
 {
 	dfsAddOperator(num, 0, target, "", 0, 0);
