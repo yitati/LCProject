@@ -22,8 +22,6 @@
 using namespace std;
 
 // We need to master both solutions
-
-
 // solution 1 - do the inorder traversal we can find the kth element
 int kthSmallest1(TreeNode* root, int k)
 {
