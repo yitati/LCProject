@@ -87,13 +87,6 @@ int canKnightMove1(int N, int M, int x1, int y1, int x2, int y2)
  * 3. Returns bool indecating if the knight can reach the final point or not
  */
 
-// TODO BAOBAO
-
-bool canKnightReachDest(vector<vector<int>>& board, int x1, int y1, int x2, int y2)
-{
-
-}
-
 
 
 
