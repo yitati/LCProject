@@ -83,5 +83,10 @@ bool isComplete_recursion(TreeNode* root, int index, int total)
 			isComplete_recursion(root->right, 2*index+2, total);
 }
 
+bool isCompleteTree(TreeNode* root)
+{
+	return isComplete_recursion(root, 0, getNumOfTreeNodes(root));
+}
+
 
 

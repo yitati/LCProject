@@ -72,6 +72,46 @@ TreeNode* deserializeBST(string data)
 	return root;
 }
 
+
+/*********************************************************************************************************************
+if we need to serialize and deserialize to a vector of int instead of string, then how should we do this?
+**********************************************************************************************************************/
+
+// serialization is simply a preorder traversal
+void serializeBST2(TreeNode* root, vector<int>& preorder)
+{
+	if(!root) return;
+	preorder.push_back(root->val);
+	serializeBST2(root->left, preorder);
+	serializeBST2(root->right, preorder);
+}
+
+// deserialization
+TreeNode* deserializeTree(const vector<int>& preorder, int& pos, int upper)
+{
+	if(pos >= preorder.size()) return NULL;
+	int data = preorder[pos];
+	if(data >= upper) return NULL;
+	TreeNode* newNode = new TreeNode(data);
+	pos++;
+	newNode->left = deserializeTree(preorder, pos, data);
+	newNode->right = deserializeTree(preorder, pos, upper);
+
+	return newNode;
+}
+
+
+TreeNode* reconstruct(vector<int> pre)
+{
+	int upper = INT_MAX;
+	int pos = 0;
+	return deserializeTree(pre, pos, INT_MAX);
+}
+
+
+
+
+
 /*
 int main(int argc, char ** argv)
 {

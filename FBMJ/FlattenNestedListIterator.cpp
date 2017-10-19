@@ -21,7 +21,7 @@ should be: [1,4,6].
 Follow-up:
 company tag: Facebook
 return list
-TODO
+
 *****************************************************************************/
 #include <stack>
 #include <vector>

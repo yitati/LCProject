@@ -36,3 +36,12 @@ vector<string> letterCombinations(string digits)
 	getLetterCombination(digits, results, result, 0);
 	return results;
 }
+
+/*
+LC拾漆，有点区别是小哥并没有说是电话九宫格，
+而是给一个List of List of letter，所以就不用考虑0这样的无效输入，一样的解法。
+ */
+vector<string> letterCombine(string digits)
+{
+
+}

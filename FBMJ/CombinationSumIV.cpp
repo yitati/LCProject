@@ -51,3 +51,15 @@ int combinationSum4(vector<int>& nums, int target)
 	}
 	return dp[target];
 }
+
+/*
+What if negative numbers are allowed in the given array?
+Then adding a num to the combination is not guaranteed to be increasing, which means I can add a huge bounch of negative nums
+and add a huge bounch of positive nums to achieve a target sum. eg.target=0:[-1,1],[-1,-1,1,1],[-1,-1,-1,1,1,1]...
+
+How does it change the problem?
+We will have lots of lots of possible combinations, even infinity.
+
+What limitation we need to add to the question to allow negative numbers?
+For example, each negative num can only be used once, etc.
+ */

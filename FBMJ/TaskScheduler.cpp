@@ -77,8 +77,7 @@ vector<int> taskScheduler(vector<char> tasks, int cooldown)
   {
     if(table.count(tasks[i]))
     {
-      int diff = time - table[tasks[i]];
-      if(diff < cooldown) time = table[tasks[i]] + cooldown;
+      if(time - table[tasks[i]] < cooldown) time = table[tasks[i]] + cooldown;
     }
 
     time++;
@@ -100,11 +99,11 @@ Idea is to add them to a priority Q and sort based on the highest frequency.
 And pick the task in each round of 'n' with highest frequency. As you pick the task, decrease the frequency, and put them back after
 the round.
  */
-int taskScheduler2(vector<char>& tasks, int n)
+int taskScheduler2(vector<char>& tasks, int cooldown)
 {
   // use priority queue to store the frequency
   auto comp = [](const pair<char, int>& lhs, const pair<char, int>& rhs)->bool{
-    return lhs.second < rhs.second || (lhs.second == rhs.second && lhs.first < rhs.first);
+    return lhs.second > rhs.second;
   };
 
   priority_queue<pair<char, int>, vector<pair<char, int>>, decltype(comp)> maxHeap(comp);
@@ -126,7 +125,7 @@ int taskScheduler2(vector<char>& tasks, int n)
   while(!maxHeap.empty())
   {
     vector<pair<char, int>> temp;
-    for(int i=0; i<=n; i++)
+    for(int i=0; i<=cooldown; i++)
     {
       if(!maxHeap.empty())  // no need to push idle
       {

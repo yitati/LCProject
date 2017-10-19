@@ -19,8 +19,46 @@ http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=296345&extra=page%3
  */
 
 #include <vector>
+#include <unordered_map>
 
 using namespace std;
+
+/*
+ * if we always keep the value of a+b and the index of a and b, then we can go through array and try to find a c+d
+ * where a+b = c+d
+ */
+
+vector<vector<int>> findTwoPairs(const vector<int>& array)
+{
+	unordered_map<int, vector<pair<int, int>>> table;
+	vector<vector<int>> results;
+	// align all the possible sum
+	for(int i=0; i<array.size(); i++)
+	{
+		for(int j=i+1; j<array.size(); j++)
+		{
+			int sum = array[i] + array[j];
+			table[sum].push_back(make_pair(i, j));
+		}
+	}
+	// this is at most O(n^3)
+	for(auto it = table.begin(); it != table.end(); it++)
+	{
+		auto list = it->second;
+		if(list.size() <= 1) continue;
+		for(int i=0; i<list.size(); i++)
+		{
+			for(int j=i+1; j<list.size(); j++)
+			{
+				if(list[i].first == list[j].first || list[i].second == list[j].second) continue;
+				vector<int> result = {list[i].first, list[i].second, list[j].first, list[j].second};
+			    results.push_back(result);
+			}
+		}
+	}
+
+	return results;
+}
 
 vector<vector<int>> findFourPairs(const vector<int>& array)
 {

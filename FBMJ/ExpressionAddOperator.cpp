@@ -17,46 +17,48 @@ using namespace std;
  * So we can use dfs recursion to calculate the current substring with the previous result.
  * But one thing to notice, since we can also do '*' operation, so need to also keep the last num that we
  * calculated.
+ *
+ * Time complexity: O(4^Len) since at each point we can do 4 different operations, + / - / * / group with other number
+ * there will be len-1 space available to add all the operators and total time complexity will be O(4^len-1)
  */
 
 vector<string> results;
 
-// TODO - time complexity? BAOBAO
-
-void dfsAddOperator(const string& num, int pos, int target, string result, int prevNum, int currSum)
+void expressionAddOp(const string num, const int target, long long currVal, long long prevVal, string curr, unsigned int pos)
 {
-	if(pos >= num.length())
+	if(pos >= num.size())
 	{
-		if(currSum == target)
+		if(currVal == target)
 		{
-			results.push_back(result);
+			results.push_back(curr);
 		}
 		return;
 	}
-
-	int nextNum = 0;
-	for(int i = pos; i<num.length(); i++)
+	long long nextVal = 0;
+	for(unsigned int i=pos; i<num.size(); i++)
 	{
-		nextNum = nextNum * 10 + num[i]- ' 0';
-		if(result.empty())
+		nextVal = nextVal*10 + num[i]-'0';
+		if(curr.empty())
 		{
-			dfsAddOperator(num, i+1, target, num.substr(0, i+1), nextNum, nextNum);
+			expressionAddOp(num, target, nextVal, nextVal, to_string(nextVal), i+1);
 		}
 		else
 		{
-			// if we add '+' to this position
-			dfsAddOperator(num, i+1, target, result + '+' + num.substr(pos, i-pos+1), nextNum, currSum + nextNum);
-			// if we add '-' to this position
-			dfsAddOperator(num, i+1, target, result + '-' + num.substr(pos, i-pos+1), -nextNum, currSum - nextNum);
-			// if we add '*' to this position
-			dfsAddOperator(num, i+1, target, result + '*' + num.substr(pos, i-pos+1), prevNum * nextNum, currSum - prevNum + prevNum*nextNum);
+			// if we do add
+			expressionAddOp(num, target, currVal+nextVal, nextVal, curr + "+" + to_string(nextVal), i+1);
+			// if we do minuse
+			expressionAddOp(num, target, currVal-nextVal, -nextVal, curr + "-" + to_string(nextVal), i+1);
+			// if we do multiply
+			expressionAddOp(num, target, currVal-prevVal+prevVal*nextVal, prevVal*nextVal, curr + "*" + to_string(nextVal), i+1);
 		}
+		if(num[pos] == '0') break; // 0 can not lead any number, pitfall here!!!
 	}
+
 }
 
 vector<string> addOperators(string num, int target)
 {
-	dfsAddOperator(num, 0, target, "", 0, 0);
+	expressionAddOp(num, target, 0, 0, "", 0);
 	return results;
 }
 

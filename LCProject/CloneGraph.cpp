@@ -7,13 +7,88 @@
 * compare adgencency list and adgencency matrix
 *****************************************************************************/
 
-// TODO - discuss with BAOBAO about the DFS solution
 
 #include <vector>
+#include <iostream>
 #include <unordered_map>
+#include <algorithm>
 #include <queue>
 
 using namespace std;
+
+/*
+what data structres are used to describe a graph?
+- adjacency matrix (1 means there is one edge between these two vertice, and 0 means no edge)
+    0  1  2  3  4
+0   1  0  1  1  1
+1   0  0  0  0  1
+2   1  0  0  0  1
+3   1  0  0  0  0
+4   1  0  1  1  0
+
+- adjacency list
+0 - [1, 2, 3]
+1 - [2, 4]
+
+which one is better?
+It depenes, when the edge is quite sparse in this graph, we wan to use adgencency list.
+If the graph is very dence or our traversal happens a lot on edges instead of nodes, then
+we want to use adjencency matrix.
+
+*/
+
+// clone graph
+struct GraphNode {
+	int id;
+	vector<GraphNode*> neigh;
+	GraphNode(int i) : id(i) {}
+};
+
+/*************** DFS solution ******************/
+GraphNode* cloneGraphDfs(GraphNode* node, unordered_map<GraphNode*, GraphNode*>& table) {
+	if (!node) return NULL;
+	if (!table.count(node)) {
+		GraphNode* nodeCopy = new GraphNode(node->id);
+
+		for (auto nei : node->neigh) nodeCopy->neigh.push_back(cloneGraphDfs(nei, table));
+
+		table[node] = nodeCopy;
+	}
+	return table[node];
+}
+
+GraphNode* cloneGraph(GraphNode* node) {
+	unordered_map<GraphNode*, GraphNode*> table;
+	return cloneGraphDfs(node, table);
+}
+
+/************* BFS solution ********************/
+GraphNode* cloneGraphBfs(GraphNode* node) {
+	if (!node) return NULL;
+	queue<GraphNode*> level;
+	level.push(node);
+
+	unordered_map<GraphNode*, GraphNode*> table;
+	table[node] = new GraphNode(node->id);
+
+	while (!level.empty()) {
+		auto curr = level.front();
+		level.pop();
+
+		for (auto nei : curr->neigh) {
+			// copy current neighbor
+			if (!table.count(nei)) {
+				level.push(nei);
+				table[nei] = new GraphNode(nei->id);
+			}
+			table[curr]->neigh.push_back(table[nei]);
+		}
+	}
+
+	return table[node];
+}
+
+///////////////////////////////////////////  LEETCODE /////////////////////////////////////////
 
 struct UndirectedGraphNode {
 	int label;

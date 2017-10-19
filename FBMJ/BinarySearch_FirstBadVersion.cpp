@@ -8,6 +8,7 @@
 bool isBadVersion(int version) { return true; };
 
 // binary search 0 0 0 0 0 1 1 1 1 1 1 will find the first 1
+// time complexity is O(logn) and space complexity is O(1)
 int firstBadVersion(int n)
 {
 	int lhs = 1, rhs = n;

@@ -1,5 +1,4 @@
-/******************************************************************************/
-/*
+/*****************************************************************************
 * Question: #248 Strobogrammatic Number III
 * company tag: Facebook, Google
 * A strobogrammatic number is a number that looks the same when rotated 180 degrees (looked at upside down).
@@ -8,15 +7,14 @@
 * Given low = "50", high = "100", return 3. Because 69, 88, and 96 are three strobogrammatic numbers.
 * Note:
 * Because the range might be a large number, the low and high numbers are represented as string.
-*/
-/*****************************************************************************/
+*****************************************************************************/
 
 #include <string>
 #include <vector>
 
 using namespace std;
 /*
- *  a helper function that does string compare, returns true if s1 < s2
+ *  a helper function that does string compare, returns true if s1 <= s2
  */
 bool compare(const string s1, const string s2)
 {

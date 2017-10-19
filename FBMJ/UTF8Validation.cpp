@@ -1,6 +1,7 @@
-/******************************************************************************/
-/*
+/******************************************************************************
 * Question: #393 UTF-8 Validation
+* http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=296018&extra=page%3D1%26filter%3Dsortid%26sortid%3D311%26searchoption%5B3046%5D%5Bvalue%5D%3D2%26searchoption%5B3046%5D%5Btype%5D%3Dradio%26sortid%3D311
+*
 * A character in UTF8 can be from 1 to 4 bytes long, subjected to the following rules:
 * 1.For 1-byte character, the first bit is a 0, followed by its unicode code.
 * 2.For n-bytes character, the first n-bits are all one's, the n+1 bit is 0, 
@@ -38,14 +39,34 @@ The first 3 bits are all one's and the 4th bit is 0 means it is a 3-bytes charac
 The next byte is a continuation byte which starts with 10 and that's correct.
 But the second continuation byte does not start with 10, so it is invalid.
 
-*/
-/*****************************************************************************/
+*****************************************************************************/
 #include <vector>
 #include <iostream>
 
 using namespace std;
 
+// simplified version
 bool validUtf8(vector<int>& data)
+{
+	int count = 0;
+	for (int i = 0; i < data.size(); i++) {
+		int x = data[i];
+		if (count == 0)
+		{
+			if (x >> 5 == 0b0110) count = 1;
+			else if (x >> 4 == 0b1110) count = 2;
+			else if (x >> 3 == 0b11110) count = 3;
+			else if (x >> 7 != 0) return false;
+		}
+		else {
+			if (x >> 6 != 0b10) return false;
+			else count--;
+		}
+	}
+	return count == 0 ? true : false;
+}
+
+bool validUtf82(vector<int>& data)
 {
 	int restByte = 0;
 	for (int val : data)

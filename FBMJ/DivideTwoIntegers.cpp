@@ -14,6 +14,53 @@
 
 using namespace std;
 
+/*
+Given two integers a and b, calculate a / b without using divide/mod operations.
+return both the quotient and remainder.
+
+Examples:
+
+0 / 1 = 0
+
+1 / 0 = Integer.MAX_VALUE
+
+-1 / 0 = Integer.MAX_VALUE
+
+11 / 2 = 5
+
+-11 / 2 = -5
+
+11 / -2 = -5
+
+-11 / -2 = -5
+*/
+
+pair<int, int> divide(int dividend, int divisor)
+{
+	if(divisor == 0) return {INT_MAX, 0};
+	if(dividend == 0) return {0, 0};
+
+	int sign = (divisor > 0) ^ (dividend > 0) == 1 ? -1 : 1;
+
+	long long did = labs(dividend), div = labs(divisor);
+	long long quotient = 0;
+
+	while(did >= div)
+	{
+		int base = 1;
+		while(did >= (div << 1))
+		{
+			div <<= 1;
+			base <<= 1;
+		}
+		did -= div;
+		quotient += base;
+		div = labs(divisor);
+	}
+	quotient *= sign;
+	return {quotient, did};
+}
+
 // always substract the divisor, but when divisor not large enough, shift it to left
 int divide(int dividend, int divisor, int& remainder)
 {

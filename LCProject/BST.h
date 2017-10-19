@@ -26,6 +26,10 @@ struct TreeLinkNode
 	TreeLinkNode(int x) : val(x), left(NULL), right(NULL), next(NULL) {};
 };
 
+struct KTreeNode {
+	int value;
+	vector<KTreeNode*> children;
+};
 
 
 // the max height of a tree

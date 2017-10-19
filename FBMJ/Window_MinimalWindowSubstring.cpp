@@ -10,7 +10,6 @@
 
 using namespace std;
 
-// TODO - BAOBAO time complexity
 /*
  * Brutal force solution
  * 1. find all possible substrings in str and sort it.
@@ -50,15 +49,14 @@ string mimWindow(string str, string pattern)
 			if(table.count(str[lhs]))
 			{
 				table[str[lhs]]++;
-				if(table[str[lhs]] == 1) diff++;
+				if(table[str[lhs]] >= 1) diff++;
 			}
 
 			lhs++;
 		}
 	}
 
-	if(start == -1) return "";
-	return str.substr(start, minLen);
+	return start == -1 ? "" : str.substr(start, minLen);
 }
 
 /*

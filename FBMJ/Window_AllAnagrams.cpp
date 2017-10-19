@@ -12,6 +12,9 @@
 
 using namespace std;
 
+/*
+ * this could be the follow-up for str str
+ */
 
 /*
  * the brutal force solution would be getting all substring with length = pattern length,
@@ -64,5 +67,4 @@ vector<int> allAnagrams(string str, string pattern)
 	return result;
 }
 
-// TODO - need to check
 

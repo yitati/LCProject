@@ -18,7 +18,6 @@ All root-to-leaf paths are:
 
 using namespace std;
 
-
 void binaryTreePaths_dfs(TreeNode * root, vector<string> & results, string result)
 {
 	if (root == NULL) return;
@@ -41,3 +40,5 @@ vector<string> binaryTreePaths(TreeNode* root)
 	binaryTreePaths_dfs(root, results, result);
 	return results;
 }
+
+

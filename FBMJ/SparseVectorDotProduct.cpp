@@ -18,6 +18,33 @@ using namespace std;
  use two pair vector to store the input pair<int, int> be the index - value pairs
  */
 
+vector<int> dotProduct_improveSpace(vector<int>& input1, vector<int>& input2)
+{
+	vector<pair<int, int>> array1;
+	vector<pair<int, int>> array2;
+
+	int len = input1.size();
+	for(int i=0; i<len; i++)
+	{
+		if(input1[i] != 0) array1.push_back(make_pair(i, input1[i]));
+		if(input2[i] != 0) array2.push_back(make_pair(i, input2[i]));
+	}
+
+	vector<int> product(len, 0);
+	int i = 0, j = 0;
+	while(i < array1.size() && j < array2.size())
+	{
+		if(array1[i].first < array2[j].first) i++;
+		else if(array1[i].first > array2[j].first) j++;
+		else
+		{
+			product[array1[i].first] += array1[i++].second * array2[j++].second;  // increase the iterator!!!
+		}
+	}
+
+	return product;
+}
+
 vector<int> dotProduct(vector<int> input1, vector<int> input2) {
 	vector<pair<int, int>> array1;
 	vector<pair<int, int>> array2;

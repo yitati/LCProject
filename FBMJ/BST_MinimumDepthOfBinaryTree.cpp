@@ -32,3 +32,13 @@ int minDepth(TreeNode* root)
 	}
 	return depth;
 }
+
+// recursion
+int minDepth_recursion(TreeNode* root)
+{
+	if(!root) return 0;
+	int leftDepth = minDepth_recursion(root->left);
+	int rightDepth = minDepth_recursion(root->right);
+	// this is a pitfalll
+	return (leftDepth ==0 || rightDepth == 0) ? leftDepth + rightDepth + 1 : min(leftDepth, rightDepth) + 1;
+}

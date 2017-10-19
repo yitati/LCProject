@@ -80,3 +80,48 @@ vector<vector<int>> threeSum(vector<int>& nums)
 	}
 	return results;
 }
+
+/*
+ * given an array, find whether there exists 3 elements a, b, c in it such that a+b=c using efficient method.
+ */
+bool isExistTriplet(vector<int>& array)
+{
+	unordered_map<int, pair<int, int>> table;
+	for(int i=0; i<array.size(); i++)
+	{
+		if(table.count(array[i]))
+		{
+			cout << "find a valid triplet "<< array[i] << "  "<< array[table[array[i]].first] << "  " << array[table[array[i]].second] << endl;
+			return true;
+		}
+		else
+		{
+			for(int j=0; j<i; j++)
+			{
+				table[array[i] + array[j]] = make_pair(i, j);
+			}
+		}
+	}
+
+	return false;
+}
+
+bool isExistTriplet2(vector<int>& array)
+{
+	unordered_map<int, unordered_set<int>> table;
+	for(int i=0; i<array.size(); i++)
+	{
+		table[array[i]].insert(i);
+	}
+
+	for(int i=0; i<array.size(); i++)
+	{
+		for(int j=i+1; j<array.size(); j++)
+		{
+			int sum = array[i] + array[j];
+			if(table.count(sum) && !table[sum].count(i) && !table[sum].count[j]) return true;
+		}
+	}
+
+	return false;
+}

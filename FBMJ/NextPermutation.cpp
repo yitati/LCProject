@@ -20,37 +20,38 @@ Here are some examples. Inputs are in the left-hand column and its corresponding
 
 using namespace std;
 
-// find the first element that is nums[j-1] < nums[j]
+// example 3214765
 void nextPermutation(vector<int>& nums) 
 {
-	if (nums.size() < 2) return;
-	int k = nums.size() - 1;
-	int l;
-	// find the first element that is smaller than its next
-	while (k >= 1 && nums[k - 1] >= nums[k]) k--;
-	// else find min value that is larger than nums[k-1]
-	l = k;
-	while (l < nums.size() - 1 && nums[l + 1] > nums[k - 1]) l++;
-	swap(nums[k - 1], nums[l]);
-	sort(nums.begin() + k, nums.end());
+    if(nums.size() < 2) return;
+    int lhs = nums.size()-1;
+    // find the first element that is smaller than its next, lhs-1 is the one to swap
+    while(lhs >= 1 && nums[lhs-1] >= nums[lhs]) lhs--;
+    if(lhs >= 1) // this is the corner case when it is already the last one
+    {
+        int rhs = lhs;
+        while(rhs+1 < nums.size() && nums[rhs+1] > nums[lhs-1]) rhs++;
+        swap(nums[lhs-1], nums[rhs]);
+    }
+    sort(nums.begin()+lhs, nums.end());
 }
+
 
 // company tag: Facebook
 // similar problem, how to find the previous permutation?
-vector<int> previousPermuation(vector<int>& nums)
+void previousPermutation(vector<int>& nums)
 {
-	if(nums.size() < 2) return nums;
-	int upper = nums.size()-1;
-	// find the first element that is larger than its next
-	while(upper >= 1 && nums[upper-1] <= nums[upper]) upper--;
-	// current permutation is the first one (smallest)
-	if(upper == 0) return nums;
-	// find max value that is smaller than nums[k-1]
-	int lower = upper;
-	while(lower+1 < nums.size() && nums[lower+1] < nums[upper]) lower++;
-	swap(nums[upper-1], nums[lower]);
-	sort(nums.begin()+upper, nums.end(), greater<int>());
-	return nums;
+	if(nums.size() < 2) return;
+	int lhs = nums.size()-1;
+	// find the first element that is larger than its next, lhs-1 is the one to swap
+	while(lhs >= 1 && nums[lhs-1] <= nums[lhs]) lhs--;
+	if(lhs >= 1) // corner case if it is already the first one, then we need to do reverse sort only
+	{
+		int rhs = lhs;
+		while(rhs+1 < nums.size() && nums[rhs+1] < nums[lhs-1]) rhs++;
+		swap(nums[rhs], nums[lhs-1]);
+	}
+	sort(nums.begin()+lhs, nums.end(), greater<int>());
 }
 
 /*

@@ -7,6 +7,7 @@ Find the median of the two sorted arrays. The overall run time complexity should
  */
 
 #include <vector>
+#include <climits>
 
 using namespace std;
 
@@ -62,5 +63,10 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2)
     int mid2 = findKthElementInTwoSortedArray(nums1, 0, nums2, 0, totolLen/2 + 1);
     return 0.5 * (mid1 + mid2);
   }
-
 }
+
+/*
+ * follow-up what about the median of k sorted array?
+ * 题目是给定一个list of sorted integer arrays，要求找所有的数的median
+ *
+ */

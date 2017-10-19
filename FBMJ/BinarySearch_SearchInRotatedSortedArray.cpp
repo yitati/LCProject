@@ -19,7 +19,7 @@ int search(vector<int>& nums, int target) {
 	{
 		int mid = lhs + (rhs - lhs) / 2;
 		if (nums[mid] == target) return mid;
-		if (nums[mid] >= nums[lhs])
+		if (nums[mid] >= nums[lhs]) // the left half is sorted
 		{
 			if (target < nums[mid] && target >= nums[lhs])
 			{
@@ -27,7 +27,7 @@ int search(vector<int>& nums, int target) {
 			}
 			else lhs = mid + 1;
 		}
-		else if (nums[mid] <= nums[rhs])
+		else if (nums[mid] <= nums[rhs]) // the right half is sorted
 		{
 			if (target > nums[mid] && target <= nums[rhs])
 			{

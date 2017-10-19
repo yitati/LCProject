@@ -20,10 +20,32 @@ Given [5, 4, 3, 2, 1],
 
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 
-// refer to problem 300 - longest increasing subsequence
+/*
+ * O(n) time solution, let's keep two candidate values cand1 and cand2 to cut the whole array into
+ * three pieces
+ * [-&, cand1]
+ * (cand1, cand2]
+ * (cand2, +&]
+ * if we find number in those three pieces then find our results.
+ * O(n) time
+ */
+bool increseTriplet(vector<int>& nums)
+{
+	int cand1 = INT_MAX, cand2 = INT_MAX;
+	for(int num : nums)
+	{
+		if(num <= cand1) cand1 = num;           // try to make cand1 and cand2 as small as possible
+		else if(num <= cand2) cand2 = num;
+		else return true;
+	}
+	return false;
+}
+
+// refer to problem 300 - longest increasing subsequence O(nlogn) time
 // now if we find any increasing sequence with length >= 3, will return true
 bool increasingTriplet(vector<int>& nums)
 {

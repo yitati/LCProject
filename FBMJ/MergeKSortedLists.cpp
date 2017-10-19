@@ -4,12 +4,42 @@
 * Merge k sorted linked lists and return it as one sorted list.
 * Analyze and describe its complexity.
 *****************************************************************************/
-// TODO - need to analysize the time complexity
 
 #include "ListNode.h"
 #include <queue>
 
 using namespace std;
+
+// optimal
+ListNode* mergeKListsWithLambda(vector<ListNode*>& lists)
+{
+    auto comp = [](const ListNode* lhs, const ListNode* rhs)->bool{
+      return lhs->val > rhs->val;
+    };
+
+    priority_queue<ListNode*, vector<ListNode*>, decltype(comp)> minHeap(comp);
+    ListNode* dummy = new ListNode(0);
+    ListNode* curr = dummy;
+
+    for(auto list : lists)
+    {
+        if(list) minHeap.push(list);
+    }
+
+    while(!minHeap.empty())
+    {
+        ListNode* tmp = minHeap.top();
+        minHeap.pop();
+        curr->next = tmp;
+        if(tmp->next) minHeap.push(tmp->next);
+        curr = tmp;
+        curr->next = NULL;
+    }
+
+    curr = dummy->next;
+    delete dummy;
+    return curr;
+}
 
  // Solution : Use recursion, divide & conquer
  ListNode * mergeLists(vector<ListNode*>& lists, int start, int end)

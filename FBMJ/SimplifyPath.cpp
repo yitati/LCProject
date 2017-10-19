@@ -31,7 +31,9 @@ string simplifyPath(string path)
 	int len = path.length(), i = 0; 
 	while (i < len)
 	{
+		// skip continuous '/'
 		while (i < len && path[i] == '/') i++;
+
 		int start = i;
 		while (i < len && path[i] != '/') i++;
 		string curr = path.substr(start, i - start);
