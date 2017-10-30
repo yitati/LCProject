@@ -69,12 +69,12 @@ int trap_updateShorterHeight(vector<int>& height)
 		rightMax = max(rightMax, height[rhs]);
 		if (leftMax < rightMax) // move lhs to left
 		{
-			sum += min(leftMax, rightMax) - height[lhs];
+			sum += leftMax - height[lhs];
 			lhs++;
 		}
 		else
 		{
-			sum += min(leftMax, rightMax) - height[rhs];
+			sum += rightMax - height[rhs];
 			rhs--;
 		}
 	}
