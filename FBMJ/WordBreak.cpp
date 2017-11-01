@@ -29,6 +29,42 @@ using namespace std;
  * above question is similar to word break I, we just need to add the substring when everytime it is true
  */
 
+string getCutString(string input, vector<string>& wordDict)
+{
+  unordered_set<string> dict;
+  for(string word : wordDict) dict.insert(word);
+
+  int ilen = input.length();
+  vector<int> dp(ilen+1, -1);
+  dp[0] = 0;
+
+  for(int i=0; i<ilen; i++)
+  {
+    if(dict.count(input.substr(0, i+1)))
+    {
+      dp[i+1] = 0;
+      continue;
+    }
+    for(int j=i-1; j>=0; j--)
+    {
+      if(dp[j+1] != -1 && dict.count(input.substr(j+1, i-j)))
+      {
+        dp[i+1] = j+1;
+      }
+    }
+  }
+
+  // get the result string
+  string result;
+  int i = ilen-1;
+  while(dp[i+1] != -1)
+  {
+    result = result + " " + input.substr(dp[i+1], i-dp[i+1]+1);
+    i = dp[i+1] - 1;
+  }
+
+  return result;
+}
 
 /*
  * word break I, return boolean

@@ -28,7 +28,7 @@ bool validTree(int n, vector<pair<int, int>>& edges)
 {
 	// initialize n isolated islands
 	vector<int> nums(n, -1);
-	// perform unit find
+	// perform union find
 	for(auto i=0; i<edges.size(); i++)
 	{
 		int x = unionfind(nums, edges[i].first);
