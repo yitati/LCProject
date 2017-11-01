@@ -5,7 +5,6 @@
  *      Author: JoanneY1
  */
 
-
 #include <vector>
 
 using namespace std;

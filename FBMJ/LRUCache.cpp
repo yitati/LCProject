@@ -10,7 +10,6 @@
 * Follow up:
 * company tag: Facebook
 * Could you do both operations in O(1) time complexity?
-* TODO: Baobao
 *****************************************************************************/
 
 

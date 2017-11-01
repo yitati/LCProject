@@ -28,80 +28,70 @@ search("b..") -> true
 using namespace std;
 
 class WordDictionary {
-private:
-	class wdNode
-	{
-	public:
-		wdNode()
-		{
-			m_isWord = false;
-		}
-		bool m_isWord;
-		unordered_map<char, wdNode *> m_children;
-	};
-
-	void destroyDic(wdNode * node)
-	{
-		if (node == NULL) return;
-		for (auto it = node->m_children.begin(); it != node->m_children.end(); it++)
-		{
-			destroyDic(it->second);
-		}
-		delete(node);
-	}
-
-	bool findNode_dfs(wdNode * node, const string & word, int level)
-	{
-		if (level == word.length()) return node->m_isWord;
-
-		char curr = word[level];
-		if (curr == '.')
-		{
-			for (auto child : node->m_children)
-			{
-				if (findNode_dfs(child.second, word, level + 1)) return true;
-			}
-			return false;
-		}
-		else {
-			if (!node->m_children.count(curr)) return false;
-			else return findNode_dfs(node->m_children[curr], word, level + 1);
-		}
-		return false;
-	}
-
-	wdNode * m_root;
-
 public:
-	/** Initialize your data structure here. */
-	WordDictionary()
-	{
-		m_root = new wdNode();
-	}
+    class TrieNode
+    {
+    public:
+        vector<TrieNode*> children;
+        bool isWord;
 
-	/** Adds a word into the data structure. */
-	void addWord(string word)
-	{
-		if (word.empty()) return;
-		wdNode * node = m_root;
-		for (char curr : word)
-		{
-			if (!node->m_children.count(curr)) node->m_children[curr] = new wdNode();
-			node = node->m_children[curr];
-		}
-		node->m_isWord = true;
-	}
+        TrieNode()
+        {
+            children = vector<TrieNode*>(26, NULL);
+            isWord = false;
+        }
+    };
 
-	/** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
-	bool search(string word)
-	{
-		return findNode_dfs(m_root, word, 0);
-	}
+    // root for the trie
+    TrieNode* root;
 
-	~WordDictionary()
-	{
-		destroyDic(m_root);
-	}
+    /** Initialize your data structure here. */
+    WordDictionary()
+    {
+        root = new TrieNode();
+    }
+
+    bool findNode(string& word, int level, TrieNode * node)
+    {
+    	if(level == word.length()) return node->isWord;
+    	char c = word[level];
+    	if(c == '.')
+    	{
+    		for(int i=0; i<26; i++)
+    		{
+    			if(!node->children[i]) continue;
+    			if(findNode(word, level+1, node->children[i]) == true) return true;
+    		}
+    	}
+    	else
+    	{
+    		if(!node->children[c-'a']) return false;
+    		return findNode(word, level+1, node->children[c-'a']);
+    	}
+    	return false;
+    }
+
+    /** Adds a word into the data structure. */
+    void addWord(string word)
+    {
+        TrieNode* curr = root;
+        for(char c : word)
+        {
+            int idx = c-'a';
+            if(!curr->children[idx])
+            {
+                curr->children[idx] = new TrieNode();
+            }
+            curr = curr->children[idx];
+        }
+        curr->isWord = true;
+    }
+
+    /** Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. */
+    bool search(string word)
+    {
+        return findNode(word, 0, root);
+    }
 };
 
 /**
@@ -110,5 +100,4 @@ public:
 * obj.addWord(word);
 * bool param_2 = obj.search(word);
 */
-
 

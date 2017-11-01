@@ -19,8 +19,6 @@ void reorderList(ListNode* head)
 
 	ListNode * slow = head;
 	ListNode * fast = head->next;
-
-	// TODO - need to think of a generic way
 	// to decide which half is shorter
 	while (fast && fast->next)
 	{

@@ -30,8 +30,6 @@ Your serialize and deserialize algorithms should be stateless.
 #include <queue>
 #include <cstring>
 
-// todo  - today
-
 using namespace std;
 
 // suppose every node must have left child and right child, they can be null or number

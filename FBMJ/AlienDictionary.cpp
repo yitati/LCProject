@@ -52,8 +52,11 @@ The order is invalid, so return "".
 using namespace std;
 
 unordered_map<char, unordered_set<char>> graph;
+
 typedef enum {
-	NOT_VISITED = 0, VISITING, VISITED
+	NOT_VISITED = 0,
+	VISITING,
+	VISITED
 } STATUS;
 
 
@@ -80,8 +83,7 @@ bool fillOrder(stack<char>& topOrder, unordered_map<char, STATUS>& state, char c
 // add nodes to graph from two strings
 void addGraphNodes(const string& word1, const string& word2) {
 	int i = 0;
-	for (char c : word2)
-		graph[c];
+	for (char c : word2) graph[c];
 	for (i = 0; i < word1.length() && i < word2.length(); i++) {
 		if (word1[i] == word2[i])
 			continue;

@@ -22,7 +22,6 @@ Explanation: No swap.
 
 using namespace std;
 
-
 int maximumSwap(int num) {
 	string nums = to_string(num);    // to put the numbers from integer
 	int n = nums.length();

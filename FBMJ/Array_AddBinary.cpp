@@ -38,12 +38,12 @@ string addBinary(string a, string b)
 }
 
 // if we don't need to do this in place
-string addBinaryWithBase(string s1, string s2, int BASE)
+string addBinaryWithBase(string s1, string s2, int base)
 {
 	// check for empty
 	if(s1.empty()) return s2;
-	if(s2.empty()) return s1;
-	// reverse string
+	if(s1.empty()) return s1;
+	// reverse the string
 	reverse(s1.begin(), s1.end());
 	reverse(s2.begin(), s2.end());
 	// add from begin to end
@@ -54,11 +54,10 @@ string addBinaryWithBase(string s1, string s2, int BASE)
 		int opt1 = i < s1.length() ? s1[i]-'0' : 0;
 		int opt2 = i < s2.length() ? s2[i]-'0' : 0;
 		int sum = opt1 + opt2 + carry;
-		int carry = sum/BASE;
-		sum %= BASE;
-		result.push_back(sum);
+		carry = sum/base;
+		sum %= base;
+		result.push_back(sum + '0');  // pitfall it is char here
 	}
-
 	reverse(result.begin(), result.end());
 	return result;
 }

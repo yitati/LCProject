@@ -72,13 +72,13 @@ TreeNode* getMaxTree(TreeNode* root, int num)
 
 }
 
-// recursion solution
 TreeNode* constructMaximumBinaryTree(vector<int>& nums)
 {
     //return getTreeNode(nums, 0, nums.size()-1);
 	TreeNode* root = NULL;
 	for(int num : nums)
 	{
+		// assign root back
 		root = getMaxTree(root, num);
 	}
 	return root;

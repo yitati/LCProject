@@ -50,6 +50,7 @@ vector<vector<int>> findTwoPairs(const vector<int>& array)
 		{
 			for(int j=i+1; j<list.size(); j++)
 			{
+				// A != C && B != D
 				if(list[i].first == list[j].first || list[i].second == list[j].second) continue;
 				vector<int> result = {list[i].first, list[i].second, list[j].first, list[j].second};
 			    results.push_back(result);

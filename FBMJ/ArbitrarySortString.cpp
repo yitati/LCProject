@@ -30,7 +30,6 @@ string arbitraryAlphaSort(string input, string cusAlpha)
 	return input;
 }
 
-
 string arbitraryAlpha(string input, string cusAlpha)
 {
 	unordered_map<char, int> order;

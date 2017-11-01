@@ -40,11 +40,11 @@ int stringWithNumCompare(string& str1, int pos1, string& str2, int pos2) {
 
   if (isAlpha(str1[pos1]) && isNum(str2[pos2]))
   {
-    return -1;
+    return 1;
   }
   else if (isNum(str1[pos1]) && isAlpha(str2[pos2]))
   {
-    return 1;
+    return -1;
   }
   else if (isAlpha(str1[pos1]) && isAlpha(str2[pos2]))
   {

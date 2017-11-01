@@ -29,42 +29,34 @@ Longest consecutive sequence path is 2-3,not3-2-1, so return 2.
 
 using namespace std;
 
-void findLongestConsecutive(TreeNode * root, int & maxLen, int currLen)
+void findLongestConsecutive(TreeNode* root, int & maxLen, int currLen)
 {
-	// base case
-	if (!root) return;
-	if (!root->left && !root->right) return;
-	if (root->left)
+	if(!root) return;
+	if(!root->left && !root->right) return;
+	if(root->left)
 	{
-		if (root->left->val == root->val + 1)
+		if(root->left->val == root->val + 1)
 		{
-			maxLen = max(maxLen, currLen + 1);
-			findLongestConsecutive(root->left, maxLen, currLen + 1);
+			maxLen = max(maxLen, currLen+1);
+			findLongestConsecutive(root->left, maxLen, currLen+1);
 		}
-		else
-		{
-			findLongestConsecutive(root->left, maxLen, 1);
-		}
+		else findLongestConsecutive(root->left, maxLen, 1);
 	}
-	if (root->right)
+	if(root->right)
 	{
-		if (root->right->val == root->val + 1)
+		if(root->right->val == root->val + 1)
 		{
-			maxLen = max(maxLen, currLen + 1);
-			findLongestConsecutive(root->right, maxLen, currLen + 1);
+			maxLen = max(maxLen, currLen+1);
+			findLongestConsecutive(root->right, maxLen, currLen+1);
 		}
-		else
-		{
-			findLongestConsecutive(root->right, maxLen, 1);
-		}
+		else findLongestConsecutive(root->right, maxLen, 1);
 	}
 }
 
 int longestConsecutive(TreeNode* root)
 {
-	if (!root) return 0;
-	int currLen = 1;
-	int maxLen = 1;
-	findLongestConsecutive(root, maxLen, currLen);
-	return maxLen;
+    if(!root) return 0;
+    int maxLen = 1;
+    findLongestConsecutive(root, maxLen, 1);
+    return maxLen;
 }

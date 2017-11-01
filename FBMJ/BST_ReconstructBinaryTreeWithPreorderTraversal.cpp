@@ -1,5 +1,5 @@
 /*
- * Laicode_ReconstructBinarTreeWithPreorderTraversal.cpp
+ * Laicode_ReconstructBinaryTreeWithPreorderTraversal.cpp
  *
  *
 company tag: Facebook

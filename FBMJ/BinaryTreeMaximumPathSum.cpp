@@ -21,20 +21,20 @@ Return 6.
 
 using namespace std;
 
-int maxSinglePathSum(TreeNode * root, int & globalSum)
+// return the maximum sum on one path
+int maxPath(TreeNode* root, int& globalMax)
 {
-	if (root == NULL) return 0;
-	int singleMaxSum = INT_MIN;
-	int leftMaxSum = maxSinglePathSum(root->left, globalSum);
-	int rightMaxSum = maxSinglePathSum(root->right, globalSum);
-	singleMaxSum = max(max(leftMaxSum, rightMaxSum) + root->val, root->val);
-	globalSum = max(globalSum, max(singleMaxSum, leftMaxSum + rightMaxSum + root->val));
-	return singleMaxSum;
+	if(!root) return 0;
+	int leftPath = maxPath(root->left, globalMax);
+	int rightPath = maxPath(root->right, globalMax);
+	int pathSum = max(max(leftPath, rightPath) + root->val, root->val);
+	globalMax = max(globalMax, max(pathSum, leftPath + rightPath + root->val));
+	return pathSum;
 }
 
 int maxPathSum(TreeNode* root)
 {
-	int globalPathSum = INT_MIN;
-	int sigle = maxSinglePathSum(root, globalPathSum);
-	return globalPathSum;
+	int globalMax = INT_MIN;
+	int pathSum = maxPath(root, globalMax);
+	return globalMax;
 }
