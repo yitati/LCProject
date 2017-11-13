@@ -1,5 +1,5 @@
 /*
- * Laicode_LongestCommonSubstring.cpp
+ * LongestCommonSubstring.cpp
  * company tag: eBay
 
 Find the longest common substring of two given strings.

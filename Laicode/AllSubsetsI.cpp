@@ -1,5 +1,5 @@
 /*
- * Laicode_AllSubsetsI.cpp
+ * AllSubsetsI.cpp
 
 Given a set of characters represented by a String, return a list containing all subsets of the characters.
 

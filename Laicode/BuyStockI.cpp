@@ -1,5 +1,5 @@
 /*
- * Laicode_BuyStockI.cpp
+ * BuyStockI.cpp
  *
 Given an array of positive integers representing a stock’s price on each day.
 On each day you can only make one operation: either buy or sell one unit of

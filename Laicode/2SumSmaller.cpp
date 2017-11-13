@@ -1,5 +1,5 @@
 /*
- * Laicode_2SumSmaller.cpp
+ * 2SumSmaller.cpp
  *
 
 Determine the number of pairs of elements in a given array that sum to a value smaller than the given target number.

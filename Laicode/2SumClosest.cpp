@@ -1,5 +1,5 @@
 /*
- * Laicode_2SumClosest.cpp
+ * 2SumClosest.cpp
  *
 
 Find the pair of elements in a given array that sum to a value that is closest to

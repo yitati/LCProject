@@ -1,5 +1,5 @@
 /*
- * Laicode_2SumAllPairI.cpp
+ * 2SumAllPairI.cpp
 
 Find all pairs of elements in a given array that sum to the given target number. Return all the pairs of indices.
 

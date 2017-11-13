@@ -1,5 +1,5 @@
 /*
- * Laicode_BinaryTreeDiameter.cpp
+ * BinaryTreeDiameter.cpp
  *
 
 Given a binary tree in which each node contains an integer number.

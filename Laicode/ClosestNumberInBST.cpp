@@ -1,5 +1,5 @@
 /*
- * Laicode_ClosestNumberInBST.cpp
+ * ClosestNumberInBST.cpp
 
 In a binary search tree, find the node containing the closest number to the given target number.
 

@@ -1,5 +1,5 @@
 /*
- * Laicode_3Sum3Arrays.cpp
+ * 3Sum3Arrays.cpp
  *
 
 Given three arrays, determine if a set can be made by picking one element from each array that sums to the given target number.

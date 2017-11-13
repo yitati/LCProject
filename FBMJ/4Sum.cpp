@@ -1,5 +1,5 @@
 /*
- * Laicode_4Sum.cpp
+ * 4Sum.cpp
 
 Determine if there exists a set of four elements in a given array that sum to the given target number.
 

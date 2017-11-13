@@ -1,5 +1,5 @@
 /*
- * Laicode_AllUniqueCharactersI.cpp
+ * AllUniqueCharactersI.cpp
  *
 
 Determine if the characters of a given string are all unique.

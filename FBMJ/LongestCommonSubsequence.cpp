@@ -1,5 +1,5 @@
 /*
- * Laicode_LongestCommonSubsequence.cpp
+ * LongestCommonSubsequence.cpp
 
 Find the length of longest common subsequence of two given strings.
 

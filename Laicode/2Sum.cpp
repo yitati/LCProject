@@ -1,5 +1,5 @@
 /*
- * Laicode_2Sum.cpp
+ * 2Sum.cpp
 
 Determine if there exist two elements in a given array, the sum of which is the given target number.
 

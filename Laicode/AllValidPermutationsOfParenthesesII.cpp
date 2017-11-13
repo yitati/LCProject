@@ -1,5 +1,5 @@
 /*
- * Laicode_AllValidPermutationsOfParenthesesII.cpp
+ * AllValidPermutationsOfParenthesesII.cpp
  *
 Get all valid permutations of l pairs of (), m pairs of [] and n pairs of {}.
 

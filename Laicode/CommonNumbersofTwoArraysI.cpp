@@ -1,5 +1,5 @@
 /*
- * Laicode_CommonNumbersofTwoArraysI.cpp
+ * CommonNumbersofTwoArraysI.cpp
  *
 company tag: Facebook
 

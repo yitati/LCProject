@@ -1,5 +1,5 @@
 /*
- * Laicode_BuyStockII.cpp
+ * BuyStockII.cpp
  *
 
 Given an array of positive integers representing a stock’s price on each day.

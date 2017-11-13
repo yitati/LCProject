@@ -1,5 +1,5 @@
 /*
- * Laicode_2Sum2Arrays.cpp
+ * 2Sum2Arrays.cpp
  *
 
 Given two arrays A and B, determine whether or not there exists a pair of elements,

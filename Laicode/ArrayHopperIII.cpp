@@ -1,5 +1,5 @@
 /*
- * Laicode_ArrayHopperIII.cpp
+ * ArrayHopperIII.cpp
  *
 
 Given an array of non-negative integers, you are initially positioned at index 0 of the array.

@@ -1,5 +1,5 @@
 /*
- * Laicode_CommonElementsIn3SortedArrays.cpp
+ * CommonElementsIn3SortedArrays.cpp
 
 Find all common elements in 3 sorted arrays.
 

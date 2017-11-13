@@ -1,5 +1,5 @@
 /*
- * Laicode_3Sum.cpp
+ * 3Sum.cpp
 
 Determine if there exists three elements in a given array that sum to the given target number.
 Return all the triple of values that sums to target.
